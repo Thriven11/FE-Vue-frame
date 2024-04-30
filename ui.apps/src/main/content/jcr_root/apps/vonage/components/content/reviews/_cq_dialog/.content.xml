@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Customer Reviews"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <mainOptions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Main"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <displayType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                name="./displayType"
+                                                fieldLabel="Display types"
+                                                fieldDescription="Select this to show either the widget/full/slimreview/staticwidget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <full
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Full"
+                                                        value="full"/>
+                                                    <widget
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Widget"
+                                                        value="widget"/>
+													<slimreviews
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Slimreviews"
+                                                        value="slimreviews"/>
+                                                    
+													<staticwidget
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Staticwidget"
+                                                        value="staticwidget"/>
+                                                </items>
+                                            </displayType>
+                                            <pageSize
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Set the number of reviews per page or widget rows"
+                                                fieldDescription="This sets the number of results per page or the widget rows"
+                                                value="10"
+                                                name="./pageSize"/>
+                                            <defaultProduct
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Show All products or a specific product"
+                                                fieldLabel="Product/s to show"
+                                                name="./defaultProduct">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <all
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="All Products"
+                                                        value="ALL"/>
+                                                    <apis
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Communication APIs"
+                                                        value="APIS"/>
+                                                    <uc
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Unified Communications"
+                                                        value="UC"/>
+                                                    <cc
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Contact Centers"
+                                                        value="CC"/>
+                                                </items>
+                                            </defaultProduct>                                            
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </mainOptions>
+                    <widgetOptions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Widget Options"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="The headline when we display the widget"
+                                                fieldLabel="Widget Headline"
+                                                name="./widgetHeadline"/>
+                                            <subHeadline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Widget Sub Headline"
+                                                name="./widgetSubHeadline"/>
+                                            <maxReviewTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Review title max character count. (Optional; default is 75)"
+                                                fieldDescription="Use this to set the review title length - charcater count. If not set, it will default to 75. Recommended value between 50 - 90"
+                                                name="./maxReviewTitle"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </widgetOptions>
+ <linkSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Staticwidget_Section"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="See all reviews link label"
+                                                name="./label"/>
+                                            <href
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="See all reviews link url"
+                                                name="./href"
+                                                rootPath="/content/vonage"/>
+                                            <target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="The link target to use. Default will be same window"
+                                                fieldLabel="See all reviews link target"
+                                                name="./target">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Same Window"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New Window"
+                                                        value="_blank"/>
+                                                </items>
+                                            </target>
+                                            <headline_x0020_text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Most customers rank Vonage Contact Center 4/5 stars&#xa;&#xa;"
+                                                fieldLabel="Headline text"
+                                                name="./headlinetext"/>
+												
+												<enbalecheckbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="select this button to enable five stars"
+                                                text="Enable 5stars"
+                                                name="./displayfivestars"/>
+												
+												
+												
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </linkSection>					
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

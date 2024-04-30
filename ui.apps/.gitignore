@@ -1,0 +1,7 @@
+# Created by https://www.gitignore.io/api/eclipse,java,maven
+
+src/main/content/jcr_root/apps/vonage/clientlibs/clientlib-site
+src/main/content/jcr_root/apps/vonage/clientlibs/clientlib-ecomm
+src/main/content/jcr_root/apps/vonage/clientlibs/clientlib-widgets
+src/main/content/jcr_root/apps/vonage/clientlibs/clientlib-print
+src/main/content/jcr_root/apps/vonage/clientlibs/clientlib-dependencies

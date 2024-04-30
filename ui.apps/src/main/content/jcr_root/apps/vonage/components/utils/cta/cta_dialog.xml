@@ -1,0 +1,51 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="CTA"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+        <label
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Link Label"
+        name="./label"/>
+        <href
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+        fieldLabel="Link URL"
+        name="./href"
+        rootPath="/content/vonage"/>
+        <target
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+        fieldDescription="The link target to use. Default will be same window"
+        fieldLabel="Link Target"
+        name="./target">
+			<items jcr:primaryType="nt:unstructured">
+				<self
+					jcr:primaryType="nt:unstructured"
+					text="Same Window"
+					value="_self"/>
+				<blank
+					jcr:primaryType="nt:unstructured"
+					text="New Window"
+					value="_blank"/>
+        <download
+					jcr:primaryType="nt:unstructured"
+					text="Download"
+					value="download"/>
+			 </items>
+        </target>
+		<ariaLabel
+				jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+				fieldLabel="Aria Label"
+				name="./ariaLabel"/>
+    <dataVideoId
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Youtube Video ID"
+        fieldDescription="Adding Video ID here will overwrite default link functionality, instead will load video in a lightbox"
+        required="{Boolean}false"
+        name="./dataVideoId"/>
+	</items>
+</jcr:root>

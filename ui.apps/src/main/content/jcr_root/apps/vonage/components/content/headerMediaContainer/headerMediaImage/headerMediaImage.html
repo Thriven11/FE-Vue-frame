@@ -1,0 +1,9 @@
+<sly data-sly-use.model="com.vonage.core.models.content.HeaderMediaComponentModel"></sly>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<figure class="header-media__image">
+  <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+  <sly data-sly-call="${template.cfImage @ cssClass='', original='850', xlg='850', lg='680', md='768', sm='576'}"/>
+</figure>

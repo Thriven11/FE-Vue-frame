@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Large Promo"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">    
+                    <textSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Title"
+                                                name="./title"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <description 
+                                                jcr:primaryType="nt:unstructured"
+                                                required="false"
+                                                fieldLabel="Description"
+                                                name="./description"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                                            <backgroundTheme
+                                                jcr:primaryType="nt:unstructured"
+                                                required="false"
+                                                fieldLabel="Background Theme"
+                                                name="./backgroundTheme"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <white
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="White"
+                                                        value=""/>
+                                                    <grey
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Grey"
+                                                        value=" large-promo--light"/>
+                                                </items>
+                                            </backgroundTheme> 
+                                            <ctaOptions
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="CTA Options"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <columns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                    <lightboxCta
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="{Boolean}false"
+                                                    fieldDescription="When checked, the CTA will trigger a lightbox form and confirmation message"
+                                                    name="./lightboxCta"
+                                                    text="CTA as Lightbox trigger?"
+                                                    uncheckedValue="{Boolean}false"
+                                                    value="{Boolean}true"/>
+                                                    </items>
+                                                    </column>
+                                                </items>
+                                                </columns>
+                                            </items>
+                                            </ctaOptions>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </textSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

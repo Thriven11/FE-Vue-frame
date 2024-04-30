@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured"
+	jcr:title="Card Icon"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+		jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+					<iconSection
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Icon Section"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<fieldset
+								jcr:primaryType="nt:unstructured"
+								jcr:title=""
+								sling:resourceType="granite/ui/components/foundation/form/fieldset">
+								<layout
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+								<items jcr:primaryType="nt:unstructured">
+									<column
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<icon
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Please select Icon modifier class"
+												fieldLabel="Icon Selection"
+												name="./icon">
+												<items jcr:primaryType="nt:unstructured">
+													<cloud
+														jcr:primaryType="nt:unstructured"
+														text="Cloud"
+														value="cloud"/>
+													<headset
+														jcr:primaryType="nt:unstructured"
+														text="Headset"
+														value="headset"/>
+													<screw
+														jcr:primaryType="nt:unstructured"
+														text="Screw"
+														value="screw"/>
+                          <phone
+                            jcr:primaryType="nt:unstructured"
+                            text="Phone"
+                            value="phone"/>
+												</items>
+											</icon>
+											<theme
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Please select Gradient modifier class"
+												fieldLabel="Theme Selection"
+												name="./theme">
+												<items jcr:primaryType="nt:unstructured">
+													<magnetacoral
+														jcr:primaryType="nt:unstructured"
+														text="Magenta Coral"
+														value="magenta-coral"/>
+													<sky
+														jcr:primaryType="nt:unstructured"
+														text="Purple Sky"
+														value="purple-sky"/>
+													<salmon
+														jcr:primaryType="nt:unstructured"
+														text="Purple Salmon"
+														value="purple-salmon"/>
+												</items>
+											</theme>
+										</items>
+									</column>
+								</items>
+							</fieldset>
+						</items>
+					</iconSection>
+                    <textSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Section"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                	<items jcr:primaryType="nt:unstructured">
+                                    	<column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter a title for Card."
+                                                fieldLabel="Title"
+                                                required="{Boolean}true"
+                                                name="./title"/>
+											<headertype
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Please select Header Type"
+												fieldLabel="Title Header Type"
+												name="./headerType">
+												<items jcr:primaryType="nt:unstructured">
+													<h5
+														jcr:primaryType="nt:unstructured"
+														text="H5"
+														value="h5"/>
+													<h2
+														jcr:primaryType="nt:unstructured"
+														text="H2"
+														value="h2"/>
+													<h3
+														jcr:primaryType="nt:unstructured"
+														text="H3"
+														value="h3"/>
+													<h4
+														jcr:primaryType="nt:unstructured"
+														text="H4"
+														value="h4"/>
+												</items>
+											</headertype>
+											<description
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+												fieldLabel="Description"
+												name="./description"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </textSection>
+					<linkSection
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Link Section"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<fieldset
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/fieldset">
+								<layout
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+								<items jcr:primaryType="nt:unstructured">
+									<column
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<cta
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/include"
+												path="/apps/vonage/components/utils/cta/cta_dialog_without_label"/>
+										</items>
+									</column>
+								</items>
+							</fieldset>
+						</items>
+					</linkSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

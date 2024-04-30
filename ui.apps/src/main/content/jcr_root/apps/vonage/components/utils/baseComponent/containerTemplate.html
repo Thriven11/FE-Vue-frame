@@ -1,0 +1,8 @@
+<template data-sly-template.rowContainer="${@ sectionClass}">
+    <section class="${sectionClass}">
+        <div class="container">
+            <sly data-sly-resource="${ @path='responsiveGridRow',
+                resourceType='vonage/components/utils/rowResponsiveGrid'}" data-sly-unwrap></sly>
+        </div>
+    </section>
+</template>

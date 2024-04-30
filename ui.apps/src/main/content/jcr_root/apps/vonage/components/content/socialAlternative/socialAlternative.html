@@ -1,0 +1,26 @@
+<sly data-sly-use.model="com.vonage.core.models.content.navigations.LinkListComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<div class="Vlt-footer-alternative__section">
+    <h2 class="Vlt-footer-alternative__title" data-sly-test="${!properties.staticLabel}">
+      ${model.title}
+    </h2>
+    <h2 class="Vlt-footer-alternative__title" data-sly-test="${properties.staticLabel}" data-static-label="${properties.staticLabel}">
+      ${model.title}
+    </h2>
+    <ul data-sly-list.resourceLink="${model.links}">
+        <li class="Vlt-footer-alternative__item">
+            <span class="Vlt-icon-social Vlt-icon-social--${resourceLink.link.type} Vlt-footer-alternative__icon"></span>
+            <a class="Vlt-footer-alternative__link"
+               href="${resourceLink.link.href}"
+               aria-label="${resourceLink.link.type}"
+               target="${resourceLink.link.target}"
+               rel="${resourceLink.link.target =='_blank' ? 'noopener' : ''}"
+               aria-describedby="${resourceLink.link.target =='_blank' ? 'new-window' : ''}">
+                ${resourceLink.link.label}
+            </a>
+        </li>
+    </ul>
+</div>

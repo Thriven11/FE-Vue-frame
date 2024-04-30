@@ -1,0 +1,46 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="feature ${model.position} ${model.marginBottom} ${model.noMarginBottom}">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2 col-md-6 offset-md-0">
+                <div class="feature__content ${properties.imagewidth}">
+                  <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+                  <sly data-sly-call="${template.cfImage @ cssClass='feature__image', original='680', xlg='535', lg='430', md='320', sm='320'}"/>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 ${model.size}">
+                <div class="feature__content feature__content--secondary ${model.topAllignment}">
+                    <h3 class="feature__headline">
+                        ${model.title}
+                    </h3>
+                    <div class="feature__body">
+                        <div class="feature__text">
+                            ${model.description @ context='html'}
+                        </div>
+                        <sly data-sly-test="${model.link.target == 'download'}">
+                          <a class="feature__link"
+                           data-sly-test="${model.link.label}"
+                           href="${model.link.href}"
+                           aria-label="${model.link.ariaLabel || model.link.label}"
+                           aria-describedby="${model.link.target =='_blank' ? 'new-window' : ''}"
+                           target="_self"
+                           download>${model.link.label}</a>
+                        </sly>
+                        <sly data-sly-test="${model.link.target != 'download'}">
+                          <a class="feature__link"
+                            data-sly-test="${model.link.label}"
+                            href="${model.link.href}"
+                            aria-label="${model.link.ariaLabel || model.link.label}"
+                            aria-describedby="${model.link.target =='_blank' ? 'new-window' : ''}"
+                            target="${model.link.target}">${model.link.label}</a>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

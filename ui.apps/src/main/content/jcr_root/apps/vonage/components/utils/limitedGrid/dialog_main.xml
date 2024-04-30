@@ -1,0 +1,26 @@
+<jcr:root
+  xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Icon Panel"
+  sling:resourceType="granite/ui/components/foundation/container"
+  extraClientlibs=""
+>
+  <!-- TODO: Make the upper and lower limit dynamic -->
+  <items jcr:primaryType="nt:unstructured">
+    <numberOfItems
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+      fieldDescription="2-4 items allowed"
+      fieldLabel="Number of Items"
+      min="2"
+      max="4"
+      name="./numberOfItems"
+      step="1"
+      value="4"
+    />
+  </items>
+</jcr:root>

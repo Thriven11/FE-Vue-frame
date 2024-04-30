@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/libs/cq/replication/templates/agent"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Cloudflare Flush de-de"
+        sling:resourceType="cq/replication/components/agent"
+        enabled="false"
+        logLevel="debug"
+        noVersioning="true"
+        serializationType="durbo"
+        ssl="relaxed"
+        transportPassword="a504d88ce39aefa6c5c023b9f0c89e258e024"
+        transportUri="cloudflare://api.cloudflare.com/client/v4/zones/e7d3a3f273289489f72d7d15b8f1ff57/purge_cache"
+        transportUser="nikhil.lingannagari@vonage.com"
+        triggerReceive="true"
+        triggerSpecific="true"
+        userId="cloudflare-flush-de-de"/>
+</jcr:root>

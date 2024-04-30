@@ -1,0 +1,17 @@
+<sly data-sly-use.model="com.vonage.core.models.content.StepsGridModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start" style="height:150px;"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="steps-grid">
+  <div class="container ${properties.dotted}">
+    <div class="col col-lg-12">
+      <h2 class="steps-grid__intro-title">${properties.introTitle}</h2>
+      <div class="steps-grid__intro-text">
+        ${properties.text @ context='html'}
+      </div>
+    </div>
+    <sly data-sly-resource="${ @path='responsiveGrid',
+              resourceType='vonage/components/utils/rowResponsiveGrid'}" data-sly-unwrap></sly>
+    </div>
+</section>

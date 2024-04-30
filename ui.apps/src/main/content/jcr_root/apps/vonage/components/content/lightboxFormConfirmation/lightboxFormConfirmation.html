@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LightboxFormConfirmationComponentModel"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     style="height: 150px;"
+     data-emptytext="${component.title} Component"></div>
+
+
+     <div class="Vlt-form__success">
+        <div class="container Vlt-form__success-${model.messageVersion}">
+          <div>
+            <sly data-sly-resource="${'confirmationImage' @resourceType='vonage/components/content/lightboxFormConfirmation/lightboxFormConfirmationImage'}"/>
+          </div>
+          <div class="row">
+            <div>
+              <h3 class="Vlt-form__success-title-${model.messageVersion}">${model.title}</h3>
+            </div>
+            <div class="col-12 col-lg-11">
+              <p class="Vlt-form__success-description-${model.messageVersion}">${model.description}</p>
+              <div class="Vlt-form__success-cta">
+                <sly data-sly-test="${!properties.videoCta}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta', selectors='cta'}"/>
+                <sly data-sly-test="${properties.videoCta}" data-sly-resource="${'video-embed-cta' @resourceType='/apps/vonage/components/content/videoEmbedCta', selectors='videoEmbedCta'}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>

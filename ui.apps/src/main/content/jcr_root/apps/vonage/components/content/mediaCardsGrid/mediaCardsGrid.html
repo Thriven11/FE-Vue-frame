@@ -1,0 +1,22 @@
+<sly data-sly-use.model="com.vonage.core.models.content.MediaCardsGridComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="media-cards-grid" id=${model.anchor}>
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="media-cards-grid__header" data-sly-test="${model.title}">
+                <h2 class="media-cards-grid__header-title">${model.title}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-12 media-cards-grid__items ${model.cardColumns == '2' ? 'two-col' : 'three-col'}">
+                <sly data-sly-resource="${ @path='responsiveGrid',
+                resourceType='vonage/components/utils/rowResponsiveGrid'}" ></sly>
+              </div>
+          </div>
+        </div>
+</section>

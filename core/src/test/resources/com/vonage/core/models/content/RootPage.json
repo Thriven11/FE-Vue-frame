@@ -1,0 +1,92 @@
+{
+	"jcr:primaryType": "cq:Page",
+	"jcr:mixinTypes": [
+		"rep:AccessControllable"
+	],
+	"jcr:createdBy": "admin",
+	"jcr:created": "Wed Oct 16 2019 12:39:41 GMT+0530",
+	"jcr:content": {
+		"jcr:primaryType": "cq:PageContent",
+		"jcr:createdBy": "admin",
+		"jcr:title": "vonage",
+		"redirectTarget": "/content/vonage/en",
+		"sling:redirect": true,
+		"jcr:created": "Wed Oct 16 2019 12:39:41 GMT+0530",
+		"sling:redirectStatus": 302,
+		"cq:deviceGroups": [
+			"/etc/mobile/groups/responsive"
+		],
+		"sling:resourceType": "foundation/components/redirect",
+		"cq:allowedTemplates": [
+			"/conf/vonage/settings/wcm/templates/.*"
+		]
+	},
+	"en-us": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:mixinTypes": [
+			"rep:AccessControllable"
+		],
+		"jcr:createdBy": "admin",
+		"jcr:created": "Wed Oct 16 2019 12:39:41 GMT+0530"
+	},
+	"es-us": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:mixinTypes": [
+			"rep:AccessControllable"
+		],
+		"jcr:createdBy": "translation-job-service",
+		"jcr:created": "Wed Feb 05 2020 20:02:51 GMT+0530"
+	},
+	"fr-us": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:mixinTypes": [
+			"rep:AccessControllable"
+		],
+		"jcr:createdBy": "admin",
+		"jcr:created": "Tue Feb 04 2020 18:10:30 GMT+0530"
+	},
+	"nl_be": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:mixinTypes": [
+			"rep:AccessControllable"
+		],
+		"jcr:createdBy": "translation-job-service",
+		"jcr:created": "Tue Feb 04 2020 14:37:47 GMT+0530"
+	},
+	"haw-us": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:mixinTypes": [
+			"rep:AccessControllable"
+		],
+		"jcr:createdBy": "admin",
+		"jcr:created": "Tue Feb 04 2020 14:27:43 GMT+0530"
+	},
+	"fr-fr": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Mon Nov 18 2019 11:01:15 GMT+0530"
+	},
+	"fr_BE": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Tue Feb 04 2020 14:39:25 GMT+0530"
+	},
+	"fr-ca": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Tue Feb 04 2020 12:21:51 GMT+0530"
+	},
+	"en-gb": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Mon Nov 18 2019 11:01:36 GMT+0530"
+	},
+	"de-de": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Tue Nov 19 2019 14:12:10 GMT+0530"
+	},
+	"rep:policy": {
+		"jcr:primaryType": "rep:ACL"
+	}
+}

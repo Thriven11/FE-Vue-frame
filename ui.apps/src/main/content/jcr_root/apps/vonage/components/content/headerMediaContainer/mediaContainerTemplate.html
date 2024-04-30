@@ -1,0 +1,19 @@
+<template data-sly-template.mediaContainer="${@ mediaType, mediaClass}">
+    <div class="header-media__content">
+        <div class="header-media__background"></div>
+        <div class="header-media__media">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="${mediaClass}" data-sly-test="${mediaType!='plainText'}"
+                         data-sly-test.resourceNode="${mediaType}"
+                         data-sly-test.resourceNodeType="${'{0}{1}' @
+                            format=['vonage/components/content/headerMediaContainer/', mediaType]}">
+                        <sly data-sly-resource="${@path=resourceNode,
+                            resourceType=resourceNodeType}" data-sly-unwrap>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

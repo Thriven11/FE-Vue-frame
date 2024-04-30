@@ -1,0 +1,32 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-use.model="com.vonage.core.models.content.MultiPageNavigationDropdownModel"
+     data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+
+<div class="multipage-dropdown">
+  <p class="multipage-dropdown__title">
+    ${model.headline}
+  </p>
+  <div class="multipage-dropdown__action">
+    <div class="multipage-dropdown__action--section">
+       <span class="multipage-dropdown__action--section-btn"  role="listbox" tabindex="0" aria-label="dropdown">
+         <span data-sly-test=${model.placeholder}>${model.placeholder}</span>
+         <span data-sly-test=${!model.placeholder}>Select a product</span>
+         <i class="Vlt-icon-chevron drop-icon"></i>
+      </span>
+      <ul class="multipage-dropdown__action--section-list">
+        <li data-sly-test=${model.placeholder} role="option">${model.placeholder}</li>
+        <li data-sly-test=${!model.placeholder} role="option">Select a product</li>
+        <sly data-sly-list.dropdownOptions="${model.dropdownOptions}">
+          <li class="multipage-dropdown__action--section-list-option" role="option" data-target="${dropdownOptions.link.target}" data-value="${dropdownOptions.link.href}">${dropdownOptions.link.label}</li>
+        </sly>
+      </ul>
+    </div>
+    <div class="multipage-dropdown__action--cta-section">
+      <a class="multipage-dropdown__action--cta-section-btn disabled" aria-label="${model.ariaLabel}">
+        ${model.ctaLabel}
+      </a>
+    </div>
+  </div>
+</div>

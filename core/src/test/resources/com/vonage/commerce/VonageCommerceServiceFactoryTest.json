@@ -1,0 +1,264 @@
+{
+	"jcr:primaryType": "sling:Folder",
+	"jcr:mixinTypes": [
+		"cq:ReplicationStatus"
+	],
+	"jcr:createdBy": "admin",
+	"jcr:title": "Vonage",
+	"cq:commerceProvider": "vonage-aem",
+	"cq:lastReplicationAction": "Activate",
+	"cq:lastReplicatedBy": "admin",
+	"jcr:created": "Mon Feb 10 2020 15:01:36 GMT+0530",
+	"cq:lastReplicated": "Mon Feb 24 2020 20:51:47 GMT+0530",
+	"communications-api": {
+		"jcr:primaryType": "sling:OrderedFolder",
+		"jcr:mixinTypes": [
+			"cq:ReplicationStatus"
+		],
+		"jcr:createdBy": "admin",
+		"jcr:title": "Communications Api",
+		"cq:lastReplicationAction": "Activate",
+		"cq:lastReplicatedBy": "admin",
+		"jcr:created": "Mon Feb 10 2020 15:01:36 GMT+0530",
+		"cq:lastReplicated": "Mon Feb 24 2020 20:51:47 GMT+0530",
+		"USD": "1.07904",
+		"jcr:lastModified": "Wed Feb 19 2020 20:56:52 GMT+0530",
+		"disableSync": false,
+		"messaging": {
+			"jcr:primaryType": "sling:OrderedFolder",
+			"jcr:mixinTypes": [
+				"cq:ReplicationStatus"
+			],
+			"jcr:createdBy": "writeServiceUser",
+			"cq:lastReplicationAction": "Activate",
+			"cq:lastReplicatedBy": "admin",
+			"jcr:created": "Thu Feb 13 2020 13:50:32 GMT+0530",
+			"cq:lastReplicated": "Mon Feb 24 2020 20:51:47 GMT+0530",
+			"AC": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Ascension Island",
+				"jcr:created": "Wed Feb 26 2020 09:45:31 GMT+0530",
+				"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"disableSync": "false",
+				"cq:commerceType": "product",
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530"
+					}
+				},
+				"toll-free": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "6",
+						"incoming": "55",
+						"jcr:lastModified": "Wed Feb 26 2020 09:45:31 GMT+0530"
+					}
+				}
+			},
+			"GA": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Gabon",
+				"jcr:lastModified": "Thu Feb 13 2020 14:04:51 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing": "0.09230000"
+					}
+				}
+			},
+			"us": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "United States",
+				"jcr:lastModified": "Thu Feb 13 2020 14:08:49 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"toll-free": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "toll free",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "1.00",
+						"incoming": "0.00570000"
+					}
+				},
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing": "0.00620000"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "virtual number",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "0.90",
+						"incoming": "0.00570000"
+					}
+				}
+			},
+			"in": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "India",
+				"jcr:lastModified": "Wed Feb 19 2020 20:56:53 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing": "0.01550000"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "virtual number",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "100.00",
+						"incoming": "0.00250000"
+					}
+				}
+			}
+		},
+		"voice": {
+			"jcr:primaryType": "sling:OrderedFolder",
+			"jcr:mixinTypes": [
+				"cq:ReplicationStatus"
+			],
+			"jcr:createdBy": "writeServiceUser",
+			"cq:lastReplicationAction": "Activate",
+			"cq:lastReplicatedBy": "admin",
+			"jcr:created": "Thu Feb 13 2020 14:18:36 GMT+0530",
+			"cq:lastReplicated": "Mon Feb 24 2020 20:51:47 GMT+0530",
+			"in": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "India",
+				"jcr:lastModified": "Thu Feb 13 2020 14:18:45 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing.landline": "0.02500000",
+						"outgoing.mobile": "0.02120000"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "virtual number",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"incoming": "0.12000000",
+						"rental.voice": "30.00"
+					}
+				}
+			},
+			"de": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Germany",
+				"jcr:lastModified": "Thu Feb 13 2020 14:18:51 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"toll-free": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "toll free",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"incoming": "0.17500000",
+						"rental.voice": "6.00"
+					}
+				},
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing.landline": "0.01280000",
+						"outgoing.mobile": "0.05700000"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "virtual number",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"incoming": "0.00450000",
+						"rental.voice": "2.00"
+					}
+				}
+			},
+			"us": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "United States",
+				"jcr:lastModified": "Wed Feb 19 2020 20:38:42 GMT+0530",
+				"sling:resourceType": "commerce/components/product",
+				"cq:commerceType": "product",
+				"toll-free": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "toll free",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "1.00",
+						"incoming": "0.01400000",
+						"rental.voice": "0.67"
+					}
+				},
+				"outgoing": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "outgoing",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"outgoing": "0.01270000"
+					}
+				},
+				"virtual-number": {
+					"jcr:primaryType": "nt:unstructured",
+					"jcr:title": "virtual number",
+					"sling:resourceType": "nt:unstructured",
+					"euros": {
+						"jcr:primaryType": "nt:unstructured",
+						"rental": "0.90",
+						"incoming": "0.00450000"
+					}
+				}
+			}
+		}
+	}
+}

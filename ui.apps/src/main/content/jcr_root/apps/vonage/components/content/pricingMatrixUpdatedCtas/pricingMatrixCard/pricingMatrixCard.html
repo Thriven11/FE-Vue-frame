@@ -1,0 +1,64 @@
+<sly
+    data-sly-use.model="com.vonage.core.models.content.PricingMatrixCardUpdatedCtasModel"
+    data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"
+    data-sly-use.lightboxCtaTemplate="vonage/components/utils/lightboxCta/lightboxCta-template.html"/>
+
+<div data-sly-test="${wcmmode.edit}"
+    class="cq-placeholder cq-marker-start" style="height: 150px;"
+    data-emptytext="${component.title}" style="min-width: 250px;"></div>
+
+<div
+    class="pricing-matrix__card-container ${(model.bannerText == null) ? 'pricing-matrix__card-container--no-ecomm' : ''}">
+    <div
+        class="plans-card plans-card--extended ${model.isBestValue ? 'plans-card--best-value' : ''} ${(model.bannerText == null) ? '' : 'plans-card--tagged'}">
+        <div class="plans-card__tag" data-sly-test="${model.bannerText}">
+            <span class="plans-card__tag-label"> ${model.bannerText @
+                i18n} </span>
+        </div>
+
+        <div class="plans-card__info">
+            <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+            <sly data-sly-call="${template.cfImage @ cssClass='', original='38', xlg='38', lg='38', md='38', sm='38'}"/>
+            <div class="plans-card__basic-info">
+                <!-- TODO: ask about id -->
+                <h3 class="plans-card__title">${model.title}</h3>
+                <p class="plans-card__mice-text">${model.startingPrice}</p>
+                <div data-sly-test="${model.description}"
+                    class="plans-card__description">${model.description @context='html'}</div>
+            </div>
+
+            <div
+                style="height: auto; width: auto; min-width: 120px; min-height: 50px;"
+                data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                <sly
+                    data-sly-resource="${'featuresList' @resourceType='vonage/components/utils/list'}" />
+            </div>
+
+            <sly data-sly-list.item="${model.prices}" data-sly-unwrap>
+
+             <span
+                class="plans-card__price initial ${itemList.first ? 'showVariant' : 'hideVariant'}"
+                data-maxlines="${item.upperLimit}"> <span
+                class="plans-card__price-wrapper">${item.price}</span>
+                <p class="plans-card__legal">${item.legal}</p>
+
+                <div class="plans-card__cta-container invisible">
+                  <!-- Text Link -->
+                  <sly data-sly-resource="${item.textlink @resourceType='/apps/vonage/components/content/cta', addSelectors='link', wcmmode='disabled'}" />
+
+                  <!-- Primary Button -->
+                  <sly data-sly-test="${!item.primaryLightBox}" data-sly-resource="${item.primaryCta @resourceType='/apps/vonage/components/content/cta', addSelectors='btn-primary', wcmmode='disabled'}" />
+                  <sly data-sly-test="${item.primaryLightBox}" data-sly-resource="${item.primaryLightBoxCta @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='btn-primary', wcmmode='disabled'}" />
+
+                  <!-- Secondary Button -->
+                  <sly data-sly-test="${!item.secondaryLightBox}" data-sly-resource="${item.secondaryCta @resourceType='/apps/vonage/components/content/cta', addSelectors='btn-secondary', wcmmode='disabled'}" />
+                  <sly data-sly-test="${item.secondaryLightBox}" data-sly-resource="${item.secondaryLightBoxCta @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='btn-secondary', wcmmode='disabled'}" />
+
+                </div>
+
+            </span> </sly> 
+        </div>
+
+
+    </div>
+</div>

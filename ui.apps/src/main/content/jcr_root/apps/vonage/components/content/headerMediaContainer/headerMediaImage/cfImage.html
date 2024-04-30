@@ -1,0 +1,23 @@
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${image.src}">
+     <!--/* Below is the Cloudflare served image that will display in Publish environments,
+      set the maximum width you need on the src.
+      Remove values less than main width from src set.
+      Our grid is SM - 576w, MD - 768w, LG - 992w,  XL - 1200w
+
+      /*-->
+     <img
+      srcset="
+        /cdn-cgi/image/fit=scale-down,width=576,onerror=redirect${image.fileReference} 576w,
+        /cdn-cgi/image/fit=scale-down,width=768,onerror=redirect${image.fileReference} 768w,
+        /cdn-cgi/image/fit=scale-down,width=680,onerror=redirect${image.fileReference} 992w,
+        /cdn-cgi/image/fit=scale-down,width=850,onerror=redirect${image.fileReference} 1200w,
+      "
+      src="/cdn-cgi/image/fit=scale-down,width=850,f=auto,onerror=redirect${image.fileReference}${transform}"
+      class=""
+      data-cmp-hook-image="image"
+      alt="${image.alt || true}"
+      title="${image.title}"
+      />
+</sly>

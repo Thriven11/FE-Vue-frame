@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Post Checkout"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured" maximized="true"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs">
+				<items jcr:primaryType="nt:unstructured">
+					<textSection jcr:primaryType="nt:unstructured"
+						jcr:title="Headline"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured" margin="true"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<orderNumber jcr:primaryType="nt:unstructured"
+												fieldLabel="Order Number" name="./orderNumber"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<headline jcr:primaryType="nt:unstructured"
+												fieldLabel="Headline" name="./headline"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<subheadline jcr:primaryType="nt:unstructured"
+												fieldLabel="SubHeadline" name="./subHeadline"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</textSection>
+					<bottomSection jcr:primaryType="nt:unstructured"
+						jcr:title="Help Section"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<title jcr:primaryType="nt:unstructured"
+												fieldLabel="Title" name="./title"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<leftSubtitle jcr:primaryType="nt:unstructured"
+												fieldLabel="Left subtitle" name="./leftSubtitle"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<leftDescription jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+												fieldLabel="Left Descrition" 
+												name="./leftDescription"
+												useFixedInlineToolbar="{Boolean}true">
+												<rtePlugins jcr:primaryType="nt:unstructured">
+													<format
+														jcr:primaryType="nt:unstructured"
+														features="*"/>
+												</rtePlugins>
+												<uiSettings jcr:primaryType="nt:unstructured">
+													<cui jcr:primaryType="nt:unstructured">
+														<inline
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</inline>
+														<dialogFullScreen
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</dialogFullScreen>
+													</cui>
+												</uiSettings>
+											</leftDescription>
+											<rightSubtitle
+												jcr:primaryType="nt:unstructured" fieldLabel="Right Subtitle"
+												name="./rightSubtitle"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<rightDescription jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+												fieldLabel="Right Descrition" 
+												name="./rightDescription"
+												useFixedInlineToolbar="{Boolean}true">
+												<rtePlugins jcr:primaryType="nt:unstructured">
+													<format
+														jcr:primaryType="nt:unstructured"
+														features="*"/>
+												</rtePlugins>
+												<uiSettings jcr:primaryType="nt:unstructured">
+													<cui jcr:primaryType="nt:unstructured">
+														<inline
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</inline>
+														<dialogFullScreen
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</dialogFullScreen>
+													</cui>
+												</uiSettings>
+											</rightDescription>
+
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</bottomSection>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

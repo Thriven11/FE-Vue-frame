@@ -1,0 +1,84 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CaseStudyComponentModel">
+    <div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+         data-emptytext="${component.title} Component"></div>
+
+    <section class="case-study">
+        <div class="container">
+            <div class="row">
+
+              <!--/* Default Image on Left, Text on Right */-->
+              <sly data-sly-test="${!properties.textLeft}">
+                <div class="col case-study__asset-col">
+                  <div class="case-study__assets">
+                      <div class="case-study__assets-group">
+                          <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+                          <sly data-sly-call="${template.cfImage @ cssClass='case-study__image', original='840', xlg='840', lg='450', md='680', sm='500'}"/>
+                          <img data-sly-test="${model.logoImage}" class="case-study__logo ${properties.logoPosition}" src="${model.logoImage}" alt="${model.altText}">
+                      </div>
+                  </div>
+                </div>
+                <div class="col ${properties.gridValue}">
+                    <div class="case-study__information">
+                      <span data-sly-test="${properties.eyebrow}" class="case-study__eyebrow">${properties.eyebrow}</span>
+                        <p class="case-study__description">${model.description}</p>
+                        <span data-sly-test="${properties.text}" class="case-study__text cmp-text">${properties.text @ context='html'}</span>
+
+                        <div class="case-study__bio" data-sly-test="${model.name || model.jobTitle}">
+                            <span class="case-study__bio-name">${model.name}</span>
+                            <span class="case-study__bio-job-title">${model.jobTitle}</span>
+                        </div>
+                        <div class="case-study__actions">
+                            <div class="case-study__action">
+                                <div style="width:auto; min-width: 250px; height:auto; min-height: 100px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                                    <sly data-sly-resource="${'cta' @resourceType='/apps/vonage/components/content/cta'}"></sly>
+                                </div>
+                            </div>
+                            <div class="case-study__action">
+                                <div style="width:auto; min-width: 250px; height:auto; min-height: 100px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                                    <sly data-sly-resource="${'cta2' @resourceType='/apps/vonage/components/content/cta' , addSelectors='link'}"></sly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </sly>
+              <!--/* Text Left, ImageRight */-->
+              <sly data-sly-test="${properties.textLeft}">
+                <div class="col ${properties.gridValue}">
+                    <div class="case-study__information">
+                      <span data-sly-test="${properties.eyebrow}" class="case-study__eyebrow">${properties.eyebrow}</span>
+                        <p class="case-study__description">${model.description}</p>
+                        <span data-sly-test="${properties.text}" class="case-study__text cmp-text">${properties.text @ context='html'}</span>
+
+                        <div class="case-study__bio" data-sly-test="${model.name || model.jobTitle}">
+                            <span class="case-study__bio-name">${model.name}</span>
+                            <span class="case-study__bio-job-title">${model.jobTitle}</span>
+                        </div>
+                        <div class="case-study__actions">
+                            <div class="case-study__action">
+                                <div style="width:auto; min-width: 250px; height:auto; min-height: 100px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                                    <sly data-sly-resource="${'cta' @resourceType='/apps/vonage/components/content/cta'}"></sly>
+                                </div>
+                            </div>
+                            <div class="case-study__action">
+                                <div style="width:auto; min-width: 250px; height:auto; min-height: 100px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                                    <sly data-sly-resource="${'cta2' @resourceType='/apps/vonage/components/content/cta' , addSelectors='link'}"></sly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col case-study__asset-col">
+                  <div class="case-study__assets">
+                      <div class="case-study__assets-group">
+                        <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+                        <sly data-sly-call="${template.cfImage @ cssClass='case-study__image', original='840', xlg='840', lg='450', md='680', sm='500'}"/>
+                          <img data-sly-test="${model.logoImage}" class="case-study__logo ${properties.logoPosition}" src="${model.logoImage}" alt="${model.altText}">
+                      </div>
+                  </div>
+                </div>
+              </sly>
+            </div>
+        </div>
+    </section>
+</sly>

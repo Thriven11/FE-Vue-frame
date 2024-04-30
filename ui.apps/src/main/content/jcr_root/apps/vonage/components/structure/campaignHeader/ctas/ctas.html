@@ -1,0 +1,15 @@
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<nav data-sly-test.showCtas="${pageProperties.showCtas || wcmmode.edit}" class="campaign-header__navigation">
+    <div style="width:auto; min-width:250px; min-height:40px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+        <sly style="width:auto; min-width:125px;" data-sly-test="${!properties.secondaryLightbox}" data-sly-resource="${'secondaryCta' @resourceType='/apps/vonage/components/content/cta', addSelectors='link'}"></sly>
+        <sly style="width:auto; min-width:125px;" data-sly-test="${properties.secondaryLightbox}" data-sly-resource="${'lightSecondaryCta' @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='link'}"></sly>
+    </div>
+    <div style="width:auto; min-width:250px; min-height:40px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+        <sly style="width:auto; min-width:125px;" data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'primaryCta' @resourceType='/apps/vonage/components/content/cta', addSelectors='cta'}"></sly>
+        <sly style="width:auto; min-width:125px;" data-sly-test="${properties.primaryLightbox}" data-sly-resource="${'lightPrimaryCta' @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='cta'}"></sly>
+    </div>
+</nav>
+

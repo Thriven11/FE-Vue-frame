@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2019-12-02T15:16:42.022+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:description="This workflow is used to request content review and then, approve/ publish a page."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Content Approval Workflow (Vonage)"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2019-11-29T14:17:48.893+05:30"
+                jcr:createdBy="admin"
+                jcr:description="Validate if the current payload is CQ Page or not"
+                jcr:lastModified="{Date}2019-12-02T14:42:00.985+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Validate Page"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.vonage.core.workflows.process.ValidatePayloadProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <or
+                jcr:created="{Date}2019-11-29T14:20:42.341+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2019-11-29T19:27:12.942+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                branchName1="Branch 1"
+                branchName2="Branch 2"
+                branchOrder="[0,1]"
+                orSplit="true"
+                script1="function check() {&#xd;&#xa;var status = workflowData.getMetaDataMap().get('activateStatus');&#xd;&#xa;   if (status == 'valid') {&#xd;&#xa;    return true;&#xd;&#xa;   } else {&#xd;&#xa;    return false;&#xd;&#xa;  }&#xd;&#xa;}"
+                script2="function check() {&#xd;&#xa;var status = workflowData.getMetaDataMap().get('activateStatus');&#xd;&#xa;   if (status == 'invalid payload') {&#xd;&#xa;    return true;&#xd;&#xa;   } else {&#xd;&#xa;    return false;&#xd;&#xa;  }&#xd;&#xa;}">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <dynamic_participant
+                        jcr:created="{Date}2019-11-29T14:42:24.001+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-12-02T15:16:42.009+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:description="Review the page content and click on Complete to Approve or Reject the page. You can add comments with reason for the approval or rejection."
+                        jcr:title="Review Page Content"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DO_NOTIFY="true"
+                            DYNAMIC_PARTICIPANT="com.vonage.core.workflows.process.ReviewParticipantChooser"
+                            PROCESS_ARGS=""/>
+                    </dynamic_participant>
+                    <or
+                        jcr:created="{Date}2019-11-29T14:58:16.424+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-12-02T14:44:10.836+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/workflow/components/model/or"
+                        branches="2"
+                        branchName1="Branch 1"
+                        branchName2="Branch 2"
+                        branchOrder="[0,1]"
+                        orSplit="true">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <noopprocess
+                                jcr:created="{Date}2019-12-02T14:33:05.487+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="A no operation process"
+                                jcr:lastModified="{Date}2019-12-02T14:33:17.094+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Approve"
+                                sling:resourceType="cq/workflow/components/workflow/noopprocess">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="/libs/workflow/scripts/noop.ecma"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </noopprocess>
+                            <process_1353227060
+                                jcr:created="{Date}2019-12-02T14:33:51.321+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-12-02T14:41:51.607+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Unlock Page"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.vonage.core.workflows.process.UnlockPageProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process_1353227060>
+                            <process
+                                jcr:created="{Date}2019-11-29T15:58:18.707+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Activates the page."
+                                jcr:lastModified="{Date}2019-11-29T15:59:52.493+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Activate Page"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                            <process_958174543
+                                jcr:created="{Date}2019-11-29T15:59:11.696+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Success notification. Selected payload is activated"
+                                jcr:lastModified="{Date}2019-11-29T19:36:13.325+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Success Notification"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.vonage.core.workflows.process.EmailNotificationProcess"
+                                    PROCESS_ARGS="ActivateSuccess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process_958174543>
+                        </_x0031_>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <noopprocess
+                                jcr:created="{Date}2019-12-02T14:33:22.854+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="A no operation process"
+                                jcr:lastModified="{Date}2019-12-02T14:33:35.064+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Reject"
+                                sling:resourceType="cq/workflow/components/workflow/noopprocess">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="/libs/workflow/scripts/noop.ecma"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </noopprocess>
+                            <process_1408059746
+                                jcr:created="{Date}2019-12-02T14:34:16.715+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-12-02T14:41:44.581+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Unlock Page"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.vonage.core.workflows.process.UnlockPageProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process_1408059746>
+                            <process
+                                jcr:created="{Date}2019-11-29T16:00:00.212+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Rejection Notification to content authors"
+                                jcr:lastModified="{Date}2019-12-02T15:03:17.415+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Reject Notification"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.vonage.core.workflows.process.EmailNotificationProcess"
+                                    PROCESS_ARGS="ActivateRequestRejected"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                        </_x0032_>
+                    </or>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2019-11-29T14:22:00.623+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Error notification. The selected payload cannot be activated"
+                        jcr:lastModified="{Date}2019-12-02T15:03:07.123+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Error Notification - Invalid Content"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.vonage.core.workflows.process.EmailNotificationProcess"
+                            PROCESS_ARGS="ActivateInvalidContent"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process>
+                </_x0032_>
+            </or>
+        </flow>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Checkout Cart Pricing Details"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <cartDetails
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cart Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Title"
+                                                name="./title"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <disclaimer 
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Disclaimer" 
+                                                name="./disclaimer"
+                                                useFixedInlineToolbar="{Boolean}true"
+                                                required="true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                                        </inline>
+                                                        <dialogFullScreen
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                                        </dialogFullScreen>
+                                                    </cui>
+                                                </uiSettings>
+                                            </disclaimer>
+                                            <href
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Checkout URL"
+                                                name="./checkoutUrl"
+                                                rootPath="/content/vonage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </cartDetails>
+                    <asset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Next Step Image"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                multiple="{Boolean}false"
+                                                name="./file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </asset>
+                    <nextStep
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Next Step"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Headline"
+                                                name="./nextStepHeadline"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cta
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/include"
+                                                path="/apps/vonage/components/utils/cta/cta_dialog_without_aria_label"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+					</nextStep>
+					<shareCart jcr:primaryType="nt:unstructured"
+						jcr:title="Share Cart Modal"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<column jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<shareCartLabel
+												jcr:primaryType="nt:unstructured"
+												fieldLabel="Share Cart Label" 
+												name="./shareCart/label"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+											<shareCartFunctionalty
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Select Share Cart Functionality"
+												name="./shareCart/functionality">
+												<items jcr:primaryType="nt:unstructured">
+													<disable
+														jcr:primaryType="nt:unstructured"
+														text="Remove Share Cart"
+														value="disable"/>
+													<unlisted
+														jcr:primaryType="nt:unstructured"
+														text="Copy to Clipboard"
+														value="copy"/>
+													<private
+														jcr:primaryType="nt:unstructured"
+														text="Send email to Lead"
+														value="api"/>
+												</items>
+											</shareCartFunctionalty>
+										</items>
+									</column>
+								</items>
+							</column>
+						</items>
+					</shareCart>
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true" 
+                            sling:hideResource="true"/>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

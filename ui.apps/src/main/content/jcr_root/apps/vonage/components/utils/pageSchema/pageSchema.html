@@ -1,0 +1,59 @@
+
+<sly data-sly-use.model="com.vonage.core.models.structure.resources.PageSchemaModel"/>
+
+<sly data-sly-test="${model.pageName == 'homepage'}">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.vonage.com/",
+      "logo": "https://www.vonage.com/content/dam/vonage/us-en/brand/logos/VonageLogo_Primary_Black.svg",
+      "name": "Vonage",
+      "description" : "Whether you need business voip phone service or powerful business cloud solutions, we provide unified communications for businesses of all sizes. Visit now",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Holmdel ",
+        "addressRegion": "NJ",
+        "postalCode": "07733",	
+        "streetAddress": "23 Main Street"   
+      },
+      "contactPoint" : [{
+        "name" : "Vonage",
+        "@type" : "ContactPoint",
+        "telephone" : "+1-844-324-0340",
+        "contactType" : "customer support",
+        "contactOption" : "TollFree",
+        "areaServed" : "United States of America"
+      }]
+    }
+  </script>
+</sly>
+
+<sly data-sly-test="${model.isBlogPage == true}">
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"BlogPosting",
+      "mainEntityOfPage": {
+        "@type":"WebPage",
+        "@id":"${model.browserUrl @ context='unsafe'}"
+      },
+      "headline": "${properties.navTitle ? properties.navTitle : properties.jcr:title @ context='unsafe'}",
+      "image": "${model.thumbnailImgPath @ context='unsafe'}",
+      "description": "${properties['jcr:description'] @ context='unsafe'}",
+      "datePublished": "${model.datePublished @ context='scriptString'}",
+      "author": {
+        "@type": "Person",
+        "name": "${model.author @ context='unsafe'}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vonage",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.vonage.com/content/dam/vonage/us-en/brand/logos/VonageLogo_Primary_Black.svg"
+        }
+      }
+    }
+  </script>
+</sly>

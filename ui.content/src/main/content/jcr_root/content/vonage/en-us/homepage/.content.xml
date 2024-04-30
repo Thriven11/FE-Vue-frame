@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2019-10-01T18:21:24.754Z"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2019-09-27T12:37:32.245Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/vonage/settings/wcm/templates/generic-page"
+        jcr:description="Vonage offers flexible and scalable voice, messaging, video and data capabilities across Unified Communications, Contact Centers and Communications APIs."
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Homepage"
+        jcr:uuid="5a7c94cc-81e7-4549-944f-36d92063542d"
+        sling:resourceType="vonage/components/structure/generic-page"
+        metadataPageName="Communication APIs, Contact Center, Business Phone, VoIP"
+        pageTitle="Communication APIs, Contact Center, Business Phone, VoIP | Vonage Business">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+                <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <hero
+                        jcr:created="{Date}2019-09-27T12:08:37.818Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-09-27T19:18:36.264Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/hero"
+                        dataVideoId="IdakC24Whps"
+                        eyebrow="One Vonage, one promise:"
+                        tileTheme="sky"
+                        title="We will lead you through change."
+                        videoPlayLabel="THE NEW VONAGE STORY"/>
+                </responsiveGrid>
+            </generalContainer>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+    <support/>
+    <log-in/>
+    <contact-us/>
+    <about-us/>
+</jcr:root>

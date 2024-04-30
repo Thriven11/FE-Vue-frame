@@ -1,0 +1,39 @@
+<sly
+  data-sly-use.model="com.vonage.core.models.content.PricingMatrixModel"
+  data-sly-use.template="limitedGridEcomm.html"
+/>
+
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title}"
+  style="min-width: 250px;"
+></div>
+<input type="hidden" name="continueCheckout" id="continueCheckout" value="${properties.continueCheckout }">
+<input type="hidden" name="SelectThisPlan" id="SelectThisPlan" value="${properties.SelectThisPlan }">
+
+<section class="pricing-matrix ${model.noBottomMargin} ${model.currencyToggle ? 'pricing-matrix--has-currency-toggle' : ''}" data-isCheckoutFlow="${model.checkoutFlow}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <h2 class="pricing-matrix__title">${model.title}</h2>
+      </div>
+
+      <sly data-sly-test="${model.currencyToggle}" data-sly-include="/apps/vonage/components/utils/currencyToggle/currencyToggle.html"></sly>
+
+    </div>
+
+    <sly
+      data-sly-call="${template.main @ numberOfItems=model.numberOfItems,
+        resourceType='vonage/components/content/pricingMatrix/pricingMatrixCard'}"
+    />
+    <div class="row">
+      <div class="col-12">
+        <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+      </div>
+    </div>
+  </div>
+  <sly data-sly-resource="${'/content/experience-fragments/vonage/en_us/ie-pop-up/master/jcr:content/root' @ wcmmode='disabled'}" />
+</section>

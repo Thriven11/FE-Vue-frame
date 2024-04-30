@@ -1,0 +1,29 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.ECommerceConfigurationModel"></sly>
+<script type="text/javascript">
+    var eCommerceConfig = {
+        b2bApiUrl: "${model.apiBaseUrl @ context='scriptString'}",
+        storefrontName: "${model.storefrontName @ context='scriptString'}",
+        priceBook: "${inheritedPageProperties.priceBook ? inheritedPageProperties.priceBook : model.priceBook @ context='scriptString'}",
+        zuora: {
+          pageId: "${model.zuoraPageId @ context='scriptString'}",
+          iframeUrl: "${model.zuoraIFrameUrl @ context='scriptString'}"
+        },
+        addressValidation: {
+            apiUrl: "${model.addressValidationUrl @ context='scriptString'}"
+        },
+        safeTech:{
+            paymentTechUrl: "${model.paymentTechUrl @ context='scriptString'}",
+            paymentTechMechantId: "${model.paymentTechMerchantId @ context='scriptString'}"
+        },
+        ezLynx : {},
+        partnerType: "${inheritedPageProperties.ecommPartnerType @ context='scriptString'}"
+    }
+</script>
+<script type="text/javascript" data-sly-test="${inheritedPageProperties.ecommPartnerType == 'EZlynx'}">
+(function () {
+  // Set ezlynx default master and sub agent ids
+  eCommerceConfig.ezLynx.masterAgentId = "${model.ezLynxMasterAgentId @ context='scriptString'}";
+  eCommerceConfig.ezLynx.subAgentId = "${model.ezLynxSubAgentId @ context='scriptString'}";
+}());
+</script>
+<input data-sly-test="${inheritedPageProperties.ecommPartnerType}" type="hidden" name="appSmart" id="ecommPartnerType" value="${inheritedPageProperties.ecommPartnerType}"/>

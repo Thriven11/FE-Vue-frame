@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Solution Finder"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <tabs jcr:primaryType="nt:unstructured" 
+        maximized="true" 
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+          <choose-device jcr:primaryType="nt:unstructured" 
+            jcr:title="Choose device" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                  <general jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="General">
+                    <items jcr:primaryType="nt:unstructured">
+                      <eyebrow jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Eyebrow text" 
+                        name="./chooseDevice/eyebrow" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <title jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Title" 
+                        name="./chooseDevice/title" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </general>
+                  <card-1 jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="Card 1">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Card title" 
+                        name="./chooseDevice/deviceCardList/item0/title" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <image
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./chooseDevice/deviceCardList/item0/fileName"
+                        fileReferenceParameter="./chooseDevice/deviceCardList/item0/imageFileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./chooseDevice/deviceCardList/item0/file"
+                        title="Card image"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                      <alt-text
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Card image alternative text"
+                        name="./chooseDevice/deviceCardList/item0/imageAltText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <categoryId jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Category Id" 
+                        name="./chooseDevice/deviceCardList/item0/categoryId" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </card-1>
+                  <card-2 jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="Card 2">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Title" 
+                        name="./chooseDevice/deviceCardList/item1/title" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <image
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./chooseDevice/deviceCardList/item1/fileName"
+                        fileReferenceParameter="./chooseDevice/deviceCardList/item1/imageFileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./chooseDevice/deviceCardList/item1/file"
+                        title="Card image"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                      <alt-text
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Card image alternative text"
+                        name="./chooseDevice/deviceCardList/item1/imageAltText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <categoryId jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Category Id" 
+                        name="./chooseDevice/deviceCardList/item1/categoryId" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </card-2>
+                  <card-3 jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="Card 3">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Title" 
+                        required="true"
+                        name="./chooseDevice/deviceCardList/item2/title" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <image
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./chooseDevice/deviceCardList/item2/fileName"
+                        fileReferenceParameter="./chooseDevice/deviceCardList/item2/imageFileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./chooseDevice/deviceCardList/item2/file"
+                        title="Card image"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                      <alt-text
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Card image alternative text"
+                        name="./chooseDevice/deviceCardList/item2/imageAltText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <categoryId jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Category Id" 
+                        name="./chooseDevice/deviceCardList/item2/categoryId" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </card-3>
+                </items>
+              </tabs>
+            </items>
+          </choose-device>
+          <company-size jcr:primaryType="nt:unstructured" 
+            jcr:title="Company size" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <column jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <eyebrow jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Eyebrow text" 
+                    name="./companySize/eyebrow" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <title jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Title" 
+                    name="./companySize/title" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <input jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Input label" 
+                    name="./companySize/label" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <rageStart jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider range start" 
+                    name="./companySize/rangeStart"
+                    min="0" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"/>
+                  <rangeEnd jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider range end"
+                    name="./companySize/rangeEnd" 
+                    min="1"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"/>
+                  <segment1 jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider segment 1 label" 
+                    name="./companySize/segment1Label" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <segment1-max jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider segment 1 max value" 
+                    name="./companySize/segment1MaxValue"
+                    min="1" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"/>
+                  <segment2 jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider segment 2 label"
+                    min="1" 
+                    name="./companySize/segment2Label" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <segment2-max jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider segment 2 max value" 
+                    name="./companySize/segment2MaxValue" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"/>
+                  <segment3 jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Slider segment 3 label" 
+                    name="./companySize/segment3Label" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <contact-sales-text jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Contact Sales CTA text" 
+                    name="./companySize/contactSalesCtaText" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <contact-sales-url jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Contact Sales CTA URL" 
+                    name="./companySize/contactSalesCtaURL" 
+                    rootPath="/content/vonage"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                </items>
+              </column>
+            </items>
+          </company-size>
+          <goals jcr:primaryType="nt:unstructured" 
+            jcr:title="Goals" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <column jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <eyebrow jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Eyebrow text" 
+                    name="./goals/eyebrow" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <title jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Title" 
+                    name="./goals/title" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <subtitle jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Subtitle" 
+                    name="./goals/subtitle" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                </items>
+              </column>
+            </items>
+          </goals>
+          <plan-recommendation jcr:primaryType="nt:unstructured" 
+            jcr:title="Plan recommendation" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <tabs jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                  <text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="General">
+                    <items jcr:primaryType="nt:unstructured">
+                      <eyebrow jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Eyebrow text" 
+                        name="./planRecommendation/eyebrow" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <featuresText jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Features text" 
+                        name="./planRecommendation/featuresText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <additionalFeaturesText jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Additional features text" 
+                        name="./planRecommendation/additionalFeaturesText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </text>
+                  <cost jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="Costs section">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Title text" 
+                        name="./planRecommendation/costTitle" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <description jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Cost description" 
+                        name="./planRecommendation/costDescription" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      
+                      <cost-disclaimer jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Cost disclaimer" 
+                        name="./planRecommendation/costDisclaimer" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      
+                      <copy-url jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Copy URL CTA text" 
+                        name="./planRecommendation/copyUrlCtaText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <add-plan-text jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Add plan CTA text" 
+                        name="./planRecommendation/addPlanCtaText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <add-plan-url jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Add plan CTA URL" 
+                        name="./planRecommendation/addPlanCtaURL" 
+                        rootPath="/content/vonage"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                    </items>
+                  </cost>
+                  <more-info jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="More information section">
+                    <items jcr:primaryType="nt:unstructured">
+                      <headline jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Headline" 
+                        name="./planRecommendation/moreInfoHeadline" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <subHeadline jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Subheadline" 
+                        name="./planRecommendation/moreInfoSubHeadline" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <ctaText jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="CTA label" 
+                        name="./planRecommendation/moreInfoCtaText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <ctaUrl jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="CTA URL" 
+                        name="./planRecommendation/moreInfoCtaUrl" 
+                        rootPath="/content/vonage"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                    </items>
+                  </more-info>
+                </items>
+              </tabs>
+            </items>
+          </plan-recommendation>
+          <phone-accesories jcr:primaryType="nt:unstructured" 
+            jcr:title="Phone and accesories" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                  <text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="General">
+                    <items jcr:primaryType="nt:unstructured">
+                      <eyebrow jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Eyebrow text" 
+                        name="./phonesAndAccesories/eyebrow" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <title jcr:primaryType="nt:unstructured" 
+                        required="true"
+                        fieldLabel="Title" 
+                        name="./phonesAndAccesories/title" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <yes-checkbox-label jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Yes checkbox label" 
+                        name="./phonesAndAccesories/yesCheckboxLabel"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </yes-checkbox-label>
+                      <no-checkbox-label jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="No checkbox label" 
+                        name="./phonesAndAccesories/noCheckboxLabel"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </no-checkbox-label>
+                      <default-answer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="Default answer"
+                        name="./phonesAndAccesories/defaultAnswer">
+                        <items jcr:primaryType="nt:unstructured">
+                          <yes jcr:primaryType="nt:unstructured"
+                            text="Yes"
+                            value="yes"/>
+                          <no jcr:primaryType="nt:unstructured"
+                            text="No"
+                            value="no"/>
+                        </items>
+                      </default-answer>
+                    </items>
+                  </text>
+                  <images jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:title="Images">
+                    <items jcr:primaryType="nt:unstructured">
+                      <left-image
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./phonesAndAccesories/leftFileName"
+                        fileReferenceParameter="./phonesAndAccesories/leftImageFileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./phonesAndAccesories/leftFile"
+                        title="Left image"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                      <left-alt-text
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Left image alternative text"
+                        name="./phonesAndAccesories/leftImageAltText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <rigth-image
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./phonesAndAccesories/rightFileName"
+                        fileReferenceParameter="./phonesAndAccesories/rightImageFileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./phonesAndAccesories/rightFile"
+                        title="Right image"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                      <right-alt-text
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Right image alternative text"
+                        name="./phonesAndAccesories/rightImageAltText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    </items>
+                  </images>
+                </items>
+              </tabs>
+            </items>
+          </phone-accesories>
+          <addons jcr:primaryType="nt:unstructured" 
+            jcr:title="Addons" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <column jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <eyebrow jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Eyebrow text" 
+                    name="./addons/eyebrow" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                  <title jcr:primaryType="nt:unstructured" 
+                    required="true"
+                    fieldLabel="Title" 
+                    name="./addons/title" 
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                </items>
+              </column>
+            </items>
+          </addons>
+        <tabsSection
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="/apps/vonage/components/ecommerce/addOn/cq:dialog/content/items/tabs/items/tabsSection"/>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

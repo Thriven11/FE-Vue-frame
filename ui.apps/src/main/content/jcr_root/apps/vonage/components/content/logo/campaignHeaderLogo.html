@@ -1,0 +1,19 @@
+<sly data-sly-use.model="com.vonage.core.models.CTAModel" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+  data-emptytext="${component.title} Component"></div>
+<!--/* Inherited Link version */-->
+<a data-sly-test="${inheritedPageProperties.href}" href="${inheritedPageProperties.href}" aria-label="Vonage Logo"
+  class="campaign-header__logo" target="${inheritedPageProperties.target}">
+  <sly data-sly-include="campaignSvg.html" />
+</a>
+<!--/* Standard Link version */-->
+<a data-sly-test="${!inheritedPageProperties.href && properties.href}" href="${model.link.href}"
+  aria-label="Vonage Logo" class="campaign-header__logo" target="${model.link.target}">
+  <sly data-sly-include="campaignSvg.html" />
+</a>
+<!--/* Standard Link version */-->
+<span data-sly-test="${!inheritedPageProperties.href && !properties.href }" aria-label="Vonage Logo"
+  class="campaign-header__logo">
+  <sly data-sly-include="campaignSvg.html" />
+</span>

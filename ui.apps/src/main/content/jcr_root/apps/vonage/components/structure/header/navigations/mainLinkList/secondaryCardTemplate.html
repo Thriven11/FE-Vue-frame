@@ -1,0 +1,19 @@
+<template
+    data-sly-template.secondaryCard="${@ card}">
+    <div class="Vlt-topmenu__item" role="menuitem">
+        <a class="Vlt-topmenu__link"
+           aria-label="${card.title}"
+           data-static-label="${card.link.staticLabel}"
+           target="${card.link.target}"
+           href="${card.link.href}">
+            <div class="Vlt-topmenu__link-content">
+            <span class="Vlt-topmenu__link-heading">
+                ${card.title}
+            </span>
+            <span class="Vlt-topmenu__link-description">
+                ${card.description}
+            </span>
+            </div>
+        </a>
+    </div>
+</template>

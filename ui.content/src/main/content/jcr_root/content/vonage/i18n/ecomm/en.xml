@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="en"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <ecomm-addToPlan
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-addToPlan"
+        sling:message="Add to plan"/>
+    <ecomm-edit
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-edit"
+        sling:message="Edit"/>
+    <ecomm-learnMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-learnMore"
+        sling:message="Learn more"/>
+    <ecomm-mo
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-mo"
+        sling:message="mo"/>
+    <ecomm-perLine
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-perLine"
+        sling:message="per line"/>
+    <ecomm-perUnit
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-perUnit"
+        sling:message="per unit"/>
+    <ecomm-remove
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-remove"
+        sling:message="Remove"/>
+    <ecomm-tax
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-tax"
+        sling:message="tax"/>
+    <ecomm-taxes
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-taxes"
+        sling:message="taxes"/>
+     <ecomm-taxesAndFees
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-taxesAndFees"
+        sling:message="taxes and fees"/>
+    <ecomm-calculatedAtCheckout
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-calculatedAtCheckout"
+        sling:message="Calculated at checkout"/>
+    <ecomm-dueToday
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-dueToday"
+        sling:message="Due today"/>
+    <ecomm-oneTimeFees
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-oneTimeFees"
+        sling:message="One-time fees"/>
+    <ecomm-monthlyFees
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-monthlyFees"
+        sling:message="Monthly fees"/>
+    <ecomm-firstBill
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-firstBill"
+        sling:message="First bill"/>
+    <ecomm-monthlyBill
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-monthlyBill"
+        sling:message="Monthly bill"/>
+    <ecomm-checkout
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-checkout"
+        sling:message="Checkout"/>
+    <ecomm-checkout-title
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-checkout-title"
+        sling:message="Your cart details"/>
+    <ecomm-lines
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-lines"
+        sling:message="lines"/>
+    <ecomm-max-number-of-lines
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-max-number-of-lines"
+        sling:message="Please enter a quantity of less than 100"/>
+    <ecomm-plan
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-plan"
+        sling:message="Plan"/>
+    <ecomm-hardware
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-hardware"
+        sling:message="Hardware"/>
+    <ecomm-professionalService
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-professionalService"
+        sling:message="Professional Services"/>
+   	<ecomm-phoneNumber
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-phoneNumber"
+        sling:message="Main Company Number"/>
+    <ecomm-addPhoneNumber
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-addPhoneNumber"
+        sling:message="Additional company numbers (optional)"/>
+    <ecomm-addPhoneNumber-mandatory
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-addPhoneNumber-mandatory"
+        sling:message="Additional company numbers"/>
+	<ecomm-addOn
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-addOn"
+        sling:message="Add On"/>
+	<ecomm-changePlan
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-changePlan"
+        sling:message="Change Plan"/>
+	<ecomm-phoneMiceText
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-phoneMiceText"
+        sling:message="After you purchase, you can generate company numbers from your account. You also can transfer your exisitng phone number(s) by going to your account and completing a Letter of Authorization (LOA) - a legal request to your existing phone company to release your numbers to Vonage."/>
+    <ecomm-confirmRemoveAddOn
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-confirmRemoveAddOn"
+        sling:message="Yes, remove"/>
+    <ecomm-discardRemoveAddOn
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-discardRemoveAddOn"
+        sling:message="No, keep add on"/>
+  	<ecomm-removeAddOnCopy
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-removeAddOnCopy"
+        sling:message="Would you like to remove {addOn} from your cart?"/>
+    <ecomm-errorAtLeastOnePhoneNumberRequired
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-errorAtLeastOnePhoneNumberRequired"
+        sling:message="You must enter at least one for either phone number type."/>
+    <ecomm-errorEmail
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-errorEmail"
+        sling:message="Please provide a valid email address."/>
+    <ecomm-errorRequired
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-errorRequired"
+        sling:message="Required field."/>
+    <ecomm-errorPrivatePolity
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-errorPrivatePolity"
+        sling:message="You must accept the Private Policy to proceed."/>
+    <ecomm-errorTermsOfService
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-errorTermsOfService"
+        sling:message="You must accept the Terms of Service to proceed."/>
+    <ecomm-account
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-account"
+        sling:message="Account"/>
+    <ecomm-shipping
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-shipping"
+        sling:message="Shipping"/>
+    <ecomm-payment
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment"
+        sling:message="Payment"/>
+    <ecomm-payment-billingAddress
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-billingAddress"
+        sling:message="Billing address"/>
+    <ecomm-payment-billingAddressSameAsService
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-billingAddressSameAsService"
+        sling:message="Billing address same as service address"/>
+    <ecomm-payment-promoCode
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-promoCode"
+        sling:message="Promo code"/>
+    <ecomm-payment-enterPromoCode
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-enterPromoCode"
+        sling:message="Enter promo code"/>
+    <ecomm-payment-removePromoCode
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-removePromoCode"
+        sling:message="Remove promo code"/>
+    <ecomm-payment-applyPromoCode
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-applyPromoCode"
+        sling:message="Apply"/>
+    <ecomm-payment-promoCodeSuccess
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-promoCodeSuccess"
+        sling:message="Free Installation has been applied to your bill"/>
+    <ecomm-payment-reviewOrder
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-payment-reviewOrder"
+        sling:message="Review your order"/>
+    <ecomm-cancel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-cancel"
+        sling:message="Cancel"/>
+    <ecomm-review
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-review"
+        sling:message="Review"/>
+    <ecomm-update
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-update"
+        sling:message="Update"/>
+    <ecomm-continueToNextStep
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-continueToNextStep"
+        sling:message="Continue to {nextStep}"/>
+    <ecomm-continue
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-continue"
+        sling:message="Continue"/>
+    <ecomm-back
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-back"
+        sling:message="Back"/>
+    <ecomm-name
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-name"
+        sling:message="Name"/>
+    <ecomm-schedule-message
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-schedule-message"
+        sling:message="Your call is scheduled on {date_time}."/>
+    <ecomm-bsn-reschedule
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-reschedule"
+        sling:message="Re-schedule"/>
+    <ecomm-bsn-schedule
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-schedule"
+        sling:message="Schedule"/>
+    <ecomm-bsn-cancelCall
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-cancelCall"
+        sling:message="Cancel call"/>
+    <ecomm-bsn-calendar-googleCalendar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-calendar-googleCalendar"
+        sling:message="Google Calendar"/>
+    <ecomm-bsn-calendar-office365Calendar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-calendar-office365Calendar"
+        sling:message="Office 365 Calendar"/>
+    <ecomm-bsn-calendar-outlookCalendar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-calendar-outlookCalendar"
+        sling:message="Outlook Calendar"/>
+    <ecomm-bsn-calendar-appleCalendar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-calendar-appleCalendar"
+        sling:message="Apple Calendar"/>
+    <ecomm-bsn-dateLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-dateLabel"
+        sling:message="Date"/>
+    <ecomm-bsn-datePlaceholder
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-datePlaceholder"
+        sling:message="Select"/>
+    <ecomm-bsn-timeLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-timeLabel"
+        sling:message="Time"/>
+    <ecomm-bsn-timePlaceholder
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-timePlaceholder"
+        sling:message="Select"/>
+    <ecomm-bsn-timezoneLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-timezoneLabel"
+        sling:message="Time Zone"/>
+    <ecomm-bsn-timezonePlaceholder
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="ecomm-bsn-timezonePlaceholder"
+        sling:message="Select"/>
+    <ecomm-loading
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-loading"
+        sling:message="Loading"/>
+    <ecomm-urlCopiedMessage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-ecomm-urlCopiedMessage"
+        sling:message="URL copied to clipboard"/>
+</jcr:root>

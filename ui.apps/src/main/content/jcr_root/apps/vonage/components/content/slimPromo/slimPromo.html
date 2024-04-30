@@ -1,0 +1,89 @@
+<sly data-sly-use.model="com.vonage.core.models.content.RTETextComponentModel"
+data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+<sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+<div class="${properties.bgColor}">
+  <!--/* Default Version */-->
+  <sly>
+    <div class="container">
+      <!--/* With Image */-->
+      <div class="row">
+        <div class="col-12 col-md-2 col-lg-2 slimPromo__image d-none d-md-block" >          
+          <sly data-sly-call="${template.cfImage @ cssClass='', original='180', xlg='180', lg='180', md='180', sm='180'}"/>
+        </div>
+        <div class="col-12 ${properties.fileReference ? 'col-md-10 col-lg-10 slimPromo__text' : 'slimPromo__text'}  d-none d-md-block" >
+          <div class="row">
+          <sly data-sly-test="${properties.ctaOption == 'no-cta'}">
+          <div class="col-12 ${properties.text ? 'col-md-7 col-lg-7' : ''}" data-sly-test="${model.subHeadline}">
+              <div data-sly-test="${model.subHeadline}" class="text-block__title">
+                  <h5 data-sly-element="${model.subHeadlineSize}">${model.subHeadline}</h5>
+              </div>
+            </div>
+            <div class="col-12 ${model.subHeadline ? 'col-md-5 col-lg-5' : ''}" data-sly-test="${properties.text}">
+                <span class="cmp-text">${properties.text @ context='html'}</span>
+            </div>
+          </sly>
+          <sly data-sly-test="${properties.ctaOption != 'no-cta'}">
+            <div class="col-12 ${properties.text ? 'col-md-5 col-lg-5' : ''}" data-sly-test="${model.subHeadline}">
+              <div data-sly-test="${model.subHeadline}" class="text-block__title">
+                  <h5 data-sly-element="${model.subHeadlineSize}">${model.subHeadline}</h5>
+              </div>
+            </div>
+            <div class="col-12 ${model.subHeadline ? 'col-md-4 col-lg-4' : ''}" data-sly-test="${properties.text}">
+                <span class="cmp-text">${properties.text @ context='html'}</span>
+            </div>
+            <div class="col-12 col-md-3 col-lg-3 ${properties.bgColor == 'theme-black theme-dark' ? 'cta-purple' : 'cta-default'}">
+               <sly data-sly-test="${properties.ctaOption == 'button-cta'}">
+                <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=model.link, rel='', cssClass='btn'}"/>
+                </sly>
+                <sly data-sly-test="${properties.ctaOption == 'text-cta'}">
+                <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=model.link, rel='', cssClass='link link--light'}"/>
+                </sly>
+            </div>
+            </sly>
+            <div class="col-12" data-sly-test="${model.endNote}">
+              <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+            </div>
+        </div>
+       </div>
+      </div>
+
+      <section class="mobile d-block d-sm-block d-md-none">
+        <div class="mobile__item tab" id="mobile${resource.path.hashCode}">
+          <input type="checkbox" id="chck${resource.path.hashCode}" class="hideme" tabindex="-1">
+          <label class="tab-label text-block__title" for="chck${resource.path.hashCode}">
+            <span class="offer-text">
+              <span data-sly-test="${!properties.mobileHeadline}" class="short-title">${model.subHeadline}</span>
+              <span data-sly-test="${properties.mobileHeadline}" class="short-title">${properties.mobileHeadline}</span>
+
+          </span>
+            <span class="controls">
+              <span class="view-offer">View Offer</span><span class="close-x">x</span>
+            </span>
+
+          </label>
+          <div class="mobile__content tab-content"><span class="mobile__answer ${properties.bgColor == 'theme-black theme-dark' ? 'cta-purple' : 'cta-default'}">
+            <h5 data-sly-test="${properties.mobileHeadline}" class="full-title">${model.subHeadline}</h5>
+            <h5 data-sly-test="${!properties.mobileHeadline}" class="full-title">${model.subHeadline}</h5>
+            ${properties.text @ context='html'}
+            <sly data-sly-test="${properties.ctaOption == 'button-cta'}">
+                <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=model.link, rel='', cssClass='btn'}"/>
+                </sly>
+                <sly data-sly-test="${properties.ctaOption == 'text-cta'}">
+                <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=model.link, rel='', cssClass='link link--light'}"/>
+                </sly>
+            <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+          </span></div>
+        </div>
+      </section>
+    </div>
+  </sly>
+
+</div>
+

@@ -1,0 +1,119 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Details Grid"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs=""
+    >
+    <content
+        granite:class="cmp-accordion__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+
+                        <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Feature Orientation"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        maximized="{Boolean}true"
+                        >
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true"
+                                maximized="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <alignment
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Please select Orientation/Alignment of the images and text on all features"
+												fieldLabel="Alignment"
+												name="./alignment">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <allLeft
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="All Images Left"
+                                                            value="all-images-left"/>
+                                                        <allRight
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="All Images Right"
+                                                            value="all-images-right"/>
+                                                        <zigzagleft
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="zigzag Start Image Left"
+                                                            value="zigzag-start-image-left"/>
+                                                        <zigzagright
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="zigzag Start Image Right"
+                                                            value="zigzag-start-image-right"/>
+                                                    </items>
+											    </alignment>
+                                                <theme
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Please select theme/background used for all feature components"
+												fieldLabel="Theme Selection"
+												name="./theme">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <magnetacoral
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Light"
+                                                            value="light"/>
+                                                        <sky
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Grey"
+                                                            value="grey"/>
+                                                    </items>
+                          </theme>
+                          <adjustPadding
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Adjust component padding, default is large padding"
+                        fieldLabel="Adjust Padding"
+                        name="./adjustPadding">
+                        <items jcr:primaryType="nt:unstructured">
+                          <paddingDefault
+                            jcr:primaryType="nt:unstructured"
+                            text="Default Padding"
+                            value="default-padding" />
+                          <paddingBoth
+                            jcr:primaryType="nt:unstructured"
+                            text="Less Padding on Top &amp; Bottom"
+                            value="details-grid__padding" />
+                          <paddingNone
+                            jcr:primaryType="nt:unstructured"
+                            text="No Padding (use with white theme only)"
+                            value="no-padding" />
+                          <padaddingTop
+                            jcr:primaryType="nt:unstructured"
+                            text="No Padding on Top only"
+                            value="details-grid__padding remove-top" />
+                          <paddingBottom
+                            jcr:primaryType="nt:unstructured"
+                            text="No Padding on Bottom only"
+                            value="details-grid__padding remove-bottom" />
+                        </items>
+                      </adjustPadding>
+                                            </items>
+                                        </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

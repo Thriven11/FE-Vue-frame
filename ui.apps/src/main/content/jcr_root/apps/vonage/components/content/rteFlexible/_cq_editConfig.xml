@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}false"
+        editorType="text">
+        <config jcr:primaryType="nt:unstructured">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <links
+                    jcr:primaryType="nt:unstructured"
+                    features="modifylink,unlink"/>
+                <justify
+                    jcr:primaryType="nt:unstructured"
+                    features="-"/>
+                <format
+                    jcr:primaryType="nt:unstructured"
+                    features="bold,italic,underline"/>
+                <subsuperscript
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <lists
+                    jcr:primaryType="nt:unstructured"
+                    features="unordered"/>
+                <paraformat
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <formats jcr:primaryType="nt:unstructured">
+                        <default_p
+                            jcr:primaryType="nt:unstructured"
+                            description="Paragraph"
+                            tag="p"/>
+                        <default_h2
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideResource="{Boolean}true"
+                            description="h2"
+                            tag="h2"/>
+                        <default_h3
+                            jcr:primaryType="nt:unstructured"
+                            description="h3"
+                            tag="h3"/>
+                        <default_h4
+                            jcr:primaryType="nt:unstructured"
+                            description="h4"
+                            tag="h4"/>
+                        <default_blockquote
+                            jcr:primaryType="nt:unstructured"
+                            description="blockquote"
+                            tag="blockquote"/>
+                        <default_pre
+                            jcr:primaryType="nt:unstructured"
+                            description="pre"
+                            tag="pre"/>
+                    </formats>
+                </paraformat>
+            </rtePlugins>
+        </config>
+    </cq:inplaceEditing>
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afteredit="REFRESH_PARENT"/>
+</jcr:root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    debug.email="{Boolean}true"
+    from.address="noreply@vonage.com"
+    smtp.host="smtp-relay.gmail.com"
+    smtp.port="25"
+    smtp.ssl="{Boolean}false"
+	smtp.starttls="{Boolean}false"
+    smtp.password=""
+    smtp.user="aemjobs@vonage.com"/>

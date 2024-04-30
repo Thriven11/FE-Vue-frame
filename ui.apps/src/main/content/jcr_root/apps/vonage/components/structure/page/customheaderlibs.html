@@ -1,0 +1,68 @@
+<!--/*
+    Copyright 2017 Adobe Systems Incorporated
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+<!--/*
+    Copyright 2017 Adobe Systems Incorporated
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<sly data-sly-use.webAppConfig="com.vonage.core.models.configs.WebAppConfig" />
+
+
+
+<link rel="stylesheet" href="/etc.clientlibs/vonage/clientlibs/clientlib-print.css" media="print" type="text/css"/>
+
+<meta data-sly-test.indexpage="${pageProperties.disableIndexForSEO || webAppConfig.envConfig.exactRunMode == 'stage' || webAppConfig.envConfig.exactRunMode == 'dev' || webAppConfig.envConfig.exactRunMode == 'qa'}" name="robots" content="noindex, nofollow"  />
+<meta data-sly-test.indexpage="${!pageProperties.disableIndexForSEO &&(webAppConfig.envConfig.exactRunMode == 'stage' || webAppConfig.envConfig.exactRunMode == 'dev' || webAppConfig.envConfig.exactRunMode == 'qa')}" name="st:robots" content="follow, index" />
+<sly data-sly-test.no-thirdparty="${(webAppConfig.envConfig.aemMode == 'publish' && (request.requestParameterMap['no-third-party'][0].toString == null) && (request.requestParameterMap['no-onetrust'][0].toString == null)) || webAppConfig.envConfig.exactRunMode == 'local' && (request.requestParameterMap['localtest'][0].toString == 'true')}">
+    <sly data-sly-test="${webAppConfig.oneTrustCodeFromService}">
+        <script data-sly-test.addOneTrustAutoBlocking="${!inheritedPageProperties.disableOneTrustAutoBlocking}" type="text/javascript" src="https://cdn.cookielaw.org/consent/${webAppConfig.oneTrustCodeFromService @ context='unsafe'}${( webAppConfig.envConfig.exactRunMode == 'stage' || webAppConfig.envConfig.exactRunMode == 'qa' || webAppConfig.envConfig.exactRunMode == 'dev' || webAppConfig.envConfig.exactRunMode == 'local' )  ? '-test' : ''}/OtAutoBlock.js" ></script>
+
+        <script
+        type="text/javascript"
+        src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+        charset="UTF-8"
+        data-domain-script="${webAppConfig.oneTrustCodeFromService @ context='unsafe'}${( webAppConfig.envConfig.exactRunMode == 'stage' || webAppConfig.envConfig.exactRunMode == 'qa' || webAppConfig.envConfig.exactRunMode == 'dev' || webAppConfig.envConfig.exactRunMode == 'local' ) ? '-test' : ''}">
+        </script>
+    </sly>
+
+</sly>
+
+<sly data-sly-test.no-thirdparty="${(webAppConfig.envConfig.aemMode == 'publish' && (request.requestParameterMap['no-third-party'][0].toString == null) && (request.requestParameterMap['no-dtm'][0].toString == null)) || webAppConfig.envConfig.exactRunMode == 'local' && (request.requestParameterMap['localtest'][0].toString == 'true')}">
+    <script type="text/javascript" data-sly-test.isDtmEnabled="${webAppConfig.appConfig.dtmUrl && (request.requestParameterMap['no-dtm'][0].toString == null)}" src="${webAppConfig.appConfig.dtmUrl @ context='unsafe'}"></script>
+</sly>
+
+<sly data-sly-test.no-thirdparty="${(webAppConfig.envConfig.aemMode == 'publish' && (request.requestParameterMap['no-third-party'][0].toString == null) && (request.requestParameterMap['no-drift'][0].toString == null)) || webAppConfig.envConfig.exactRunMode == 'local' && (request.requestParameterMap['localtest'][0].toString == 'true')}">
+    <sly data-sly-test.addDriftApp="${(webAppConfig.envConfig.exactRunMode == 'stage' || webAppConfig.envConfig.exactRunMode == 'prod') && !inheritedPageProperties.disableDrift}" data-sly-include="../../utils/driftChatApp/driftChatApp.html" />
+</sly>
+
+<sly data-sly-test.no-thirdparty="${(webAppConfig.envConfig.aemMode == 'publish' && (request.requestParameterMap['no-third-party'][0].toString == null) && (request.requestParameterMap['no-catchpoint'][0].toString == null)) || webAppConfig.envConfig.exactRunMode == 'local' && (request.requestParameterMap['localtest'][0].toString == 'true')}">
+    <sly data-sly-include="../../utils/catchpoint/rum.html" data-sly-test="${inheritedPageProperties.enableRum && webAppConfig.envConfig.aemMode == 'publish'}"/>
+</sly>
+<sly data-sly-include="../../utils/analytics/analytics.html"></sly>
+<sly data-sly-include="../../utils/pageSchema/pageSchema.html" />
+<sly data-sly-include="../../utils/forms/recaptcha/customrecaptcha.html" data-sly-test="${inheritedPageProperties.enableRecaptcha}"/>
+<sly data-sly-include="../../utils/ecommerce-config/ecommerce-config.html"></sly>

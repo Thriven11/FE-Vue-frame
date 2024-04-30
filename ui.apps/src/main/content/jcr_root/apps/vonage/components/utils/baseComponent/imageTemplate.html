@@ -1,0 +1,184 @@
+<template data-sly-template.cfImage="${@ cssClass, sm, md, lg, xlg, original }">
+  <sly
+    data-sly-use.image="com.vonage.core.models.structure.VonageImage"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test="${image.src}"
+  >
+    <a
+      data-sly-unwrap="${!image.link}"
+      class="cmp-image__link"
+      href="${image.link}"
+      target="${properties.target}"
+      aria-label="${properties.ariaLabel}"
+      data-cmp-hook-image="link"
+      itemprop="contentUrl"
+    >
+      <img
+        data-sly-test="${!image.useOptimizedImage}"
+        src="${image.fileReference}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.title}"
+      />
+      <img
+        data-sly-test="${image.useOptimizedImage}"
+        srcset="
+        /cdn-cgi/image/fit=scale-down,width=${sm},onerror=redirect${image.fileReference @ context='uri'} 576w,
+        /cdn-cgi/image/fit=scale-down,width=${md},onerror=redirect${image.fileReference @ context='uri'} 768w,
+        /cdn-cgi/image/fit=scale-down,width=${lg},onerror=redirect${image.fileReference @ context='uri'} 992w,
+        /cdn-cgi/image/fit=scale-down,width=${xlg},onerror=redirect${image.fileReference @ context='uri'} 1200w,
+      "
+      src="/cdn-cgi/image/fit=scale-down,width=${original},f=auto,onerror=redirect${image.fileReference}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.title}"
+      />
+    </a>
+  </sly>
+  <sly
+    data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cmp-image cq-dd-image'}"
+  ></sly>
+</template>
+<template data-sly-template.coreImage="${@ cssClass, transform}">
+  <sly
+    data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test="${image.src}"
+  >
+    <a
+      data-sly-unwrap="${!image.link}"
+      class="cmp-image__link"
+      href="${image.link}"
+      target="${properties.target}"
+	  aria-label="${properties.ariaLabel}"
+      data-cmp-hook-image="link"
+      itemprop="contentUrl"
+    >
+      <img
+        src="${image.fileReference}${transform}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.displayPopupTitle && image.title}"
+      />
+    </a>
+  </sly>
+  <sly
+    data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cmp-image cq-dd-image'}"
+  ></sly>
+</template>
+
+<template
+  data-sly-template.coreImageWithCaption="${@ cssClass, captionCss, transform}"
+>
+  <sly
+    data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test="${image.src}"
+    data-cmp-is="image"
+    data-cmp-lazy="${image.lazyEnabled}"
+    data-cmp-src="${image.srcUriTemplate ? image.srcUriTemplate : image.src}"
+    data-cmp-widths="${image.widths}"
+    data-asset="${image.fileReference}"
+    data-asset-id="${image.uuid}"
+    data-title="${image.title || image.alt}"
+    class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''}"
+    itemscope
+    itemtype="http://schema.org/ImageObject"
+  >
+    <a
+      data-sly-unwrap="${!image.link}"
+      class="cmp-image__link"
+      href="${image.link}"
+      data-cmp-hook-image="link"
+      itemprop="contentUrl"
+    >
+      <img
+        src="${image.fileReference}${transform}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.displayPopupTitle && image.title}"
+      />
+    </a>
+    <figcaption
+      class="${captionCss}"
+      itemprop="caption"
+      data-sly-test="${image.displayPopupTitle && image.title}"
+    >
+      ${image.title}
+    </figcaption>
+    <meta
+      itemprop="caption"
+      content="${image.title}"
+      data-sly-test="${image.displayPopupTitle && image.title}"
+    />
+  </sly>
+  <sly
+    data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cmp-image cq-dd-image'}"
+  ></sly>
+</template>
+<template data-sly-template.cfImageCaption="${@ cssClass, captionCss, sm, md, lg, xlg, original }">
+  <sly
+    data-sly-use.image="com.vonage.core.models.structure.VonageImage"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-asset-id="${image.uuid}"
+    data-title="${image.title || image.alt}"
+    data-asset="${image.fileReference}"
+    data-sly-test="${image.src}"
+  >
+    <a
+      data-sly-unwrap="${!image.link}"
+      class="cmp-image__link"
+      href="${image.link}"
+      data-cmp-hook-image="link"
+      itemprop="contentUrl"
+    >
+      <img
+        data-sly-test="${!image.useOptimizedImage}"
+        src="${image.fileReference}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.title}"
+      />
+      <img
+        data-sly-test="${image.useOptimizedImage}"
+        srcset="
+        /cdn-cgi/image/fit=scale-down,width=${sm},onerror=redirect${image.fileReference @ context='uri'} 576w,
+        /cdn-cgi/image/fit=scale-down,width=${md},onerror=redirect${image.fileReference @ context='uri'} 768w,
+        /cdn-cgi/image/fit=scale-down,width=${lg},onerror=redirect${image.fileReference @ context='uri'} 992w,
+        /cdn-cgi/image/fit=scale-down,width=${xlg},onerror=redirect${image.fileReference @ context='uri'} 1200w,
+      "
+      src="/cdn-cgi/image/fit=scale-down,width=${original},f=auto,onerror=redirect${image.fileReference}"
+        class="cmp-image__image ${cssClass}"
+        data-cmp-hook-image="image"
+        data-sly-attribute.usemap="${image.areas ? usemap : ''}"
+        alt="${image.alt || true}"
+        title="${image.title}"
+      />
+    </a>
+    <figcaption
+      class="${captionCss}"
+      itemprop="caption"
+      data-sly-test="{image.title}"
+    >
+      ${image.title}
+    </figcaption>
+    <meta
+      itemprop="caption"
+      content="${image.title}"
+      data-sly-test="${image.title}"
+    />
+  </sly>
+  <sly
+    data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cmp-image cq-dd-image'}"
+  ></sly>
+</template>

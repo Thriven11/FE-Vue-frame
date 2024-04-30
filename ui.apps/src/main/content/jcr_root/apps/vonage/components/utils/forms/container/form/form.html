@@ -1,0 +1,69 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.FormContainerComponentModel" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-test.scheme="${request.scheme}"/>
+<sly data-sly-test.servername="${request.serverName}"/>
+<sly data-sly-test.serverport="${request.serverPort}"/>
+<sly data-sly-test.uri="${request.requestURI}"/>
+
+<sly data-sly-test.isCondensed="${request.requestPathInfo.selectorString == 'condensed'}"/>
+
+<form
+  class="Vlt-form ${isCondensed ? 'condensed' : ''}"
+  data-form-type="${model.formType}"
+  data-page-context="${model.pageContext}"
+  method="post"
+  action="${model.formHandler  @context='text'}"
+  novalidate
+>
+  <!--/*
+    Important hidden fields with default values are included with the server payload. That's just
+    in case the client-side code fails or JavaScript is turned off, the leads will still route
+    through Pardot and Salesforce.
+  */-->
+  <input type="hidden" name="webcampaignid" value="${model.defaultCampaignId}">
+  <input type="hidden" name="webreferrerurl" value="${servername}${uri}">
+  <input type="hidden" name="eventid" value="${model.eventId}" data-sly-test="${model.eventId}">
+  <input type="hidden" name="eventinstance" value="${model.eventInstance}" data-sly-test="${model.eventInstance}">
+  <input type="hidden" name="webinarType" value="${model.webinarType}" data-sly-test="${model.webinarType}"/>
+  <input type="hidden" name="showCode" value="${model.showCode}" data-sly-test="${model.showCode}">
+
+  <div class="row">
+    <div class="col-12">
+      <h3 class="Vlt-form__eyebrow">${model.eyebrow}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="Vlt-form__submit-error-msg" role="status">
+        <div class="Vlt-form__element__error Vlt-icon-warning-icon">
+          <span class="Vlt-form__submit-error-msg-label">
+            ${model.errorMessage}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <sly data-sly-test="${!isCondensed}" data-sly-resource="${ @path='formsResponsiveGrid', resourceType='vonage/components/utils/forms/container/responsiveGrid'}" />
+  <div class="form-row" data-sly-test="${isCondensed}">
+    <sly data-sly-resource="${ @path='formsResponsiveGrid', resourceType='vonage/components/utils/forms/container/responsiveGrid/twoColumns'}" />
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="Vlt-form__submit-disclaimer Vlt-form__element-hidden">
+        ${'vng-gdpr-disclaimer' @ i18n}
+        <a
+          class="Vlt-form__checkbox-label-link"
+          href="https://www.vonage.com/privacy-policy"
+          target="_blank"
+          >${'vng-privacyPolicyLink' @ i18n}</a
+        >.
+      </p>
+      <div style="width:auto; min-width: 120px; min-height: 40px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+        <sly data-sly-resource="${ @path='submit', resourceType='vonage/components/utils/forms/button/submit'}" />
+      </div>
+    </div>
+  </div>
+</form>

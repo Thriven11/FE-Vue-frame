@@ -1,0 +1,29 @@
+<sly data-sly-use.model="com.vonage.core.models.content.HeroFormModel" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start" data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="in-page-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-5 offset-md-1 offset-lg-0">
+                <h2 class="in-page-form__title">${model.title}</h2>
+                <p class="in-page-form__description">${model.description}</p>
+            </div>
+            <div class="col-12 col-md-10 col-lg-6 offset-md-1">
+                <div class="in-page-form__card">
+                    <div style="width:auto; min-width: 355px; height: auto; min-height: 522px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                        <sly data-sly-test="${properties.bestNextForm}">
+                            <sly data-sly-resource="${ @path='bestNextStepForm', resourceType='vonage/components/ecommerce/bestNextStepForm'}" />
+                        </sly>
+                        <sly data-sly-test="${!properties.bestNextForm}">
+                            <sly data-sly-test="${!properties.condenseForm}" data-sly-resource="${ @path='form', resourceType='vonage/components/utils/forms/container/form'}" />
+                            <sly data-sly-test="${properties.condenseForm}" data-sly-resource="${ @path='form', resourceType='vonage/components/utils/forms/container/form/', selectors='condensed'}" />
+                            <!-- Success State Goes Here-->
+                    <sly data-sly-test="${model.confMessagePath}" data-sly-resource="${model.confMessagePath}/jcr:content/root" />
+                        </sly>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

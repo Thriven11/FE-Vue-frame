@@ -1,0 +1,8 @@
+<sly data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width: 300px"></div>
+<div id="main-content" class="${ (l3NavModel.isL3NavActive) ? 'header--l3' : ''}">
+  <div data-sly-resource="${ @path='responsiveGrid', resourceType='wcm/foundation/components/responsivegrid'}"
+       data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}"></div>
+</div>
+<sly data-sly-include="video-overlay.html"/>

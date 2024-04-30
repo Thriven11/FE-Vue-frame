@@ -1,0 +1,18 @@
+<section class="bio" data-sly-use.model="com.vonage.core.models.content.BioComponentModel">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <div class="bio__author-info">
+          <div class="bio__avatar-container">
+            <sly data-sly-include="image.html" />
+          </div>
+          <div class="bio__stats-container">
+            <span class="bio__author-name">${model.namePrefix}${model.namePrefix ? " " : ""}${model.name}</span>
+            <span class="bio__author-status">${model.role}</span>
+            <p class="bio__description">${model.bioText}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

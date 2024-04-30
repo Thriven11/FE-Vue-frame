@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="cq:Page">
+  <jcr:content
+    cq:targetPath="/var/commerce/products/vonage/communications-api/messaging"
+    jcr:description="Scaffolding used to update Vonage messaging products."
+    jcr:primaryType="cq:PageContent"
+    jcr:title="Messaging Data"
+    sling:resourceType="wcm/scaffolding/components/scaffolding">
+    <cq:dialog
+      jcr:primaryType="nt:unstructured"
+      jcr:title="Vonage Messaging Properties"
+      sling:resourceType="cq/gui/components/authoring/dialog">
+      <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+            <items jcr:primaryType="nt:unstructured">
+              <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                    <items jcr:primaryType="nt:unstructured">
+                      <tab1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                          <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Title"
+                            name="./jcr:title"
+                            renderReadOnly="{Boolean}true"
+                            required="{Boolean}true"/>
+                          <overwrite
+                            jcr:primaryType="nt:unstructured"
+                            name="./disableSync"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            fieldDescription="When checked, the price will not be synced from API anymore and the prices Authored here will prevail."
+                            text="Disable API Sync"
+                            value="{Boolean}true"/>
+                          <restricted
+                            jcr:primaryType="nt:unstructured"
+                            name="./restricted"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            fieldDescription="When checked, this country is restricted and shows the message instead of pricing"
+                            text="Restrict Country"
+                            value="{Boolean}true"/>
+                        </items>
+                      </tab1>
+                      <tab2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Outgoing"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                          <outgoing
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Outgoing"
+                            name="./outgoing/outgoing"/>
+                        </items>
+                      </tab2>
+                      <tab3
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Toll Free"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                          <outgoing
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Outgoing"
+                            name="./toll-free/outgoing"/>
+                          <incoming
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Incoming"
+                            name="./toll-free/incoming"/>
+                          <rental
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Rental"
+                            name="./toll-free/rental"
+                            renderReadOnly="{Boolean}true"/>
+                          <rentalSms
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Rental SMS"
+                            name="./toll-free/rental.sms"
+                            renderReadOnly="{Boolean}true"/>
+                        </items>
+                      </tab3>
+                      <tab4
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Virtual Numbers"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                          <outgoing
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Outgoing"
+                            name="./virtual-number/outgoing"/>
+                          <incoming
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Incoming"
+                            name="./virtual-number/incoming"/>
+                          <rental
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Rental"
+                            name="./virtual-number/rental"
+                            renderReadOnly="{Boolean}true"/>
+                          <rentalSms
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Rental SMS"
+                            name="./virtual-number/rental.sms"
+                            renderReadOnly="{Boolean}true"/>
+                        </items>
+                      </tab4>
+                    </items>
+                  </tabs>
+                </items>
+              </column2>
+            </items>
+          </columns>
+        </items>
+      </content>
+    </cq:dialog>
+  </jcr:content>
+</jcr:root>

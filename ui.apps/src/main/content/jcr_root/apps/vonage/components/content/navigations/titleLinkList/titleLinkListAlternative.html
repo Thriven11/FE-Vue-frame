@@ -1,0 +1,18 @@
+<sly data-sly-use.model="com.vonage.core.models.content.navigations.LinkListComponentModel"
+     data-sly-use.template="linkListTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="Vlt-footer-alternative__section">
+    <h2 class="Vlt-footer-alternative__title" data-sly-test="${!properties.staticLabel}">
+      ${model.title}
+    </h2>
+    <h2 class="Vlt-footer-alternative__title" data-sly-test="${properties.staticLabel}" data-static-label="${properties.staticLabel}">
+      ${model.title}
+    </h2>
+    <sly data-sly-call="${template.linkListV3 @
+        links=model.links,
+        listItemClass='Vlt-footer-alternative__item',
+        anchorClass='Vlt-footer-alternative__link'}"/>
+</div>

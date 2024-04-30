@@ -1,0 +1,7 @@
+<sly data-sly-use.model="com.vonage.core.models.content.EndNoteComponentModel"
+     data-sly-use.endNoteTemplate="vonage/components/utils/baseComponent/endNoteTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-test="${model.endNote}" data-sly-call="${endNoteTemplate.endNoteV1 @ endNote = model.endNote}"/>

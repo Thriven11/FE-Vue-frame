@@ -1,0 +1,17 @@
+<template data-sly-template.main="${@numberOfItems, resourceType, mediumColClass}">
+  <sly data-sly-use.itemCount="${'items.js' @ numberOfItems=numberOfItems}" data-sly-unwrap />
+  <div class="row">
+    <sly data-sly-list.item="${itemCount.items}">
+      <div
+              class="col-12 ${mediumColClass != null ? mediumColClass : 'col-md-6'} col-lg-${itemCount.colspan} col-lg-${itemCount.colspan}"
+              data-sly-test.resourceNodeType="${resourceType}"
+              data-sly-test.resourceNode="${['item', item.intValue] @join='-'}"
+      >
+        <div
+                data-sly-resource="${@path=resourceNode, resourceType=resourceNodeType}"
+                data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}"
+        ></div>
+      </div>
+    </sly>
+  </div>
+</template>

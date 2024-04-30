@@ -1,0 +1,7 @@
+<sly data-sly-use.model="com.vonage.core.models.CTAModel"
+     data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-test="${model.link.label}" data-sly-call="${ctaTemplate.ctaV3 @ link = model.link, cssClass='btn btn--secondary'}"/>

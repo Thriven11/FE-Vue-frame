@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig"
+apiBaseUrl="https://qa-www.vonage.com/Vonage/services/apexrest/v1/"
+storefrontName="Vonage"
+priceBook="VBC Pricebook"
+zuoraPageId=""
+zuoraIFrameUrl="https://apisandbox.zuora.com/apps/PublicHostedPageLite.do"
+addressValidationUrl="https://api.panther.vocal-dev.com/"
+addressValidationUser="ecomm_b2b"
+addressValidationPassword="public"
+paymentTechUrl="https://securevar.paymentech.com/kount"
+paymentTechMerchantId="300494"
+ezLynxMasterAgentId="0010t00001VtpxgAAB"
+ezLynxSubAgentId="0010t00001VtpegAAB"/>

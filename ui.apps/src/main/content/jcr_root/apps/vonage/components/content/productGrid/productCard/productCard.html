@@ -1,0 +1,11 @@
+<sly data-sly-use.model="com.vonage.core.models.CTAModel" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"  style="min-width:250px"></div>
+
+<div class="product-grid__product-wrapper">
+  <a class="product-grid__product-cta" href="${model.link.href}" aria-label="${model.link.ariaLabel}"></a>
+  <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+  <sly data-sly-call="${template.cfImage @ cssClass='product-grid__product-image', original='500', xlg='500', lg='300', md='680', sm='500'}"/>
+  <span class="product-grid__product-cta-label" aria-hidden="true">${model.link.label}</span>
+</div>

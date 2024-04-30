@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/vonage/settings/wcm/templates/generic-page-with-leadgen"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="vonage/components/structure/generic-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+                <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                  <detailsgrid
+                    jcr:primaryType="nt:unstructured"
+                    alignment="all-images-right"
+                    sling:resourceType="vonage/components/content/detailsGrid"
+                    theme="grey">
+                    <responsiveGrid
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/utils/rowResponsiveGrid">
+                      <detailsitem
+                        jcr:primaryType="nt:unstructured"
+                        eyebrow="Technology Partner"
+                        href="https://www.nexmo.com/partners/advocado/contact"
+                        label="Contact Advocado"
+                        sling:resourceType="vonage/components/content/detailsGrid/detailsItem"
+                        target="_blank"
+                        title="Advocado &amp; Vonage: Linking Online and Offline Data for a Consistent Customer Journey">
+                        <detailsFeatureImage
+                          jcr:primaryType="nt:unstructured"
+                          altValueFromDAM="true"
+                          fileReference="/content/dam/vonage/us-en/partners/logos/showcase/large-blue-background/Advocado.png"
+                          isDecorative="false"
+                          sling:resourceType="vonage/components/content/detailsGrid/detailsItem/detailsFeatureImage"
+                          titleValueFromDAM="true"/>
+                      </detailsitem>
+                    </responsiveGrid>
+                  </detailsgrid>
+                  <rtetext_1234
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/pressRelease/rteText"
+                    subHeadlineSize="h2"
+                    text="RTE TEXT"/>
+                  <headerlists
+                    jcr:primaryType="nt:unstructured"
+                    cardOneTitle="Industries"
+                    cardTwoTitle="Areas of Focus"
+                    inline="false"
+                    sling:resourceType="vonage/components/content/headerLists"
+                    title="  ">
+                    <cardOne
+                      jcr:primaryType="nt:unstructured">
+                      <item0
+                        jcr:primaryType="nt:unstructured"
+                        listItem="eCommerce/Retail"/>
+                      <item1
+                        jcr:primaryType="nt:unstructured"
+                        listItem="Hospitality/Travel/Transportation"/>
+                      <item2
+                        jcr:primaryType="nt:unstructured"
+                        listItem="Healthcare"/>
+                      <item3
+                        jcr:primaryType="nt:unstructured"
+                        listItem="Financial Services/Insurance"/>
+                    </cardOne>
+                    <cardTwo jcr:primaryType="nt:unstructured">
+                      <item0 jcr:primaryType="nt:unstructured" listItem="Customer 360"/>
+                      <item1 jcr:primaryType="nt:unstructured" listItem="Customer Engagement"/>
+                      <item2 jcr:primaryType="nt:unstructured" listItem="Call Center"/>
+                      <item3 jcr:primaryType="nt:unstructured" listItem="Hospitality"/>
+                      <item4 jcr:primaryType="nt:unstructured" listItem="Marketing"/>
+                      <item5 jcr:primaryType="nt:unstructured" listItem="Business Productivity"/>
+                      <item6 jcr:primaryType="nt:unstructured" listItem="eCommerce"/>
+                      <item7 jcr:primaryType="nt:unstructured" listItem="Collaboration/Comms"/>
+                      <item8 jcr:primaryType="nt:unstructured" listItem="Support"/>
+                    </cardTwo>
+                  </headerlists>
+                  <slimvideo
+                    jcr:primaryType="nt:unstructured"
+                    altValueFromDAM="true"
+                    dataVideoId="Eg6Sb01zrxw"
+                    fileReference="/content/dam/vonage/us-en/partners/logos/showcase/Advocado Banner.png"
+                    isDecorative="false"
+                    jcr:title="TraaqrSMB HubSpot Demo"
+                    sling:resourceType="vonage/components/content/videos/slimVideo"
+                    titleValueFromDAM="false"/>
+                  <rtetext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/pressRelease/rteText"
+                    subHeadline="Use Case: Online / Offline Call Tracking with CRM integration for conversions and offline conversion uploads to Google Ads &amp; Facebook"
+                    subHeadlineSize="h2"
+                    text="RTE TEXT"/>
+                  <categorygrid jcr:primaryType="nt:unstructured" cardColumns="2" isDecorative="true" sling:resourceType="vonage/components/content/categoryGrid" title="Resources">
+                    <responsiveGrid jcr:primaryType="nt:unstructured" sling:resourceType="vonage/components/utils/rowResponsiveGrid"><categorycard jcr:primaryType="nt:unstructured" href="https://www.myadvocado.com/" sling:resourceType="vonage/components/content/categoryGrid/categoryCard" target="_blank" title="Advocado Website"/>
+                    </responsiveGrid>
+                  </categorygrid>
+                  <experiencefragment
+                    jcr:primaryType="nt:unstructured"
+                    fragmentVariationPath="/content/experience-fragments/vonage/en-us/find-and-api-partner-large-promo/master"
+                    sling:resourceType="vonage/components/content/fragments/experiencefragment"/>
+                </responsiveGrid>
+            </generalContainer>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

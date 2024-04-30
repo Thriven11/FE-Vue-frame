@@ -1,0 +1,59 @@
+<sly data-sly-use.model="com.vonage.core.models.content.QuantitySelectorComponentModel" />
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title}"
+  style="min-width: 250px;"
+></div>
+
+<section class="quantity-selector" id="${model.anchor}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-10 offset-md-1 ${properties.inlineSelector ? 'center-selector' : ''}">
+				<h2 class="quantity-selector__headline ${properties.inlineSelector ? 'inline-ele' : ''}">${model.headline}</h2>
+					<div class="quantity-selector__widget ${properties.inlineSelector ? 'inline-ele' : ''} ${properties.hideSlider ? 'input-center-mob' : ''}">
+						<sly data-sly-test="${model.description}">	
+							<label for="employee-counter">
+								<div class="quantity-selector__description">${model.description @context='html'}</div>
+							</label>
+						</sly>
+						<div class="quantity-selector__controls ${properties.inlineSelector ? 'mar-right' : ''}">
+							<input id="employee-counter" autocomplete="off" class="quantity-selector__quantity-count" type="text" name="counter" value="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
+								<div class="quantity-selector__widget-range ${properties.hideSlider ? 'hidden' : ''}" aria-hidden="true">
+									<div class="quantity-selector__range-length">
+										<div class="quantity-selector__range-start">1</div>
+										<div class="quantity-selector__range-end">${model.segment3Maximum} +</div>
+									</div>
+									<input 
+										id="slider"
+										autocomplete="off"
+										tabindex="-1" 
+										aria-hidden="true" 
+										class="quantity-selector__quantity-range" 
+										type="range" 
+										min="1" 
+										max="99" 
+										value="0" 
+										data-s1-min="1" 
+										data-s1-max="${model.segment1Maximum}" 
+										data-s2-min="${model.segment1Maximum}"
+										data-s2-max="${model.segment2Maximum}" 
+										data-s3-min="${model.segment2Maximum}" 
+										data-s3-max="${model.segment3Maximum}" 
+										style="background: linear-gradient(to right, rgb(136, 31, 255) 0%, rgb(136, 31, 255) 1%, rgb(255, 255, 255) 1%, white 100%);">
+									<div class="quantity-selector__ranges">
+										<div>${model.segment1Label @context='html'}</div>
+										<div>${model.segment2Label @context='html'}</div>
+										<div>${model.segment3Label @context='html'}</div>
+									</div>
+								</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+

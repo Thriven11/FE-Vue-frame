@@ -1,0 +1,47 @@
+<sly data-sly-use.template="mediaContainerTemplate.html"></sly>
+<sly data-sly-use.model="com.vonage.core.models.content.HeaderMediaComponentModel"></sly>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<header data-sly-test="${model.headline}" class="header-media ${model.backgroundColor=='paleGrey' ? 'header-media--secondary' :''} ${model.mediaContainerType!='plainText' ? 'header-media--media' : ''} header-media--padding" >
+  <div class="content-resource-header">
+    <div class="container">
+      <div class="row" data-sly-test="${model.headline}">
+        <div class="col-12 col-md-11 col-lg-9">
+          <h1 class="content-resource-header__headline">${model.headline}</h1>
+        </div>
+      </div>
+
+        <sly data-sly-test="${model.byLine}">
+            <div class="row">
+                <div class="col-12 col-md-5 col-lg-6">
+                    <div class="content-resource-header__byline-container">
+                        <sly data-sly-resource="${model.byLine @ wcmmode='disabled'}" />
+                    </div>
+                </div>
+            </div>
+        </sly>
+
+      <div class="row" data-sly-test="${model.description}">
+        <div class="col-10 offset-2 col-md-7 offset-md-5 col-lg-6 offset-lg-6">
+          <p class="content-resource-header__description">${model.description}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <sly data-sly-test="${model.mediaContainerType == 'plainText'}"
+       data-sly-call="${template.mediaContainer @
+                        mediaType='plainText', mediaClass=''}"/>
+
+  <sly data-sly-test="${model.mediaContainerType == 'video'}"
+       data-sly-call="${template.mediaContainer @
+                        mediaType='headerMediaVideo', mediaClass='col-12 p-0 px-md-3'}"/>
+
+  <sly data-sly-test="${model.mediaContainerType == 'image'}"
+       data-sly-call="${template.mediaContainer @
+                        mediaType='headerMediaImage', mediaClass='col-12 col-lg-8 p-0 px-md-3'}"/>
+
+</header>

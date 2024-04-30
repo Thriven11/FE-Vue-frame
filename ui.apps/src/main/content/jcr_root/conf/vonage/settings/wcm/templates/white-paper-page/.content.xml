@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2019-11-11T17:34:54.970+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/vonage/settings/wcm/template-types/generic-page"
+        allowedPaths="[/content/vonage/(.*)/resources/webinars,/content/vonage/(.*)/resources/publications]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="White Paper Page"
+        status="enabled"/>
+</jcr:root>

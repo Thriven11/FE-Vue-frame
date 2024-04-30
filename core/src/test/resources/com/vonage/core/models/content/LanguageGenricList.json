@@ -1,0 +1,45 @@
+{
+	"jcr:primaryType": "cq:Page",
+	"jcr:createdBy": "admin",
+	"jcr:created": "Mon Feb 03 2020 15:38:25 GMT+0530",
+	"jcr:content": {
+		"jcr:primaryType": "nt:unstructured",
+		"jcr:title": "Languages List",
+		"cq:lastModified": "Wed Feb 05 2020 20:04:04 GMT+0530",
+		"sling:resourceType": "acs-commons/components/utilities/genericlist",
+		"cq:lastModifiedBy": "admin",
+		"list": {
+			"jcr:primaryType": "nt:unstructured",
+			"item0": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "German",
+				"value": "de"
+			},
+			"item1": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "US English",
+				"value": "en-us"
+			},
+			"item2": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "French",
+				"value": "fr"
+			},
+			"item3": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Hawaiin",
+				"value": "haw"
+			},
+			"item4": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Dutch",
+				"value": "nl"
+			},
+			"item5": {
+				"jcr:primaryType": "nt:unstructured",
+				"jcr:title": "Spanish",
+				"value": "es"
+			}
+		}
+	}
+}

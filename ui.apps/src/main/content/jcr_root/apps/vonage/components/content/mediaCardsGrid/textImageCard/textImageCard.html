@@ -1,0 +1,28 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="card-image-3-up__card">
+        <div class="Vlt-card-image__image-wrapper">
+          <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+          <sly data-sly-call="${template.cfImage @ cssClass='Vlt-card-image__image', original='500', xlg='500', lg='300', md='680', sm='500'}"/>
+        </div>
+        <div class="Vlt-card-image__body">
+            <div class="Vlt-card-image__header" data-sly-test="${model.title || model.description}">
+                <span data-sly-test="${model.title}" class="Vlt-card-image__category">
+                    ${model.title}
+                </span>
+                <span data-sly-test="${model.description}" class="Vlt-card-image__type">
+                    ${model.description}
+                </span>
+            </div>
+            <div class="text aem-GridColumn aem-GridColumn--default--12">
+              <sly data-sly-include="text.html"/>
+          </div>
+            <span class="Vlt-card-image__headline" data-sly-test="${model.link.href != '#'}">
+              <a data-sly-test.link="${model.link}" class="Vlt-card-image Vlt-card-image--variation"
+              href="${properties.href}" target="${link.target}" aria-describedby="${link.target =='_blank' ? 'new-window' : ''}" aria-label="${link.ariaLabel}"> ${model.headline} <i data-sly-test="${model.link.href != '#'}" class="Vlt-icon-arrow-link"></i></a>
+            </span>
+        </div>
+</div>

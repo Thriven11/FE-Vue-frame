@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Feature Pricing Card Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <leftSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Left Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <currencyToggle
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              text="Include Currency Toggle"
+                                              name="./currencyToggle"
+                                              value="true" />
+                                            <caption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Caption"
+                                                name="./caption"/>
+                                            <currency
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Currency"
+                                                name="./currency"/>
+                                            <price
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Price"
+                                                name="./price"
+                                                required="{Boolean}true"/>
+                                            <frequency
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Frequency"
+                                                name="./frequency"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Description"
+                                                name="./description"
+                                                required="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </leftSection>
+                    <rightSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Right Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Headline"
+                                                name="./headline"
+                                                required="{Boolean}true"/>
+                                            <sectionType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Section Type"
+                                                name="./sectionType"
+                                                required="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <perMinutePricingOption
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Per Minute Pricing"
+                                                        value="per-minute-pricing-section"/>
+                                                        <checkBoxListOption
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Checkbox List"
+                                                        value="checkbox-list-section"/>
+                                                </items>
+                                            </sectionType>
+                                            <offerings
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldDescription="Click 'Add' to add a new pricing feature."
+                                                fieldLabel="Per Minute Feature"
+                                                composite="{Boolean}true">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./offeringList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <price
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Price"
+                                                            name="./price"
+                                                            required="{Boolean}true"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Description"
+                                                            name="./description"
+                                                            required="{Boolean}true"/>
+                                                    </items>
+                                                </field>
+                                            </offerings>
+                                            <ctaType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="CTA Options"
+                                                name="./ctaType"
+                                                required="{Boolean}false">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <ctaNone
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="No CTA"
+                                                        value="no-cta"/>
+                                                    <ctaLeftOption
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}false"
+                                                        text="CTA Left aligned"
+                                                        value="cta-left"/>
+                                                    <ctaRightOption
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="CTA Right aligned"
+                                                        value="cta-right"/>
+                                                    <ctaCenterOption
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="CTA Center aligned"
+                                                        value="cta-center"/>
+                                                </items>
+                                            </ctaType>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </rightSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

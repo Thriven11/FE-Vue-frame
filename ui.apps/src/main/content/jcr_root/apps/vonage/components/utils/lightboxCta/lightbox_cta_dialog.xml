@@ -1,0 +1,26 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Lightbox CTA"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+        <label
+            jcr:primaryType="nt:unstructured"
+            fieldLabel="Label"
+            name="./label"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+        <form
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+            fieldLabel="Form"
+            fieldDescription="This is the form that will be embedded in the lightbox"
+            name="./formPath"
+            rootPath="/content/experience-fragments/vonage"/>
+        <confirmationMessage
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+            fieldLabel="Confirmation Message"
+            fieldDescription="This is the message displayed after submitting the form"
+            name="./confMessagePath"
+            rootPath="/content/experience-fragments/vonage"/>
+    </items>
+</jcr:root>

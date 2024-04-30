@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.vonage.core.models.CTAModel"
+     data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component (set options here)"></div>
+<section class="cta-single ${properties.grayBg ? 'gray-bg' : '' }">
+     <div class="container">
+          <div class="row">
+               <div class="col-12 ${properties.centerButton ? 'centerButton' : '' }">
+                    <sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn'}"></sly>
+                    <sly data-sly-test="${properties.primaryLightbox}" data-sly-resource="${'cta-2' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='cta'}"></sly>
+               </div>
+          </div>
+     </div>
+</section>

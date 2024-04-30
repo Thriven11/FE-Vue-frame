@@ -1,0 +1,19 @@
+<sly data-sly-use.model="com.vonage.core.models.content.RTETextComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+<section class=" text-block ${properties.adjustPadding ? 'text-block--padded' : ''} ${properties.grayBg ? 'text-block--gray' : ''} ${properties.forceCenter ? 'text-block--centered' : ''}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ${properties.fullWidth ? '' : 'offset-md-1 col-md-10 offset-lg-2 col-lg-7'}">
+                <div data-sly-test="${model.subHeadline}" class="text-block__title ${properties.forceCenter ? 'text-block__title--centered' : ''}">
+                    <h5 data-sly-element="${model.subHeadlineSize}">${model.subHeadline}</h5>
+                </div>
+                <div class="text aem-GridColumn aem-GridColumn--default--12">
+                    <sly data-sly-include="text.html"/>
+                </div>
+                <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+            </div>
+        </div>
+    </div>
+</section>

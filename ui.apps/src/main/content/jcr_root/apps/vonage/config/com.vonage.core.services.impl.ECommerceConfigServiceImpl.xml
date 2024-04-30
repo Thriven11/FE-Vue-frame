@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig"
+apiBaseUrl="https://turkey-vhelp.cs159.force.com/Vonage/services/apexrest/v1/"
+storefrontName="Vonage"
+priceBook="VBC Pricebook"
+zuoraPageId="2c93db8275e3d08b0175e74beb663a76"
+zuoraIFrameUrl="https://pt1.zuora.com/apps/PublicHostedPageLite.do"
+addressValidationUrl="https://api.badger.vocal-dev.com/"
+addressValidationUser="ecomm_b2b"
+addressValidationPassword="public"
+paymentTechUrl="https://securevar.paymentech.com/kount"
+paymentTechMerchantId="300494"
+ezLynxMasterAgentId="0010t00001VtpxgAAB"
+ezLynxSubAgentId="0010t00001VtpegAAB"/>

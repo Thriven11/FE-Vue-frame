@@ -1,0 +1,23 @@
+# Favicon
+RewriteRule ^/favicon.ico$ /etc.clientlibs/vonage/clientlibs/clientlib-base/resources/favicon.ico [NC,PT,L]
+
+# Remove .html
+RewriteRule ^(.+)\.html$ $1/ [R=301,L]
+
+# Add Trailing Slash
+RewriteCond %{REQUEST_URI} !^/etc.clientlibs
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/home/
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [R=301,L]
+
+# VONDEV-1624 - Adobe Security Update - dot dot semi bypass
+RewriteCond %{REQUEST_URI} ^.\.\.;.
+RewriteRule ".*" "-" [R=404]
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+  <filter root="/apps/vonage"/>
+  <filter root="/apps/msm" mode="merge"/>
+  <filter root="/apps/cq/gui/components/authoring/rte/coralui3/js" mode="merge"/>
+  <!-- <filter root="/apps/granite/translation/connector/config/smartling/languageMapping"/> -->
+  <!-- <filter root="/apps/wcm/core/resources/languages" mode="merge"/> -->
+  <filter root="/conf/vonage/settings/wcm/"/>
+  <filter root="/conf/global/settings/dam/"/>
+  <filter root="/conf/global/settings/workflow/models/dam/update_asset"/>
+  <filter root="/conf/global/settings/workflow/models/wcm-translation/create_language_copy"/>
+  <filter root="/conf/global/settings/workflow/models/wcm-translation/update_language_copy"/>
+  <filter root="/conf/global/settings/workflow/models/wcm-translation/prepare_translation_project"/>
+	<filter root="/conf/global/settings/workflow/models/vonage"/>
+  <filter root="/etc/map"/>
+  <filter root="/etc/languages"/>
+  <filter root="/etc/map.publish"/>
+  <filter root="/etc/map.dev.publish"/>
+  <filter root="/etc/map.stage.publish"/>
+  <filter root="/etc/map.prod.publish"/>
+  <filter root="/etc/map.qa.publish"/>
+	<filter root="/etc/notification/email/vonage"/>
+	<filter root="/etc/workflow/notification/email/default/en.txt"/>
+    <filter root="/var/workflow/models/dam/update_asset"/>
+    <filter root="/var/workflow/models/vonage"/>
+  <filter root="/var/vonage" mode="merge"/>
+</workspaceFilter>

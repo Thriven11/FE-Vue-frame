@@ -1,0 +1,7 @@
+<sly data-sly-use.listModel="com.vonage.core.models.structure.ListModel"
+     data-sly-use.template="listTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-call="${template.listWithSublist @ model=listModel}"/>

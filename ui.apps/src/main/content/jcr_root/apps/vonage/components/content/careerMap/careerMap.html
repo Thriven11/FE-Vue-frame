@@ -1,0 +1,45 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CareerMapComponentModel">
+
+	<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+		data-emptytext="${component.title} Component"></div>
+
+		<script type="text/javascript">
+		var careersMapData={defaultOfficeImage:"default.jpg",mobileCoords:[{countries:["US"],coords:{lat:38.741658819697996,lng:-96.28193020283909},zoom:3},{countries:["UK","DE","PL","BG","IL"],coords:{lat:46.574344062312086,lng:15.602835422160902},zoom:3},{countries:["AU","JP","HK","CN","SG"],coords:{lat:4.134108137837371,lng:126.86967648894431},zoom:3}],offices:{4016423002:{displayName:"Atlanta, GA",description:"The Atlanta office is comprised of two impressive 16-story towers connected by an enclosed glass arbor, and overlooks the Chattahoochee River. We’re minutes away from restaurants, retail centers, and the Atlanta Airport.",address:{street1:"3200 Windy Hill Rd STE 200E",street2:null,city:"Atlanta",state:"GA",zip:30339,country:"US"},phoneNumber:"678-383-2571",coords:{lat:33.913476,lng:-84.461082},officeImage:"atlanta.png",highlight:!1,slug:"atlanta"},4009272002:{displayName:"Atlanta, GA",description:"The Atlanta office is comprised of two impressive 16-story towers connected by an enclosed glass arbor, and overlooks the Chattahoochee River. We’re minutes away from restaurants, retail centers, and the Atlanta Airport.",address:{street1:"3200 Windy Hill Rd STE 200E",street2:null,city:"Atlanta",state:"GA",zip:30339,country:"US"},phoneNumber:"678-383-2571",coords:{lat:33.913476,lng:-84.461082},officeImage:"atlanta.png",highlight:!1,slug:"atlanta"},4009273002:{displayName:"Basingstoke, UK (NewVoiceMedia)",description:"Basingstoke is home to an ambitious and fun-loving bunch of Tech, Sales, Marketing and Support teams who enjoy social and sport activities such as quiz and games nights!",address:{street1:"Rosalind House, Jays Close",street2:null,city:"Basingstoke",state:"Hampshire",zip:"RG22 4BS",country:"GB"},phoneNumber:null,coords:{lat:51.246195,lng:-1.09634},officeImage:"basingstoke.png",slug:"basingstoke",highlight:!1},4009281002:{displayName:"Holmdel",description:"Our corporate headquarters, known as the Vonage Technology Center, is a 350,000-square-foot facility situated on 88 acres  in central New Jersey. It’s about an hour south of New York City and has approximately 600 employees across all departments.",address:{street1:"23 Main Street",street2:null,city:"Holmdel",state:"NJ",zip:"07733",country:"US"},phoneNumber:"732-528-2600",coords:{lat:40.34712,lng:-74.188702},officeImage:"holmdel.png",slug:"holmdel",highlight:!1},4009282002:{displayName:"Hong Kong",description:null,address:{street1:null,street2:null,city:null,state:null,zip:null,country:null},phoneNumber:null,coords:{lat:22.320137,lng:114.172799},officeImage:null,slug:"hong-kong",highlight:!1},4009285002:{displayName:"London",description:"With 200+ employees in Shoreditch. We have everyone from Sales to Engineering to Finance represented within our extremely multi-cultural office. On last count we had over 50 nationalities and languages spoken in the London office!",address:{street1:"3rd floor, 15 Bonhill Street",street2:null,city:"London",state:null,zip:"EC2A 4DN",country:"EN"},phoneNumber:null,coords:{lat:51.523123,lng:-.08522},officeImage:"london.png",slug:"london",highlight:!1},4009287002:{displayName:"Luxembourg",description:null,address:{street1:null,street2:null,city:null,state:null,zip:null,country:"LU"},phoneNumber:null,coords:{lat:49.606436,lng:6.096584},officeImage:null,slug:"luxembourg",highlight:!1},4009295002:{displayName:"Remote",description:null,address:{street1:null,street2:null,city:null,state:null,zip:null,country:null},phoneNumber:null,coords:{lat:null,lng:null},officeImage:null,showOnMap:!1,slug:"remote",highlight:!1},4009298002:{displayName:"San Francisco",description:"Located in the SoMa district, we're near many other innovative technology companies and get to experience the great hustle and bustle of the city! We have around 40 employees from Sales, Support, Product, Marketing, and Business Operations.",address:{street1:"501 2nd Street, Suite 310",street2:null,city:"San Francisco",state:"CA",zip:94107,country:"US"},phoneNumber:null,coords:{lat:37.783093,lng:-122.393281},officeImage:"sanfrancisco.png",slug:"san-francisco",highlight:!1},4009300002:{displayName:"Shenzhen",description:null,address:{street1:null,street2:null,city:"Shenzhen",state:null,zip:null,country:"CN"},phoneNumber:null,coords:{lat:22.560112,lng:114.053884},officeImage:null,slug:"shenzhen",highlight:!1},4009301002:{displayName:"Singapore",description:null,address:{street1:null,street2:null,city:null,state:null,zip:null,country:"SG"},phoneNumber:null,coords:{lat:1.307811,lng:103.888891},officeImage:null,slug:"singapore",highlight:!1},4009305002:{displayName:"Wrocław, Poland (NewVoiceMedia)",description:"WrocLove (as we like to call the city) is not only #1 European Best Destination of 2018, but also home to 72 bright minds. We create a culture of learning and knowledge sharing through hackatons, “lunch and learn” events, conferences and more.",address:{street1:"Pilsudskiego 69/73, 50-019",street2:null,city:"Wroclaw",state:"Poland",zip:null,country:"PL"},phoneNumber:null,coords:{lat:51.100782,lng:17.031178},officeImage:"wroclaw.png",slug:"wroclaw",highlight:!1},4010269002:{displayName:"Israel",description:"Our Tel Aviv office is home to about 40 employees including our Chief Technology Officer, Sagi Dudai. Most of our employees are focused on research and development, but we also make sure to carve out time for the fun stuff like hackathons..",address:{street1:"94 Yigal Alon Street",street2:"Alon Tower, Building 2, 39th floor",city:"Tel Aviv",state:"Israel",zip:6789156,country:"Israel"},phoneNumber:null,coords:{lat:32.06855,lng:34.794151},officeImage:"israel.png",slug:"israel",highlight:!1},4012389002:{displayName:"Remote - International",description:null,address:{street1:null,street2:null,city:null,state:null,zip:null,country:null},phoneNumber:null,coords:{lat:null,lng:null},officeImage:null,showOnMap:!1,slug:"remote-international",highlight:!1}}};
+		</script>
+
+	<section class="jobs-map" id="career-map" data-nojobs-msg="${model.noJobsMsg}">
+		<div class="container">
+			<h2 class="headline">${model.headline}</h2>
+			<div class="description">${model.description}</div>
+			<div id="mapContainer">
+				<div id="map"></div>
+				<div class="mapOverlay hidden">
+					<div class="officeContentContainer">
+
+						<div class="overlayHeader">
+							<img src="/content/dam/vonage/us-en/brand/logos/VonageLogo_Primary_White.svg" alt="Vonage"/>
+							<button class="officeCloseButton" aria-label="Close Office Overlay"></button>
+						</div>
+
+						<div class="officeContent">
+							<div class="officeName"></div>
+							<div class="officeAddress"></div>
+							<div class="officeDetails"></div>
+
+							<div class="officeOpeningsContainer">
+								<div class="officeImage"></div>
+								<div class="officeOpenings">
+									<div class="officeOpeningsHeader">
+										${model.openPositions}
+									</div>
+									<div class="officeOpeningsDetails" ></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</sly>

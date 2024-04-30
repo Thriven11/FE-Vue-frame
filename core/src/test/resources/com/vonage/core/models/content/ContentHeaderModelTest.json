@@ -1,0 +1,8 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "headlineText": "Headline text",
+    "jcr:lastModifiedBy": "admin",
+    "contentDate": "November 12, 2019",
+    "jcr:lastModified": "Mon Nov 18 2019 12:04:28 GMT+0530",
+    "sling:resourceType": "vonage/components/content/contentHeader"
+}

@@ -1,0 +1,27 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CategoryGridComponentModel"
+data-sly-use.categoryTemplate="category.html" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="category-grid" id=${model.anchor}>
+      <div class="container">
+        <div class="category-grid__group">
+          <div class="row">
+            <div class="col-12 col-lg-3" data-sly-test="${model.title}" >
+              <div class="category-grid__header">
+                <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+                <sly data-sly-call="${template.cfImage @ cssClass='category-grid__header-icon', original='38', xlg='38', lg='38', md='38', sm='38'}"/>
+                <h2 class="category-grid__header-title">${model.title}</h2>
+              </div>
+            </div>
+            <div class="col-12 ${model.title ? 'col-lg-9' : '' }">
+              <div class="category-grid__items ${model.cardColumns == '2' ? 'two-col' : 'three-col'}">
+                  <sly data-sly-resource="${ @path='responsiveGrid',
+                resourceType='vonage/components/utils/rowResponsiveGrid'}" data-sly-unwrap></sly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

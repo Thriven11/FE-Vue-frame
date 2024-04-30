@@ -1,0 +1,339 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CustomerReviewsModel" />
+<sly data-sly-use.imageTemplate="vonage/components/utils/baseComponent/imageTemplate.html" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+  data-emptytext="${component.title} Component" style="min-width:150px; min-height:250px;"></div>
+<section data-sly-test="${model.displayType}" class="customer-reviews"
+  :class="[isLoading ? classes.isLoading : '', hasResults ? classes.hasResults : '', isWidget ? classes.isWidget : '']"
+  data-page-size="${model.pageSize}" data-default-product="${model.defaultProduct}"
+  data-display-type="${model.displayType}" data-title-count="${model.maxReviewTitle}" itemscope
+  itemtype="http://schema.org/Product">
+  <div data-sly-test="${ model.displayType == 'full'}" class="container">
+    <div class="row" ref="main">
+      <!--/* Filters  - hide on initial load */-->
+      <div class="col-12 col-lg-3">
+        <div v-if="!initialLoad" class="customer-reviews__filters">
+          <!--/* Product Filter */-->
+          <div v-if="!singleProduct" class="customer-reviews__filters-products">
+            <h3 class="customer-reviews__filters-title">Filter by product:</h3>
+            <div class="customer-reviews__filters-body">
+              <div class="customer-reviews__filters-filter" v-for="product in products">
+                <div class="Vlt-radio">
+                  <label v-bind:for="product.abv">
+                    <span class="Vlt-radio__button">
+                      <input type="radio" name="product" v-bind:value="product.id" v-bind:id="product.abv"
+                        v-model="selectedID" v-on:change="productUpdate" />
+                      <span class="Vlt-radio__icon"></span>
+                    </span>
+                    {{ product.name }}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-else class="customer-reviews__filters-products">
+            <h3 class="customer-reviews__filters-title">{{ selectedProduct }}</h3>
+            <div class="customer-reviews__filters-body">
+              <div class="customer-reviews__filters-sub-title">{{ reviewData.totalReviews }} reviews</div>
+            </div>
+          </div>
+          <!--/* Rating Filter */-->
+          <div class="customer-reviews__filters-ratings">
+            <h3 class="customer-reviews__filters-title">Filter by rating:</h3>
+            <div class="customer-reviews__filters-body">
+              <meta itemprop="name" v-bind:content="reviewData.business.name">
+              <div itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating" itemscope>
+                <meta itemprop="reviewCount" v-bind:content="reviewData.business.reviewCount" />
+                <meta itemprop="ratingValue" v-bind:content="reviewData.business.avgRating" />
+              </div>
+              <div v-if="!singleProduct" class="customer-reviews__filters-sub-title">{{ reviewData.totalReviews }}
+                reviews</div>
+              <div class="customer-reviews__filters-filter" v-for="rating in reviewData.summaryRatings">
+                <div class="Vlt-checkbox">
+                  <label v-bind:for="rating.rating">
+                    <span class="Vlt-checkbox__button">
+                      <input v-if="rating.reviewCount > 0" type="checkbox" name="rating" v-bind:value="rating.rating"
+                        v-bind:id="rating.rating" v-model="selectedRatings" v-on:change="ratingsUpdate" />
+                      <input v-else type="checkbox" disabled />
+                      <span class="Vlt-checkbox__icon"></span>
+                    </span>
+                    <span class="review-stars" :inner-html.prop="rating.rating | getStars(rating.rating)"></span>
+                    <span>({{ rating.reviewCount }})</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/* Source Filters*/-->
+          <div class="customer-reviews__filters-sources">
+            <h3 class="customer-reviews__filters-title">Filter by source:</h3>
+            <div class="customer-reviews__filters-body">
+              <div class="customer-reviews__filters-filter" v-for="source in reviewData.sources">
+                <div v-if="source.sourceAlias !== 'birdeye'" class="Vlt-checkbox">
+                  <label v-bind:for="source.sourceAlias">
+                    <span class="Vlt-checkbox__button">
+                      <input type="checkbox" name="source" v-bind:value="source.sourceAlias"
+                        v-bind:id="source.sourceAlias" v-model="selectedSources" v-on:change="sourcesUpdate" />
+                      <span class="Vlt-checkbox__icon"></span>
+                    </span>
+                    {{ source.sourceName }} ({{ source.reviewCount }})
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/* End Filters */-->
+      <div class="col-12 col-lg-9">
+        <!--/* Loading */-->
+        <div class="customer-reviews__loading"></div>
+        <!--/* Main Reviews Results */-->
+        <div v-if="hasResults" class="customer-reviews__results" :data-toggled-comment="toggledComment">
+          <h3>Displaying {{ resultsStart }} - {{ resultsEnd }} of {{ filteredTotal }} reviews</h3>
+          <div style="max-height:300px; width:auto; min-width: 120px;"
+            data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+            <div v-for="(review, index) in reviewData.reviews" :key="index" class="customer-reviews__review">
+              <div class="customer-reviews__review-detail" itemprop="review" itemtype="http://schema.org/Review"
+                itemscope>
+                <div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+                  <meta itemprop="name" v-bind:content="review.reviewer.nickName" />
+                </div>
+                <div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+                  <meta itemprop="ratingValue" v-bind:content="review.rating" />
+                  <meta itemprop="bestRating" content="5" />
+                </div>
+                <p class="review-rating">{{ Math.round(review.rating) }}/5 <span
+                    :inner-html.prop="review.rating | getStars(review.rating)"></span></p>
+                <p class=review-headings><span class="review-headings_date" itemprop="datePublished"
+                    v-bind:content="review.reviewDate">{{ review.reviewDate }}</span><span class="seperator"> -
+                  </span><span class="review-headings_name">{{ review.reviewer.firstName }} {{ review.reviewer.lastName
+                    }}</span></p>
+                <p class="review-comments" itemprop="description">
+                  <span v-if="review.commentsSnippet && !review.toggle">{{ review.commentsSnippet }}</span>
+                  <span v-else>{{ review.comments }}</span>
+                  <span
+                    v-if="review.commentsSnippet && !review.toggle || review.commentsSnippet && review.toggle === true"
+                    class="review-comments__toggle" v-on:click="toggleText(index)"
+                    :inner-html.prop="review.toggle | getToggleText(review.toggle)"></span>
+                </p>
+                <p class="review-link"><a class="link" :href="review.reviewUrl" target="_blank"
+                    aria-label="Click to go to the original review source">{{ review.sourceType }}</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/* No Results */-->
+        <div v-if="!initialLoad" class="no-results">
+          <sly
+            data-sly-call="${imageTemplate.cfImage @ cssClass='no-results__image', original='117', xlg='117', lg='117', md='117', sm='117'}" />
+          <h2 class="no-results__title">No matching results</h2>
+          <span class="no-results__description">We can't find any results for the selected filters.</span>
+        </div>
+      </div>
+    </div>
+    <pagination v-if="hasResults" :current-page="page" :total-pages="getTotalPages" @go-to-page="goToPage($event)">
+    </pagination>
+  </div>
+  <div data-sly-test="${model.displayType == 'widget'}" class="reviews-widget container">
+    <!--/* MicroData */-->
+    <meta itemprop="name" v-bind:content="reviewData.business.name">
+    <div itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating" itemscope>
+      <meta itemprop="reviewCount" v-bind:content="reviewData.business.reviewCount" />
+      <meta itemprop="ratingValue" v-bind:content="reviewData.business.avgRating" />
+    </div>
+    <!--/* Loading */-->
+    <div class="customer-reviews__loading"></div>
+    <!--/* Widget Reviews Results */-->
+    <div v-if="hasResults" class="customer-reviews__results" :data-toggled-comment="toggledComment">
+      <div class="reviews-widget__header">
+        <h2 class="title" data-sly-test="${model.widgetHeadline}">${model.widgetHeadline}</h2>
+        <p class="sub-title" data-sly-test="${model.widgetSubHeadline}">${model.widgetSubHeadline}</p>
+      </div>
+      <div class="reviews-widget__body">
+        <div v-for="reviewIndex in widgetData.reviewsToShow" class="customer-reviews__review">
+          <div class="customer-reviews__review-detail" itemprop="review" itemtype="http://schema.org/Review" itemscope>
+            <div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+              <meta itemprop="name" v-bind:content="reviewData.reviews[reviewIndex].reviewer.nickName" />
+            </div>
+            <div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+              <meta itemprop="ratingValue" v-bind:content="reviewData.reviews[reviewIndex].rating" />
+              <meta itemprop="bestRating" content="5" />
+            </div>
+            <div v-if="reviewData.reviews[reviewIndex].commentTitle" class="review__header">
+              <h3 class="review-title">{{ reviewData.reviews[reviewIndex].commentTitle }}</h3>
+              <div class="review-rating">{{ Math.round(reviewData.reviews[reviewIndex].rating) }}/5 <span
+                  :inner-html.prop="reviewData.reviews[reviewIndex].rating | getStars(reviewData.reviews[reviewIndex].rating)"></span>
+              </div>
+            </div>
+            <p class=review-headings>
+              <span class="review-headings__date" itemprop="datePublished"
+                v-bind:content="reviewData.reviews[reviewIndex].reviewDate">{{
+                reviewData.reviews[reviewIndex].reviewDate }}</span>
+              <span class="seperator"> - </span><span class="review-headings__source">{{
+                reviewData.reviews[reviewIndex].sourceType }}</span>
+              <span class="seperator"> - </span><span class="review-headings__name">{{
+                reviewData.reviews[reviewIndex].reviewer.firstName }} {{
+                reviewData.reviews[reviewIndex].reviewer.lastName }}</span>
+            </p>
+            <p class="review-comments" itemprop="description">
+              <span v-if="reviewData.reviews[reviewIndex].toggle && reviewData.reviews[reviewIndex].toggle === true">{{
+                reviewData.reviews[reviewIndex].comments }}</span>
+            </p>
+            <p><span class="review-comments__toggle" v-on:click="toggleText(reviewIndex)"
+                :inner-html.prop="reviewData.reviews[reviewIndex].toggle | getToggleText(reviewData.reviews[reviewIndex].toggle)"></span>
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-widget__cta">
+      <sly data-sly-resource="${'widgetCta' @resourceType='/apps/vonage/components/content/cta'}"></sly>
+    </div>
+  </div>
+
+
+
+  <div data-sly-test="${model.displayType == 'slimreviews'}" class="reviews-widget container">
+        <!--/* MicroData */-->
+    <meta itemprop="name" v-bind:content="reviewData.business.name">
+    <div itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating" itemscope>
+      <meta itemprop="reviewCount" v-bind:content="reviewData.business.reviewCount" />
+      <meta itemprop="ratingValue" v-bind:content="reviewData.business.avgRating" />
+    </div>
+    <!--/* Loading */-->
+    <div class="customer-reviews__loading"></div>
+    
+      <section class="hero-cards">
+        <div class="reviews-root"></div>
+        <div class="container" >
+          <div class="row" >
+            <div class="col-12  ">
+              <div class=" hero-cards-static">
+                <div class="hero-cards__card-extrusion extrusion-reviews"></div>
+                <div class="hero-cards__card-container static-container" >
+  
+                  <div class="row static-stars">
+                    <div v-if="hasResults" class="customer-reviews__results-slim" :data-toggled-comment="toggledComment">
+
+                      <div class="reviews-widget__header slimwidget_bottom">
+                        <h2 class="title" data-sly-test="${model.widgetHeadline}">${model.widgetHeadline}</h2>
+                        <p class="sub-title" data-sly-test="${model.widgetSubHeadline}">${model.widgetSubHeadline}</p>
+                      </div>
+                      <div class="reviews-widget__body">
+                        <div class="row">
+                          <template v-for="reviewIndex in widgetData.reviewsToShow" class="customer-reviews__review ">
+                            <div class="customer-reviews__review-detail col-lg-4" itemprop="review" itemtype="http://schema.org/Review"
+                              itemscope>
+                              <div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+                                <meta itemprop="name" v-bind:content="reviewData.reviews[reviewIndex].reviewer.nickName" />
+                              </div>
+                              <div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+                                <meta itemprop="ratingValue" v-bind:content="reviewData.reviews[reviewIndex].rating" />
+                                <meta itemprop="bestRating" content="5" />
+                              </div>
+                              <div v-if="reviewData.reviews[reviewIndex].commentTitle" class="review__header">
+                                <div class="review-rating-slim">{{ Math.round(reviewData.reviews[reviewIndex].rating) }}/5 <span
+                                    :inner-html.prop="reviewData.reviews[reviewIndex].rating | getStars(reviewData.reviews[reviewIndex].rating)"></span>
+                                </div>
+                                <p class=review-headings>
+                                  <span class="review-headings__date" itemprop="datePublished"
+                                    v-bind:content="reviewData.reviews[reviewIndex].reviewDate">{{
+                                    reviewData.reviews[reviewIndex].reviewDate }}</span>
+                                  <span class="seperator"> - </span><span class="review-headings__name">{{
+                                    reviewData.reviews[reviewIndex].reviewer.firstName }} {{
+                                    reviewData.reviews[reviewIndex].reviewer.lastName }}</span>
+                                </p>
+                                <p class="review-comments slimreviews_headline" itemprop="description">
+                                  <span v-if="reviewData.reviews[reviewIndex].commentsSnippet && !reviewData.reviews[reviewIndex].toggle">{{ reviewData.reviews[reviewIndex].commentsSnippet }}</span>
+                                  <span v-else>{{ reviewData.reviews[reviewIndex].comments }}</span>
+                                  <span
+                                        v-if="reviewData.reviews[reviewIndex].commentsSnippet && !reviewData.reviews[reviewIndex].toggle || reviewData.reviews[reviewIndex].commentsSnippet && reviewData.reviews[reviewIndex].toggle === true"
+                                        class="review-comments__toggle-widget" v-on:click="toggleText(reviewIndex)"
+                                        :inner-html.prop="reviewData.reviews[reviewIndex].toggle | getToggleText(reviewData.reviews[reviewIndex].toggle)"></span>
+                                </p>
+                              
+                              </div>
+                
+                
+                              <p class="review-link"><a class="link" :href="reviewData.reviews[reviewIndex].reviewUrl" target="_blank"
+                                  aria-label="Click to go to the original review source">{{ reviewData.reviews[reviewIndex].sourceType
+                                  }}</a></p>
+                              </p>
+                
+                
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                
+                    </div>
+                    
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+
+  </div>
+
+
+
+  <div data-sly-test="${model.displayType == 'staticwidget'}" class="reviews-widget container">
+    <section class="hero-cards">
+      <div class="reviews-root"></div>
+      <div class="container" >
+        <div class="row" >
+          <div class="col-12  ">
+            <div class="hero-cards-static">
+              <div class="hero-cards__card-extrusion extrusion-reviews"></div>
+              <div class="hero-cards__card-container static-container" >
+
+                <div class="row static-stars">
+                  <div class="col-lg-2 staticwidget_desktopview">
+
+                    <span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <sly data-sly-test="${properties.displayfivestars}"><span class="staticwidget_stars">★</span>
+                      </sly>
+                    </span>
+
+                  </div>
+                  <div class="col-lg-8" >
+                    <div class="staticwidget_headline"> ${properties.headlinetext || 'Most customers rank Vonage Contact
+                      Center 4/5 stars'}</div>
+
+                  </div>
+                  <div class="col-lg-2 staticwidget_mobileview">
+
+                    <span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <span class="staticwidget_stars">★</span>
+                      <sly data-sly-test="${properties.displayfivestars}"><span class="staticwidget_stars">★</span> </sly>
+                    </span>      
+                  </div>
+                  <div class="col-lg-2" >
+                    <p class="staticwidget_subheadline"><a href="${properties.href @ extension='html'}"
+                        target="${properties.target}"> ${properties.label|| 'See the reviews'}</a> </p>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

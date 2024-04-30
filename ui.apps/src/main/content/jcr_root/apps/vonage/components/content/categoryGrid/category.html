@@ -1,0 +1,9 @@
+<sly data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html" />
+
+<template data-sly-template.category="${@ link}">
+    <div class="category-grid__item">
+            <div data-sly-resource="${ @path='responsiveGrid',
+            resourceType='wcm/foundation/components/responsivegrid'}"></div>
+        <p class="category-grid__description">description</p>
+    </div>
+</template>

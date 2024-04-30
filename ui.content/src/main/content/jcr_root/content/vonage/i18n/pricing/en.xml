@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:language="en"
+  jcr:mixinTypes="[mix:language]"
+  jcr:primaryType="nt:folder">
+
+  <sms-sendMessage
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-sendMessage"
+    sling:message="Send a message"/>
+  <sms-receiveMessage
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-receiveMessage"
+    sling:message="Receive a message"/>
+  <sms-shortCode-shared
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-shortCode-shared"
+    sling:message="Shared"/>
+  <sms-shortCode-random
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-shortCode-random"
+    sling:message="Random (Dedicated)"/>
+  <sms-shortCode-vanity
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-shortCode-vanity"
+    sling:message="Vanity (Dedicated)"/>
+  <voice-makeCall-standard
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-voice-makeCall-standard"
+    sling:message="Make a call"/>
+  <voice-makeCall-mobile
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-voice-makeCall-mobile"
+    sling:message="Make a call to a mobile number"/>
+  <voice-makeCall-landline
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-voice-makeCall-landline"
+    sling:message="Make a call to a landline number"/>
+  <voice-receiveCall
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-voice-receiveCall"
+    sling:message="Receive a call"/>
+  <rental-sms
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-sms"
+    sling:message="SMS"/>
+  <rental-voice
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-voice"
+    sling:message="Voice"/>
+  <rental-smsVoice
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-smsVoice"
+    sling:message="SMS and Voice"/>
+  <rental-virtual
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-virtual"
+    sling:message="Rent a virtual phone number"/>
+  <rental-tollFree
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-tollFree"
+    sling:message="Rent a toll free number"/>
+  <rental-shortCode
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rental-shortCode"
+    sling:message="Rent a short code"/>
+  <sip-pstn-standard
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-pstn-standard"
+    sling:message="Using PSTN Leg"/>
+  <sip-pstn-mobile
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-pstn-mobile"
+    sling:message="Using PSTN Leg (mobile)"/>
+  <sip-pstn-landline
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-pstn-landline"
+    sling:message="Using PSTN Leg (landline)"/>
+  <sip-sipLeg
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-sipLeg"
+    sling:message="Using SIP Leg"/>
+  <sip-numberPorting
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-numberPorting"
+    sling:message="Number Porting"/>
+  <sip-firstFifty
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-firstFifty"
+    sling:message="US or Canada up to 50 local numbers"/>
+  <sip-beyondFifty
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-beyondFifty"
+    sling:message="Additional numbers beyond first 50"/>
+  <sip-included
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-included"
+    sling:message="Included"/>
+  <sip-availabilityAndPricing
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-availabilityAndPricing"
+    sling:message="Availability and Pricing"/>
+  <verify-verifyNumber
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-verify-verifyNumber"
+    sling:message="Verify a number"/>
+  <legal-perMessage
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-legal-perMessage"
+    sling:message="per message"/>
+  <legal-perMinute
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-legal-perMinute"
+    sling:message="per minute"/>
+  <legal-perMonth
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-legal-perMonth"
+    sling:message="per month"/>
+  <endNote-sms-virtual-us
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-virtual-us"
+    sling:message="* Additional carrier fees apply for U.S. long code messages transmitted on some U.S. networks. See below."/>
+  <endNote-sms-virtual-ca
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-virtual-ca"
+    sling:message="* Additional carrier fees apply for messages sent through the Rogers, Telus and Bell networks. See below."/>
+  <endNote-sms-shortCode-us-1
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-us-1"
+    sling:message="* Additional carrier fees apply for U.S. short code messages transmitted on some U.S. networks. See below."/>
+  <endNote-sms-shortCode-us-2a
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-us-2a"
+    sling:message="** There is a minimum 3 month term."/>
+  <endNote-sms-shortCode-us-2b
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-us-2b"
+    sling:message="to purchase a short code."/>
+  <endNote-sms-shortCode-ca-1a
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-ca-1a"
+    sling:message="* There is a minimum 3 month term."/>
+  <endNote-sms-shortCode-ca-1b
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-ca-1b"
+    sling:message="to purchase a short code."/>
+  <endNote-sms-shortCode-ca-2
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-endNote-sms-shortCode-ca-2"
+    sling:message="* One time set up fee of €1912 applies. There is a minimum 3 month term."/>
+  <currency-disclaimer-1
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-currency-disclaimer-1"
+    sling:message="Pricing is updated every hour and will fluctuate based on"/>
+  <currency-disclaimer-2
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-currency-disclaimer-2"
+    sling:message="carrier costs and current exchange rate (between USD and EUR)."/>
+  <sip-connect
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sip-connect"
+    sling:message="SIP Connect"/>
+  <virtual-phone-number
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-virtual-phone-number"
+    sling:message="Virtual Phone Number"/>
+  <toll-free-number
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-toll-free-number"
+    sling:message="Toll Free Number"/>
+  <short-code
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-short-code"
+    sling:message="Short Code"/>
+  <free
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-free"
+    sling:message="Free"/>
+  <make-a-call-title
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-make-a-call-title"
+    sling:message="Make a Call"/>
+  <verify-title
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-verify-title"
+    sling:message="Verify"/>
+  <verify-feature-1
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-verify-feature-1"
+    sling:message="No need to purchase virtual numbers, we deliver using a short code or long code depending on carrier requirements."/>
+  <verify-feature-2
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-verify-feature-2"
+    sling:message="Verify uses a pre-approved short code, saving you thousands of dollars per year."/>
+  <verify-feature-3
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-verify-feature-2"
+    sling:message="Send Verifications today without experiencing setup delays or fees."/>
+  <vng-plans-banner-basic
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-plans-banner-basic"
+    sling:message="Basic"/>
+  <verify-plans-banner-mostPopular
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-plans-banner-mostPopular"
+    sling:message="Most popular"/>
+  <vng-plans-banner-allTheBells
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-plans-banner-allTheBells"
+    sling:message="All the bells &#38; whistles"/>
+  
+</jcr:root>

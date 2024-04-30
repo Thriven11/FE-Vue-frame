@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Quantity Slider"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_text_v2"
+    trackingFeature="core-components:text:v2">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <contentSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                                 <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Headline"
+                                                name="./headline">
+                                                
+                                            </headline>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                path="vonage/components/utils/rte/rte_dialog_namespace"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                               <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Description"
+                                                    namee="./description"/>
+                                            </description>
+                                            <segment1Label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                path="vonage/components/utils/rte/rte_dialog_namespace"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Label"
+                                                    namee="./segment1Label"/>
+                                            </segment1Label>
+                                            <segment1Max
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Set the maximum value for this segment"
+                                                fieldLabel="Maximum Value"
+                                                max="10000"
+                                                min="1"
+                                                name="./segment1Maximum"
+                                                step="1"/>
+                                            <segment2Label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                path="vonage/components/utils/rte/rte_dialog_namespace"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Label"
+                                                    namee="./segment2Label"/>
+                                            </segment2Label>
+                                            <segment2Max
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Set the maximum value for this segment"
+                                                fieldLabel="Maximum Value"
+                                                max="10000"
+                                                min="1"
+                                                name="./segment2Maximum"
+                                                step="1"/>
+                                            <segment3Label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                path="vonage/components/utils/rte/rte_dialog_namespace"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Label"
+                                                    namee="./segment3Label"/>
+                                            </segment3Label>
+
+                                                <segment3Max
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldDescription="Set the maximum value for this segment"
+                                                    fieldLabel="Maximum Value"
+                                                    max="10000"
+                                                    min="1"
+                                                    name="./segment3Maximum"
+                                                    step="1"/>
+                                                    
+                                                     <anchor jcr:primaryType="nt:unstructured" required="false" fieldLabel="ID" name="./anchor" fieldDescription="This is the anchor used for on-page navigation.  Set each category link to a unique ID so that when the user clicks, they jump to this content." sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                                    
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </contentSection>
+                    <sliderOption
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Slider Options"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hideSlider
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./hideSlider"
+                                                text="Hide Slider?"
+                                                value="{Boolean}true"
+                                                granite:class="hideSlider"/>
+                                            <inline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./inlineSelector"
+                                                text="Input field in Single line?"
+                                                value="{Boolean}true"
+                                                granite:class="inlineSelector"/>       
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </sliderOption>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,48 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LightboxCtaComponentModel"/>
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  data-emptytext="${component.title} Component"
+></div>
+
+<section class="form-overlay">
+  <div
+    class="form-overlay__trigger"
+    data-sly-test="${!properties.hasExternalTrigger}"
+  >
+    <button class="${properties.ctaBackgroundColor}">
+      ${properties.label}
+    </button>
+  </div>
+  <div
+    class="form-overlay__overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="form"
+    data-external-trigger-id="${properties.externalTriggerId}"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-right">
+          <button
+            class="Vlt-icon-close form-overlay__close"
+            aria-label="Close modal"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <!-- Form Goes Here ${model.formPath} -->
+    <sly
+      data-sly-test="${model.formPath}"
+      data-sly-resource="${model.formPath}"
+    />
+
+      <!-- Insert Success State Here ${model.confMessagePath} -->
+      <sly
+        data-sly-test="${model.confMessagePath}"
+        data-sly-resource="${model.confMessagePath}/jcr:content/root"
+      />
+
+  </div>
+</section>

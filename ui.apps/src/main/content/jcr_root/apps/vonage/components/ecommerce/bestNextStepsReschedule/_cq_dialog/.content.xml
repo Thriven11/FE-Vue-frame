@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Best next steps reschedule"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <confirmation
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Confirmation"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Confirmation title"
+                                                name="./confirmTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <message
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Scheduled call confirmation message"
+                                                name="./confirmMessage"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <soonMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="'As soon as possible' confirmation message"
+                                                name="./soonConfirmMessage"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <endCTAText
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Primary CTA text"
+                                                name="./endCTAText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <endCTAUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Primary CTA URL"
+                                                name="./endCTAUrl"
+                                                rootPath="/content/vonage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </confirmation>
+                    <reschedule
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Reschedule form"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <question
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Best time to call question"
+                                                name="./bestTimeToCall"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <rescheduleSecondaryText
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Secondary CTA text"
+                                                name="./rescheduleSecondaryText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <rescheduleSecondaryUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Secondary CTA URL"
+                                                name="./rescheduleSecondaryUrl"
+                                                rootPath="/content/vonage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </reschedule>
+                    <excludedDates jcr:primaryType="nt:unstructured" 
+                      jcr:title="Excluded dates" 
+                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                        <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                          <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                <excludedDates
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                  fieldDescription="Click 'Add field' to add new excluded dare"
+                                  fieldLabel="Excluded dates">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="Date" 
+                                    displayedFormat="MM-DD-YYYY"
+                                    required="true"
+                                    type="date"
+                                    name="./excludedDates"/>
+                              </excludedDates>
+                              </items>
+                            </column>
+                          </items>
+                        </columns>
+                      </items>
+                    </excludedDates>
+                    <cancel
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cancel form"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <question
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Cancel question"
+                                                name="./confirmCancelTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <keep
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Keep appointment CTA"
+                                                name="./keepAppointmentCtaText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cancel
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Cancel appointment CTA"
+                                                name="./cancelCtaText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cancelConfirmedTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Cancelled confirmation title"
+                                                name="./cancelledTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cancelMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Cancelled confirmation message"
+                                                name="./cancelledMessage"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cancelConfirmed
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Scheduled call cancel confirmation"
+                                                name="./cancelConfirmedTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <cancelConfirmed
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="'As soon as possible' call cancel confirmation"
+                                                name="./soonCancelConfirmedTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <rescheduleACall
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Reschedule CTA"
+                                                name="./rescheduleACall"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </cancel>
+                    <add-to-calendar
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Add to calendar"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Add to calendar text"
+                                                name="./addCalendarTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <eventTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Calendar new event title"
+                                                name="./calendarEventTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <eventTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Calendar new event description"
+                                                name="./calendarEventDescription"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </add-to-calendar>
+                    <event-not-found
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Event not found"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <notfoundTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Event not found title"
+                                                name="./notfoundTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <notfoundMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Event not found message"
+                                                name="./notfoundMessage"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <notfoundPrimaryCTAText
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Primary CTA text"
+                                                name="./notfoundPrimaryCTAText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <notfoundPrimaryCTAUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Primary CTA URL"
+                                                name="./notfoundPrimaryCTAUrl"
+                                                rootPath="/content/vonage"/>
+                                            <notfoundSecondaryCTAText
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Secondary CTA text"
+                                                name="./notfoundSecondaryCTAText"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <notfoundSecondaryCTAUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Secondary CTA URL"
+                                                name="./notfoundSecondaryCTAUrl"
+                                                rootPath="/content/vonage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </event-not-found>
+                    <asset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Image"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                multiple="{Boolean}false"
+                                                name="./file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <alt
+                                                jcr:primaryType="nt:unstructured"
+                                                required="true"
+                                                fieldLabel="Alternative Text"
+                                                name="./alt"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </asset>
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true" 
+                            sling:hideResource="true"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

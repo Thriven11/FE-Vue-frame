@@ -1,0 +1,13 @@
+<p data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start row"
+   data-emptytext="${component.title} Component"></p>
+<!--/*  Unique ID for targeting */-->
+<div class="faq__item tab" id="faq${resource.path.hashCode}">
+  <!--/*  Animation Trigger */-->
+  <input type="checkbox" id="chck${resource.path.hashCode}" class="hideme" tabindex="-1">
+
+  <!--/*  FAQ Question */-->
+  <label class="tab-label" for="chck${resource.path.hashCode}"><span class="faq__label" data-sly-test="${properties.questionLabel}">${properties.questionLabel} </span>${properties.question}</label>
+
+  <!--/*  FAQ Answer */-->
+  <div class="faq__content tab-content cmp-text"><span class="faq__label" data-sly-test="${properties.answerLabel}">${properties.answerLabel}</span> <span class="faq__answer">${properties.answer @context='html'}</span></div>
+</div>

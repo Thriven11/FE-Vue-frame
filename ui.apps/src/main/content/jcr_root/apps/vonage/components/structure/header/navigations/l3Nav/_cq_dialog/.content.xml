@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="L3 Nav Links"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+                <l3Nav jcr:primaryType="nt:unstructured" cq:showOnCreate="false" sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">
+                        <l3Nav jcr:primaryType="nt:unstructured" composite="true" fieldDescription="Click 'Add Field' to add new L3 Nav links to the page and its children pages" fieldLabel="Navigation Links" sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                            <field jcr:primaryType="nt:unstructured" name="./links" sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <cta jcr:primaryType="nt:unstructured" path="/apps/vonage/components/utils/cta/cta_dialog_without_aria_label" sling:resourceType="granite/ui/components/foundation/include"/>
+                                </items>    
+                            </field>
+                        </l3Nav>
+                    </items>
+                </l3Nav>
+        </items>
+    </content>
+</jcr:root>

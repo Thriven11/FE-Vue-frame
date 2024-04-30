@@ -1,0 +1,4 @@
+<sly data-sly-use.model="com.vonage.core.models.content.BioComponentModel"></sly>
+<sly data-sly-test="${model.bio}">
+	<sly data-sly-resource="${model.bio @ wcmmode='disabled'}/jcr:content/root/bio" />
+</sly>

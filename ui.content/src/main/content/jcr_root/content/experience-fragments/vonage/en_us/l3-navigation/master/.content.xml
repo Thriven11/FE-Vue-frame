@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/vonage/settings/wcm/templates/experience-fragment-page"
+		cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="L3 Navigation"
+        sling:resourceType="vonage/components/structure/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <l3navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/resources/l3Navigation"
+                categoriesLabel="Category:"
+                title="Category">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    href="/content/vonage/en-us/homepage/resources"
+                    label="Featured"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    href="/content/vonage/en-us/homepage/articles"
+                    label="Articles"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    href="/content/vonage/en-us/homepage/customer-stories"
+                    label="Customer Stories"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    href="/content/vonage/en-us/homepage/company-news"
+                    label="Company news"/>
+                <item4
+                    jcr:primaryType="nt:unstructured"
+                    href="/content/vonage/en-us/homepage/whitepapers-and-guides"
+                    label="Whitepapers and Guides"/>
+                <links jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        href="/content/vonage/en_us/resources"
+                        label="Featured"
+                        target="_self"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        href="/content/vonage/en_us/articles"
+                        label="Articles"
+                        target="_self"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        href="/content/vonage/en_us/customer-stories"
+                        label="Customer Stories"
+                        target="_self"/>
+                    <item3
+                        jcr:primaryType="nt:unstructured"
+                        href="/content/vonage/en_us/company-news"
+                        label="Company news"
+                        target="_self"/>
+                    <item4
+                        jcr:primaryType="nt:unstructured"
+                        href="/content/vonage/en_us/whitepaper-and-guides"
+                        label="Whitepapers and Guides"
+                        target="_self"/>
+                </links>
+            </l3navigation>
+        </root>
+    </jcr:content>
+</jcr:root>

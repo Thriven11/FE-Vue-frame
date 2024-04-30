@@ -1,0 +1,13 @@
+<section class="col-12 offset-md-1 col-md-10 offset-lg-2 col-lg-7" data-sly-use.model="com.vonage.core.models.content.PressReleaseHomeComponentModel">
+    <div class="cmp-text" data-sly-list.article="${model.getPageList}">
+        <div class="content">
+            <p>${article.datePublished}</p>
+            <p><a href="${article.path}" target="_blank">${article.title @ context='html'}</a></p>
+        </div>
+    </div>
+    <div class="cmp-text">
+        <div class="content">
+            <p><a href="https://ir.vonage.com/press-releases/2020" target="_blank">See all press releases</a></p>
+        </div>
+    </div>
+</section>

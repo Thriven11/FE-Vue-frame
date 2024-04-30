@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  externalizer.domains="[local https://author-vonageholdingscorp-dev65-a.adobecqms.net,
+author http://author1.dev.vonage.adobecqms.net/,
+publish https://qa-www.vonage.com,
+publish_us-en https://qa-www.vonage.com,
+publish_fr-fr https://qa-www.vonage.fr,
+publish_ph-en https://qa-www.vonage.com.ph,
+publish_au-en https://qa-www.vonage.com.au,
+publish_gb-en https://qa-www.vonage.co.uk,
+publish_my-en https://qa-www.vonage.com.my,
+publish_sg-en https://qa-www.vonage.sg,
+publish_nz-en https://qa-www.vonage.nz,
+publish_ca-en https://qa-www.vonage.ca/en,
+publish_ca-fr https://qa-www.vonage.ca/fr,
+publish_id-en https://qa-www.vonage.id,
+publish_hk-en https://qa-www.vonage.hk,
+publish_br-es https://qa-www.vonage.com.br,
+publish_co-es https://qa-www.vonage.co,
+publish_mx-es https://qa-www.vonage.mx,
+publish_ar-es https://qa-www.vonage.com.ar,
+publish_es-es https://qa-www.vonage.com.es,
+publish_cl-es https://qa-www.vonage.cl,
+publish_jp-ja https://qa-www.vonagebusiness.jp,
+publish_kr-ko https://qa-www.vonage.kr,
+publish_cn-zh https://qa-www.vonagebusiness.cn,
+publish_ru-ru https://qa-www.vonage.ru,
+publish_de-de https://qa-www.vonagebusiness.de,
+publish_br-pt https://qa-www.vonage.com.br,
+publish_tw-en https://qa-www.vonage.com.tw
+]"/>

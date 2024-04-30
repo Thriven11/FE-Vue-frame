@@ -1,0 +1,20 @@
+<sly data-sly-use.headerComponentModel="com.vonage.core.models.structure.header.HeaderComponentsModel"
+    data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel"
+    data-sly-use.headerComponents="headerComponents.html"/>
+
+<div hidden>
+  <span id="new-window">Opens in a new window</span>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a class="skip-to-main sr-only" href="#main-content">${headerComponentModel.skipButtonLabel}</a>
+    </div>
+  </div>
+</div>
+
+<sly data-sly-include="headerEditMode"/>
+<header class="Vlt-header ${ (l3NavModel.isL3NavActive) ? 'Vlt-header--l3' : ''}" data-sly-test="${!wcmmode.edit}" data-swiftype-index="false">
+  <sly data-sly-call="${headerComponents.template @ headerComponentModel=headerComponentModel}" />
+</header>

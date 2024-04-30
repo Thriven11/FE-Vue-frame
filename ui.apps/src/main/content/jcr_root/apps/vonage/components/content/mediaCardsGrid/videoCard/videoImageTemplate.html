@@ -1,0 +1,17 @@
+<template data-sly-template.videoImageContent="${@ dataVideoId, caption, ariaLabel}">
+  <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+    <div class="slim-video" data-video-id="${dataVideoId}">
+        <div class="slim-video__placeholder">
+            <sly data-sly-call="${template.cfImage @ cssClass='slim-video__image', original='500', xlg='500', lg='300', md='680', sm='500'}"/>
+            <button class="slim-video__cta"
+                    aria-label="${ariaLabel}">
+                        <span class="Vlt-icon-play-video">
+                          <span class="Vlt-icon-play-video--background"></span>
+                        </span>
+                <span class="Vlt-icon-play-video">
+                          <span class="Vlt-icon-play-video--arrow"></span>
+                        </span>
+            </button>
+        </div>
+    </div>
+</template>

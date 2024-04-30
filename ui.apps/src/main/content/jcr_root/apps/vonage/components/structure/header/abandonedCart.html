@@ -1,0 +1,57 @@
+<template data-sly-template.template="${@ headerComponentModel}">
+    <div id="abandoned-cart-modal" class="vng-modal" data-sly-test="${headerComponentModel.abandonedCartModalHeader != null}">
+        <section
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="v16-modal-trigger"
+        class="vng-modal__overlay"
+        open="open"
+        >
+        <div class="vng-modal__backdrop"></div>
+        <div class="vng-modal__content-wrapper">
+            <div class="row no-gutters justify-content-md-center">
+            <div class="col-12 col-lg-8">
+                <div class="vng-modal__content">
+                <button
+                    aria-label="Close modal"
+                    class="vng-modal__close Vlt-icon-close"
+                ></button>
+                <div class="text-center leave-cart leave-cart--abandoned">
+                    <h4 class="leave-cart__headline h4">
+                        ${headerComponentModel.abandonedCartModalHeader @ context='text'}
+                    </h4>
+                    <div class="leave-cart__description p2">
+                    <!-- RTE -->
+                        ${headerComponentModel.abandonedCartModalText @ context='html'}
+                    <!-- END RTE -->
+                    </div>
+                    <div class="leave-cart__ctas">
+                    <div class="leave-cart__cta">
+                        <a class="btn" href="${headerComponentModel.link.href @ context='uri'}">
+                            ${headerComponentModel.link.label @ context='text'}
+                        </a>
+                    </div>
+                    <div class="leave-cart__cta">
+                        <a
+                          class="link"
+                          href="${headerComponentModel.abandonedCartModalLinkUrl @ context='uri'}"
+                          data-sly-test="${headerComponentModel.abandonedCartModalLinkUrl}"
+                          >
+                          ${headerComponentModel.abandonedCartModalLinkText @ context='text'}
+                        </a>
+                        <button
+                          class="link"
+                          data-sly-test="${!headerComponentModel.abandonedCartModalLinkUrl}"
+                        >
+                            ${headerComponentModel.abandonedCartModalLinkText @ context='text'}
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+    </div>
+</template>

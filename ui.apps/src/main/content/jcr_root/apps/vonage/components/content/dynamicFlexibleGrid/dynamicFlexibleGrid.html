@@ -1,0 +1,19 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LogoStripModel"/>
+
+<sly data-sly-use.itemCount="itemCount.js" data-sly-unwrap />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+	 data-emptytext="${component.title} Component" style="height:150px; min-width:600px"></div>
+
+     <div class="container">
+        <div class="row">
+              <sly data-sly-list.card="${itemCount.array}">
+                 <div class="col" data-sly-test.resourceNode="${['dynamicFlexGrid', card.intValue] @join='-'}">
+                    <sly data-sly-resource="${ @path=resourceNode,
+                     resourceType='wcm/foundation/components/responsivegrid'}"
+                     data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+                     </sly>
+                  </div>
+              </sly>
+         </div>
+    </div>

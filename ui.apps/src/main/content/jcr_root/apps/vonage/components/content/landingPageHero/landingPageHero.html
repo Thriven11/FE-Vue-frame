@@ -1,0 +1,58 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LandingPageHeroComponentModel" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<header class="landing-page-hero ${model.mediaContained} ${model.mediaFloating} ${model.mediaLandscape} ${model.noSpace} ${model.addPadding} ${model.backgroundColor} ${model.alternateClouds} ${model.subcopy ? 'landing-page-hero--has-price' : ''}">
+
+  <div data-sly-test="${!model.hideBreadcrumbs}" style="height:auto; width: auto;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+    <sly data-sly-resource="${'breadcrumb' @resourceType='vonage/components/content/breadcrumb', addSelectors='light'}"/>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-6">
+        <h1 class="landing-page-hero__title">${model.title}</h1>
+        <div class="landing-page-hero__price-container" data-sly-test="${model.subcopy}">
+          <span class="landing-page-hero__price-currency">${model.priceCurrency}</span>
+          <span class="landing-page-hero__price">${model.subcopy}</span>
+          <span class="landing-page-hero__price-unit"> ${model.priceUnit}</span>
+          <div class="landing-page-hero__price-description">${model.priceDescription}</div>
+        </div>
+        <span class="landing-page-hero__description">${model.description @ context='html'}</span>
+        <div class="landing-page-hero__ctas">
+
+          <div style="width:auto; min-width: 120px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+            <sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn-light-unsafe'}"></sly>
+            <sly data-sly-test="${properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-light'}"></sly>
+          </div>
+          <div style="width:auto; min-width: 120px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+            <sly data-sly-test="${!properties.secondaryLightbox}" data-sly-resource="${'cta-2' @resourceType='/apps/vonage/components/content/cta', addSelectors='btn-secondary-light'}"></sly>
+            <sly data-sly-test="${properties.secondaryLightbox}" data-sly-resource="${'cta-2' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-secondary-light'}"></sly>
+          </div>
+
+
+        </div>
+        <sly data-sly-test="${properties.endNote}" data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+      </div>
+      <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center">
+	      <sly data-sly-test="${model.mediaType == 'image'}">
+          <div class="landing-page-hero__background ${properties.hideMedia ? 'hide-media' : '' @context='styleString'}" style="background-image: url(${model.backgroundImage @context='unsafe'});">
+            <sly data-sly-resource="${'heroMediaContainer' @resourceType='vonage/components/content/landingPageHero/heroMediaContainer'}"/>
+          </div>
+        </sly>
+        <sly data-sly-test="${model.mediaType == 'video'}">
+          <div class="landing-page-hero__background landing-page-hero__inline-video ${properties.hideMedia ? 'hide-media' : '' @context='styleString'}">
+            <sly data-sly-resource="${'heroVideoContainer' @resourceType='vonage/components/utils/inlineVideo'}"/>
+          </div>
+        </sly>
+        <sly data-sly-test="${model.mediaType == 'embed'}">
+          <div class="landing-page-hero__background ${properties.hideMedia ? 'hide-media' : '' @context='styleString'}">
+            <div class="landing-page-hero__media-container">
+              <sly data-sly-resource="${'heroEmbedContainer' @resourceType='vonage/components/content/embed'}"/>
+            </div>
+          </div>
+        </sly>
+      </div>
+    </div>
+  </div>
+</header>

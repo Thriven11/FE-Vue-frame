@@ -1,0 +1,13 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--textarea">
+  <div class="Vlt-textarea Vlt-form__textarea-container">
+    <textarea data-sly-test="${!properties.isRequired}" class="Vlt-form__textarea" id="comments-${model.uuid}" name="comments" rows="4" cols="50"></textarea>
+    <textarea data-sly-test="${properties.isRequired}" class="Vlt-form__textarea" id="comments-${model.uuid}" name="comments" rows="4" cols="50" required></textarea>
+    <label data-sly-test="${properties.title}" class="Vlt-form__input-label" for="comments-${model.uuid}">${properties.title}</label>
+    <label data-sly-test="${!properties.title}" class="Vlt-form__input-label" for="comments-${model.uuid}">${'vng-message' @ i18n}</label>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

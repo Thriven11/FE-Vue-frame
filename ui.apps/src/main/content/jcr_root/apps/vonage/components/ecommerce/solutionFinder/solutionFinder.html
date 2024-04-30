@@ -1,0 +1,108 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.solutionfinder.SolutionFinderModel" />
+<sly data-sly-use.addPlanCtaURL="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.planRecommendation.addPlanCtaURL}" />
+<sly data-sly-use.moreInfoCtaUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.planRecommendation.moreInfoCtaUrl}" />
+<sly data-sly-use.contactSalesLink="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.companySize.contactSalesCtaURL}" />
+<sly data-sly-use.yesCheckboxLabel="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.phonesAndAccesories.yesCheckboxLabel}" />
+<sly data-sly-use.noCheckboxLabel="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.phonesAndAccesories.noCheckboxLabel}" />
+<div data-sly-test="${wcmmode.edit}"
+	class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+
+<section class="solution-finder">
+  <div id="v-solution-finder"></div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="countryCode" value="${currentPage.language.country}">
+    <input type="hidden" name="language" value="${currentPage.language.language}">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+
+    <!-- Labels -->
+    <input type="hidden" name="addToPlan" value="${'vng-ecomm-addToPlan' @ i18n}">
+    <input type="hidden" name="back" value="${'vng-ecomm-back' @ i18n}">
+    <input type="hidden" name="continue" value="${'vng-ecomm-continue' @ i18n}">
+    <input type="hidden" name="edit" value="${'vng-ecomm-edit' @ i18n}">
+    <input type="hidden" name="learnMore" value="${'vng-ecomm-learnMore' @ i18n}">
+    <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+    <input type="hidden" name="perLine" value="${'vng-ecomm-perLine' @ i18n}">
+    <input type="hidden" name="remove" value="${'vng-ecomm-remove' @ i18n}">
+    <input type="hidden" name="tax" value="${'vng-ecomm-tax' @ i18n}">
+    <input type="hidden" name="taxes" value="${'vng-ecomm-taxes' @ i18n}">
+    <input type="hidden" name="taxesAndFees" value="${'vng-ecomm-taxesAndFees' @ i18n}">
+    <input type="hidden" name="update" value="${'vng-ecomm-update' @ i18n}">
+    <input type="hidden" name="completed" value="${'vng-ecomm-completed' @ i18n}">
+    <input type="hidden" name="urlCopiedMessage" value="${'vng-ecomm-urlCopiedMessage' @ i18n}">
+
+    <!-- STEP 0 - Choose Devices -->
+    <input type="hidden" name="chooseDevicesEyebrow" value="${model.chooseDevice.eyebrow @ context='attribute'}">
+    <input type="hidden" name="chooseDevicesTitle" value="${model.chooseDevice.title @ context='attribute'}">
+    <sly data-sly-list.card="${model.chooseDevice.deviceCardList}">
+        <input type="hidden" name="card${cardList.index}_title" value="${card.title @ context='attribute'}">
+        <input type="hidden" name="card${cardList.index}_value" value="${card.categoryId @ context='attribute'}">
+        <input type="hidden" name="card${cardList.index}_image" value="${card.imageFileReference @ context='attribute'}">
+        <input type="hidden" name="card${cardList.index}_altText" value="${card.imageAltText @ context='attribute'}">
+    </sly>
+
+    <!-- STEP 1- Company Size -->
+    <input type="hidden" name="companySizeEyebrow" value="${model.companySize.eyebrow @ context='attribute'}">
+    <input type="hidden" name="companySizeTitle" value="${model.companySize.title @ context='attribute'}">
+    <input type="hidden" name="companySizeDescription" value="${model.companySize.label @ context='attribute'}">
+    <input type="hidden" name="companySizeRangeStart" value="${model.companySize.rangeStart @ context='attribute'}">
+    <input type="hidden" name="companySizeRangeEnd" value="${model.companySize.rangeEnd @ context='attribute'}">
+    <input type="hidden" name="companySizeMaxSmallRange" value="${model.companySize.segment1MaxValue @ context='attribute'}">
+    <input type="hidden" name="companySizeMaxMediumRange" value="${model.companySize.segment2MaxValue @ context='attribute'}">
+    <input type="hidden" name="companySizeSegment1Label" value="${model.companySize.segment1Label @ context='attribute'}">
+    <input type="hidden" name="companySizeSegment2Label" value="${model.companySize.segment2Label @ context='attribute'}">
+    <input type="hidden" name="companySizeSegment3Label" value="${model.companySize.segment3Label @ context='attribute'}">
+    <input type="hidden" name="contactSales" value="${model.companySize.contactSalesCtaText @ context='attribute'}">
+    <input type="hidden" name="contactSalesLink" value="${contactSalesLink.externalUrl @ context='attribute'}">
+
+    <!-- STEP 2 - Goals -->
+    <input type="hidden" name="goalsEyebrow" value="${model.goals.eyebrow @ context='attribute'}">
+    <input type="hidden" name="goalsTitle" value="${model.goals.title @ context='attribute'}">
+    <input type="hidden" name="goalsSubTitle" value="${model.goals.subtitle @ context='attribute'}">
+
+    <!-- STEP 3 - Summary Plan -->
+
+    <!-- Plan Recommendation -->
+    <input type="hidden" name="planRecommendationEyebrow" value="${model.planRecommendation.eyebrow @ context='attribute'}">
+    <input type="hidden" name="planRecommendationParagraph1" value="${model.planRecommendation.featuresText @ context='attribute'}">
+    <input type="hidden" name="planRecommendationParagraph2" value="${model.planRecommendation.additionalFeaturesText @ context='attribute'}">
+    <input type="hidden" name="planRecommendationImage" value="${model.planRecommendation.imageFileReference @ context='attribute'}">
+    <input type="hidden" name="planRecommendationImageAlt" value="${model.planRecommendation.imageAltText @ context='attribute'}">
+
+    <!-- Cost Section -->
+    <input type="hidden" name="costSectionTitle" value="${model.planRecommendation.costTitle @ context='attribute'}">
+    <input type="hidden" name="costSectionDescription" value="${model.planRecommendation.costDescription @ context='attribute'}">
+    <input type="hidden" name="costSectionDetail" value="${model.planRecommendation.costDisclaimer @ context='attribute'}">
+    <input type="hidden" name="copyPageLink" value="${model.planRecommendation.copyUrlCtaText @ context='attribute'}">
+    <input type="hidden" name="addPlanToCart" value="${model.planRecommendation.addPlanCtaText @ context='attribute'}">
+    <input type="hidden" name="planSummaryUrl" value="${addPlanCtaURL.externalUrl @ context='attribute'}">
+
+    <!-- More Info -->
+    <input type="hidden" name="moreInfo_headline" value="${model.planRecommendation.moreInfoHeadline @ context='attribute'}">
+    <input type="hidden" name="moreInfo_subhead" value="${model.planRecommendation.moreInfoSubHeadline @ context='attribute'}">
+    <input type="hidden" name="moreInto_CTAUrl"  value="${moreInfoCtaUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="moreInto_CTAText" value="${model.planRecommendation.moreInfoCtaText @ context='attribute'}">
+
+    <!-- STEP 4 - Phones Accessories -->
+    <input type="hidden" name="phonesAccessoriesEyebrow" value="${model.phonesAndAccesories.eyebrow @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesTitle" value="${model.phonesAndAccesories.title @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesYes" value="${yesCheckboxLabel.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesNo" value="${noCheckboxLabel.externalizedHtml@ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesDefaultAnswer" value="${model.phonesAndAccesories.defaultAnswer @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesLeftImage" value="${model.phonesAndAccesories.leftImageFileReference @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesLeftImageAltText" value="${model.phonesAndAccesories.leftImageAltText @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesRightImage" value="${model.phonesAndAccesories.rightImageFileReference @ context='attribute'}">
+    <input type="hidden" name="phonesAccessoriesRightImageAltText" value="${model.phonesAndAccesories.rightImageAltText @ context='attribute'}">
+
+    <!-- STEP 5 - Addons -->
+    <input type="hidden" name="addOnsEyebrow" value="${model.addons.eyebrow @ context='attribute'}">
+    <input type="hidden" name="addOnsTitle" value="${model.addons.title @ context='attribute'}">
+    
+    <input type="hidden" name="tabOneLabel" value="${properties.tabOneLabel || 'Add-ons' }">
+    <input type="hidden" name="tabTwoLabel" value="${properties.tabTwolabel || 'Phones'}">
+    <input type="hidden" name="tabThreeLabel" value="${properties.tabThreeLabel ||' Services and Integrations' }">
+    <input type="hidden" name="authorServices" value="${properties.tabThreeSubProductOne ||' Professional Services' }">
+    <input type="hidden" name="authorIntegrations" value="${properties.tabThreeSubProductTwo ||' Integrations' }">
+  </div>
+</section>

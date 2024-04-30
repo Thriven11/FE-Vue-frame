@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LogoStripModel"/>
+
+<sly data-sly-use.itemCount="itemCount.js" data-sly-unwrap />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+	 data-emptytext="${component.title} Component" style="height:150px; min-width:600px"></div>
+
+<div class="container">
+    <!--/* <div data-sly-test="${model.headline}"  class="col-12 ">
+        <h2 class="l__headline">${model.headline}</h2>
+      </div> */-->
+	<div class="row">
+         <sly data-sly-list.card="${itemCount.array}">
+             <sly class="col" data-sly-test.resourceNode="${['logo', card.intValue] @join='-'}">
+                <sly data-sly-resource="${ @path=resourceNode,
+                 resourceType='vonage/components/content/flexibleGrid/textImageCard'}"
+                 data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}"></sly>
+                </sly>
+          </sly>
+ 	</div>
+</div>

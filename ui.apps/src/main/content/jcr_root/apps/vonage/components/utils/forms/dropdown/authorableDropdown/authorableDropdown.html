@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.vonage.core.models.content.AuthorableDropDown" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+    <div class="Vlt-select">
+        <!--/* NOTE: Option values set below, translations set in vonage/i18n/forms/en.xml */-->
+        <select data-sly-test="${!properties.isOptional}" id="${model.id}" name="${model.name}"
+            class="Vlt-form__select" required>
+            <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+            <sly data-sly-list="${model.multifields}">
+
+
+                <option value=${item.value}>${item.label}</option>
+            </sly>
+        </select>
+        <select data-sly-test="${properties.isOptional}" id="${model.id}" name="${model.name}"
+            class="Vlt-form__select" autocomplete="off">
+            <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+            <sly data-sly-list="${model.multifields}">
+
+
+                <option value=${item.value}>${item.label}</option>
+            </sly>
+        </select>
+        <label class="Vlt-form__input-label">
+            <sly data-sly-test="${!properties.isOptional}">${model.authorablelabel}</sly>
+            <sly data-sly-test="${properties.isOptional}">${model.authorablelabel}</sly>
+        </label>
+    </div>
+    <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+        <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+    </small>
+</div>

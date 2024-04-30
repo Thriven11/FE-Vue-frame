@@ -1,0 +1,14 @@
+<sly data-sly-use.model="${'com.vonage.core.models.content.videos.VideoComponentModel'}"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+  <section class="videoCard">
+    <div class="videoContent">
+      <sly data-sly-include="videoContent.html"/>
+    </div>
+    <div class="Vlt-card-image__body">
+        <sly data-sly-include="videoHeader.html"/>
+    </div>
+  </section>
+

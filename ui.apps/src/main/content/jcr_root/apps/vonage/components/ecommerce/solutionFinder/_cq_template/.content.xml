@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <chooseDevice jcr:primaryType="nt:unstructured"
+        eyebrow="Communication devices"
+        title="Choose one or more devices that your team will use to communicate.">
+        <deviceCardList jcr:primaryType="nt:unstructured">
+            <item0 jcr:primaryType="nt:unstructured" 
+                title="Our smart phones"
+                categoryId="aAH7X000000CnVcWAK"/>
+            <item1 jcr:primaryType="nt:unstructured" 
+                title="Our computers"
+                categoryId="aAH7X000000CnVdWAK"/>
+            <item2 jcr:primaryType="nt:unstructured" 
+                title="Our desk phones"
+                categoryId="aAH7X000000CnVeWAK"/>
+        </deviceCardList>
+    </chooseDevice>
+    <companySize jcr:primaryType="nt:unstructured"
+        eyebrow="Company size"
+        title="How many employees will use Vonage?" 
+        label="Enter a number" 
+        rangeStart="0"
+        rangeEnd="1000"
+        segment1Label="Small"
+        segment1MaxValue="100"
+        segment2Label="Medium"
+        segment2MaxValue="500"
+        segment3Label="Enterprise"
+        contactSalesCtaText="Contact sales"
+        contactSalesCtaURL="/content/vonage"/>
+    <goals jcr:primaryType="nt:unstructured"
+        eyebrow="Goals"
+        title="What types of communication are important to your business?" 
+        subtitle="Pick one or more choices below to describe the communications system you need, and to help us recommend the best plan for your business."/>
+    <planRecommendation jcr:primaryType="nt:unstructured"
+        eyebrow="We recommend"
+        featuresText="Based on the goals you chose, we recommend this plan for the following features:"
+        additionalFeaturesText="You also get these features:"
+        moreInfoHeadline="Need more information before you decide?"
+        moreInfoSubHeadline="See all of our plans to find the right one for you business"
+        moreInfoCtaText="Plans &amp; Pricing"
+        moreInfoCtaUrl="/content/vonage"
+        costTitle="Your monthly cost"
+        costDescription="We’re transparent about what you pay up front, so your bill isn’t a surprise."
+        costDisclaimer="*Local taxes and fees calculated at checkout"
+        copyUrlCtaText="Copy page link"
+        addPlanCtaText="Add plan to cart"
+        addPlanCtaURL="/content/vonage" />
+    <phonesAndAccesories jcr:primaryType="nt:unstructured"
+        eyebrow="Phones and accessories"
+        title="Do you need any desk phones or accessories?"
+        yesCheckboxLabel="Yes, we’d like to purchase compatible phones and accessories"
+        noCheckboxLabel="No, we’d like to use our phones and will make sure to &lt;a href='#'&gt;check their compatibility&lt;/a&gt;"
+        defualtAnswer="yes"/>
+    <addons jcr:primaryType="nt:unstructured"
+        title="Phones and accessories"
+        eyebrow="Choose from our popular phones" />
+</jcr:root>

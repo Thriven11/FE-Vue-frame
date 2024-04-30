@@ -1,0 +1,26 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<div class="card-icon-3-up__card card-icon-3-up__card--${model.theme}">
+   <a href="${model.link.href}" class="Vlt-card-icon" target="${model.link.target}"
+      aria-describedby="${model.link.target =='_blank' ? 'new-window' : ''}" aria-label="${model.link.ariaLabel}">
+      <div class="Vlt-card-icon__extrusion"></div>
+      <div class="Vlt-card-icon__container">
+         <div class="Vlt-card-icon__icon">
+            <span class="Vlt-icon-card Vlt-icon-card--${model.icon}"></span>
+         </div>
+         <div class="Vlt-card-icon__content">
+            <h5 data-sly-element="${model.headerType}"
+                class="Vlt-card-icon__title ${!model.description ? 'Vlt-card-icon__title--center' : ''}">
+               ${model.title}
+            </h5>
+            <p data-sly-test="${model.description}" class="Vlt-card-icon__description">
+               ${model.description}
+            </p>
+         </div>
+         <span class="Vlt-icon-arrow-link"></span>
+      </div>
+   </a>
+</div>

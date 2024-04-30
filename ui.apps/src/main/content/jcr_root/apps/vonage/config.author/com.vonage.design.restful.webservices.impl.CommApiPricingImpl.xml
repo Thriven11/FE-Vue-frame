@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig" 
+	apiEnabled="{Boolean}true"
+	apiUrl="https://rest.nexmo.com"
+	exchangeApiUrl="http://data.fixer.io/api/latest?access_key=2b4d7d6b064f5e444a8f7e0a90d05356"/>

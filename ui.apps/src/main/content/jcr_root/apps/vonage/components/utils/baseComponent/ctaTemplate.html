@@ -1,0 +1,70 @@
+<template data-sly-template.cta="${@ link}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+    <a href="${link.href}" target="${link.target}" class="${ctaClass}">${link.label}</a>
+</template>
+
+<template data-sly-template.ctaV2="${@ link, rel, cssClass}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+    <a class="${ctaClass}" href="${link.href}"
+       target="${link.target}"
+       rel="${rel}"
+       aria-describedby="${link.target =='_blank' ? 'new-window' : ''}">${link.label}</a>
+</template>
+
+<template data-sly-template.ctaL3="${@ link, cssClass}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+    <a href="${link.href}" target="${link.target}" class="${ctaClass} ${link.path==currentPage.path ? '{0}--active' : '' @format=cssClass}" aria-label="${link.ariaLabel || link.label}"
+       aria-describedby="${link.target =='_blank' ? 'new-window' : ''}">${link.label}</a>
+</template>
+
+<template data-sly-template.ctaV3="${@ link, cssClass}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+  <sly data-sly-test="${link.target == 'download'}">
+    <a class="${ctaClass}" href="${link.href}"
+      target="${link.target}"
+      aria-describedby="${link.target =='_blank' ? 'new-window' : ''}"
+      aria-label="${link.ariaLabel || link.label}"
+      download>${link.label}</a>
+  </sly>
+  <sly data-sly-test="${link.target != 'download'}">
+    <!--/* Normal CTA */-->
+    <a data-sly-test="${!link.dataVideoId}" class="${ctaClass}" href="${link.href}"
+      target="${link.target}"
+      aria-describedby="${link.target =='_blank' ? 'new-window' : ''}"
+      aria-label="${link.ariaLabel || link.label}">${link.label}</a>
+    <!--/* Video Lightbox CTA */-->
+    <span data-sly-test="${link.dataVideoId}" class="video-lightbox-cta" data-video-id="${link.dataVideoId}">
+      <span class="video-lightbox-cta__placeholder">
+        <button class="video-lightbox-cta__cta ${ctaClass}" aria-label="${link.ariaLabel}">
+          ${link.label}
+        </button>
+      </span>
+    </span>
+  </sly>
+</template>
+
+<template data-sly-template.ctaV4="${@ link, cssClass, context}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+  <!--/* Normal CTA */-->
+  <a data-sly-test="${!link.dataVideoId}" class="${ctaClass}" href="${link.href @ context = context}"
+     target="${link.target}"
+     aria-describedby="${link.target =='_blank' ? 'new-window' : ''}"
+     aria-label="${link.ariaLabel || link.label}">${link.label}</a>
+  <!--/* Video Lightbox CTA */-->
+  <span data-sly-test="${link.dataVideoId}" class="video-lightbox-cta" data-video-id="${link.dataVideoId}">
+    <span class="video-lightbox-cta__placeholder">
+      <button class="video-lightbox-cta__cta ${ctaClass}" aria-label="${link.ariaLabel}">
+        ${link.label}
+      </button>
+    </span>
+  </span>
+</template>
+
+<template data-sly-template.ctaV5="${@ link, rel, cssClass}">
+  <sly data-sly-test.ctaClass="${link.checkDefault ? cssClass : link.ctaBackgroundColor}"></sly>
+  <a class="${ctaClass} true" href="${link.href}"
+     target="${link.target}"
+     rel="${rel}"
+     aria-describedby="${link.target =='_blank' ? 'new-window' : ''}"
+     data-static-label="${link.staticLabel}">${link.label}</a>
+</template>

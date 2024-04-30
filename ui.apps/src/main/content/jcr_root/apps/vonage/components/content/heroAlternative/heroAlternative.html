@@ -1,0 +1,62 @@
+<sly
+  data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+  data-sly-use.model="com.vonage.core.models.content.HeroAlternativeComponentModel"
+/>
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  data-emptytext="${component.title} Component"
+></div>
+
+<section
+  class="hero-alt ${model.textColor} ${model.mediaLandscape} ${model.noSpace} ${model.addPadding}"
+  style="background-image: url(${image.fileReference @context='styleString'}) ${properties.gradient ? ',' : '' @context='styleString'} ${properties.gradient @context='styleString'};"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-9 hero-alt__title--container">
+        <h1 class="hero-alt__title">${model.title}</h1>
+      </div>
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <p class="hero-alt__sub-title ${properties.largeSubtitle}">
+          ${model.description}
+        </p>
+      </div>
+      <div class="col-12">
+        <div class="hero-alt__ctas">
+          <div class="hero-alt__cta-primary">
+            <div
+              style="width: auto; min-width: 125px;"
+              data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}"
+            >
+              <sly
+                data-sly-test="${!properties.primaryLightbox}"
+                data-sly-resource="${'lightCta' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn-light-unsafe'}"
+              ></sly>
+              <sly
+                data-sly-test="${properties.primaryLightbox}"
+                data-sly-resource="${'lightLightCta' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-light-unsafe'}"
+              ></sly>
+            </div>
+          </div>
+          <div class="hero-alt__cta-secondary">
+            <div
+              style="width: auto; min-width: 125px;"
+              data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}"
+            >
+              <sly
+                data-sly-test="${!properties.secondaryLightbox}"
+                data-sly-resource="${'secondaryCta' @resourceType='/apps/vonage/components/content/cta', addSelectors='btn-secondary-light'}"
+              ></sly>
+              <sly
+                data-sly-test="${properties.secondaryLightbox}"
+                data-sly-resource="${'secondaryLightCta' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-secondary-light'}"
+              ></sly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

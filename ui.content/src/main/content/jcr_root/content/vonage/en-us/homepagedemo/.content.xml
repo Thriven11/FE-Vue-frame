@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2019-10-09T00:30:53.147-05:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2019-09-27T13:25:29.540Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/vonage/settings/wcm/templates/generic-page"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="HomePageDemo"
+        jcr:uuid="47d457d6-38d1-4098-a932-b1c80365edf8"
+        sling:resourceType="vonage/components/structure/generic-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+                <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <hero
+                        jcr:created="{Date}2019-10-08T23:22:46.907-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-09T00:30:53.144-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/videos/hero"
+                        dataVideoId="IdakC24Whps"
+                        eyebrow="One Vonage, one promise:"
+                        tileTheme="magenta"
+                        title="We will lead you through change."
+                        videoPlayLabel="THE NEW VONAGE STORY"/>
+                    <cardcontainer
+                        jcr:created="{Date}2019-10-08T23:23:28.996-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-08T23:23:34.413-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/cardContainer"
+                        containerType="card-icon-3-up">
+                        <iconCard-1
+                            jcr:lastModified="{Date}2019-10-08T23:34:19.878-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/iconCard"
+                            description="Customize your offering easily with our innovative apps and integrations."
+                            headerType="h5"
+                            href="www.vonage.com/business/"
+                            icon="cloud"
+                            target="_blank"
+                            theme="magenta-coral"
+                            title="Communications APIs"/>
+                        <iconCard-2
+                            jcr:lastModified="{Date}2019-10-08T23:32:45.113-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/iconCard"
+                            description="Unified Communications"
+                            headerType="h5"
+                            href="https://www.vonage.com/business/"
+                            icon="headset"
+                            target="_blank"
+                            theme="purple-sky"
+                            title="Unified Communications"/>
+                        <iconCard-3
+                            jcr:lastModified="{Date}2019-10-08T23:33:25.324-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/iconCard"
+                            description="Customize your offering easily with our innovative apps and integrations."
+                            headerType="h5"
+                            icon="screw"
+                            target="_blank"
+                            theme="purple-salmon"
+                            title="Contact Centers"/>
+                    </cardcontainer>
+                    <feature
+                        jcr:created="{Date}2019-10-08T23:35:21.341-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-08T23:37:25.902-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/feature"
+                        altValueFromDAM="true"
+                        description="Delight customers and employees in their preferred channels by unlocking and connecting conversations and business workflows."
+                        displayPopupTitle="true"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/feature-01.jpg"
+                        href="https://www.vonage.com/business/"
+                        isDecorative="false"
+                        label="learn more"
+                        position="feature--inverted"
+                        size="col-lg-5 offset-lg-1"
+                        target="_blank"
+                        title="Customize your offering easily with our innovative apps and integrations."
+                        titleValueFromDAM="true"/>
+                    <feature_1977342465
+                        jcr:created="{Date}2019-10-08T23:38:57.249-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-08T23:42:02.267-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/feature"
+                        altValueFromDAM="true"
+                        description="Create profoundly human connections between customers and employees, while doing it faster and easier than ever before."
+                        displayPopupTitle="true"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/feature-02.jpg"
+                        isDecorative="false"
+                        size="col-lg-5 offset-lg-1"
+                        target="_blank"
+                        title="Customize great experiences, effortlessly"
+                        titleValueFromDAM="true"/>
+                    <feature_921603638
+                        jcr:created="{Date}2019-10-08T23:42:26.434-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-08T23:44:22.227-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/feature"
+                        altValueFromDAM="true"
+                        description="One partner, one global platform, enabling you to scale easily."
+                        displayPopupTitle="true"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/feature-03.jpg"
+                        href="https://www.vonage.com/business/"
+                        isDecorative="false"
+                        label="learn more"
+                        position="feature--inverted"
+                        size="col-lg-5 offset-lg-1"
+                        target="_blank"
+                        title="Scale securely, reliable, and globally"
+                        titleValueFromDAM="true"/>
+                    <feature_978116230
+                        jcr:created="{Date}2019-10-08T23:46:53.961-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-09T00:05:07.608-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/feature"
+                        altValueFromDAM="true"
+                        description="Drive action by adding intelligence to every touchpoint on the conversational journey."
+                        displayPopupTitle="true"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/feature-04.jpg"
+                        href="https://www.vonage.com/business/"
+                        isDecorative="false"
+                        label="learn more"
+                        marginBottom="feature--last"
+                        size="col-lg-5 offset-lg-1"
+                        target="_blank"
+                        title="Enrich conversations with data &amp; AI"
+                        titleValueFromDAM="true"/>
+                    <video
+                        jcr:created="{Date}2019-10-08T23:52:05.515-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-09T00:03:57.021-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/videos/video"
+                        altValueFromDAM="true"
+                        caption="Vonage is a holistic communication plarform that connects internal teams and customers seamlessly"
+                        dataVideoId="IdakC24Whps"
+                        description="Vonage is a holistic communication plarform that connects internal teams and customers seamlessly"
+                        displayPopupTitle="false"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/placeholder.jpg"
+                        isDecorative="false"
+                        title="Connect your team and customers with Vonage"
+                        titleValueFromDAM="false"/>
+                    <cardcontainer_1280565371
+                        jcr:created="{Date}2019-10-09T00:05:26.759-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-09T00:05:32.432-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/cardContainer"
+                        containerType="card-image-3-up">
+                        <imageCard-1
+                            jcr:lastModified="{Date}2019-10-09T00:08:45.759-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/imageCard"
+                            altValueFromDAM="true"
+                            description="Industry trends"
+                            displayPopupTitle="true"
+                            fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/card-image-01.jpg"
+                            href="https://www.vonage.com/business/"
+                            isDecorative="false"
+                            label="The last bank in town "
+                            target="_blank"
+                            title="Perspectives"
+                            titleValueFromDAM="true"/>
+                        <imageCard-2
+                            jcr:lastModified="{Date}2019-10-09T00:10:07.328-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/imageCard"
+                            altValueFromDAM="true"
+                            description="Cloud communications"
+                            displayPopupTitle="true"
+                            fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/card-image-02.jpg"
+                            href="https://www.vonage.com/business/"
+                            isDecorative="false"
+                            label="5 all-star enterprise communication tools that will put your business in the major leagues "
+                            target="_blank"
+                            title="Perspectives"
+                            titleValueFromDAM="true"/>
+                        <imageCard-3
+                            jcr:lastModified="{Date}2019-10-09T00:11:33.291-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/cardContainer/imageCard"
+                            altValueFromDAM="true"
+                            description="Communication APIS"
+                            displayPopupTitle="true"
+                            fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/card-image-03.jpg"
+                            href="https://www.vonage.com/business/"
+                            isDecorative="false"
+                            label="Checking the London Tube status with Nexmo's SMS API "
+                            target="_blank"
+                            title="Developer blog"
+                            titleValueFromDAM="true"/>
+                    </cardcontainer_1280565371>
+                    <leadgen
+                        jcr:created="{Date}2019-10-09T00:12:34.405-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-10-09T00:22:44.182-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/leadGen"
+                        fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/home-page/lead-gen-icon.png"
+                        headline="Speak with an expert."
+                        subtitle="I'm interested in:">
+                        <leadGenContent jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                hoursData="8am - 10pm ET"
+                                hoursLabel="Monday - Friday"
+                                leadGenDropdown="Select an Option"
+                                phoneNumber="1.855.237.1200"
+                                phoneNumberLabel="Toll free number"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                hoursData="7am - 9pm ET"
+                                hoursLabel="Monday - Saturday"
+                                leadGenDropdown="Communications APIs"
+                                phoneNumber="1.855.237.1201"
+                                phoneNumberLabel="Toll free number"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                hoursData="6am - 4pm ET"
+                                hoursLabel="Monday - Sunday"
+                                leadGenDropdown="Unified Communications"
+                                phoneNumber="1.855.237.1202"
+                                phoneNumberLabel="Toll free number"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                hoursData="12pm - 10pm ET"
+                                hoursLabel="Monday - Thursday"
+                                leadGenDropdown="Contact Centers"
+                                phoneNumber="1.855.237.1203"
+                                phoneNumberLabel=" Toll free number"/>
+                        </leadGenContent>
+                    </leadgen>
+                </responsiveGrid>
+            </generalContainer>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

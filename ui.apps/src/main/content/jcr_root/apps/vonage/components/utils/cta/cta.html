@@ -1,0 +1,6 @@
+<template data-sly-template.anchorCTA="${@label, path, target, trackingcode, cssClass}">
+    <a data-analytics-track-code = "${trackingcode}" class="${cssClass}" href="${path}"
+       data-sly-attribute.target="${target}">
+        ${label}
+    </a>
+</template>

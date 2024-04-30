@@ -1,0 +1,21 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"  style="min-width:250px"></div>
+
+<section class="product-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h2 class="product-grid__headline">${properties.title}</h2>
+        <span class="product-grid__description">${properties.description}</span>
+      </div>
+      <div class="col-12">
+        <div class="product-grid__products">
+          <sly data-sly-resource="${ @path='responsiveGridRow', resourceType='vonage/components/utils/rowResponsiveGrid'}" data-sly-unwrap></sly>
+        </div>
+        <div style="width: auto; height:auto;">
+          <sly data-sly-resource="${'cta' @resourceType='/apps/vonage/components/content/cta', addSelectors='btn-secondary'}"></sly>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

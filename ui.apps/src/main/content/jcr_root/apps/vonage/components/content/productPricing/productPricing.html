@@ -1,0 +1,44 @@
+<sly data-sly-use.model="com.vonage.core.models.content.ProductPricingModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="pricing-card ${model.paddingTop}">
+  <sly data-sly-test="${model.includeCurrencyToggle}" data-sly-include="/apps/vonage/components/utils/currencyToggle/currencyToggle.html"></sly>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 data-sly-test="${model.sectionTitle}" class="pricing-card__title">${model.sectionTitle}</h2>
+        <div class="pricing-card__card not-dynamic">
+          <!-- Include Sections -->
+          <sly data-sly-list.sectionItem="${model.sectionList}">
+            <div class="pricing-card__option">
+              <h3 class="pricing-card__option-product">${sectionItem.headline}</h3>
+              <!-- Include Offerings -->
+              <sly data-sly-list.offeringItem="${sectionItem.offeringList}">
+                <div class="pricing-card__offer">
+                  <span class="pricing-card__offer-name">${offeringItem.description @ context='html'}</span>
+                  <div class="pricing-card__offer-price-container">
+                    <span class="pricing-card__offer-price">${offeringItem.price}</span>
+                    <span data-sly-test="${offeringItem.legal}" class="pricing-card__offer-price__legal">
+                      ${offeringItem.legal}
+                    </span>
+                  </div>
+                </div>
+              </sly>
+              <sly data-sly-test="${sectionItem.validityText}">
+                <div class="pricing-card__validity-section"> 
+                  <span class="pricing-card__validity-text">${sectionItem.validityText}</span>
+                </div>
+              </sly>
+            </div>
+          </sly>
+          <div data-sly-test="${model.includeCta}" class="pricing-card__cta-container">
+            <sly data-sly-resource="${'cta' @resourceType='/apps/vonage/components/content/cta'}"></sly>
+          </div>
+        </div>
+        <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<sly data-sly-use.model="${'com.vonage.core.models.content.LeadGenComponentModel'}"/>
+
+<div class="col-12 col-md-6 col-lg-4">
+   <h2 class="lead-gen__headline">${model.headline}</h2>
+   <label for="lead-gen-dropdown" class="lead-gen__subtitle">${model.subtitle}</label>
+   <div class="lead-gen__dropdown-wrapper">
+      <select id="lead-gen-dropdown" class="lead-gen__dropdown" aria-label="Updating Phone number and hours below" aria-controls="lead-gen-info"
+      data-sly-test.dropdownList="${model.leadGenContent}" data-sly-list="${dropdownList}">
+         <option value="${itemList.index}" data-phone-label="${item.phoneNumberLabel}" 
+         data-phone="${item.phoneNumber}" data-hours-label="${item.hoursLabel}" 
+         data-hours="${item.hoursData}">${item.leadGenBusinessUnit}</option>
+      </select>
+      <span class="lead-gen__dropdown-icon Vlt-icon Vlt-icon-chevron"></span>
+   </div>
+   <div id="lead-gen-info" aria-live="polite" aria-atomic="true" class="lead-gen__info lead-gen__info--visible" data-sly-test.contentList="${model.leadGenContent}">
+      <div class="row">
+         <div class="col-12 col-md-6">
+            <div class="lead-gen__info-number">
+               <p class="lead-gen__info-number-label">${contentList[0].phoneNumberLabel}</p>
+               <a href="tel:+${contentList[0].phoneNumber}" class="lead-gen__info-number-data">${contentList[0].phoneNumber}</a>
+            </div>
+         </div>
+         <div class="col-12 col-md-6">
+            <div class="lead-gen__info-hours">
+               <p class="lead-gen__info-hours-label">${contentList[0].hoursLabel}</p>
+               <p class="lead-gen__info-hours-data">${contentList[0].hoursData}</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

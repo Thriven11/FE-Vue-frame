@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/vonage/settings/wcm/templates/events-page"
+        jcr:primaryType="cq:PageContent"
+        contentCategory="vonage:events/details-page"
+        removeL3Nav="{Boolean}true"
+        sling:resourceType="vonage/components/structure/events-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+              <responsiveGrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <heroalternative
+                  jcr:created="{Date}2020-05-05T23:58:32.981Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-05-14T13:50:29.544Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/heroAlternative"
+                  description=" Join leaders from Cradlepoint, Glassdoor, and Salesforce Tuesday, June 2, 2 PM ET.  During this live event, we'll dive into the  state of remote customer service, remote workforce trends, and metrics of the  new normal. &#xd;&#xa; &#xd;&#xa;"
+                  fileReference="/content/dam/vonage/us-en/brand/imagery/vonage/placeholder/HeroBackground.svg"
+                  primaryLightbox="true"
+                  secondaryLightbox="false"
+                  textColor="hero-alt--white-text"
+                  title="How Cradlepoint and Glassdoor Navigate the New Normal With Vonage and Salesforce">
+                  <secondaryLightCta
+                    jcr:lastModified="{Date}2020-05-06T00:23:46.910Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/utils/lightboxCta"
+                    confMessagePath="/content/experience-fragments/vonage/en-us/api---global-pricing-sheet-download/master"
+                    formPath="/content/experience-fragments/vonage/en-us/authors/aaron-ross/bio"
+                    label="Register now"/>
+                  <lightLightCta
+                    jcr:lastModified="{Date}2020-05-15T18:09:32.375Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/utils/lightboxCta"
+                    confMessagePath="/content/experience-fragments/vonage/en-us/forms/confirmation_message/apps---webinar-sign-up-confirmation/master"
+                    formPath="/content/experience-fragments/vonage/en-us/forms/lightbox_forms/cc_apps_webinar_sign/cradlepoint-webinar/master"
+                    label="Register now"/>
+                </heroalternative>
+                <announcementcomponen
+                  jcr:created="{Date}2020-05-26T20:04:54.176Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-05-26T20:05:13.570Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/announcementComponent">
+                  <announcements jcr:primaryType="nt:unstructured">
+                    <item0
+                      jcr:primaryType="nt:unstructured"
+                      headline="Next up on June 16: Why Are Your Communications Tech Stacks Still Social Distancing?  Check back soon for event details."
+                      target="_self"/>
+                  </announcements>
+                </announcementcomponen>
+                <detailsgrid
+                  jcr:created="{Date}2020-05-06T00:24:32.531Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-05-08T21:02:33.166Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/detailsGrid"
+                  alignment="zigzag-start-image-right"
+                  theme="grey">
+                  <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/utils/rowResponsiveGrid">
+                    <detailsitem
+                      jcr:created="{Date}2020-05-06T00:24:49.708Z"
+                      jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                      jcr:lastModified="{Date}2020-05-13T02:19:59.966Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/content/detailsGrid/detailsItem"
+                      description=" And yet, customers expect the same experience to guide them through the new normal. Vonage understands these demands and the importance to operate remotely—to communicate, collaborate, and remain productive—while maintaining business continuity. Join leaders from Cradlepoint, Glassdoor, and Salesforce as we discuss:"
+                      eyebrow="Now we're talking live"
+                      imagewidth="false"
+                      label="Register now"
+                      primaryLightbox="true"
+                      target="_self"
+                      title=" Today, everyone shares the same remote work challenges.">
+                      <ctaLightbox
+                        jcr:lastModified="{Date}2020-05-15T18:09:38.094Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/lightboxCta"
+                        confMessagePath="/content/experience-fragments/vonage/en-us/forms/confirmation_message/apps---webinar-sign-up-confirmation/master"
+                        formPath="/content/experience-fragments/vonage/en-us/forms/lightbox_forms/cc_apps_webinar_sign/cradlepoint-webinar/master"
+                        label="Register now"/>
+                      <detailsFeatureImage
+                        jcr:lastModified="{Date}2020-05-13T02:20:13.753Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/detailsGrid/detailsItem/detailsFeatureImage"
+                        altValueFromDAM="true"
+                        fileReference="/content/dam/vonage/us-en/resources/imagery/article-thumbnails/Office 500.svg"
+                        isDecorative="false"
+                        titleValueFromDAM="true"/>
+                      <listOfItems jcr:primaryType="nt:unstructured">
+                        <item0
+                          jcr:primaryType="nt:unstructured"
+                          listItem="How remote work and remote service delivery accelerated cloud contact center adoption"/>
+                        <item1
+                          jcr:primaryType="nt:unstructured"
+                          listItem="Prioritization on employee well-being and the technology to support these changes"/>
+                        <item2
+                          jcr:primaryType="nt:unstructured"
+                          listItem="Looking ahead toward an efficient, cost-effective, and “futureproof” workforce"/>
+                      </listOfItems>
+                    </detailsitem>
+                  </responsiveGrid>
+                </detailsgrid>
+                <iconpanel
+                  jcr:created="{Date}2020-05-06T20:24:04.569Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-05-13T02:18:09.112Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/iconPanel"
+                  numberOfItems="4">
+                  <item-0
+                    jcr:lastModified="{Date}2020-05-15T16:36:26.176Z"
+                    jcr:lastModifiedBy="Christopher.Kelly@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    description="EVP of Alliances and Business Development, Vonage"
+                    fileReference="/content/dam/vonage/us-en/authors/robert_gavin.jpg"
+                    headline="Robert Gavin"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="true"
+                    target="_self"
+                    titleValueFromDAM="false"/>
+                  <item-1
+                    jcr:lastModified="{Date}2020-05-27T19:56:10.596Z"
+                    jcr:lastModifiedBy="betsy.rohtbart@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    description="VP for Strategic Research, Salesforce&#xd;&#xa;&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/peter_coffee.jpg"
+                    headline="Peter Coffee"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="true"
+                    target="_self"
+                    titleValueFromDAM="false"/>
+                  <item-2
+                    jcr:lastModified="{Date}2020-05-15T16:35:03.048Z"
+                    jcr:lastModifiedBy="Christopher.Kelly@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    description="IT Project Lead, Cradlepoint&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/kory_harker.jpg"
+                    headline="Kory Harker"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="true"
+                    target="_self"
+                    titleValueFromDAM="false"/>
+                  <item-3
+                    jcr:lastModified="{Date}2020-05-15T16:34:57.383Z"
+                    jcr:lastModifiedBy="Christopher.Kelly@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    description="Salesforce Solution Architect, Senior Enterprise Applications Manager, Glassdoor&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/carmen_woo.jpg"
+                    headline="Carmen Woo"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="true"
+                    target="_self"
+                    titleValueFromDAM="false"/>
+                </iconpanel>
+                <inpageform
+                  jcr:created="{Date}2020-05-06T00:39:37.905Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-05-14T14:12:32.009Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/inPageForm"
+                  confMessagePath="/content/experience-fragments/vonage/en-us/forms/confirmation_message/in_page_confirmation/webinar-thank-you/master"
+                  description="Sign up for How Cradlepoint and Glassdoor Navigate the New Normal With Vonage and Salesforce, on June 2 at 2 PM ET:  it's complimentary, but pre-registration is required and space  is limited, so reserve your spot today!"
+                  title="Now We're Talking LIVE: Register now!">
+                  <form
+                    jcr:lastModified="{Date}2020-05-15T18:07:10.538Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/utils/forms/container/form"
+                    errorMessage="Oops!  Something isn't right. Please try again."
+                    eventId="2336131"
+                    eventInstance="nvm"
+                    eyebrow="Save your space"
+                    formHandler="https://ww3.business.vonage.com/l/7772/2020-05-15/b1ljqq"
+                    formType="lead form: apps: webinar: lp: in page">
+                    <formsResponsiveGrid
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/utils/forms/container/responsiveGrid">
+                      <firstname
+                        jcr:created="{Date}2020-05-06T00:45:03.097Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-05-06T00:45:03.097Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/firstName"/>
+                      <lastname
+                        jcr:created="{Date}2020-05-06T00:45:09.539Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-05-06T00:45:09.539Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/lastName"/>
+                      <companyname
+                        jcr:created="{Date}2020-05-06T00:45:17.099Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-05-06T00:45:17.099Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/companyName"/>
+                      <email
+                        jcr:created="{Date}2020-05-07T18:59:28.695Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T18:59:28.695Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/email"/>
+                      <phonenumber
+                        jcr:created="{Date}2020-05-07T18:59:10.646Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T18:59:10.646Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/phoneNumber"/>
+                      <jobtitle
+                        jcr:created="{Date}2020-05-07T18:59:19.106Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T18:59:19.106Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/jobTitle"/>
+                      <country
+                        jcr:created="{Date}2020-05-07T18:59:50.334Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T18:59:50.334Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/dropdown/country"/>
+                      <state
+                        jcr:created="{Date}2020-05-07T18:59:56.398Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T18:59:56.398Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/dropdown/state"/>
+                      <privacypolicy
+                        jcr:created="{Date}2020-05-07T19:24:54.476Z"
+                        jcr:createdBy="kelly.lafferty@vonage.com"
+                        jcr:lastModified="{Date}2020-05-07T19:24:54.476Z"
+                        jcr:lastModifiedBy="kelly.lafferty@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/checkbox/privacyPolicy"/>
+                    </formsResponsiveGrid>
+                    <submit
+                      jcr:lastModified="{Date}2020-05-06T00:45:55.920Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/utils/forms/button/submit"
+                      label="Register now"/>
+                  </form>
+                </inpageform>
+              </responsiveGrid>
+            </generalContainer>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

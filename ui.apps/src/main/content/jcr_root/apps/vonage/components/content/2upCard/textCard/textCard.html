@@ -1,0 +1,10 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title}"></div>
+
+<a data-sly-test="${model.title}" class="info-card" href="${model.link.href}">
+  <h2 class="info-card__title">${model.title}</h2>
+  <p class="info-card__description">${model.description}</p>
+  <span class="Vlt-icon-arrow-link" aria-hidden="true"></span>
+</a>

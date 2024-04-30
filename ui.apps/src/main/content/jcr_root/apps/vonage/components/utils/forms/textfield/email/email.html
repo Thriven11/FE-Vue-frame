@@ -1,0 +1,18 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-input">
+    <!--/* Placeholder has an intentional space in order to trigger the label hoisting animation correctly */-->
+    <input type="email" placeholder=" " id="email-${model.uuid}" name="email" required>
+  <sly data-sly-test="${!properties.businessemail}" > 
+   <label class="Vlt-form__input-label" for="email-${model.uuid}">${'vng-email' @ i18n}</label>
+</sly>
+   <sly data-sly-test="${properties.businessemail}" > 
+    <label class="Vlt-form__input-label" for="email-${model.uuid}">${'vng-businessemail' @ i18n}</label>
+   </sly>
+   <span class="Vlt-icon-form-checkmark"></span>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label" >${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

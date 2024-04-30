@@ -1,0 +1,42 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.CartPricingDetailsModel"/>
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"/>
+<sly data-sly-use.checkoutUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.checkoutUrl}" />
+<sly data-sly-use.nextStepCtaUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.nextStepCta.href}" />
+<sly data-sly-use.disclaimer="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.disclaimer}" />
+<sly data-sly-use.shareCartLink="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.shareCartLink}" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="cart-pricing-details">
+  <div class="cart-pricing-details__inner Vlt-form">
+    <div class="v-cart-pricing-details"></div>
+  </div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+
+    <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+    <input type="hidden" name="oneTimeFees" value="${'vng-ecomm-oneTimeFees' @ i18n}">
+    <input type="hidden" name="monthlyFees" value="${'vng-ecomm-monthlyFees' @ i18n}">
+    <input type="hidden" name="shipping" value="${'vng-ecomm-shipping' @ i18n}">
+    <input type="hidden" name="taxes" value="${'vng-ecomm-taxes' @ i18n}">
+    <input type="hidden" name="calculatedAtCheckout" value="${'vng-ecomm-calculatedAtCheckout' @ i18n}">
+    <input type="hidden" name="dueToday" value="${'vng-ecomm-dueToday' @ i18n}">
+    <input type="hidden" name="firstBill" value="${'vng-ecomm-firstBill' @ i18n}">
+    <input type="hidden" name="monthlyBill" value="${'vng-ecomm-monthlyBill' @ i18n}">
+    <input type="hidden" name="checkoutText" value="${'vng-ecomm-checkout' @ i18n}">
+    <input type="hidden" name="lines" value="${'vng-ecomm-lines' @ i18n}">
+    <input type="hidden" name="loading" value="${'vng-ecomm-loading' @ i18n}">
+
+    <input type="hidden" name="checkoutUrl" value="${checkoutUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="disclaimer" value="${disclaimer.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="title" value="${model.title @ context='attribute'}">
+    <input type="hidden" name="nextStepHeadline" value="${model.nextStepHeadline @ context='attribute'}">
+    <input type="hidden" name="nextStepCtaText" value="${model.nextStepCta.label @ context='attribute'}">
+    <input type="hidden" name="nextStepCtaUrl" value="${nextStepCtaUrl.externalUrl @ context='attribute'}">
+
+    <input type="hidden" name="nextStepImage" value="${image.fileReference}">
+
+    <input data-sly-test="${wcmmode.edit}" type="hidden" name="isEditMode" value="true">
+  </div>
+</section>

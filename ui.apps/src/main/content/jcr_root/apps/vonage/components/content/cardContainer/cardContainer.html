@@ -1,0 +1,14 @@
+<sly data-sly-use.template="cardsContainerTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${properties.containerType == 'card-icon-3-up' ? 'Icon' :
+                        (properties.containerType == 'card-image-3-up' ? 'Image' : '')}
+                        ${component.title} Component" style="min-width:250px"></div>
+
+<sly data-sly-test="${properties.containerType == 'card-icon-3-up'}"
+     data-sly-call="${template.cardsContainer @
+                        sectionClass=properties.containerType, cardType='iconCard', cardWidth='col-12 col-lg-4', cardTitle='', cardTitleType=''}"/>
+
+<sly data-sly-test="${properties.containerType == 'card-image-3-up'}"
+     data-sly-call="${template.cardsContainer @
+                        sectionClass=properties.containerType, cardType='imageCard', cardWidth='col-12 col-lg-4', cardTitle=properties.title, cardTitleType=properties.headerType}"/>

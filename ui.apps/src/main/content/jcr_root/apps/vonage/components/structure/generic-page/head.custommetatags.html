@@ -1,0 +1,42 @@
+<sly data-sly-use.model="com.vonage.core.models.structure.CustomMetaTagsModel"/>
+
+<meta data-sly-test.pageTitle="${pageProperties.pageTitle ? pageProperties.pageTitle : pageProperties.jcr:title}" class="swiftype" name="title" data-type="string" content="${pageTitle}"/>
+<meta data-sly-test.description="${properties['jcr:description']}" class="swiftype" name="meta_description" data-type="text" content="${description}"/>
+<meta class="swiftype" name="site" data-type="enum" content="vonage-business-marketing"/>
+<meta data-sly-test.datePublished="${ pageProperties['datePublished'] ? pageProperties['datePublished'] : model.dateCreated }" class="swiftype" name="published_at" data-type="date" content="${ 'yyyy-MM-dd' @ format=datePublished}"/>
+<meta data-sly-test.eventStartDate="${model.eventStartDate}" class="swiftype" name="event_start" data-type="date" content="${ 'yyyy-MM-dd' @ format=eventStartDate}"/>
+<meta data-sly-test.eventEndDate="${model.eventEndDate}" class="swiftype" name="event_end" data-type="date" content="${ 'yyyy-MM-dd' @ format=eventEndDate}"/>
+<meta data-sly-test.eventStartDate="${model.eventStartDate}" class="swiftype" name="event_start_string" data-type="enum" content="${ 'dd MMMM, yyyy' @ format=eventStartDate}"/>
+<meta data-sly-test.eventEndDate="${model.eventEndDate}" class="swiftype" name="event_end_string" data-type="enum" content="${ 'dd MMMM, yyyy' @ format=eventEndDate}"/>
+<meta data-sly-test.thumbnailImage="${model.thumbnailImage.path}" class="swiftype" name="image" data-type="enum" content="${thumbnailImage}"/>
+<meta data-sly-test.googleSiteVerification = "${inheritedPageProperties.metataValue}" name="google-site-verification" content="${inheritedPageProperties.metataValue}" />
+<sly data-sly-test="${model.multiMap}" data-sly-list.key="${model.multiMap}">
+  <sly data-sly-test="${inheritedPageProperties.isResourcesTransformed}">
+    <sly data-sly-test="${!('/resources/' in currentPage.path || '/events/' in currentPage.path || '/about-us/vonage-stories/' in currentPage.path)   }"data-sly-list.value="${model.multiMap[key]}">
+      <meta class="swiftype" name="${key}" data-type="enum" content="${value}"/>
+    </sly>
+    <sly data-sly-test="${'/resources/' in currentPage.path || '/events/' in currentPage.path || '/about-us/vonage-stories/' in currentPage.path }" data-sly-list.value="${model.multiMapResources[key]}">
+     <meta class="swiftype" name="${key}" data-type="enum" content="${value}"/>
+    </sly>
+  </sly>
+  <sly data-sly-test="${!inheritedPageProperties.isResourcesTransformed}">
+    <sly data-sly-list.value="${model.multiMap[key]}">
+      <meta class="swiftype" name="${key}" data-type="enum" content="${value}"/>
+    </sly>
+  </sly>
+</sly>
+<meta data-sly-test="${pageProperties.isTranslatedResource}" class="swiftype" name="translatedResource" data-type="string" content="true"/>
+<meta class="swiftype" name="language" data-type="enum" content="${currentPage.language.language}"/>
+<meta class="swiftype" name="country" data-type="enum" content="${currentPage.language.country.toLowerCase}"/>
+<meta data-sly-test.featurePage="${model.featurePage}" class="swiftype"  data-type="enum" name="featured" content="${featurePage}"/>
+<link data-sly-test.canonicalUrl="${model.canonicalUrl}" rel="canonical" href="${canonicalUrl}" />
+<sly data-sly-list.page="${model.alternatePages}">
+  <link rel="alternate" href="${page.href}" hreflang="${page.hreflang}"/>
+</sly>
+<meta data-sly-test.browserUrl="${model.browserUrl}" property="og:url" content="${browserUrl}"/>
+<meta data-sly-test.pageTitle="${model.ogTitle ? model.ogTitle : (pageProperties.pageTitle ? pageProperties.pageTitle : pageProperties.jcr:title)}" property="og:title" content="${pageTitle}"/>
+<meta data-sly-test.description="${properties['jcr:description']}" property="og:description" content="${description}"/>
+<meta data-sly-test.type="${model.ogType ? model.ogType : 'website'}" property="og:type" content="${type}"/>
+<meta data-sly-test.image="${model.thumbnailImage.path}" property="og:image" content="${image}"/>
+<meta data-sly-test.image="${model.thumbnailImage.height}" property="og:image:height" content="${model.thumbnailImage.height}"/>
+<meta data-sly-test.image="${model.thumbnailImage.width}" property="og:image:width" content="${model.thumbnailImage.width}"/>

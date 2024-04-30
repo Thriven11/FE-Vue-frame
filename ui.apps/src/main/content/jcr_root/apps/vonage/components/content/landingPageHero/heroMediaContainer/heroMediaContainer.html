@@ -1,0 +1,10 @@
+<sly data-sly-use.webAppConfig="com.vonage.core.models.configs.WebAppConfig" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="landing-page-hero__media-container">
+  <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+  <sly data-sly-call="${template.cfImage @ cssClass='landing-page-hero__media', original='620', xlg='620', lg='260', md='620', sm='500'}"/>
+</div>
+

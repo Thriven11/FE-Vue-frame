@@ -1,0 +1,38 @@
+<sly data-sly-use.model="com.vonage.core.models.content.SpeedBumpComponentModel"
+    data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="${model.fileReference ? 'speed-bump speed-bump--image' : 'speed-bump'} ${model.ctaButton ? 'speed-bump--button-cta' : ''}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-11 offset-md-1 col-lg-9 offset-lg-2">
+        <div data-sly-test="${model.title}" class="speed-bump__container">
+
+          <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+          <sly data-sly-call="${template.cfImage @ cssClass='speed-bump__image', original='400', xlg='355', lg='290', md='260', sm='150'}"/>
+
+          <span data-sly-test="${model.eyebrow}" class="speed-bump__eyebrow">
+            ${model.eyebrow}
+          </span>
+
+          <div class="speed-bump__headline">
+            ${model.title}
+          </div>
+          <div class="speed-bump__description">
+            ${model.description}
+          </div>
+
+          <div class="speed-bump__link-container">
+            <sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta' @resourceType='/apps/vonage/components/content/cta',addSelectors='link-light'}"></sly>
+            <sly data-sly-test="${properties.primaryLightbox}" data-sly-resource="${'lightboxCta' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-light'}"></sly>
+          </div>
+          <div class="speed-bump__link-container" data-sly-test="${properties.includeLink}">
+            <sly data-sly-resource="${'cta2' @resourceType='/apps/vonage/components/content/cta',addSelectors='link-light'}"></sly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Dynamic Pricing Card Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <tabs jcr:primaryType="nt:unstructured" maximized="true" sling:resourceType="granite/ui/components/coral/foundation/tabs">
+            <items jcr:primaryType="nt:unstructured">
+              <productType jcr:primaryType="nt:unstructured" jcr:title="Product Type" sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <items jcr:primaryType="nt:unstructured">
+                      <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                          <product
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Please select a product's pricing to display"
+                            fieldLabel="Product"
+                            name="./product">
+                            <items jcr:primaryType="nt:unstructured">
+                              <sms
+                                jcr:primaryType="nt:unstructured"
+                                text="SMS"
+                                value="messaging"/>
+                              <voice
+                                jcr:primaryType="nt:unstructured"
+                                text="Voice"
+                                value="voice"/>
+                              <verify
+                                jcr:primaryType="nt:unstructured"
+                                text="Verify"
+                                value="verify"/>
+                              <sip
+                                jcr:primaryType="nt:unstructured"
+                                text="SIP Connect"
+                                value="sip" />
+                              <phoneNumbers
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone Numbers"
+                                value="phone-numbers"/>
+                            </items>
+                          </product>
+                          <tabs jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Please select tabs to display authrable text"
+                            multiple="{Boolean}true"
+                            emptyText="Select"
+                            fieldLabel="Tabs"
+                            name="./tabs">
+                            <items jcr:primaryType="nt:unstructured">
+                              <makeacall jcr:primaryType="nt:unstructured"
+                                text="Make a Call"
+                                value="makeACallTitle" />
+                              <sip jcr:primaryType="nt:unstructured"
+                                text="SIP Connect"
+                                value="sipConnectTitle" />
+                              <virtual jcr:primaryType="nt:unstructured"
+                                text="Virtual Phone Number"
+                                value="virtualPhoneNumberTitle" />
+                              <tollfree jcr:primaryType="nt:unstructured"
+                                text="Toll Free Number"
+                                value="tollFreeNumberTitle" />
+                             </items>
+                            </tabs>
+                            <lang jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Please select sites to display authrable text"
+                            multiple="{Boolean}true"
+                            emptyText="Select"
+                            fieldLabel="Sites"
+                            name="./lang">
+                            <datasource
+						        jcr:primaryType="nt:unstructured"
+						        sling:resourceType="/apps/vonage/components/content/datasource/I18NDatasource.html"/>
+                            </lang>
+                            <country jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Please select country to display authrable text"
+                            multiple="{Boolean}true"
+                            emptyText="Select"
+                            fieldLabel="Country"
+                            name="./country">
+                            <datasource
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/vonage/components/content/datasource/PricingDatasource.html"/>
+                            </country>
+                            <description jcr:primaryType="nt:unstructured"
+                                path="/apps/vonage/components/utils/rte/rte_dialog_with_description_optional"
+                                sling:resourceType="granite/ui/components/foundation/include" />
+								<endnote
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="End Note for &quot;make a call&quot;"
+                                                name="./endnote"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="unordered"/>
+                                                    <subsuperscript
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#subscript,subsuperscript#superscript,#styles]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[]"
+                                                                    ref="justify"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered]"
+                                                                    ref="lists"/>
+                                                                <subsuperscript
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[subsuperscript#subscript,subsuperscript#superscript]"
+                                                                    ref="justify"/>
+                                                            </popovers>
+                                                        </inline>
+                                                        <dialogFullScreen
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#superscript,subsuperscript#subscript,#styles]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered]"
+                                                                    ref="lists"/>
+                                                                <subsuperscript
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[subsuperscript#subscript,subsuperscript#superscript]"
+                                                                    ref="justify"/>
+                                                            </popovers>
+                                                        </dialogFullScreen>
+                                                    </cui>
+                                                </uiSettings>
+                                            </endnote>
+								
+                        </items>
+                      </column>
+                    </items>
+                  </columns>
+                </items>
+              </productType>
+            </items>
+          </tabs>
+        </items>
+    </content>
+</jcr:root>

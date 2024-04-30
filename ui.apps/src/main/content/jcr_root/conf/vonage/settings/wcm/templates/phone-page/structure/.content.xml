@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:template="/conf/vonage/settings/wcm/templates/phone-page"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:uuid="ec726538-331a-436e-99aa-944970e4ae94"
+        sling:resourceType="vonage/components/structure/phone-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <experiencefragment
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/Header/master"/>
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+                <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <breadcrumb
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/breadcrumb"
+                        startLevel="3"/>
+                    <responsivegrid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid"
+                        editable="{Boolean}true"/>
+                </responsiveGrid>
+            </generalContainer>
+            <experiencefragment_1366488934
+              jcr:primaryType="nt:unstructured"
+              fragmentVariationPath="/content/experience-fragments/vonage/en-us/uc---2-up-card---contact---pricing/uc---2-up-card---contact---pricing"
+              sling:resourceType="vonage/components/content/fragments/experiencefragment" />
+            <experiencefragment_leadgen
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/lead_gen/master"/>
+            <experiencefragment_footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/Footer/master"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

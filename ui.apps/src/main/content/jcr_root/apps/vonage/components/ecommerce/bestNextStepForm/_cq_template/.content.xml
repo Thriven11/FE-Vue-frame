@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    contactLeyend="Whom should we contact?"
+    phoneLeyend="When is the best time to call you?"
+    soonCallLabel="As soon as possible"
+    scheduledCallLabel="Schedule a call"
+    tellUsMoreLeyend="Tell us more about yourself so we can match you with the right expert"
+    footNote="&lt;p&gt;*If your request was submitted&amp;nbsp;after business hours, an expert will contact&amp;nbsp;you the next business day.&lt;br&gt;
+    &amp;nbsp; Our business hours are 9am-6pm ET, Monday-Friday.&lt;/p&gt;"
+    privacyPolicySchedule="By checking this box, I agree to the Privacy Policy"
+    primaryCtaText="Homepage"
+    primaryCtaUrl="#"
+    secondaryCtaText="Re Schedule a call"
+    secondaryCtaUrl="#"
+    confirmEmailTitle="Thanks, you'll receive an email shortly from one of our experts."
+    confirmPhoneTitle="Thanks, one of our experts will be in touch."
+    confirmPhoneMessage="Your call is scheduled on {date} at {time} EST."
+    addCalendarTitle="Add to your calendar"
+    calendarEventTitle="Call with Vonage Expert"
+    calendarEventDescription="You will receive a call from one of our experts.">
+</jcr:root>

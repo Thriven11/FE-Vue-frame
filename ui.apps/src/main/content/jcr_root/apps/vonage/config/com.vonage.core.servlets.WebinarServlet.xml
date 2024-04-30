@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig" 
+    accessKey="87C9643CA67F185941F7B2D8AA54480E"
+	secretAccessKey= "2c3a7b75715f677c081ea4d1907585bfd73059372da46ef50d042ebd3543f16eeeab31439ae0015f0acd1064f20a833778c3d1380f12d3d808e5fb54fb310e57"
+	on24Url="https://api.on24.com/v2/client/{0}/event/{1}/registrant/"
+	on24VeUrl="https://vshow.on24.com/vshow/{0}/register"
+	on24VeApiKey="Vonage"
+	clientID="42426"/>

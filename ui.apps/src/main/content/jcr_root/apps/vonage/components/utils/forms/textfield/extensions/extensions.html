@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-input">
+    <!--/* Placeholder has an intentional space in order to trigger the label hoisting animation correctly */-->
+    <input  data-sly-test="${!properties.isOptional}" type="number" placeholder=" " id="extensions-${model.uuid}" name="numberofextensions" required>
+    <input  data-sly-test="${properties.isOptional}" type="number" placeholder=" " id="extensions-${model.uuid}" name="numberofextensions">
+    <label class="Vlt-form__input-label" for="extensions-${model.uuid}">${'vng-extensions' @ i18n}</label>
+    <span class="Vlt-icon-form-checkmark"></span>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label" >${'vng-validExtensions' @ i18n}</span>
+  </small>
+</div>

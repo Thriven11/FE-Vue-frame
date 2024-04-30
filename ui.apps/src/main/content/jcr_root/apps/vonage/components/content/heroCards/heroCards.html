@@ -1,0 +1,26 @@
+<sly
+  data-sly-use.template="limitedGrid.html"
+/>
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title} Component"
+  style="min-width: 250px;"
+
+></div>
+  <section class="hero-cards">
+    <div class="hero-cards__spacer ${properties.background}"></div>
+    <div class="container">
+     <sly data-sly-test.lobsection="${properties.fourthLobSection ? '4' : '3'}"></sly>
+      <sly
+        data-sly-call="${template.main @ numberOfItems = lobsection,
+          resourceType='vonage/components/content/heroCards/heroCard',
+          mediumColClass=''}"
+      />
+	  
+      </sly>
+      
+    </div>
+  </section>

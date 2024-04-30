@@ -1,0 +1,46 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.CartPricingDetailsModel"/>
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"/>
+<sly data-sly-use.checkoutUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.checkoutUrl}" />
+<sly data-sly-use.nextStepCtaUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.nextStepCta.href}" />
+<sly data-sly-use.nextStepImage="${'../../utils/urlRewriter/urlRewriter.js' @ url=image.fileReference}" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="card-icon-3-up__card--magenta-coral checkout-cart-pricing-details">
+  <div class="Vlt-card-icon checkout-cart-pricing-details__inner Vlt-form">
+    <div class="Vlt-card-icon__extrusion"></div>
+    <div class="Vlt-card-icon__container checkout-cart-pricing-details__container">
+      <h3 class="checkout-cart-pricing-details__title h5 d-none d-lg-block">${model.title @ context='text'}</h3>
+      <div id="v-checkout-cart-pricing-details"></div>
+    </div>
+  </div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+
+    <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+    <input type="hidden" name="oneTimeFees" value="${'vng-ecomm-oneTimeFees' @ i18n}">
+    <input type="hidden" name="monthlyFees" value="${'vng-ecomm-monthlyFees' @ i18n}">
+    <input type="hidden" name="shipping" value="${'vng-ecomm-shipping' @ i18n}">
+    <input type="hidden" name="taxes" value="${'vng-ecomm-taxes' @ i18n}">
+    <input type="hidden" name="calculatedAtCheckout" value="${'vng-ecomm-calculatedAtCheckout' @ i18n}">
+    <input type="hidden" name="dueToday" value="${'vng-ecomm-dueToday' @ i18n}">
+    <input type="hidden" name="firstBill" value="${'vng-ecomm-firstBill' @ i18n}">
+    <input type="hidden" name="monthlyBill" value="${'vng-ecomm-monthlyBill' @ i18n}">
+    <input type="hidden" name="checkoutText" value="${'vng-ecomm-checkout' @ i18n}">
+    <input type="hidden" name="lines" value="${'vng-ecomm-lines' @ i18n}">
+    <input type="hidden" name="disclaimer" value="${model.disclaimer @ context='attribute'}">
+    <input type="hidden" name="title" value="${'vng-ecomm-checkout-title' @ i18n}">
+
+    <input type="hidden" name="checkoutUrl" value="${checkoutUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="nextStepHeadline" value="${model.nextStepHeadline @ context='attribute'}">
+    <input type="hidden" name="nextStepCtaText" value="${model.nextStepCta.label @ context='attribute'}">
+    <input type="hidden" name="nextStepCtaUrl" value="${nextStepCtaUrl.externalUrl @ context='attribute'}">
+
+    <input type="hidden" name="nextStepImage" value="${nextStepImage.externalUrl}">
+
+    <input type="hidden" name="shareCartLabel" value="${model.shareCart.label}">
+    <input type="hidden" name="shareFunctionality" value="${model.shareCart.functionality}">
+
+  </div>
+</section>

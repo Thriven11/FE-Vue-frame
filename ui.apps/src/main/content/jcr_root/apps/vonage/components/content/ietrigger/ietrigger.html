@@ -1,0 +1,53 @@
+<sly data-sly-use.triggerTemplate="ieTriggerTemplate.html" />
+
+<sly data-sly-test.header="${properties.modalHeader}"/>
+<sly data-sly-test.text="${properties.modalText @context='html'}" />
+<sly data-sly-test.label="${properties.label}"/>
+<sly data-sly-test.href="${properties.href @context='uri'}"/>
+<sly data-sly-test.linkText="${properties.linkText}"/>
+<sly data-sly-test.linkUrl="${properties.linkUrl @context='uri'}"/>
+<sly data-sly-test.ariaLabel="${properties.ariaLabel}"/>
+
+<sly data-sly-test="${wcmmode.edit}" data-sly-call="${triggerTemplate.template @ header= header,text=text,label=label,href= href,linkText=linkText,linkUrl=linkUrl,ariaLabel=ariaLabel}" />
+
+<div id="showModel">
+<section data-sly-test="${!wcmmode.edit}" role="dialog" aria-modal="true" aria-labelledby="v16-modal-trigger"
+    class="vng-modal__overlay ieModal" open="open" style="display:none;">
+    <div class="vng-modal__backdrop" id="closeIEmodal"></div>
+    <sly data-sly-call="${triggerTemplate.template @ header= header,text=text,label=label,href= href,linkText=linkText,linkUrl=linkUrl,ariaLabel=ariaLabel}" />
+</section>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) { 
+    
+        var modal =document.querySelector(".ieModal");
+    var showModal =document.querySelector("#showModel");
+    var ua = window.navigator.userAgent;
+    var trident = ua.indexOf('Trident/');
+      if (trident > 0) {
+          // IE 11 => return version number
+          var rv = ua.indexOf('rv:');
+          showModal.classList.add("vng-modal--open");
+          modal.style.display="block";
+    
+       }
+    
+    // When the user clicks on  (x), close the modal   
+    var close = document.getElementById("model-close");
+    close.onclick = function() {
+      showModal.classList.remove("vng-modal--open");
+        modal.style.display="none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    var closeOutside = document.getElementById("closeIEmodal");
+    closeOutside.onclick = function(event) {
+    showModal.classList.remove("vng-modal--open");
+     modal.style.display="none";
+    
+    }
+    
+    });
+    
+    </script>

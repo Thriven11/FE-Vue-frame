@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[workflow:wcm]"
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:template="/libs/cq/workflow/templates/model"
+        cq:workflowDetailsPage="/mnt/overlay/dam/gui/content/s7dam/jobmonitoring/encodingjobdetails.html${item}?item=${payload}"
+        jcr:description="Workflow to create a new language copys"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="WCM: Create Language Copy"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow 
+            jcr:primaryType="nt:unstructured" 
+            sling:resourceType="foundation/components/parsys">
+            <process 
+                jcr:primaryType="nt:unstructured"
+                jcr:description="Create page with children if requested." 
+                jcr:title="Create language copy" 
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData 
+                    jcr:primaryType="nt:unstructured" 
+                    PROCESS="com.adobe.cq.wcm.translation.impl.process.CreateLanguageCopyProcess" 
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <process_55697807 
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Update XF links in Sites" 
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData 
+                    jcr:primaryType="nt:unstructured" 
+                    PROCESS="com.vonage.core.workflows.process.UpdateXfLinksInSites" 
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_55697807>
+            <process_2106021037 
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Update Links in Experience Fragments" 
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData 
+                    jcr:primaryType="nt:unstructured" 
+                    PROCESS="com.vonage.core.workflows.process.UpdateURLsInXF" 
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_2106021037>
+        </flow>
+        <image 
+            jcr:primaryType="nt:unstructured" 
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

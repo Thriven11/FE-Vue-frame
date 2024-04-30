@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Text Image Card"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+        <tabs
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/tabs"
+          maximized="{Boolean}true">
+          <items jcr:primaryType="nt:unstructured">
+            <embedCodeTab
+              jcr:primaryType="nt:unstructured"
+              jcr:title="Embed"
+              sling:resourceType="granite/ui/components/coral/foundation/container">
+              <items jcr:primaryType="nt:unstructured">
+                <columns
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                  margin="{Boolean}true">
+                  <items jcr:primaryType="nt:unstructured">
+                    <column
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                        <embedCode
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                          fieldLabel="Code"
+                          rows="15"
+                          name="./embedCode"/>
+                      </items>
+                    </column>
+                  </items>
+                </columns>
+              </items>
+            </embedCodeTab>
+            <styleOptions
+              jcr:primaryType="nt:unstructured"
+              jcr:title="Style Options"
+              sling:resourceType="granite/ui/components/coral/foundation/container">
+              <items jcr:primaryType="nt:unstructured">
+                <columns
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                  margin="{Boolean}true">
+                  <items jcr:primaryType="nt:unstructured">
+                    <column
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                        <adjustPadding
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                          fieldDescription="Adjust component padding, default is no padding"
+                          fieldLabel="Adjust Padding"
+                          name="./adjustPadding">
+                          <items jcr:primaryType="nt:unstructured">
+                            <paddingNone
+                              jcr:primaryType="nt:unstructured"
+                              text="No Padding"
+                              value="no-padding"/>
+                            <paddingBoth
+                              jcr:primaryType="nt:unstructured"
+                              text="Padding on Top &amp; Bottom"
+                              value="vonage-embed__padding"/>
+                            <padaddingTop
+                              jcr:primaryType="nt:unstructured"
+                              text="Padding on Top only"
+                              value="vonage-embed__padding top"/>
+                            <paddingBottom
+                              jcr:primaryType="nt:unstructured"
+                              text="Padding on Bottom only"
+                              value="vonage-embed__padding bottom"/>
+                          </items>
+                        </adjustPadding>
+                        <adjustMargin
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Adjust component margin, default is no margin"
+                        fieldLabel="Adjust Margin"
+                        name="./adjustMargin">
+                        <items jcr:primaryType="nt:unstructured">
+                          <marginNone
+                            jcr:primaryType="nt:unstructured"
+                            text="No Margin"
+                            value="no-margin"/>
+                          <marginBoth
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Top &amp; Bottom"
+                            value="vonage-embed__margin"/>
+                          <marginTop
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Top only"
+                            value="vonage-embed__margin margin-top"/>
+                          <marginBottom
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Bottom only"
+                            value="vonage-embed__margin margin-bottom"/>
+                        </items>
+                      </adjustMargin>
+                      </items>
+                    </column>
+                  </items>
+                </columns>
+              </items>
+            </styleOptions>
+          </items>
+        </tabs>
+
+
+        </items>
+    </content>
+</jcr:root>

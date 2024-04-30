@@ -1,0 +1,217 @@
+<sly data-sly-use.countries="countries.js" data-sly-unwrap />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component" style="min-width:250px"></div>
+<script type="text/javascript">
+  var vngPricingStrings = {
+    sms: {
+      sendMessage: "${'vng-sms-sendMessage' @ i18n, context='scriptString'}",
+      receiveMessage: "${'vng-sms-receiveMessage' @ i18n, context='scriptString'}",
+      shortCode: {
+        shared: "${'vng-sms-shortCode-shared' @ i18n, context='scriptString'}",
+        random: "${'vng-sms-shortCode-random' @ i18n, context='scriptString'}",
+        vanity: "${'vng-sms-shortCode-vanity' @ i18n, context='scriptString'}"
+      }
+    },
+    voice: {
+      makeCall: {
+        standard: "${'vng-voice-makeCall-standard' @ i18n, context='scriptString'}",
+        mobile: "${'vng-voice-makeCall-mobile' @ i18n, context='scriptString'}",
+        landline: "${'vng-voice-makeCall-landline' @ i18n, context='scriptString'}"
+      },
+      receiveCall: "${'vng-voice-receiveCall' @ i18n, context='scriptString'}"
+    },
+    rental: {
+      sms: "${'vng-rental-sms' @ i18n, context='scriptString'}",
+      voice: "${'vng-rental-voice' @ i18n, context='scriptString'}",
+      smsVoice: "${'vng-rental-smsVoice' @ i18n, context='scriptString'}",
+      virtual: "${'vng-rental-virtual' @ i18n, context='scriptString'}",
+      tollFree: "${'vng-rental-tollFree' @ i18n, context='scriptString'}",
+      shortCode: "${'vng-rental-shortCode' @ i18n, context='scriptString'}"
+    },
+    sip: {
+      pstn: {
+        standard: "${'vng-sip-pstn-standard' @ i18n, context='scriptString'}",
+        mobile: "${'vng-sip-pstn-mobile' @ i18n, context='scriptString'}",
+        landline: "${'vng-sip-pstn-landline' @ i18n, context='scriptString'}"
+      },
+      sipLeg: "${'vng-sip-sipLeg' @ i18n, context='scriptString'}",
+      numberPorting: {
+        numberPorting: "${'vng-sip-numberPorting' @ i18n, context='scriptString'}",
+        firstFifty: "${'vng-sip-firstFifty' @ i18n, context='scriptString'}",
+        beyondFifty: "${'vng-sip-beyondFifty' @ i18n, context='scriptString'}",
+        availabilityAndPricing: "${'vng-sip-availabilityAndPricing' @ i18n, context='scriptString'}",
+        included: "${'vng-sip-included' @ i18n, context='scriptString'}",
+        contactSales: "<a href='/communications-apis/contact-api/' class='contact-sales-link'>Contact Sales</a>"
+      }
+    },
+    verify: {
+      verifyNumber: "${'vng-verify-verifyNumber' @ i18n, context='scriptString'}",
+      description: "per successful verification.<br />(Additional Messaging & Voice rates apply for attempted and successful verifications)"
+    },
+    legal: {
+      perMessage: "${'vng-legal-perMessage' @ i18n, context='scriptString'}",
+      perMinute: "${'vng-legal-perMinute' @ i18n, context='scriptString'}",
+      perMonth: "${'vng-legal-perMonth' @ i18n, context='scriptString'}"
+    },
+    endNote: {
+      sms: {
+        virtual: {
+          us: "${'vng-endNote-sms-virtual-us' @ i18n, context='scriptString'}",
+          ca: "${'vng-endNote-sms-virtual-ca' @ i18n, context='scriptString'}"
+        },
+        shortCode: {
+          us: [
+            "${'vng-endNote-sms-shortCode-us-1' @ i18n, context='scriptString'}",
+            "${'vng-endNote-sms-shortCode-us-2a' @ i18n, context='scriptString'} <a href='/communications-apis/contact-api/'>Contact Sales</a> ${'vng-endNote-sms-shortCode-us-2b' @ i18n, context='scriptString'}",
+          ],
+          ca: [
+          "${'vng-endNote-sms-shortCode-ca-1a' @ i18n, context='scriptString'} <a href='/communications-apis/contact-api/'>Contact Sales</a> ${'vng-endNote-sms-shortCode-ca-1b' @ i18n, context='scriptString'}",
+          "${'vng-endNote-sms-shortCode-ca-2' @ i18n, context='scriptString'}"
+          ]
+        }
+      }
+    },
+    sipConnectTitle: "${'vng-sip-connect' @ i18n, context='scriptString'}",
+    virtualPhoneNumberTitle: "${'vng-virtual-phone-number' @ i18n, context='scriptString'}",
+    tollFreeNumberTitle: "${'vng-toll-free-number' @ i18n, context='scriptString'}",
+    shortCodeTitle: "${'vng-short-code' @ i18n, context='scriptString'}",
+    free: "${'vng-free' @ i18n, context='scriptString'}",
+    makeACallTitle: "${'vng-make-a-call-title' @ i18n, context='scriptString'}",
+    verifyTitle: "${'vng-verify-title' @ i18n, context='scriptString'}",
+    verifyFeatures: [
+      "${'vng-verify-feature-1' @ i18n, context='scriptString'}",
+      "${'vng-verify-feature-2' @ i18n, context='scriptString'}",
+      "${'vng-verify-feature-3' @ i18n, context='scriptString'}"
+    ]
+  };
+</script>
+<input type="hidden" name="tabs" value="${properties.tabs}">
+<input type="hidden" name="langguage" value="${properties.lang}">
+<input type="hidden" name="dropCountry" value="${properties.country}">
+<section id="dynamic-pricing-container" class="dynamic-pricing-container" value="${properties.product}">
+  <div class="flex-container container">
+    <div class="country-dropdown">
+      <div class="Vlt-form__element Vlt-form__element--big" role="status">
+        <div class="Vlt-select">
+          <input id="vng-pricing-country-input" list="vng-pricing-country" placeholder="${'vng-enterCountry' @ i18n}" v-on:focus="captureCountry" v-on:change="changeCountry" v-on:blur="resetCountry" />
+          <label class="Vlt-form__input-label" for="vng-pricing-country-input">${'vng-country' @ i18n}</label>
+          <datalist id="vng-pricing-country" class="Vlt-form__select">
+            <sly data-sly-list.country="${countries}">
+              <option data-value="${country.code}" value="${country.key @ i18n}"></option>
+            </sly>
+          </datalist>
+        </div>
+
+      </div>
+    </div>
+    <div class="currency-container">
+      <div class="currency-container__toggle-container">
+        <span class="currency-container__currency">$</span>
+        <input class="currency-container__toggle" type="checkbox" aria-label="change currency" v-on:click="changeCurrency"/>
+        <span class="currency-container__currency">€</span>
+      </div>
+      <div class="currency-container__disclaimer-container">
+        <p class="currency-container__disclaimer">${'vng-currency-disclaimer-1' @ i18n}</p>
+        <p class="currency-container__disclaimer">${'vng-currency-disclaimer-2' @ i18n}</p>
+      </div>
+    </div>
+  </div>
+
+  <template v-for="(tabs, outerIndex) in cards">
+
+    <template v-if="tabs.restricted">
+      <div v-if="productNames.length" class="tabs__product-name-restricted">{{productNames[outerIndex]}}</div>
+      <sly data-sly-resource="${'/content/experience-fragments/vonage/en-us/api---product-not-available-in-country-message/master/jcr:content/root' @ wcmmode='disabled'}" />
+    </template>
+
+    <div v-else class="tabs">
+      <!-- Tab Titles -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div v-if="productNames.length" class="tabs__product-name">{{productNames[outerIndex]}}</div>
+            <div role="tablist" aria-label="SMS" class="tabs__tabs">
+              <button
+                v-for="(title, index) in tabs.titles"
+                :aria-controls="'panel-' + index"
+                :aria-selected="index === 0"
+                class="tabs__tab"
+                :id="'tab-title-' + index"
+                role="tab"
+                v-on:click="tabSelected(index, outerIndex)"
+                :tabindex="index">{{title}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tab Panels -->
+      <div v-for="(panel, index) in tabs.panels" role="tabpanel" aria-label="Pricing card details" class="tabs__panel" :tabindex="index" aria-hidden="false" :id="'panel-' + index">
+        <div class="pricing-card">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="pricing-card__card">
+                  <div v-for="(option, index) in panel.options" class="pricing-card__option">
+                    <!-- Checklist for US Verify -->
+                    <ul v-if="product === 'verify' && selectedCountry.code === 'US' && index === 1" class="list-items">
+                      <li v-for="feature in option.verifyUSFeatures" class="list-item">
+                        <span class="Vlt-icon-checkmark" aria-hidden="false"></span>
+                        <span class="list-item-label">{{feature}}</span>
+                      </li>
+                    </ul>
+                    <!-- Otherwise render offerings -->
+                    <template v-else>
+                      <h3 class="pricing-card__option-product">{{option.title}}</h3> 
+                      <div v-for="offeringObject in option.offerings" class="pricing-card__offer">
+                        <!-- Use v-html to render <br /> for verify description -->
+                        <span class="pricing-card__offer-name" v-html="offeringObject.description"></span>
+                        <div class="pricing-card__offer-price-container">
+                          <span class="pricing-card__offer-price" v-html="offeringObject.priceString"></span>
+                          <span class="pricing-card__offer-price__legal">
+                            {{offeringObject.legal}}
+                          </span>
+                        </div>
+                      </div>
+                      <div  v-if="selectedCountry.code === 'US' && index === 0" class="auth-text-endnote">
+                        ${properties.endnote @context='html' }
+                     </div>
+                    </template>
+                  </div>
+        
+                     <div class="auth-text">
+                        ${properties.description @context='html'}
+                     </div>
+                </div>
+                <div class="end-note">
+                  <div class="end-note__content">
+                    <p v-for="endNote in panel.endNotes" v-html="endNote"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End .tabs -->
+    </div>
+  </template>
+
+  <!-- Additional Carrier Fees -->
+  <sly data-sly-use.model="com.vonage.core.models.content.DynamicPricingCardModel"/>
+<template v-if="selectedCountry.code === 'US' && activeTabIndices[0] === 0 && (product === 'messaging' || product === 'phone-numbers')">
+
+  <sly data-sly-resource="${model.usVirtaul @ wcmmode='disabled'}" />
+  </template>
+  <template v-else-if="selectedCountry.code === 'US' && activeTabIndices[0] === 2 && (product === 'messaging' || product === 'phone-numbers')">
+    <sly data-sly-resource="${model.usSMS @ wcmmode='disabled'}" />
+  </template>
+  <template v-else-if="selectedCountry.code === 'US' && activeTabIndices[0] === 1 && (product === 'messaging' || product === 'phone-numbers')">
+    <sly data-sly-resource="${model.usTollFree @ wcmmode='disabled'}" />
+  </template>
+  <template v-else-if="selectedCountry.code === 'CA' && activeTabIndices[0] === 0 && (product === 'messaging' || product === 'phone-numbers')">
+    <sly data-sly-resource="${model.caVirtaul @ wcmmode='disabled'}" />
+  </template>
+
+</section>

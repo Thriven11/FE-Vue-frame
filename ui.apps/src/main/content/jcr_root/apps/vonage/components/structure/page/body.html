@@ -1,0 +1,21 @@
+<sly data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel" />
+
+<div data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}" data-sly-test="${!inheritedPageProperties.removeL3Nav}" >
+    <sly data-sly-resource="${@path='l3NavLinks', resourceType='vonage/components/structure/header/navigations/l3Nav'}"/>
+</div>
+
+<div style="min-height: 80px;" data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}" data-sly-test="${pageProperties.showAnnouncement}">
+    <sly data-sly-resource="${'announcement' @resourceType='vonage/components/content/announcementComponent'}"></sly>
+</div>
+
+<sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
+     data-sly-repeat.child="${templatedContainer.structureResources}"
+     data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div'}"></sly>
+
+     
+	 
+<sly data-sly-test="${pageProperties.winbackpath}" data-sly-resource="${pageProperties.winbackpath @ wcmmode='disabled'}" />
+<sly data-sly-test="${!pageProperties.disableiePopUP}" data-sly-resource="${'/content/experience-fragments/vonage/en_us/ie-pop-up/master/jcr:content/root' @ wcmmode='disabled'}" />
+<section class="date-time-section">
+    <div class="display-date-time"></div>
+</section>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Hero Alternative"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <asset
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Asset"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    allowUpload="{Boolean}false"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    multiple="{Boolean}false"
+                                                    name="./file"
+                                                    title="Upload Image Asset"
+                                                    uploadUrl="${suffix.path}"
+                                                    useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </asset>
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideResource="{Boolean}true">
+                    </metadata>
+                    <backgroundSection
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Background Section"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <fieldset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title=""
+                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                        <layout
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                          <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                              <background
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Select background color"
+                                fieldLabel="Background color"
+                                name="./gradient">
+                                <items jcr:primaryType="nt:unstructured">
+                                  <default
+						            jcr:primaryType="nt:unstructured"
+						            text="Default"
+						            value=""
+						            selected="{Boolean}true"/>
+						          <white
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(56, 21%, 52%, 1) 100%);"/>
+                                  <black
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(56, 21%, 52%, 1) 100%);"/>
+                                  <darkGray
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Dark Gray"
+                                    value="linear-gradient(90deg, hsla(0, 0%, 35%, 1) 0%, hsla(56, 21%, 52%, 1) 100%);"/>
+                                  <purpleSalmon
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Purple Salmon"
+                                    value="linear-gradient(90deg, #83499a 0%, #ca4494 50%, #f59e92 100%)"/>
+                                  <purpleViolet
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Purple Violet"
+                                    value="linear-gradient(90deg, #881ffe 0%, #8533cc 50%, #83469c 100%);"/>
+                                  <magentaCoral
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Magenta Coral"
+                                    value="linear-gradient(90deg, #ec688b 0%, #f57f84 50%, #fd977d 100%);"/>
+                                  <purpleSky
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Purple Sky"
+                                    value="linear-gradient(90deg, #73bcfd 0%, #688ed5 50%, #5c5ba9 100%);"/>
+                                  <indigoViolet
+						            jcr:primaryType="nt:unstructured"
+						            text="Indigo Violet"
+						            value="linear-gradient(90deg,#881fff 40%,#827ef9);"/>
+                                </items>
+                              </background>
+											<mediaLandscape
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./mediaLandscape" text="Landscape Orientation"
+												value="hero-alt--media-landscape">
+											</mediaLandscape>
+											<noSpace jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./noSpace" text="Remove Bottom Margin from Component?"
+												fieldDescription="Select this to make this component bump up against the content below it"
+												value="hero-alt--no-space">
+											</noSpace>
+											<bottomSpace
+                                                jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Add Bottom Padding to Component if CTAs are getting cut-off" name="./addPadding"
+                                                emptyOption="{Boolean}false"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <option1 jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true" text="none"
+                                                        value="" />
+                                                    <option2 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 1 rem from bottom"
+                                                        value="hero-alt--padding-bottom-1rem" />
+                                                    <option3 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 2 rem from bottom" value="hero-alt--padding-bottom-2rem" />
+                                                    <option4 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 3 rem from bottom" value="hero-alt--padding-bottom-3rem" />
+                                                    <option5 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 4 rem from bottom" value="hero-alt--padding-bottom-4rem" />
+                                                    <option6 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 5 rem from bottom" value="hero-alt--padding-bottom-5rem" />
+                                                </items>
+                                            </bottomSpace>
+                            </items>
+                          </column>
+                        </items>
+                      </fieldset>
+                    </items>
+                    </backgroundSection>
+                    <textSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <textColor
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                              fieldDescription="Use white text with a dark background image. Use black text with a light background image."
+                                              fieldLabel="Text Color"
+                                              name="./textColor">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                <white
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="White"
+                                                  value="hero-alt--white-text"
+                                                  selected="{Boolean}true"/>
+                                                <black
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Black"
+                                                  value=" "/>
+                                              </items>
+                                            </textColor>
+                                            <largeSubtitle
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              name="./largeSubtitle"
+                                              text="Large Subtitle Font"
+                                              fieldDescription="Select this to use a larger font-size for the subtitle"
+                                              value="hero-alt__sub-title--large"/>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                required="{Boolean}true"
+                                                name="./title"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Description"
+                                                required="{Boolean}true"
+                                                name="./description"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </textSection>
+                    <ctaOptions
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="CTA Options"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                        <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                            <primaryLightbox
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}false"
+                            fieldDescription="When checked, the primary CTA will trigger a lightbox form and confirmation message"
+                            name="./primaryLightbox"
+                            text="Primary Button as Lightbox?"
+                            uncheckedValue="{Boolean}false"
+                            value="{Boolean}true"/>
+                            <secondaryLightbox
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            checked="{Boolean}false"
+                            fieldDescription="When checked, the secondary CTA will trigger a lightbox form and confirmation message"
+                            name="./secondaryLightbox"
+                            text="Secondary Button as Lightbox?"
+                            uncheckedValue="{Boolean}false"
+                            value="{Boolean}true"/>
+                            </items>
+                            </column>
+                        </items>
+                        </columns>
+                    </items>
+                    </ctaOptions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

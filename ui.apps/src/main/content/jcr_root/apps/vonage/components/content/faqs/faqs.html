@@ -1,0 +1,11 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start col-12"
+     data-emptytext="${component.title} Component"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2 faq__tabs" id="${properties.anchor}" >
+      <h2 class="faq__title" data-sly-test="${properties.title}">${properties.title}</h2>
+      <sly data-sly-resource="${ @path='responsiveGrid',
+                resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></sly>
+    </div>
+  </div>
+</div>

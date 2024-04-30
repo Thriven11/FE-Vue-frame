@@ -1,0 +1,24 @@
+<section class="alternative-download">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="alternative-download__container">
+          <div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start" data-emptytext="${component.title} Component" style="min-width:250px"></div>
+          <span class="alternative-download__description">
+						${properties.description}
+					</span>
+          <div
+                  data-sly-use.download="com.adobe.cq.wcm.core.components.models.Download"
+                  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+                  class="cmp-download">
+            <a
+                    aria-label="${properties.ariaLabel}" class="cmp-download__action"
+                    href="${properties.href}"> <span
+                    class="cmp-download__action-text">${properties.label}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

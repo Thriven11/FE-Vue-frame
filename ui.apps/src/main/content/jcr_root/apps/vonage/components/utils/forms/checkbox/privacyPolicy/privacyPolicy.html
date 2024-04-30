@@ -1,0 +1,44 @@
+<sly
+  data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel"
+/>
+
+<div class="Vlt-form__element Vlt-form__element--checkbox" role="status">
+  <div class="Vlt-checkbox">
+    <label for="privacypolicy-${model.uuid}">
+      <div class="Vlt-checkbox__button">
+        <input
+          type="checkbox"
+          class="Vlt-checkbox__input"
+          name="privacypolicyoptin"
+          id="privacypolicy-${model.uuid}"
+          value="true"
+          required
+        />
+        <span
+          class="Vlt-checkbox__icon form__checkbox-icon Vlt-icon-form-checkmark Vlt-form__checkbox-icon"
+        ></span>
+      </div>
+      <div class="Vlt-form__checkbox-label-container" id="consent-${model.uuid}">
+        <div class="Vlt-form__checkbox-label">
+          ${'vng-privacyPolicy' @ i18n}
+          <a
+            class="Vlt-form__checkbox-label-link"
+            href="https://www.vonage.com/privacy-policy"
+            target="_blank"
+            >${'vng-privacyPolicyLink' @ i18n}</a
+          >.
+        </div>
+        <small
+          class="Vlt-form__element__error Vlt-icon-warning-icon form__checkbox-error"
+        >
+          <span class="Vlt-form__input-error-label">${'vng-requiredCheckboxMsg' @ i18n}</span>
+        </small>
+      </div>
+      <div class="Vlt-form__checkbox-label-container Vlt-form__element-hidden" id="gdpr-consent-${model.uuid}">
+        <div class="Vlt-form__checkbox-label">
+          ${'vng-gdpr-consent' @ i18n}
+        </div>
+      </div>
+    </label>
+  </div>
+</div>

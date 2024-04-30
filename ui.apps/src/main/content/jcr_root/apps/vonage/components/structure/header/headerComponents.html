@@ -1,0 +1,56 @@
+<sly data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel" />
+<template data-sly-template.template="${@ headerComponentModel}"
+  data-sly-use.l3NavTemplate="vonage/components/structure/header/navigations/l3Nav/l3Nav-template.html"
+  data-sly-use.abandonedCart="abandonedCart.html" >
+  <div class="Vlt-header__backdrop-overlay"></div>
+  <div class="Vlt-header__backdrop"></div>
+  <div class="Vlt-header__content">
+    <div class="Vlt-header__logo">
+      <sly data-sly-resource="${'header-logo' @ resourceType='vonage/components/content/logo'}" />
+    </div>
+
+    <!--/* Eccomerce button - Mobile */-->
+    <div class="ecomm-link ecomm-link--mobile ${!inheritedPageProperties.enableSearch ? 'ecomm-link--no-search' : ''}">
+      <a href="${headerComponentModel.link.href}"
+        class="ecomm-link__btn"
+        aria-label="redirect to cart page"
+      >
+        <sly data-sly-resource="${'cartSvg' @
+                  resourceType='vonage/components/structure/header/navigations/mainLinkList', selectors='cartSvg'}" />
+      </a>
+    </div>
+
+    <!--/* search box */-->
+    <div data-sly-unwrap="${!wcmmode.edit}" style="min-width: 250px">
+      <sly data-sly-test="${inheritedPageProperties.enableSearch}" data-sly-include="searchBox.html"/>
+    </div>
+
+    <!--/* navigation burger */-->
+    <button class="Vlt-header__nav-toggle" aria-label="open site navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+    <button class="Vlt-topmenu-toggle" aria-label="back to site navigation menu">
+      ${headerComponentModel.mainMenuLabel}
+    </button>
+    <div class="Vlt-header__navigation">
+      <!--/*TODO: add custom styles to remove authoring inline style*/-->
+      <div data-sly-unwrap="${!wcmmode.edit}" style="min-width: 250px">
+        <sly data-sly-resource="${'mainNavigation' @
+                  resourceType='vonage/components/structure/header/navigations/mainLinkList', requestAttributes=headerComponentModel.parameters}" />
+      </div>
+      <hr class="Vlt-header__menu-separator">
+      <!--/*TODO: add custom styles to remove authoring inline style*/-->
+      <div data-sly-unwrap="${!wcmmode.edit}" style="min-width: 250px">
+        <sly data-sly-resource="${'utilityNavigation' @
+                  resourceType='vonage/components/structure/header/navigations/utilityLinkList'}"/>
+      </div>
+    </div>
+  </div>
+  <sly data-sly-test.isL3Nav="${!inheritedPageProperties.removeL3Nav}">
+    <div data-sly-unwrap="${!wcmmode.edit}" style="min-width: 250px">
+      <sly data-sly-call="${l3NavTemplate.l3Nav}"/>
+    </div>
+  </sly>
+  <sly data-sly-test="${headerComponentModel.abandonedCartModalHeader}" data-sly-call="${abandonedCart.template @ headerComponentModel=headerComponentModel}" />
+</template>

@@ -1,0 +1,50 @@
+<sly data-sly-use.model="com.vonage.core.models.content.DetailsGridModel"
+     data-sly-use.ctaTemplate="ctaTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-0">
+    	<sly data-sly-test="${properties.mediaType != 'embed'}">
+      		<div class="detail__content  ${properties.imagewidth ? 'detail__content__force-image-width' : ''}"
+           		data-sly-test.resourceNode="detailsFeatureImage"
+           		data-sly-test.resourceNodeType="${'{0}{1}' @
+            	format=['vonage/components/content/detailsGrid/detailsItem/', 'detailsFeatureImage']}">
+        		<sly data-sly-resource="${@path=resourceNode, resourceType=resourceNodeType}" data-sly-unwrap>
+        		</sly>
+      		</div>
+      	</sly>
+        <sly data-sly-test="${properties.mediaType == 'embed'}">
+          <div class="detail__content ${properties.hideEmbed ? 'hide-embed' : '' @context='styleString'}">
+            <sly data-sly-resource="${'detailsEmbedContainer' @resourceType='vonage/components/content/embed'}"/>
+          </div>
+        </sly>
+    </div>
+    <div class="col-12 col-md-10 offset-md-1 col-lg-6">
+      <div class="detail__content">
+        <div class="detail__eyebrow-container">
+            <span class="detail__eyebrow  ${model.eyebrowapill ? 'detail__eyebrow--pill' : ''}">
+              ${model.eyebrow}
+            </span>
+        </div>
+        <h2 class="detail__title">${model.title @ context='html'}</h2>
+        <span class="detail__description">${model.description @ context='html'}</span>
+        <ul class="detail__list"
+            data-sly-test.listOfItems="${model.listOfItems}"
+            data-sly-list="${listOfItems}">
+          <li><span>${item.listItem @ context='html'}</span></li>
+        </ul>
+        <div class="detail__link-wrapper" data-sly-test="${model.link.href != '#' || properties.primaryLightbox}">
+          <sly
+                  data-sly-test="${!properties.primaryLightbox}"
+                  data-sly-call="${ctaTemplate.ctaL3 @link=model.link, cssClass='link'}"/>
+          <sly
+                  data-sly-test="${properties.primaryLightbox}"
+                  data-sly-resource="${'ctaLightbox' @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='link'}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

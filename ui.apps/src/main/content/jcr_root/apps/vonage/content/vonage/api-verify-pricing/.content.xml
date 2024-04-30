@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:targetPath="/var/commerce/products/vonage/communications-api/verify"
+        jcr:description="Scaffolding used to update Vonage verify products."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="verify Data"
+        sling:resourceType="wcm/scaffolding/components/scaffolding">
+        <cq:dialog
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Vonage verify Properties"
+            sling:resourceType="cq/gui/components/authoring/dialog">
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tabs
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tab1
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Basic"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Title"
+                                                        name="./jcr:title"
+                                                        renderReadOnly="{Boolean}true"
+                                                        required="{Boolean}true"/>
+													<overwrite
+                                                        jcr:primaryType="nt:unstructured"
+                                                        name="./disableSync"
+														sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+														fieldDescription="When checked, the price will not be synced from API anymore and the prices Authored here will prevail."
+														text="Disable API Sync"
+														value="{Boolean}true"/>
+                          <restricted
+                            jcr:primaryType="nt:unstructured"
+                            name="./restricted"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            fieldDescription="When checked, this country is restricted and shows the message instead of pricing"
+                            text="Restrict Country"
+                            value="{Boolean}true"/>
+                                                </items>
+                                            </tab1>
+											<tab2
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Verify"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <flatPrice
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Flat Price"
+                                                        name="./flatPrice"/>
+													<flatPushPrice
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Flat Push Price"
+                                                        name="./flatPushPrice"/>
+													<flatFailPrice
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Flat Fail Price"
+                                                        name="./flatFailPrice"/>
+                                                </items>
+                                            </tab2>
+                                        </items>
+                                    </tabs>
+                                </items>
+                            </column2>
+                        </items>
+                    </columns>
+                </items>
+            </content>
+        </cq:dialog>
+        <dialog/>
+    </jcr:content>
+</jcr:root>

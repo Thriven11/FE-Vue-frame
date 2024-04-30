@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/vonage/settings/wcm/templates/events-page"
+        jcr:primaryType="cq:PageContent"
+        contentCategory="vonage:events/details-page"
+        removeL3Nav="{Boolean}true"
+        sling:resourceType="vonage/components/structure/events-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <generalContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+              <responsiveGrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <heroform
+                  jcr:created="{Date}2020-05-28T20:54:31.013Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-06-02T00:31:59.933Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/heroForm"
+                  confMessagePath="/content/experience-fragments/vonage/en-us/forms/confirmation_message/in_page_confirmation/webinar-thank-you/master"
+                  eyebrowContent="Now we're talking LIVE"
+                  heroTheme="theme-black"
+                  title="Open for Business: How Contact Centers Can Win in a Post-COVID World">
+                  <responsiveGrid1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/utils/rowResponsiveGrid">
+                    <rteflexible
+                      jcr:created="{Date}2020-05-28T20:54:52.688Z"
+                      jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                      jcr:lastModified="{Date}2020-05-28T22:04:20.549Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/content/rteFlexible"
+                      adjustPadding="no-padding"
+                      gridValue="col-lg-12 col-md-12"
+                      subHeadlineSize="h2"
+                      text="&lt;h2>May 19, 2:00 ET&lt;/h2>&#xd;&#xa;&lt;p>Join expert analyst Donna Fluss, president, DMG Consulting, and Vonage VP of Product Marketing Brian Gilman, to discuss reopening considerations, future-proofing, and the ultimate roadmap to success.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                      textIsRich="[true,true]"/>
+                    <flexiblegrid
+                      jcr:created="{Date}2020-05-28T20:55:03.197Z"
+                      jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                      jcr:lastModified="{Date}2020-06-02T00:44:20.881Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/content/flexibleGrid"
+                      numberOfLogos="6">
+                      <logo-0
+                        jcr:lastModified="{Date}2020-05-28T22:05:51.138Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/flexibleGrid/textImageCard"
+                        altValueFromDAM="true"
+                        fileReference="/content/dam/vonage/us-en/authors/Tom-Furr.png"
+                        isDecorative="false"
+                        text="&lt;p style=&quot;text-align: center;&quot;>&lt;b>Tom Furr&lt;/b>&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        textOnTop="false"
+                        titleValueFromDAM="false"/>
+                      <logo-1
+                        jcr:lastModified="{Date}2020-05-28T22:05:00.794Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/flexibleGrid/textImageCard"
+                        altValueFromDAM="true"
+                        fileReference="/content/dam/vonage/us-en/authors/Donna-192.png"
+                        isDecorative="false"
+                        text="&lt;p style=&quot;text-align: center;&quot;>&lt;b>Donna Fluss&lt;/b>&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        textOnTop="false"
+                        titleValueFromDAM="true"/>
+                      <logo-2
+                        jcr:lastModified="{Date}2020-05-28T22:05:07.366Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/flexibleGrid/textImageCard"
+                        altValueFromDAM="true"
+                        fileReference="/content/dam/vonage/us-en/authors/Brian192.png"
+                        isDecorative="false"
+                        text="&lt;p style=&quot;text-align: center;&quot;>&lt;b>Brian Gilman&lt;/b>&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        textOnTop="false"
+                        titleValueFromDAM="true"/>
+                      <logo-3
+                        jcr:lastModified="{Date}2020-05-28T22:05:54.568Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/flexibleGrid/textImageCard"
+                        altValueFromDAM="true"
+                        fileReference="/content/dam/vonage/us-en/careers/talent-acquisition-team/krzysztof_szczepanski.jpg"
+                        isDecorative="false"
+                        text="&lt;p style=&quot;text-align: center;&quot;>&lt;b>you can add up to 6 people/pics&lt;/b>&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"
+                        textOnTop="false"
+                        titleValueFromDAM="true"/>
+                    </flexiblegrid>
+                    <cta
+                      jcr:created="{Date}2020-05-28T21:49:13.614Z"
+                      jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                      jcr:lastModified="{Date}2020-05-28T21:49:13.614Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/content/cta"/>
+                    <rteflexible_322355710
+                      jcr:created="{Date}2020-05-28T22:04:28.187Z"
+                      jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                      jcr:lastModified="{Date}2020-05-28T22:04:32.860Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/content/rteFlexible"
+                      adjustPadding="no-padding"
+                      gridValue="col-lg-12 col-md-12"
+                      subHeadlineSize="h2"
+                      text="&lt;h2>Why attend?&lt;br>&#xd;&#xa;&lt;/h2>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Hear what industry experts consider the key considerations for running a contact center successfully in the &amp;quot;new normal&amp;quot;&lt;/li>&#xd;&#xa;&lt;li>Get a complimentary copy of Donna's latest whitepaper: Contact Centers Post COVID-19&lt;/li>&#xd;&#xa;&lt;li>Discover industry predictions for what % of agents will likely remain working from home — permanently&lt;/li>&#xd;&#xa;&lt;li>Ask Brian Gilman super hard questions during a live Q&amp;amp;A. We'd be secretly gleeful it if you stump him&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                      textIsRich="[true,true]"/>
+                  </responsiveGrid1>
+                  <form jcr:primaryType="nt:unstructured">
+                    <formsResponsiveGrid
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/utils/forms/container/responsiveGrid">
+                      <firstname
+                        jcr:created="{Date}2020-06-03T19:50:19.413Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:19.413Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/firstName"/>
+                      <lastname
+                        jcr:created="{Date}2020-06-03T19:50:27.044Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:27.044Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/lastName"/>
+                      <companyname
+                        jcr:created="{Date}2020-06-03T19:50:35.723Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:35.723Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/companyName"/>
+                      <email
+                        jcr:created="{Date}2020-06-03T19:50:42.399Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:42.399Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/email"/>
+                      <phonenumber
+                        jcr:created="{Date}2020-06-03T19:50:48.240Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:48.240Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/phoneNumber"/>
+                      <jobtitle
+                        jcr:created="{Date}2020-06-03T19:50:57.150Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:50:57.150Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/textfield/jobTitle"/>
+                      <country
+                        jcr:created="{Date}2020-06-03T19:51:04.188Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:51:04.188Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/dropdown/country"/>
+                      <state
+                        jcr:created="{Date}2020-06-03T19:51:09.006Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:51:09.006Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/dropdown/state"/>
+                      <privacypolicy
+                        jcr:created="{Date}2020-06-03T19:51:16.241Z"
+                        jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                        jcr:lastModified="{Date}2020-06-03T19:51:16.241Z"
+                        jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/utils/forms/checkbox/privacyPolicy"/>
+                    </formsResponsiveGrid>
+                    <submit
+                      jcr:lastModified="{Date}2020-06-03T19:52:32.514Z"
+                      jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="vonage/components/utils/forms/button/submit"
+                      label="Register now"/>
+                  </form>
+                </heroform>
+                <rteflexible_1928472275
+                  jcr:created="{Date}2020-06-01T15:18:55.005Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-06-01T15:19:14.553Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/rteFlexible"
+                  adjustPadding="no-padding"
+                  gridValue="col-lg-12 col-md-12"
+                  subHeadlineSize="h2"
+                  text="&lt;p>&amp;nbsp; &amp;nbsp;&lt;/p>&#xd;&#xa;"
+                  textIsRich="[true,true]"/>
+                <iconpanel
+                  jcr:created="{Date}2020-05-28T21:16:30.610Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-06-02T00:54:42.199Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/iconPanel"
+                  numberOfItems="3">
+                  <item-0
+                    jcr:lastModified="{Date}2020-06-02T00:54:33.210Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    altValueFromDAM="true"
+                    description="If you want to add bios or a description, this is a better component to use. &#xd;&#xa;President of DMG Consulting LLC, Donna is highly regarded as an expert on contact center, analytics and the back office. With 30 years of experience helping organizations build contact centers and back office operating environments, and assisting vendors to deliver competitive solutions, Donna is a renowned speaker and author.&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/Donna-192.png"
+                    headline="Donna Fluss"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="false"
+                    target="_self"
+                    titleValueFromDAM="true"/>
+                  <item-1
+                    jcr:lastModified="{Date}2020-05-28T21:17:34.167Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    alt="brian gilman headshot"
+                    altValueFromDAM="true"
+                    description="VP of Product Marketing at Vonage, Brian has spent more than a decade building solutions-based marketing functions, Brian has a proven record of success in developing and implementing strategic B2B marketing plans and engaging in high-touch sales activities within the communications and collaboration markets.&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/Brian192.png"
+                    headline="Brian Gilman"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="false"
+                    target="_self"
+                    titleValueFromDAM="false"/>
+                  <item-2
+                    jcr:lastModified="{Date}2020-05-28T21:17:49.233Z"
+                    jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/iconPanel/iconPanelItem"
+                    altValueFromDAM="true"
+                    description="Vonage's very own head of brand, Tom is British and therefore sounds smart. For this event, he will merely be moderating (you're welcome.) Tom led the rebranding effort of Vonage and recently kicked off our first brand campaign in five years. Passionate about creative, bold and effective advertising, expect to see a return to Vonage's cheeky and irreverent past in 2020 and beyond.&#xd;&#xa;"
+                    fileReference="/content/dam/vonage/us-en/authors/Tom-Furr.png"
+                    headline="Tom Furr"
+                    iconSize="icon-panel__image--large"
+                    isDecorative="false"
+                    target="_self"
+                    titleValueFromDAM="true"/>
+                </iconpanel>
+                <rteflexible
+                  jcr:created="{Date}2020-05-28T21:46:49.265Z"
+                  jcr:createdBy="Dorothy.Cerulo@vonage.com"
+                  jcr:lastModified="{Date}2020-06-01T14:52:08.156Z"
+                  jcr:lastModifiedBy="Dorothy.Cerulo@vonage.com"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="vonage/components/content/rteFlexible"
+                  addContainer="container"
+                  adjustPadding="no-padding"
+                  centerCol="center-column"
+                  centerText="center-text"
+                  gridValue="col-lg-12 col-md-12"
+                  subHeadlineSize="h2"
+                  text="&lt;h2 style=&quot;text-align: center;&quot;>more copy can go here&lt;/h2>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Formatted however you like.&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;blockquote>&amp;nbsp;&lt;/blockquote>&#xd;&#xa;"
+                  textIsRich="[true,true]"/>
+              </responsiveGrid>
+            </generalContainer>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

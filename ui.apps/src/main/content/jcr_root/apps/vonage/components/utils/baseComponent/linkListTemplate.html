@@ -1,0 +1,42 @@
+<template
+    data-sly-template.linkList="${@ links, listClass, listItemClass}"
+    data-sly-use.ctaTemplate="ctaTemplate.html">
+    <ul class="${listClass}" data-sly-list.resourceLink="${links}">
+        <li class="${listItemClass}">
+            <sly data-sly-call="${ctaTemplate.cta @ link=resourceLink.link}"/>
+        </li>
+    </ul>
+</template>
+
+<template
+        data-sly-template.linkListV2="${@ links, listClass, listItemClass, anchorClass}"
+        data-sly-use.ctaTemplate="ctaTemplate.html">
+    <ul class="${listClass}" data-sly-list.resourceLink="${links}">
+        <li class="${listItemClass}">
+            <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=resourceLink.link, rel='', cssClass=anchorClass}"/>
+        </li>
+    </ul>
+</template>
+
+<template
+        data-sly-template.linkListL3="${@ links, listClass, listItemClass, anchorClass}"
+        data-sly-use.ctaTemplate="ctaTemplate.html">
+    <ul class="${listClass}" data-sly-list.resourceLink="${links}">
+        <li class="${listItemClass}">
+            <sly data-sly-call="${ctaTemplate.ctaL3 @
+                link=resourceLink.link, cssClass=anchorClass}"/>
+        </li>
+    </ul>
+</template>
+
+<template
+        data-sly-template.linkListV3="${@ links, listClass, listItemClass, anchorClass, staticLabel}"
+        data-sly-use.ctaTemplate="ctaTemplate.html">
+    <ul class="${listClass}" data-sly-list.resourceLink="${links}">
+        <li class="${listItemClass}">
+            <sly data-sly-call="${ctaTemplate.ctaV5 @
+                link=resourceLink.link, rel='', cssClass=anchorClass}"/>
+        </li>
+    </ul>
+</template>

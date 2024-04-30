@@ -1,0 +1,32 @@
+<sly data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel" />
+<sly data-sly-use.l3NavTemplate="vonage/components/structure/header/navigations/l3Nav/l3Nav-template.html"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start" data-emptytext="${component.title} Component"></div>
+<!-- remove data is-scrolled att once js issues have been resolved -->
+<!-- Use modifier `variation` campaign-header--variation when header is used on templates that containes a
+  hero with colored background. -->
+<header class="campaign-header" style="top:0" data-is-scrolled="false" data-swiftype-index="false">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="campaign-header__content">
+          <div style="width:auto; height: auto; min-height: 75px;" data-sly-unwrap="${!wcmmode.edit}">
+            <sly data-sly-resource="${'campaign-header-logo' @ resourceType='vonage/components/content/logo', addSelectors='campaignHeaderLogo'}" />
+          </div>
+          <div class="campaign-header__ctas-container">
+            <div style="width:auto; min-width: 250px; height: auto; min-height: 50px;" data-sly-unwrap="${!wcmmode.edit}">
+              <sly data-sly-resource="${'campaign-tfn' @resourceType='vonage/components/structure/campaignHeader/tfn'}" />
+            </div>
+            <div style="width:auto; min-width: 500px; height: auto; min-height: 50px;" data-sly-unwrap="${!wcmmode.edit}">
+              <sly data-sly-resource="${'campaign-ctas' @resourceType='vonage/components/structure/campaignHeader/ctas'}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <sly data-sly-test.isL3Nav="${!inheritedPageProperties.removeL3Nav}">
+    <div data-sly-unwrap="${!wcmmode.edit}" style="min-width: 250px">
+        <sly data-sly-call="${l3NavTemplate.l3Nav}"/>
+    </div>
+  </sly>
+</header>

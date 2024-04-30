@@ -1,0 +1,91 @@
+<sly data-sly-use.analyticsData="com.vonage.core.models.structure.analytics.AnalyticsDataModel">
+  <sly data-sly-test.pageInfoData="${analyticsData.pageInfoBean}"></sly>
+  <sly data-sly-test.contentData="${analyticsData.contentBean}" ></sly>
+  
+  <script type="text/javascript">
+        var digitalData = {
+              page: {
+                pageInfo: {
+                  pageName: "${pageInfoData.pageName @ context='scriptString'}",
+                  lob: "${pageInfoData.lob @ context='scriptString'}",
+                  functionDept: "${pageInfoData.functionDept @ context='scriptString'}",
+                  subCategory1: "${pageInfoData.subCategory1 @ context='scriptString'}",
+                  subCategory2: "${pageInfoData.subCategory2 @ context='scriptString'}",
+                  subCategory3: "${pageInfoData.subCategory3 @ context='scriptString'}",
+                  primaryCategory: "${pageInfoData.primaryCategory @ context='scriptString'}",
+                  internalSearchTerm: "",
+                  internalSearchResults: "",
+                  error: "",
+                  pageType: "",
+                  language: "${currentPage.language.language @ context='scriptString'}",
+                  country: "${currentPage.language.country.toLowerCase @ context='scriptString'}",
+                  fileGatedType: "",
+                  tollFreeNumber: "",
+                  siteIdentifier: "${pageInfoData.siteIdentifier @ context='scriptString'}",
+                  pageCategory: "",
+                  pageSubCategory: "",
+                  type: "",
+                  spaFlag: "${pageProperties.isSpaApp ? 'yes' : 'no' @ context='scriptString'}",
+                  appVersion: "${pageInfoData.appVersion @ context='scriptString'}"
+                },
+                content: {
+                  name: "${contentData.name @ context='scriptString'}",
+                  author: "${analyticsData.author @ context='scriptString'}",
+                  type: "${analyticsData.contentCategory @ context='scriptString'}",
+                  publishDate: "${analyticsData.datePublished @ context='scriptString'}",
+                  subCategory: "",
+                  topic: "${analyticsData.tagMap['product'] @ context='scriptString'}",
+                  industry: "${analyticsData.tagMap['industry'] @ context='scriptString'}",
+                  businessSize: "${analyticsData.tagMap['business-size'] @ context='scriptString'}",
+                  profRole: "${analyticsData.tagMap['professional-role'] @ context='scriptString'}"
+                }
+              },
+              user: {
+                profile: {
+                  profileInfo: {
+                    targetExperience: "",
+                    responsiveSiteVersion: "${analyticsData.DESKTOP @ context='scriptString'}",
+                    visitorType: "",
+                    gaCampaign: "",
+                    salesrepFlag: "no"
+                  }
+                }
+              },
+              transaction: {
+                item: {
+                  quantity: "",
+                  price: {
+                    basePrice: ""
+                  },
+                  productInfo: {
+                    productID: ""
+                  }
+                },
+                testCartFlag: "no"
+              },
+              eventData: {
+                fIndustry: "",
+                fName: "",
+                fCTA: "",
+                fLines: "",
+                fAreaofinterest: ""
+              }
+        };
+
+        (function(){
+            var width = ( window.innerWidth != "undefined" ) ? window.innerWidth : document.documentElement.clientWidth;
+            digitalData.user.profile.profileInfo.responsiveSiteVersion = ( width < 720 ) ? "mobile" : ( width < 992 ) ? "tablet" : "desktop";
+            var isSalesRep = "no", isTestCart = "no", masterAgent = "", subAgent = "", lsObject = JSON.parse(localStorage.getItem('vng.cart')), lsIds = JSON.parse(localStorage.getItem('vng.ids')), urlParams = new URLSearchParams(window.location.search);
+            if (lsObject !== null && lsObject.salesRepId !== null) { isSalesRep = "yes"; } else { if (urlParams.has('salesRepId')) { isSalesRep = "yes"; }}
+            if (lsObject !== null && lsObject.isTestCart !== null) { isTestCart = "yes"; } else { if (urlParams.has('isTestCart')) { isTestCart = "yes"; }}
+            if (lsIds !== null && lsIds.masterAgentID !== null) { masterAgent = lsIds.masterAgentID; } else { if (urlParams.has('masteragentid')) { masterAgent = urlParams.get('masteragentid'); }}
+            if (lsIds !== null && lsIds.subAgentID !== null) { subAgent =lsIds.subAgentID ; } else { if (urlParams.has('isTestCart')) { subAgent = urlParams.get('subagentid'); }}
+            
+            digitalData.user.profile.profileInfo.salesrepFlag = isSalesRep;
+            digitalData.user.profile.profileInfo.masterAgentID = masterAgent;
+            digitalData.user.profile.profileInfo.subAgentID = subAgent;
+            digitalData.transaction.testCartFlag = isTestCart;
+        })();
+
+    </script>
+</sly>

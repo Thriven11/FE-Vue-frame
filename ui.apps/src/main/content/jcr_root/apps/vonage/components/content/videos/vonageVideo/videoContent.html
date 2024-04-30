@@ -1,0 +1,7 @@
+<sly data-sly-use.model="${'com.vonage.core.models.content.videos.VideoComponentModel'}"/>
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"/>
+<sly data-sly-use.template="vonage/components/utils/baseComponent/videoImageTemplate.html"/>
+
+<div class="col-12 col-lg-10 offset-lg-1 p-0 px-md-3" data-sly-test="${model.dataVideoId}">
+    <sly data-sly-call="${template.videoImageContent @ dataVideoId=model.dataVideoId, caption=image.title, ariaLabel=model.ariaLabel}"></sly>
+</div>

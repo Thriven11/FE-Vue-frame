@@ -1,0 +1,60 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.PostPurchase" />
+<div data-sly-test="${wcmmode.edit}"
+	class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+<sly data-sly-use.rightDescription="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.rightDescription}" />
+<sly data-sly-use.leftDescription="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.leftDescription}" />
+<section class="post-purchase">
+  <div class="container post-purchase__wrapper">
+    <div class="post-purchase__header">
+      <sly data-sly-include="image.html" />
+      <p class="eyebrow post-purchase__order" data-sly-test="${model.orderNumber}">
+        ${model.orderNumber}
+        <span class="eyebrow post-purchase__order-number order-number-query-param"></span>
+      </p>
+      <h3 class="h3 post-purchase__headline" data-sly-test="${model.headline}">${model.headline}</h3>
+      <p class="p1 post-purchase__subheadline" data-sly-test="${model.subHeadline}">${model.subHeadline}</p>
+    </div>
+
+    <div class="post-purchase__tiles">
+      <div class="post-purchase__tile">
+        <sly
+          data-sly-resource="${'card1' @resourceType='vonage/components/ecommerce/postPurchase/postPurchaseCard'}" />
+      </div>
+      <div class="post-purchase__tile">
+        <sly
+          data-sly-resource="${'card2' @resourceType='vonage/components/ecommerce/postPurchase/postPurchaseCard'}" />
+      </div>
+      <div class="post-purchase__tile">
+        <sly
+          data-sly-resource="${'card3' @resourceType='vonage/components/ecommerce/postPurchase/postPurchaseCard'}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="post-purchase__help">
+    <div class="container post-purchase__help-wrapper">
+      <h5 class="h4 post-purchase__help-title" data-sly-test="${model.title}">${model.title}</h5>
+      <div class="post-purchase__help-cards">
+        <div class="post-purchase__help-left">
+          <h5 class="h5 post-purchase__help-subtitle" data-sly-test="${model.leftSubtitle}">${model.leftSubtitle}</h5>
+          <div class="p2 post-purchase__help-description" data-sly-test="${model.leftDescription}">${leftDescription.externalizedHtml @ context='html'}</div>
+          <div class="post-purchase__help-cta" style="width: auto; min-width: 120px; min-height: 40px;"
+            data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+            <sly
+              data-sly-resource="${'text-link-left' @resourceType='/apps/vonage/components/content/cta', addSelectors='link'}" />
+          </div>
+        </div>
+        <div class="post-purchase__help-right">
+          <h5 class="h5 post-purchase__help-subtitle" data-sly-test="${model.rightSubtitle}">${model.rightSubtitle}</h5>
+          <div class="p2 post-purchase__help-description" data-sly-test="${rightDescription.externalizedHtml}">${model.rightDescription @ context='html'}</div>
+          <div class="post-purchase__help-cta" style="width: auto; min-width: 120px; min-height: 40px;"
+            data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+            <sly
+              data-sly-resource="${'text-link-right' @resourceType='/apps/vonage/components/content/cta', addSelectors='link'}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

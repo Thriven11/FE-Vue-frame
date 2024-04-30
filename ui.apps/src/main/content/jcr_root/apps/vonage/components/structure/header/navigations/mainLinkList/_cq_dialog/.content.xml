@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured"
+	jcr:title="Main Navigation"
+	extraClientlibs="[vng.widgets]"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content
+		jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs
+				jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs"
+				maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<tab
+						jcr:primaryType="nt:unstructured"
+						jcr:title="Links"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<fieldset
+								jcr:primaryType="nt:unstructured"
+								jcr:title=""
+								sling:resourceType="granite/ui/components/foundation/form/fieldset">
+								<layout
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+								<items jcr:primaryType="nt:unstructured">
+									<column
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<primarynav
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+												composite="{Boolean}true"
+												fieldDescription="Click 'Add Field' to add a new primary navigation link."
+												fieldLabel="Primary Navigation">
+												<field
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/container"
+													name="./primaryNavLinks">
+													<items jcr:primaryType="nt:unstructured">
+														<cta
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/include"
+															path="/apps/vonage/components/utils/cta/cta_dialog_with_static_value"/>
+														<show
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/checkbox"
+															name="./showSecondaryLevel"
+															id="enable"
+															text="Show Secondary Level Navigation?"
+															class="cq-dialog-checkbox-showhide"
+															cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+															uncheckedValue="false"
+															value="true"/>
+														<showHideContainer
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/container"
+															class="button-option-enable-showhide-target"
+															granite:id="secondaryNavigatonCSS"
+															showhidetargetvalue="true">
+															<items jcr:primaryType="nt:unstructured">
+																<secondarynav
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+																	composite="{Boolean}true"
+																	fieldDescription="Click 'Add Field' to add a new secondary navigation link."
+																	fieldLabel="Secondary Navigation">
+																	<field
+																		jcr:primaryType="nt:unstructured"
+																		sling:resourceType="granite/ui/components/coral/foundation/container"
+																		name="./secondaryNavLinks">
+																		<items jcr:primaryType="nt:unstructured">
+																			<title
+																				jcr:primaryType="nt:unstructured"
+																				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+																				fieldLabel="Title"
+																				name="./title"/>
+																			<staticLabel
+																				jcr:primaryType="nt:unstructured"
+																				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+																				name="./staticLabel"
+																				fieldLabel="Static (English) Label"
+																				fieldDescription="This value is ignored by translation for our navigation tracking purposes. "
+																				text="Static Label"/>
+																			<subtitle
+																				jcr:primaryType="nt:unstructured"
+																				sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+																				fieldLabel="Sub Title (Description)"
+																				name="./description"/>
+																			<cta
+																				jcr:primaryType="nt:unstructured"
+																				sling:resourceType="granite/ui/components/foundation/include"
+																				path="/apps/vonage/components/utils/cta/cta_dialog_without_label_without_aria_label"/>
+																		</items>
+																	</field>
+																</secondarynav>
+															</items>
+														</showHideContainer>
+													</items>
+												</field>
+											</primarynav>
+										</items>
+									</column>
+								</items>
+							</fieldset>
+						</items>
+					</tab>
+					<tab1
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/tabs"
+						jcr:title="Primary Button"
+						maximized="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<buttonSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="Button"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<fieldset
+											jcr:primaryType="nt:unstructured"
+											jcr:title=""
+											sling:resourceType="granite/ui/components/foundation/form/fieldset">
+										<layout
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+										<items jcr:primaryType="nt:unstructured">
+											<column
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<cta
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/foundation/include"
+                              							path="/apps/vonage/components/utils/cta/cta_dialog_without_aria_label"
+                              							name="./link" />
+												</items>
+											</column>
+										</items>
+									</fieldset>
+								</items>
+							</buttonSection>
+							<productCtaSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="Product Specific Link Labels"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<fieldset
+											jcr:primaryType="nt:unstructured"
+											jcr:title=""
+											sling:resourceType="granite/ui/components/foundation/form/fieldset">
+										<layout
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+										<items jcr:primaryType="nt:unstructured">
+											<column
+													jcr:primaryType="nt:unstructured"
+													jcr:title="Product Specific Button Labels"
+													sling:resourceType="granite/ui/components/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<ucCtaLabel
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="UC Contact CTA Label"
+														fieldDescription="If left empty, it will use the default link label"
+														name="./ucCtaLabel" />
+													<uchref
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="UC Link URL"
+                                                        name="./ucPrimary"
+                                                        rootPath="/content/vonage"/>
+													<ccCtaLabel
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="CC Contact CTA Label"
+														fieldDescription="If left empty, it will use the default link label"
+														name="./ccCtaLabel" />
+													<cchref
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="CC Link URL"
+                                                        name="./ccPrimary"
+                                                        rootPath="/content/vonage"/>
+													<apiCtaLabel
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="API Contact CTA Label"
+														fieldDescription="If left empty, it will use the default link label"
+														name="./apiCtaLabel" />
+													<apihref
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="API Link URL"
+                                                        name="./apiPrimary"
+                                                        rootPath="/content/vonage"/>	
+												</items>
+											</column>
+										</items>
+									</fieldset>
+								</items>
+							</productCtaSection>
+						</items>
+          			</tab1>
+          			<tab2
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/tabs"
+						jcr:title="Secondary Button"
+						maximized="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<secondaryButtonSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="Default Cta"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<fieldset
+											jcr:primaryType="nt:unstructured"
+											jcr:title=""
+											sling:resourceType="granite/ui/components/foundation/form/fieldset">
+										<layout
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+										<items jcr:primaryType="nt:unstructured">
+											<column
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<label
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Link Label"
+														name="./secondaryCta/label"/>
+													<href
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Link URL"
+														name="./secondaryCta/href"
+														rootPath="/content/vonage"/>
+													<target
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														fieldDescription="The link target to use. Default will be same window"
+														fieldLabel="Link Target"
+														name="./secondaryCta/target">
+														<items jcr:primaryType="nt:unstructured">
+														<self
+															jcr:primaryType="nt:unstructured"
+															text="Same Window"
+															value="_self"/>
+														<blank
+															jcr:primaryType="nt:unstructured"
+															text="New Window"
+															value="_blank"/>
+														</items>
+													</target>
+													<ariaLabel
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Aria Label"
+														name="./secondaryCta/ariaLabel"/>
+												</items>
+											</column>
+										</items>
+									</fieldset>
+								</items>
+							</secondaryButtonSection>
+							<ucSecondaryButtonSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="UC Cta"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<fieldset
+											jcr:primaryType="nt:unstructured"
+											jcr:title=""
+											sling:resourceType="granite/ui/components/foundation/form/fieldset">
+										<layout
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+										<items jcr:primaryType="nt:unstructured">
+											<column
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<label
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Link Label"
+														name="./ucSecondaryCta/label"/>
+													<href
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Link URL"
+														name="./ucSecondaryCta/href"
+														rootPath="/content/vonage"/>
+													<target
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														fieldDescription="The link target to use. Default will be same window"
+														fieldLabel="Link Target"
+														name="./ucSecondaryCta/target">
+														<items jcr:primaryType="nt:unstructured">
+														<self
+															jcr:primaryType="nt:unstructured"
+															text="Same Window"
+															value="_self"/>
+														<blank
+															jcr:primaryType="nt:unstructured"
+															text="New Window"
+															value="_blank"/>
+														</items>
+													</target>
+												</items>
+											</column>
+										</items>
+									</fieldset>
+								</items>
+							</ucSecondaryButtonSection>
+							<ccSecondaryButtonSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="CC Cta"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<fieldset
+											jcr:primaryType="nt:unstructured"
+											jcr:title=""
+											sling:resourceType="granite/ui/components/foundation/form/fieldset">
+										<layout
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+										<items jcr:primaryType="nt:unstructured">
+											<column
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<label
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+														fieldLabel="Link Label"
+														name="./ccSecondaryCta/label"/>
+													<href
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Link URL"
+														name="./ccSecondaryCta/href"
+														rootPath="/content/vonage"/>
+													<target
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/select"
+														fieldDescription="The link target to use. Default will be same window"
+														fieldLabel="Link Target"
+														name="./ccSecondaryCta/target">
+														<items jcr:primaryType="nt:unstructured">
+														<self
+															jcr:primaryType="nt:unstructured"
+															text="Same Window"
+															value="_self"/>
+														<blank
+															jcr:primaryType="nt:unstructured"
+															text="New Window"
+															value="_blank"/>
+														</items>
+													</target>
+												</items>
+											</column>
+										</items>
+									</fieldset>
+								</items>
+							</ccSecondaryButtonSection>
+							<apiSecondaryButtonSection
+									jcr:primaryType="nt:unstructured"
+									jcr:title="API cta"
+									sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<nexmoCta
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<fieldset
+												jcr:primaryType="nt:unstructured"
+												jcr:title="Nexmo"
+												sling:resourceType="granite/ui/components/foundation/form/fieldset">
+												<layout
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+												<items jcr:primaryType="nt:unstructured">
+													<column
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/foundation/container">
+														<items jcr:primaryType="nt:unstructured">
+															<label
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+																fieldLabel="Link Label"
+																name="./apiNexmoSecondaryCta/label"/>
+															<href
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+																fieldLabel="Nexmo Sign-Up URL"
+																rootPath="/content/vonage"
+																name="./apiNexmoSecondaryCta/href" />
+															<target
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																fieldDescription="The link target to use. Default will be same window"
+																fieldLabel="Link Target"
+																name="./apiNexmoSecondaryCta/target">
+																<items jcr:primaryType="nt:unstructured">
+																<self
+																	jcr:primaryType="nt:unstructured"
+																	text="Same Window"
+																	value="_self"/>
+																<blank
+																	jcr:primaryType="nt:unstructured"
+																	text="New Window"
+																	value="_blank"/>
+																</items>
+															</target>
+														</items>
+													</column>
+												</items>
+											</fieldset>
+										</items>
+									</nexmoCta>
+									<tokboxCta
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<fieldset
+												jcr:primaryType="nt:unstructured"
+												jcr:title="Tokbox"
+												sling:resourceType="granite/ui/components/foundation/form/fieldset">
+												<layout
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+												<items jcr:primaryType="nt:unstructured">
+													<column
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/foundation/container">
+														<items jcr:primaryType="nt:unstructured">
+															<label
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+																fieldLabel="Link Label"
+																name="./apiTokboxSecondaryCta/label"/>
+															<href
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+																fieldLabel="Tokbox Sign-Up URL"
+																rootPath="/content/vonage"
+																name="./apiTokboxSecondaryCta/href" />
+															<target
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/select"
+																fieldDescription="The link target to use. Default will be same window"
+																fieldLabel="Link Target"
+																name="./apiTokboxSecondaryCta/target">
+																<items jcr:primaryType="nt:unstructured">
+																<self
+																	jcr:primaryType="nt:unstructured"
+																	text="Same Window"
+																	value="_self"/>
+																<blank
+																	jcr:primaryType="nt:unstructured"
+																	text="New Window"
+																	value="_blank"/>
+																</items>
+															</target>
+														</items>
+													</column>
+												</items>
+											</fieldset>
+										</items>
+									</tokboxCta>
+								</items>
+							</apiSecondaryButtonSection>
+						</items>
+					</tab2>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

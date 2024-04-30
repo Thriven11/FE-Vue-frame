@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Plan Summary"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <tabs jcr:primaryType="nt:unstructured" maximized="true" sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+          <textSection jcr:primaryType="nt:unstructured" jcr:title="Plan" sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                  <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Title"
+                        name="./title"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <couponText
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Alternate text to show if a product with coupon is removed"
+                        name="./couponText"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <lineMonthlyPrice
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Monthly price by line label "
+                        name="./lineMonthlyPrice"
+                        required="true"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <planTrialMiceText jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Plan Mice text/Legal text"
+                        name="./planTrialMiceText"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </planTrialMiceText>
+                      <phoneNumberBodyCopy
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Phone Number Body Copy"
+                        name="./phoneNumberBodyCopy"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </phoneNumberBodyCopy>
+                      <phoneMiceText jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Phone Mice text/Legal text"
+                        name="./phoneMiceText"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </phoneMiceText>
+                      <href
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Change plan URL"
+                        name="./href"
+                        rootPath="/content/vonage"/>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </textSection>
+          <abandonCart jcr:primaryType="nt:unstructured"
+            jcr:title="Abandon Cart Modal"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <column jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <column jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Modal Title"
+                        name="./abandonCart/title"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                      <text
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Modal text"
+                        name="./abandonCart/text"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                      <ctaLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Primary CTA label"
+                        name="./abandonCart/label"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                      <cteHref
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Primary CTA URL"
+                        name="./abandonCart/href"
+                        rootPath="/content/vonage"/>
+                      <closeLabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Close Modal text"
+                        name="./abandonCart/closeLabel"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                    </items>
+                  </column>
+                </items>
+              </column>
+            </items>
+          </abandonCart>
+		   <subAgent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SubAgent Modal"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal Title"
+                                                name="./subAgent/title"/>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal text"
+                                                name="./subAgent/text"/>
+                                            <ctaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Primary CTA label"
+                                                name="./subAgent/label"/>
+                                            <cteHref
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Primary CTA URL"
+                                                name="./subAgent/href"
+                                                rootPath="/content/vonage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </subAgent>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

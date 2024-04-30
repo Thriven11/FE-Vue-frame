@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_page_v2"
+    mode="edit">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <vonage
+                        jcr:primaryType="nt:unstructured"
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:title="Vonage"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<announcement
+											cq:showOnCreate="false"
+											jcr:primaryType="nt:unstructured"
+											jcr:title="Announcement"
+											sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+										<items jcr:primaryType="nt:unstructured">
+											<showAnnouncement
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./showAnnouncement"
+                                                text="Show Announcement"
+                                                fieldDescription="Check if Announcement component should be shown at top of the page"
+                                                uncheckedValue="false"
+                                                value="true">
+                                                <granite:data 
+													jcr:primaryType="nt:unstructured" 
+													cq-msm-lockable="showAnnouncement"/>
+                                            </showAnnouncement>
+										</items>
+									</announcement>
+                                      <winbackpath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Experience fragment path(Winback Popup)"
+                                        name="./winbackpath"
+                                        rootPath="/content/experience-fragments/vonage"/>
+                                      <winbackusecase
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Please select usecase to show winback popup"
+                                        emptyText="Select"
+                                        fieldLabel="Winback Popup Usecase"
+                                        name="./usecase">
+                                        <items jcr:primaryType="nt:unstructured">
+                                          <exit
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Shoppers try to exit"
+                                            value="shoppersExit"/>
+                                          <dropdown
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Shoppers select 1-9 from the lead form"
+                                            value="selectDropdown"/>
+                                          <both
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Both"
+                                            value="both"/>
+                                        </items>
+                                   </winbackusecase>
+                                        
+                                </items>
+                            </column>
+                        </items>
+                    </vonage>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

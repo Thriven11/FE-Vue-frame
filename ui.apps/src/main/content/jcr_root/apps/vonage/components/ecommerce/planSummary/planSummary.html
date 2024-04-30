@@ -1,0 +1,60 @@
+<sly
+	data-sly-use.model="com.vonage.core.models.ecommerce.PlanSummaryModel" />
+<sly data-sly-use.changePlanUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.changePlanCta.href}" />
+<sly data-sly-use.abandonCartCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.abandonCart.cta.href}" />
+<sly data-sly-use.subAgentCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.subAgent.cta.href}" />
+<sly data-sly-use.planTrialMiceText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.planTrialMiceText}" />
+<sly data-sly-use.phoneMiceText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.phoneMiceText}" />
+<sly data-sly-use.phoneNumberBodyCopy="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.phoneNumberBodyCopy}" />
+<div data-sly-test="${wcmmode.edit}"
+	class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+
+<section class="plan-summary">
+  <h5 class="plan-summary__title h5" data-sly-test="${model.title}">${model.title}</h5>
+  <div id="v-plan-summary"></div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="countryCode" value="${currentPage.language.country}">
+    <input type="hidden" name="language" value="${currentPage.language.language}">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+
+    <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+    <input type="hidden" name="plan" value="${'vng-ecomm-plan' @ i18n}">
+    <input type="hidden" name="phoneNumber" value="${'vng-ecomm-phoneNumber' @ i18n}">
+    <input type="hidden" name="maxNumberOfLines" value="${'vng-ecomm-max-number-of-lines' @ i18n}">
+    <input type="hidden" name="addPhoneNumber" value="${'vng-ecomm-addPhoneNumber' @ i18n}">
+    <input type="hidden" name="addPhoneNumberMandatory" value="${'vng-ecomm-addPhoneNumber-mandatory' @ i18n}">
+    <input type="hidden" name="addOn" value="${'vng-ecomm-addOn' @ i18n}">
+    <input type="hidden" name="hardware" value="${'vng-ecomm-hardware' @ i18n}">
+    <input type="hidden" name="professionalService" value="${'vng-ecomm-professionalService' @ i18n}">
+    <input type="hidden" name="remove" value="${'vng-ecomm-remove' @ i18n}">
+    <input type="hidden" name="changePlan" value="${'vng-ecomm-changePlan' @ i18n}">
+    <input type="hidden" name="removeAddOn" value="${'vng-ecomm-removeAddOnCopy' @ i18n}">
+    <input type="hidden" name="errorAtLeastOnePhoneNumberRequired" value="${'vng-ecomm-errorAtLeastOnePhoneNumberRequired' @ i18n}">
+
+    <input type="hidden" name="discardRemoveAddOn" value="${'vng-ecomm-discardRemoveAddOn' @ i18n}">
+    <input type="hidden" name="confirmRemoveAddOn" value="${'vng-ecomm-confirmRemoveAddOn' @ i18n}">
+    <input type="hidden" name="removeAddOnCopy" value="${'vng-ecomm-removeAddOnCopy' @ i18n}">
+    <input type="hidden" name="couponCopy" value="${properties.couponText}">
+    <input type="hidden" name="planTrialMiceText" value="${planTrialMiceText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="phoneNumberBodyCopy" value="${phoneNumberBodyCopy.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="phoneMiceText" value="${phoneMiceText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="changePlanUrl" value="${changePlanUrl.externalUrl}">
+    <input type="hidden" name="authorMode" value="${wcmmode.edit?'true':'false'}">
+    <input type="hidden" name="numberMonthLabel" value="${model.lineMonthlyPrice @ context='attribute'}">
+
+    <input type="hidden" name="abandonCartTitle" value="${model.abandonCart.title @ context='attribute'}">
+    <input type="hidden" name="abandonCartText" value="${model.abandonCart.text @ context='attribute'}">
+    <input type="hidden" name="abandonCartCTAUrl" value="${abandonCartCTAUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="abandonCartCTALabel" value="${model.abandonCart.cta.label @ context='attribute'}">
+    <input type="hidden" name="abandonCartCloseLabel" value="${model.abandonCart.closeLabel @ context='attribute'}">
+
+    <input type="hidden" name="subAgentTitle" value="${model.subAgent.title @ context='attribute'}">
+    <input type="hidden" name="subAgentText" value="${model.subAgent.text @ context='attribute'}">
+    <input type="hidden" name="subAgentCTAUrl" value="${subAgentCTAUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="subAgentCTALabel" value="${model.subAgent.cta.label @ context='attribute'}">
+
+  </div>
+</section>
+<sly data-sly-resource="${'Add on' @ resourceType='/apps/vonage/components/ecommerce/addOn'}" />

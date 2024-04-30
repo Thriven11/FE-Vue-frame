@@ -1,0 +1,23 @@
+<template data-sly-template.listWithSublist="${@ model}">
+  <sly data-sly-test="${model.list}">
+    <div class="list">
+      <span class="list-title" aria-hidden="true" data-sly-test="${model.title}"
+        >${model.title @context='html'}
+      </span>
+      <ul
+        data-sly-list.list="${model.list}"
+        class="list-items"
+      >
+        <li class="list-item">
+          <span class="Vlt-icon-checkmark" aria-hidden="true"></span>
+          <span class="list-item-label">${list.listItem @context='html'}</span>
+          <ul data-sly-list.subList="${list.subList}" class="sub-list">
+            <li class="sub-list-item">
+              <span>${subList.subListItem @context='html'}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </sly>
+</template>

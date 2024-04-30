@@ -1,0 +1,61 @@
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"/>
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.BestNextStepsReschedule" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+<sly data-sly-use.notfoundPrimaryCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.notfoundPrimaryCTAUrl}" />
+<sly data-sly-use.notfoundSecondaryCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.notfoundSecondaryCTAUrl}" />
+<sly data-sly-use.rescheduleSecondaryUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.rescheduleSecondaryUrl}" />
+<sly data-sly-use.endCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.endCTAUrl}" />
+<section class="bns-reschedule">
+  <div id="v-bns-reschedule"></div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+    <input type="hidden" name="confirmTitle" value="${model.confirmTitle}">
+    <input type="hidden" name="confirmMessage" value="${model.confirmMessage}">
+    <input type="hidden" name="reschedule" value="${'ecomm-bsn-reschedule' @ i18n}">
+    <input type="hidden" name="cancelCall" value="${'ecomm-bsn-cancelCall' @ i18n}">
+    <input type="hidden" name="bestTimeToCall" value="${model.bestTimeToCall}">
+    <input type="hidden" name="update" value="${'vng-ecomm-update' @ i18n}">
+    <input type="hidden" name="confirmCancelTitle" value="${model.confirmCancelTitle}">
+    <input type="hidden" name="keepAppointmentCtaText" value="${model.keepAppointmentCtaText}">
+    <input type="hidden" name="cancelCtaText" value="${model.cancelCtaText}">
+    <input type="hidden" name="cancelConfirmedTitle" value="${model.cancelConfirmedTitle}">
+    <input type="hidden" name="rescheduleACall" value="${model.rescheduleACall}">
+    <input type="hidden" name="addCalendarTitle" value="${model.addCalendarTitle}">
+    <input type="hidden" name="googleCalendar" value="${'ecomm-bsn-calendar-googleCalendar' @ i18n}">
+    <input type="hidden" name="office365Calendar" value="${'ecomm-bsn-calendar-office365Calendar' @ i18n}">
+    <input type="hidden" name="outlookCalendar" value="${'ecomm-bsn-calendar-outlookCalendar' @ i18n}">
+    <input type="hidden" name="appleCalendar" value="${'ecomm-bsn-calendar-appleCalendar' @ i18n}">
+    <input type="hidden" name="icon" value="${image.fileReference}">
+    <input type="hidden" name="iconAlt" value="${image.alt}">
+    <input type="hidden" name="calendarEventTitle" value="${model.calendarEventTitle}">
+    <input type="hidden" name="calendarEventDescription" value="${model.calendarEventDescription}">
+    <input type="hidden" name="dateLabel" value="${'ecomm-bsn-dateLabel' @ i18n}">
+    <input type="hidden" name="datePlaceholder" value="${'ecomm-bsn-datePlaceholder' @ i18n}">
+    <input type="hidden" name="timeLabel" value="${'ecomm-bsn-timeLabel' @ i18n}">
+    <input type="hidden" name="timePlaceholder" value="${'ecomm-bsn-timePlaceholder' @ i18n}">
+    <input type="hidden" name="timezoneLabel" value="${'ecomm-bsn-timezoneLabel' @ i18n}">
+    <input type="hidden" name="timezonePlaceholder" value="${'ecomm-bsn-timezonePlaceholder' @ i18n}">
+    <input type="hidden" name="errorRequired" value="${'vng-ecomm-errorRequired' @ i18n}">
+    <input type="hidden" name="notfoundTitle" value="${model.notfoundTitle}">
+    <input type="hidden" name="notfoundMessage" value="${model.notfoundMessage}">
+    <input type="hidden" name="notfoundPrimaryCTAText" value="${model.notfoundPrimaryCTAText}">
+    <input type="hidden" name="notfoundPrimaryCTAUrl" value="${notfoundPrimaryCTAUrl.externalUrl}">
+    <input type="hidden" name="notfoundSecondaryCTAText" value="${model.notfoundSecondaryCTAText}">
+    <input type="hidden" name="notfoundSecondaryCTAUrl" value="${notfoundSecondaryCTAUrl.externalUrl}">
+    <input type="hidden" name="rescheduleSecondaryText" value="${model.rescheduleSecondaryText}">
+    <input type="hidden" name="rescheduleSecondaryUrl" value="${rescheduleSecondaryUrl.externalUrl}">
+    <input type="hidden" name="endCTAText" value="${model.endCTAText}">
+    <input type="hidden" name="endCTAUrl" value="${endCTAUrl.externalUrl}">
+
+    <input type="hidden" name="excludedDates" value="${model.excludedDates}">
+
+    <!-- Call as soon as possible -->
+    <input type="hidden" name="schedule" value="${'ecomm-bsn-schedule' @ i18n}">
+    <input type="hidden" name="confirmAsSoonAsPossibleMessage" value="${model.soonConfirmMessage}">
+    <input type="hidden" name="cancelAsSoonAsPossibleConfirmedTitle" value="${model.soonCancelConfirmedTitle}">
+    <input type="hidden" name="cancelledTitle" value="${model.cancelledTitle}">
+    <input type="hidden" name="cancelledMessage" value="${model.cancelledMessage}">
+  </div>
+</section>

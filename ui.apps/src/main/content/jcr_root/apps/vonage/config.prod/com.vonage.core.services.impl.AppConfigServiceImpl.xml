@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig"
+	dtmUrl="//assets.adobedtm.com/aa512cb75f2e3e0ee5f88731d3c730fc32883b03/satelliteLib-5b65567b5ca33f955c1735c794afe16a3e47588d.js"
+	publishAgents="[publish1useast1,publish2useast1]"
+	contentApproverMapping="[/content/vonage/(.*)/articles(/.*)?:content-approver-articles,/content/vonage/(.*)/resources(/.*)?:content-approver-resources]"/>

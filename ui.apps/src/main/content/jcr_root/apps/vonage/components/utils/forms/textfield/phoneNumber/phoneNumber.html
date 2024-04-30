@@ -1,0 +1,30 @@
+<sly data-sly-use.countries="countries.js" data-sly-unwrap />
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-composite">
+    <div class="Vlt-composite__prepend">
+      <div class="Vlt-native-dropdown Vlt-select">
+        <select id="dialingCode-${model.uuid}" aria-label="Dialing Code" required>
+          <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+          <sly data-sly-list.country="${countries}">
+            <option
+              data-country-code="${country.code}"
+              data-country-name="${country.key @ i18n}"
+              value="${country.dialCode}"
+              >${country.key @ i18n}</option>
+          </sly>
+        </select>
+      </div>
+    </div>
+    <div class="Vlt-composite__wrapper Vlt-input">
+      <input type="tel" placeholder=" " id="phone-number-${model.uuid}" required>
+      <label class="Vlt-form__input-label" for="phone-number-${model.uuid}">${'vng-phoneNumber' @ i18n}</label>
+      <span class="Vlt-icon-form-checkmark"></span>
+    </div>
+  </div>
+  <input class="Vlt-form__field-hidden" type="text" name="phonenumber">
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

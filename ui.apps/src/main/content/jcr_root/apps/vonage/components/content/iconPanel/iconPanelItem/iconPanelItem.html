@@ -1,0 +1,29 @@
+<sly data-sly-use.model="com.vonage.core.models.content.IconPanelItemModel" />
+
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title} Component"
+  style="min-width: 250px;"
+></div>
+
+<div class="icon-panel__item">
+  <div class="icon-panel__image ${model.iconSize}">
+    <sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+    <sly data-sly-call="${template.cfImage @ cssClass='', original='100', xlg='100', lg='100', md='100', sm='100'}"/>
+  </div>
+  <h2 class="icon-panel__headline">${model.headline}</h2>
+  <span class="icon-panel__description">${model.description @ context='html'}</span>
+  <sly data-sly-test="${model.link.href != '#'}">
+    <a
+      class="category-grid__link"
+      href="${model.link.href}"
+      target="${model.link.target}"
+      aria-describedby="${model.link.target =='_blank' ? 'new-window' : ''}"
+      aria-label="${model.link.ariaLabel}"
+    >
+      ${model.link.label}
+    </a>
+  </sly>
+</div>

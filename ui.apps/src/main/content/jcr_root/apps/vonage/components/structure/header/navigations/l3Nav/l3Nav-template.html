@@ -1,0 +1,17 @@
+<template data-sly-template.l3Nav="${@ l3NavModel , rel, cssClass}">
+    <sly data-sly-use.l3NavModel="com.vonage.core.models.structure.header.L3NavModel"/>
+    <sly data-sly-test="${!wcmmode.edit}">
+        
+        <div class="l3" data-sly-test="${l3NavModel.isL3NavActive}">
+            <div class="l3__container">
+            <div class="l3__items">
+
+                <sly data-sly-list="${l3NavModel.navLinkModel}">
+                   
+                <a href="${item.link.href}" class="l3__item ${(model.activeNavLinkLabel == item.link.label) ? 'l3__item--active' : ''}">${item.link.label}</a>
+                </sly>
+            </div>
+            </div>
+        </div>
+    </sly>
+</template>

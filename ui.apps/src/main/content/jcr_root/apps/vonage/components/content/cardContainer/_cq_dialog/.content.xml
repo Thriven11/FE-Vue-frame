@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Card Container"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <containerType
+                        granite:class="cq-dialog-dropdown-showhide"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Container Type"
+                        name="./containerType">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".reassign-fields-hide-show"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <iconCardContainer
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="Icon Card Container"
+                                value="card-icon-3-up"/>
+                            <imageCardContainer
+                                jcr:primaryType="nt:unstructured"
+                                text="Image Card Container"
+                                value="card-image-3-up"/>
+                        </items>
+                    </containerType>
+                </items>
+            </column>
+            <imageTitleContainer
+                granite:class="reassign-fields-hide-show"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Please enter a title for Card."
+                        fieldLabel="Title"
+                        name="./title"/>
+                    <headertype
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Please select Header Type"
+                        fieldLabel="Title Header Type"
+                        name="./headerType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <h2
+                                jcr:primaryType="nt:unstructured"
+                                text="H2"
+                                value="h2"/>
+                            <h3
+                                jcr:primaryType="nt:unstructured"
+                                text="H3"
+                                value="h3"/>
+                            <h4
+                                jcr:primaryType="nt:unstructured"
+                                text="H4"
+                                value="h4"/>
+                            <h5
+                                jcr:primaryType="nt:unstructured"
+                                text="H5"
+                                value="h5"/>                                
+                        </items>
+                    </headertype>
+                </items>
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    showhidetargetvalue="card-image-3-up"/>
+            </imageTitleContainer>            
+        </items>
+    </content>
+</jcr:root>

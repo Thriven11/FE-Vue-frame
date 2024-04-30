@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.vonage.core.models.content.RTETextComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+<span class="${properties.adjustPadding} ${properties.centerText} ${properties.bgColor} ${properties.adjustMargin}">
+  <!--/* With Container */-->
+  <sly data-sly-test="${properties.addContainer}">
+    <span class="container">
+      <div class="col-12 ${properties.gridValue} ${properties.centerCol}">
+        <div data-sly-test="${model.subHeadline}" class="text-block__title">
+            <h5 data-sly-element="${model.subHeadlineSize}">${model.subHeadline}</h5>
+        </div>
+        <div class="text aem-GridColumn aem-GridColumn--default--12">
+            <sly data-sly-include="text.html"/>
+        </div>
+        <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+      </div>
+    </span>
+  </sly>
+  <!--/* Witout Container */-->
+  <sly data-sly-test="${!properties.addContainer}">
+    <div class="col-12 ${properties.gridValue} ${properties.centerCol}">
+      <div data-sly-test="${model.subHeadline}" class="text-block__title">
+          <h5 data-sly-element="${model.subHeadlineSize}">${model.subHeadline}</h5>
+      </div>
+      <div class="text aem-GridColumn aem-GridColumn--default--12">
+          <sly data-sly-include="text.html"/>
+      </div>
+      <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+    </div>
+  </sly>
+</span>

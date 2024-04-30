@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="en"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <vng-clear
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-clear"
+        sling:message="Clear"/>
+    <vng-clearAll
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-clearAll"
+        sling:message="Clear All"/>
+    <vng-clearAllFilters
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-clearAllFilters"
+        sling:message="Clear All Filters"/>
+    <vng-filters
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-filters"
+        sling:message="Filters"/>
+    <vng-save
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-save"
+        sling:message="Save"/>
+    <vng-showResults
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-showResults"
+        sling:message="Show results"/>
+    <vng-featured
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-featured"
+        sling:message="Featured"/>
+    <vng-results
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-results"
+        sling:message="Results"/>
+    <vng-latest
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-latest"
+        sling:message="Latest"/>
+    <vng-viewAll
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="vng-viewAll"
+        sling:message="View All"/>
+</jcr:root>

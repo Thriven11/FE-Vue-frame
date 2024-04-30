@@ -1,0 +1,35 @@
+<template data-sly-template.template="${@ header,text,label,href,linkText,linkUrl,ariaLabel}">
+    <div class="vng-modal__content-wrapper">
+        <div class="row no-gutters justify-content-md-center">
+            <div class="col-12 col-lg-8">
+                <div class="vng-modal__content">
+                    <button id="model-close" aria-label="Close modal" class="vng-modal__close Vlt-icon-close"></button>
+                    <div class="text-center leave-cart leave-cart--abandoned" style="margin-left: 10%;">
+                        <h4 data-sly-test ="${header}" class="leave-cart__headline h4">
+                            ${header}
+                        </h4>
+                        <div  data-sly-test ="${text}" class="leave-cart__description p2">
+                            ${text @ context='html'}
+                        </div>
+
+                    </div>
+                    <div data-sly-test ="${label||linkText}" class="leave-cart__ctas">
+                        <div  data-sly-test ="${label}" class="leave-cart__cta">
+                           <a class="btn" href="${href @ extension='html'}">
+                                ${label}
+                            </a>
+                        </div>
+                        <div  data-sly-test ="${linkText}" class="leave-cart__cta">
+                             <a class="link" href="${linkUrl @ extension='html'}">
+                                ${linkText}
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</template>

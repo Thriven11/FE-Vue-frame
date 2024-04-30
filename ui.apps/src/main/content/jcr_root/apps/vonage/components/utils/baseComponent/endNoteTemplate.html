@@ -1,0 +1,23 @@
+<template data-sly-template.endNoteV1="${@ endNote}">
+    <div class="end-note">
+        <div class="end-note__content">
+            ${endNote @context='html'}
+        </div>
+    </div>
+</template>
+
+<template data-sly-template.endNoteV2="${@ background, keyLine, endNote}">
+    <div class="end-note-block ${background =='greyBackground' ? 'end-note-block--dark-theme' : ''} ${keyLine ==true ? 'end-note-block--keyline' : ''}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="end-note">
+                        <div class="end-note__content">
+                            ${endNote @context='html'}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

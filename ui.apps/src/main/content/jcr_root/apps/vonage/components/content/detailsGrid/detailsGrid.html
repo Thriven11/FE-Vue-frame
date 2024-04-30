@@ -1,0 +1,11 @@
+<sly data-sly-use.model="com.vonage.core.models.content.DetailsGridModel"/>
+
+<sly data-sly-use.gridAttributes="gridAttributes.js" data-sly-unwrap />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start" style="height:150px;"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="details-grid ${gridAttributes.themeClass} ${gridAttributes.alignmentClass} ${properties.adjustPadding}">
+    <sly data-sly-resource="${ @path='responsiveGrid',
+            resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></sly>
+</section>

@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+<div data-sly-test="${model.promotionalIconType}" data-type="${model.promotionalIconType}" class="category-grid__promo-icon">${model.promotionalIconType}</div>
+<sly data-sly-test="${model.link.href != '#'}">
+   <a class="category-grid__link" href="${model.link.href}" target="${model.link.target}" aria-describedby="${model.link.target =='_blank' ? 'new-window' : ''}" aria-label="${model.link.ariaLabel}">
+          ${model.title @ context='html'}
+   </a>
+</sly>
+<sly data-sly-test="${model.link.href == '#'}">
+   <p class="text-link">${model.title  @ context='html'}</p>
+</sly>
+<span class="category-grid__description">${model.description @ context='html'}</span>

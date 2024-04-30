@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[workflow:wcm]"
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:template="/libs/cq/workflow/templates/model"
+		jcr:description="Workflow to update an existing language copy using a launch" 
+        jcr:title="WCM: Update Language Copy"
+        jcr:primaryType="cq:PageContent"
+		sling:resourceType="cq/workflow/components/pages/model">
+		<flow 
+			jcr:primaryType="nt:unstructured" 
+			sling:resourceType="foundation/components/parsys">
+			<process 
+				jcr:primaryType="nt:unstructured" 
+				jcr:description="Create launch for an existing language copy" 
+				jcr:title="Create Language Copy Launch" 
+				sling:resourceType="cq/workflow/components/model/process">
+				<metaData 
+					jcr:primaryType="nt:unstructured" 
+					PROCESS="com.adobe.cq.wcm.translation.impl.process.CreateLanguageCopyLaunchProcess" 
+					PROCESS_ARGS="/libs/msm/wcm/rolloutconfigs/pushonmodify /libs/msm/launches/rolloutconfigs/pushonmodifyshallow /libs/msm/launches/rolloutconfigs/launch" PROCESS_AUTO_ADVANCE="true"/>
+			</process>
+			<process_0 
+				jcr:primaryType="nt:unstructured" 
+				jcr:description="Replace language copy launch content with master language content" 
+				jcr:title="Inject Master Language into Launchs" 
+				sling:resourceType="cq/workflow/components/model/process">
+				<metaData 
+					jcr:primaryType="nt:unstructured" 
+					PROCESS="com.adobe.cq.wcm.translation.impl.process.InjectMasterLanguageIntoLaunchProcess" 
+					PROCESS_AUTO_ADVANCE="true"/>
+			</process_0>
+			 <process_479706204 
+	                jcr:primaryType="nt:unstructured"
+	                jcr:title="Update XF links in Sites" 
+	                sling:resourceType="cq/workflow/components/model/process">
+	                <metaData 
+	                    jcr:primaryType="nt:unstructured" 
+	                    PROCESS="com.vonage.core.workflows.process.UpdateXfLinksInSites" 
+	                    PROCESS_AUTO_ADVANCE="true"/>
+	            </process_479706204>
+	            <process_679367285 
+	                jcr:primaryType="nt:unstructured"
+	                jcr:title="Update Links in Experience Fragments" 
+	                sling:resourceType="cq/workflow/components/model/process">
+	                <metaData 
+	                    jcr:primaryType="nt:unstructured" 
+	                    PROCESS="com.vonage.core.workflows.process.UpdateURLsInXF" 
+	                    PROCESS_AUTO_ADVANCE="true"/>
+	            </process_679367285>
+		</flow>
+		<image 
+			jcr:primaryType="nt:unstructured" 
+			imageRotate="0"
+		/>
+	</jcr:content>
+</jcr:root>

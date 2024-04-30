@@ -1,0 +1,49 @@
+<template data-sly-template.mainTpl="${@ btnClass}">
+
+  <div
+          data-sly-test="${wcmmode.edit}"
+          class="cq-placeholder"
+          data-emptytext="${component.title}"></div>
+
+  <sly
+    data-sly-use.model="com.vonage.core.models.content.LightboxCtaComponentModel"
+  />
+  <sly data-sly-test.ctaClass="${model.lightboxDefault ? btnClass : model.lightboxColor }"></sly>
+  <section class="form-overlay">
+    <div class="form-overlay__trigger">
+      <button class="${ctaClass}">
+        ${properties.label}
+      </button>
+    </div>
+    <div
+            class="form-overlay__overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label="form"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-right">
+            <button
+                    class="Vlt-icon-close form-overlay__close"
+                    aria-label="Close modal"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- Form Goes Here ${model.formPath} -->
+      <sly
+              data-sly-test="${model.formPath}"
+              data-sly-resource="${model.formPath}"
+      />
+
+      <!-- Insert Success State Here ${model.confMessagePath} -->
+      <sly
+              data-sly-test="${model.confMessagePath}"
+              data-sly-resource="${model.confMessagePath}/jcr:content/root"
+      />
+
+    </div>
+  </section>
+
+</template>

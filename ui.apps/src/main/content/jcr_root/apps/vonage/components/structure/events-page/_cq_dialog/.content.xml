@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_page_v2"
+    mode="edit">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Title and Tags"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                <eventStartDate
+                                    jcr:primaryType="nt:unstructured"
+                                    cq:showOnCreate="{Boolean}true"	
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    displayedFormat="MMMM DD, YYYY"
+                                    displayTimezoneMessage="{Boolean}true"
+                                    fieldLabel="Event Start Date"
+                                    fieldDescription="Enter the event start date."
+                                    name="./eventStartDate"
+                                    renderReadOnly="{Boolean}true"
+                                    required="{Boolean}false"
+                                    type="datetime">
+                                    <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    allowBulkEdit="{Boolean}true"
+                                    cq-msm-lockable="eventStartDate"/>
+                                </eventStartDate>
+                                <eventEndDate
+                                    jcr:primaryType="nt:unstructured"
+                                    cq:showOnCreate="{Boolean}true"	
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    displayedFormat="MMMM DD, YYYY"
+                                    displayTimezoneMessage="{Boolean}true"
+                                    fieldLabel="Event End Date"
+                                    fieldDescription="Enter the event end date."
+                                    name="./eventEndDate"
+                                    renderReadOnly="{Boolean}true"
+                                    required="{Boolean}false"
+                                    type="datetime">
+                                    <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    allowBulkEdit="{Boolean}true"
+                                    cq-msm-lockable="eventEndDate"/>
+                                </eventEndDate>
+                                </items>
+                            </title>
+                            </items>
+                        </column>
+                        </items>
+                    </basic>
+                    <vonage
+                        jcr:primaryType="nt:unstructured"
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:title="Vonage"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<announcement
+                                        cq:showOnCreate="false"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Announcement"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+										<items jcr:primaryType="nt:unstructured">
+											<showAnnouncement
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./showAnnouncement"
+                                                text="Show Announcement?"
+                                                fieldDescription="Check if Announcement component should be shown at top of the page"
+                                                uncheckedValue="false"
+                                                value="true"/>
+										</items>
+									</announcement>
+									<telephoneNumber
+                                        cq:showOnCreate="false"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Telephone Number"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+											<showTfn
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./showTfn"
+                                                text="Show Telephone Number?"
+                                                fieldDescription="Check if you want the campaign telephone number to show"
+                                                uncheckedValue="false"
+                                                value="true"/>
+										</items>
+									</telephoneNumber>
+									<ctas
+                                        cq:showOnCreate="false"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Header CTA's"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+											<showCtas
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./showCtas"
+                                                text="Show Header CTAs?"
+                                                fieldDescription="Check if you want the cta's to show in header"
+                                                uncheckedValue="false"
+                                                value="true"/>
+										</items>
+									</ctas>
+                                </items>
+                            </column>
+                        </items>
+                    </vonage>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

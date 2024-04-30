@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--checkbox" role="status">
+  <div class="Vlt-checkbox">
+    <label for="master-agent-${model.uuid}">
+      <div class="Vlt-checkbox__button">
+        <input type="checkbox" class="Vlt-checkbox__input" name="affiliatedwithamasteragent" id="master-agent-${model.uuid}">
+        <span class="Vlt-checkbox__icon form__checkbox-icon Vlt-icon-form-checkmark Vlt-form__checkbox-icon"></span>
+      </div>
+      <div class="Vlt-form__checkbox-label-container">
+        <div class="Vlt-form__checkbox-label">${'vng-masterAgent' @ i18n}</div>
+      </div>
+    </label>
+  </div>
+</div>

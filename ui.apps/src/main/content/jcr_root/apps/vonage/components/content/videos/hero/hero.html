@@ -1,0 +1,19 @@
+<sly data-sly-use.model="${'com.vonage.core.models.content.HeroComponentModel'}"/>
+
+<section class="Vlt-hero Vlt-hero--purple-${model.tileTheme ? model.tileTheme : 'magenta'} Vlt-hero--animated" id="main-component" tabindex="-1" data-video-id="${model.dataVideoId}">
+    <div class="container">
+        <div class="Vlt-hero__container" style="height:661px">
+            <div class="Vlt-hero__content">
+                <div class="Vlt-hero__headline-wrapper">
+                    <h5 class="Vlt-hero__eyebrow">${model.eyebrow}</h5>
+                    <h1 class="Vlt-hero__title">${model.title}</h1>
+                </div>
+                <div class="Vlt-hero__play-wrapper">
+                    <button class="Vlt-hero__play-icon Vlt-icon-play--circle" aria-label="${model.ariaLabel}" data-di-id="${model.dataVideoId}"></button>
+                    <span class="Vlt-hero__play-label">${model.videoPlayLabel}</span>
+                </div>
+            </div>
+            <sly data-sly-include="tiles.html"/>
+        </div>
+    </div>
+</section>

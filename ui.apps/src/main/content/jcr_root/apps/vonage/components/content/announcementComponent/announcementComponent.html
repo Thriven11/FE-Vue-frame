@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.vonage.core.models.content.AnnouncementComponentModel"
+     data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+
+<section class="announcement" data-announcement="${pageProperties.showAnnouncement ? 'true' : ''}">
+    <div class="announcement__pages">
+        <button class="announcement__control announcement__control--previous" id="announcement-previous-btn" aria-label="Go to the previous announcement">
+            <span class="Vlt-icon-chevron"></span>
+        </button>
+        <div class="announcement__page-numbers">
+            <span class="announcement__current-page"></span>
+            <span aria-hidden="true">/</span>
+            <span class="announcement__last-page"></span>
+        </div>
+        <div role="region" aria-live="polite" class="announcement__aria-live sr-only" data-prefix="Item" data-connector="of"></div>
+        <button class="announcement__control" id="announcement-next-btn" aria-label="Go to the next announcement">
+            <span class="Vlt-icon-chevron"></span>
+        </button>
+    </div>
+    <ul class="announcement__items" data-sly-list.announcementItem="${model.announcements}">
+        <li class="announcement__item">
+            <p class="announcement__content">
+                ${announcementItem.headline}
+            </p>
+            <sly data-sly-call="${ctaTemplate.ctaV2 @
+                link=announcementItem.link, rel='', cssClass='link link--light'}"/>
+        </li>
+    </ul>
+    <button class="announcement__close" aria-label="Close the announcement">
+        <span class="Vlt-icon-close"></span>
+    </button>
+</section>
+

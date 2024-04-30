@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+    fieldLabel="${{fieldLabell}}"
+    name="${{namee}}"
+    useFixedInlineToolbar="{Boolean}true">
+    <rtePlugins jcr:primaryType="nt:unstructured">
+        <format
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <lists
+            jcr:primaryType="nt:unstructured"
+            features="unordered"/>
+        <paraformat
+            jcr:primaryType="nt:unstructured"
+            features="*">
+            <formats jcr:primaryType="nt:unstructured">
+                <default_p
+                    jcr:primaryType="nt:unstructured"
+                    description="Paragraph"
+                    tag="p"/>
+                <default_h1
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Heading 1"
+                    tag="h1"/>
+                <default_h2
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Heading 2"
+                    tag="h2"/>
+                <default_h3
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Heading 3"
+                    tag="h3"/>
+                <default_h4
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Heading 4"
+                    tag="h4"/>
+                <default_h5
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}true"
+                    description="Heading 5"
+                    tag="h5"/>
+                <default_h6
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}true"
+                    description="Heading 6"
+                    tag="h6"/>
+                <default_blockquote
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Quote"
+                    tag="blockquote"/>
+                <default_pre
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}false"
+                    description="Preformatted"
+                    tag="pre"/>
+            </formats>
+        </paraformat>
+        <subsuperscript
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <justify
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+    </rtePlugins>
+    <uiSettings jcr:primaryType="nt:unstructured">
+        <cui jcr:primaryType="nt:unstructured">
+            <inline
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#subscript,subsuperscript#superscript]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <justify
+                        jcr:primaryType="nt:unstructured"
+                        items="[]"
+                        ref="justify"/>
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        items="[lists#unordered]"
+                        ref="lists"/>
+                    <paraformat
+                        jcr:primaryType="nt:unstructured"
+                        items="paraformat:getFormats:paraformat-pulldown"
+                        ref="paraformat"/>
+                    <subsuperscript
+                        jcr:primaryType="nt:unstructured"
+                        items="[subsuperscript#subscript,subsuperscript#superscript]"
+                        ref="justify"/>
+                </popovers>
+            </inline>
+            <dialogFullScreen
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,format#underline,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#superscript,subsuperscript#subscript]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <paraformat
+                        jcr:primaryType="nt:unstructured"
+                        items="paraformat:getFormats:paraformat-pulldown"
+                        ref="paraformat"/>
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        items="[lists#unordered]"
+                        ref="lists"/>
+                    <subsuperscript
+                        jcr:primaryType="nt:unstructured"
+                        items="[subsuperscript#subscript,subsuperscript#superscript]"
+                        ref="justify"/>
+                </popovers>
+            </dialogFullScreen>
+        </cui>
+    </uiSettings>
+</jcr:root>

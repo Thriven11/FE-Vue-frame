@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+	sitemapRoot="/content/vonage/live-copies/fr/fr"
+	cronExpression="0 0 17 1/1 * ? *"
+	enableScheduler="{Boolean}true"
+	urlRewrites="[/content/vonage/fr/fr/:/]"
+	mimeTypes="[image/png,image/jpg,image/jpeg,image/svg+xml]"
+	targetPath="/content/vonage/live-copies/fr/fr/sitemap-images.xml"/>

@@ -1,0 +1,76 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component" style="min-width:250px"></div>
+<sly data-sly-use.model="com.vonage.core.models.content.CareersJobDetailComponentModel"/>
+
+<section class="job-detail-hero">
+  <div class="job-detail-hero__banner">
+    <div class="container">
+      <sly data-sly-resource="${'breadcrumb' @resourceType='vonage/components/content/breadcrumb', selectors='light'}"/>
+      <h1 class="job-detail-hero__title">Careers at Vonage</h1>
+    </div>
+  </div>
+  <div class="container job-detail-hero__button-container">
+    <a class="job-detail-hero__back-button"><span class="Vlt-icon Vlt-icon-arrow-thin-left"></span> Back to Jobs</a>
+  </div>
+</section>
+
+<section class="careers__job-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                <h1 data-sly-test="${model.jobTitle}" class="careers__job-title">${model.jobTitle}</h1>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="careers__social-share" data-swiftype-index="false">
+                    <a class="share-link" href="javascript:void(0)" title="Share this job">
+                        Share Job
+                        <span class="Vlt-icon Vlt-icon-share"></span>
+                    </a>
+                    <div class="share-popover" data-sly-test.browserUrl="${model.browserUrl}">
+                        <div class='share-toolbox'>
+                            <ul class='share-options'>
+                                <li>
+                                    <a href="https://www.linkedin.com/shareArticle?url=${browserUrl}" target="_blank" title='Share to LinkedIn' data-social-network="linkedin" data-social-share="share">
+                                        <span class="Vlt-icon-social Vlt-icon-social--linkedin"></span>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=${browserUrl}" target="_blank" title='Share to Facebook' data-social-network="facebook" data-social-share="share">
+                                        <span class="Vlt-icon-social Vlt-icon-social--facebook"></span>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=${model.jobTitle}&url=${browserUrl}" target="_blank" title='Share to Twitter' data-social-network="twitter" data-social-share="share">
+                                        <span class="Vlt-icon-social Vlt-icon-social--twitter"></span>
+                                        Twitter
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-12 col-lg-8">
+                <div class="careers__summary">
+                    <div data-sly-test="${model.requisitionID}" class="careers__summary-title"><strong>Job ID:</strong> ${model.requisitionID}</div>
+                    <div data-sly-test="${model.career}" class="careers__summary-title"><strong>Career:</strong> ${model.career}</div>
+                    <div data-sly-test="${model.jobLocation}" class="careers__summary-title"><strong>Location:</strong> ${model.jobLocation}</div>
+                    <div data-sly-test="${model.datePosted}" class="careers__summary-title"><strong>Date Posted:</strong> ${model.datePosted}</div>
+                </div>
+            </div>
+            <div class=" col-12 col-lg-4">
+                <div class="careers__summary-cta">
+                    <a data-sly-test="${model.applyURL}" class="btn" href="${model.applyURL}" target="_blank" aria-label="Find out more" title="Apply Now">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        <div data-sly-test="${model.jobDescription}" class="careers__job-description">${model.jobDescription @context='html'}</div>
+        <div class="careers__job-descripton--cta">
+            <a data-sly-test="${model.applyURL}" class="btn" href="${model.applyURL}" target="_blank" aria-label="Find out more" title="Apply Now">Apply Now</a>
+        </div>
+    </div>
+</section>

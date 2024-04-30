@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Feature Container"
+          extraClientlibs="[vng.widgets]"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <featureContentSection
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Section"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title=""
+                            sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                            <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <eyebrow
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Eyebrow"
+                                                name="./eyebrow"/>
+                                            <eyebrow-pill
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./eyebrowapill"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                text="Is Eyebrow a Pill"
+                                                value="true"/>
+                                            <eyebrow-pillType
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./iseyebrowapill@TypeHint"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                value="Boolean"/>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                name="./title"/>
+                                            <description jcr:primaryType="nt:unstructured" path="/apps/vonage/components/utils/rte/rte_dialog_with_description" sling:resourceType="granite/ui/components/foundation/include"/>
+                                            <listItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldDescription="Click 'Add Field' to add a new list item."
+                                                fieldLabel="List"
+                                                composite="{Boolean}true">
+                                                <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                name="./listOfItems">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                  <item jcr:primaryType="nt:unstructured" path="/apps/vonage/components/utils/rte/rte_dialog_list_item" sling:resourceType="granite/ui/components/foundation/include"/>
+                                                </items>
+                                                </field>
+                                            </listItems>
+                                            <imageWidth
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./imagewidth"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                text="Force image to set width"
+                                                fieldDescription="When checked, the image will be 300px wide, this is useful for large icons and vertical images."
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </featureContentSection>
+
+                    <linkSection
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Link Section"
+                      sling:resourceType="granite/ui/components/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                        <fieldset
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                          <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                          <items jcr:primaryType="nt:unstructured">
+                            <column
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                <primaryLightbox
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                  fieldDescription="When checked, the primary CTA will trigger a lightbox form and confirmation message"
+                                  name="./primaryLightbox"
+                                  text="Override CTA functionality below and serve lightbox form instead?"
+                                  uncheckedValue="{Boolean}false"
+                                  value="{Boolean}true"/>
+                                <cta
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/include"
+                                  path="/apps/vonage/components/utils/cta/cta_dialog"/>
+                              </items>
+                            </column>
+                          </items>
+                        </fieldset>
+                      </items>
+                    </linkSection>
+		    <mediaTypeSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Media Type Section"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <mediaType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                emptyOption="{Boolean}false"
+                                                fieldLabel="Media Type"
+                                                name="./mediaType"
+                                                required="true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <option1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Feature Image Component"
+                                                        value="featureImage"/>
+                                                    <option2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Embed Component"
+                                                        value="embed"/>
+                                                </items>
+                                            </mediaType>
+                                            <hideEmbed
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                fieldDescription="Select to hide embed in mobile.(Applicable only when embed is selected in the media type.)"
+                                                name="./hideEmbed"
+                                                text="Hide Embed in Mobile"
+                                                value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </mediaTypeSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

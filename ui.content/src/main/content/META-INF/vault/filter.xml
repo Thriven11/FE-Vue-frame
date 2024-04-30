@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+  <filter root="/content/vonage/i18n/forms/en"/>
+  <filter root="/content/vonage/i18n/countries/en"/>
+  <filter root="/content/vonage/i18n/pricing/en"/>
+  <filter root="/content/vonage/i18n/ecomm/en"/>
+  <filter root="/content/vonage/i18n/common/en"/>
+</workspaceFilter>

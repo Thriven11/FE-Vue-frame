@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="RTE Text (Flexible)"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          helpPath="https://www.adobe.com/go/aem_cmp_text_v2"
+          trackingFeature="core-components:text:v2">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <tabs
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+        maximized="{Boolean}true">
+        <items jcr:primaryType="nt:unstructured">
+          <textHeaderSection
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Text Header"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <subHeadline
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Headline"
+                        name="./subHeadline"/>
+                      <subHeadlineSize
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Please select Sub Headline Size"
+                        fieldLabel="Headline Size"
+                        name="./subHeadlineSize">
+                        <items jcr:primaryType="nt:unstructured">
+                          <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="H2"
+                            value="h2"/>
+                          <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="H3"
+                            value="h3"/>
+                          <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="H4"
+                            value="h4"/>
+                          <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="H5"
+                            value="h5"
+                            />
+                          <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="H6"
+                            value="h6"/>
+                        </items>
+                      </subHeadlineSize>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </textHeaderSection>
+          <properties
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Text"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    granite:class="cq-RichText-FixedColumn-column"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        name="./text"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                          <format
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                          <lists
+                            jcr:primaryType="nt:unstructured"
+                            features="unordered"/>
+                          <paraformat
+                            jcr:primaryType="nt:unstructured"
+                            features="*">
+                            <formats jcr:primaryType="nt:unstructured">
+                              <default_p
+                                jcr:primaryType="nt:unstructured"
+                                description="Paragraph"
+                                tag="p"/>
+                              <default_h1
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Heading 1"
+                                tag="h1"/>
+                              <default_h2
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Heading 2"
+                                tag="h2"/>
+                              <default_h3
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Heading 3"
+                                tag="h3"/>
+                              <default_h4
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Heading 4"
+                                tag="h4"/>
+                              <default_h5
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"
+                                description="Heading 5"
+                                tag="h5"/>
+                              <default_h6
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"
+                                description="Heading 6"
+                                tag="h6"/>
+                              <default_blockquote
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Quote"
+                                tag="blockquote"/>
+                              <default_pre
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}false"
+                                description="Preformatted"
+                                tag="pre"/>
+                            </formats>
+                          </paraformat>
+                          <subsuperscript
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                          <justify
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                          <image
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                          <table
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                          <sourceedit
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                          <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#subscript,subsuperscript#superscript,image#imageProps,table#table]">
+                              <popovers jcr:primaryType="nt:unstructured">
+                                <justify
+                                  jcr:primaryType="nt:unstructured"
+                                  items="[]"
+                                  ref="justify"/>
+                                <lists
+                                  jcr:primaryType="nt:unstructured"
+                                  items="[lists#unordered]"
+                                  ref="lists"/>
+                                <paraformat
+                                  jcr:primaryType="nt:unstructured"
+                                  items="paraformat:getFormats:paraformat-pulldown"
+                                  ref="paraformat"/>
+                                <subsuperscript
+                                  jcr:primaryType="nt:unstructured"
+                                  items="[subsuperscript#subscript,subsuperscript#superscript]"
+                                  ref="justify"/>
+                              </popovers>
+                            </inline>
+                            <dialogFullScreen
+                              jcr:primaryType="nt:unstructured"
+                              toolbar="[format#bold,format#italic,format#underline,lists#unordered,links#modifylink,links#unlink,#paraformat,subsuperscript#superscript,subsuperscript#subscript,image#imageProps,misctools#sourceedit,#styles,table#table]">
+                              <popovers jcr:primaryType="nt:unstructured">
+                                <paraformat
+                                  jcr:primaryType="nt:unstructured"
+                                  items="paraformat:getFormats:paraformat-pulldown"
+                                  ref="paraformat"/>
+                                <lists
+                                  jcr:primaryType="nt:unstructured"
+                                  items="[lists#unordered]"
+                                  ref="lists"/>
+                                <paraformat
+                                  jcr:primaryType="nt:unstructured"
+                                  items="paraformat:getFormats:paraformat-pulldown"
+                                  ref="paraformat"/>
+                                <subsuperscript
+                                  jcr:primaryType="nt:unstructured"
+                                  items="[subsuperscript#subscript,subsuperscript#superscript]"
+                                  ref="justify"/>
+                              </popovers>
+                            </dialogFullScreen>
+                          </cui>
+                        </uiSettings>
+                      </text>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </properties>
+          <endNoteSection
+            jcr:primaryType="nt:unstructured"
+            jcr:title="End Note"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <endNote
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        fieldLabel="End Note"
+                        path="/apps/vonage/components/utils/endNote/endnote_dialog"/>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </endNoteSection>
+          <styleOptions
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Style Options"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <gridValue
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Adjust Component size in grid (12 is largest and default)"
+                        fieldLabel="Column Size"
+                        name="./gridValue">
+                        <items jcr:primaryType="nt:unstructured">
+                          <col-lg-12
+                            jcr:primaryType="nt:unstructured"
+                            text="12"
+                            value="col-lg-12 col-md-12"/>
+                          <col-lg-11
+                            jcr:primaryType="nt:unstructured"
+                            text="11"
+                            value="col-lg-11 col-md-11"/>
+                          <col-lg-10
+                            jcr:primaryType="nt:unstructured"
+                            text="10"
+                            value="col-lg-10 col-md-10"/>
+                          <col-lg-9
+                            jcr:primaryType="nt:unstructured"
+                            text="9"
+                            value="col-lg-9 col-md-9"/>
+                          <col-lg-8
+                            jcr:primaryType="nt:unstructured"
+                            text="8"
+                            value="col-lg-8 col-md-8"/>
+                          <col-lg-7
+                            jcr:primaryType="nt:unstructured"
+                            text="7"
+                            value="col-lg-7 col-md-7"/>
+                          <col-lg-6
+                            jcr:primaryType="nt:unstructured"
+                            text="6"
+                            value="col-lg-6 col-md-6"/>
+                        </items>
+                      </gridValue>
+                      <centerCol
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        checked="{Boolean}false"
+                        fieldDescription="When checked, entire RTE column will be centered in the row."
+                        name="./centerCol"
+                        text="Center Column"
+                        uncheckedValue=""
+                        value="center-column"/>
+                      <centerText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        checked="{Boolean}false"
+                        fieldDescription="When checked, all text (title, RTE &amp; endnote) will be centered within the column."
+                        name="./centerText"
+                        text="Center Text"
+                        uncheckedValue=""
+                        value="center-text"/>
+                      <addContainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        checked="{Boolean}false"
+                        fieldDescription="When checked, a container will be added. A container forces this component to obey site max-width value."
+                        name="./addContainer"
+                        text="Add Container"
+                        uncheckedValue=""
+                        value="container"/>
+                      <adjustPadding
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Adjust component padding, default is no padding"
+                        fieldLabel="Addjust Padding"
+                        name="./adjustPadding">
+                        <items jcr:primaryType="nt:unstructured">
+                          <paddingNone
+                            jcr:primaryType="nt:unstructured"
+                            text="No Padding"
+                            value="no-padding"/>
+                          <paddingBoth
+                            jcr:primaryType="nt:unstructured"
+                            text="Padding on Top &amp; Bottom"
+                            value="flexibleRte__padding"/>
+                          <padaddingTop
+                            jcr:primaryType="nt:unstructured"
+                            text="Padding on Top only"
+                            value="flexibleRte__padding top"/>
+                          <paddingBottom
+                            jcr:primaryType="nt:unstructured"
+                            text="Padding on Bottom only"
+                            value="flexibleRte__padding bottom"/>
+                        </items>
+                      </adjustPadding>
+                      <adjustMargin
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Adjust component margin, default is no margin"
+                        fieldLabel="Adjust Margin"
+                        name="./adjustMargin">
+                        <items jcr:primaryType="nt:unstructured">
+                          <marginNone
+                            jcr:primaryType="nt:unstructured"
+                            text="No Margin"
+                            value="no-margin"/>
+                          <marginBoth
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Top &amp; Bottom"
+                            value="flexibleRte__margin"/>
+                          <marginTop
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Top only"
+                            value="flexibleRte__margin margin-top"/>
+                          <marginBottom
+                            jcr:primaryType="nt:unstructured"
+                            text="Margin on Bottom only"
+                            value="flexibleRte__margin margin-bottom"/>
+                        </items>
+                      </adjustMargin>
+                      <bgColor
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                      fieldDescription="Adjust the background color of this component."
+                      fieldLabel="Background color"
+                      name="./bgColor">
+                        <items jcr:primaryType="nt:unstructured">
+                          <transparent
+                            jcr:primaryType="nt:unstructured"
+                            text="Transparent (no bg)"
+                            value="theme-none"
+                            selected="{Boolean}true"/>
+                          <purple
+                            jcr:primaryType="nt:unstructured"
+                            text="Purple"
+                            value="theme-purple theme-dark"/>
+                          <purpleGradient
+                            jcr:primaryType="nt:unstructured"
+                            text="Purple Gradient"
+                            value="theme-purple-gradient theme-dark"/>
+                          <black
+                            jcr:primaryType="nt:unstructured"
+                            text="Black"
+                            value="theme-black theme-dark"/>
+                          <darkGrey
+                            jcr:primaryType="nt:unstructured"
+                            text="Dark Grey"
+                            value="theme-dark-grey theme-dark"/>
+                          <lightGrey
+                            jcr:primaryType="nt:unstructured"
+                            text="Light Grey"
+                            value="theme-light-grey theme-light"/>
+                          <white
+                            jcr:primaryType="nt:unstructured"
+                            text="White"
+                            value="theme-white theme-light"/>
+                        </items>
+                      </bgColor>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </styleOptions>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

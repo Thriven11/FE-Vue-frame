@@ -1,0 +1,20 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.PostPurchaseCard" />
+<sly data-sly-use.description="${'../../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.description}" />
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title}"
+  style="min-width: 250px;"
+></div>
+  <div class="card-icon-3-up__card--magenta-coral Vlt-card-icon">
+    <div class="Vlt-card-icon__extrusion"></div>
+      <div class="Vlt-card-icon__container">
+        <p data-sly-test="${model.number}" class="h1">${model.number}</p>
+        <div data-sly-test="${model.description}" class="p1 post-purchase__card-description">${description.externalizedHtml @ context='html'}</div>
+        <div class="Vlt-card-icon__cta"
+          data-sly-unwrap="${!wcmmode.edit && !wcmmode.preview}">
+          <sly data-sly-resource="${'text-link' @resourceType='/apps/vonage/components/content/cta', addSelectors='link'}" />
+        </div>
+    </div>
+  </div>

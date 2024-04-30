@@ -1,0 +1,23 @@
+subject=Vonage web notification | Page review requested
+
+header=Hello ${participant.name}, \n \
+
+message=\n \
+An AEM page has been subjected to workflow process and assigned to you for review. Details of the workflow: \n \
+\n \
+Page- "${payload.path}" \n \
+Workflow- "${model.title}" \n \
+Step- "${item.node.title}" \n \
+Initiated By- "${initiator.name}" \n \
+\n \
+Click the link below in order to review the page and take appropriate action (Approve or Reject): \n \
+\n \
+${host.prefix}${payload.path.open} \n \
+\n
+footer=\n \
+From, \n \
+Vonage AEM Admin \n \
+-------------------------------------------------------------------------------------\n \
+View the workflow item in your AEM Inbox: ${host.prefix}/aem/inbox\n \
+-------------------------------------------------------------------------------------\n \
+This is an automatic generated message. Please do not reply.

@@ -1,0 +1,31 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-use.model="com.vonage.core.models.content.SearchFiltersRootModel" />
+<section class="search-filters-root">
+	<search-filters-filter ref="search-filters-filter" engine-key="${inheritedPageProperties.engineKey}"
+		content-category="${model.contentType}" filter-options="${model.filters}">
+	</search-filters-filter>
+
+	<div class="dict d-none">
+		<input type="hidden" name="filters" value="${'vng-filters' @ i18n}">
+		<input type="hidden" name="save" value="${'vng-save' @ i18n}">
+		<input type="hidden" name="showResults" value="${'vng-showResults' @ i18n}">
+		<input type="hidden" name="clear" value="${'vng-clear' @ i18n}">
+		<input type="hidden" name="clearAll" value="${'vng-clearAll' @ i18n}">
+		<input type="hidden" name="clearAllFilters" value="${'vng-clearAllFilters' @ i18n}">
+	</div>
+</section>
+<div class="resources-featured">
+	<div id="v-resources-featured"></div>
+	<div class="dict d-none">
+		<input type="hidden" name="authorResultsTitle" value="${'vng-results' @ i18n}">
+		<input type="hidden" name="engineKey" value="${inheritedPageProperties.engineKey}">
+		<input type="hidden" name="authorFeatured" value="${'vng-featured' @ i18n}">
+		<input type="hidden" name="viewAll" value="${'vng-viewAll' @ i18n}">
+		<input type="hidden" name="authorUC" value="${properties.ucname }">
+		<input type="hidden" name="authorCC" value="${properties.ccname }">
+		<input type="hidden" name="authorAPI" value="${properties.apiname }">
+		<input type="hidden" name="authorLatestArticles" value="${'vng-latest' @ i18n}">
+	</div>
+</div>

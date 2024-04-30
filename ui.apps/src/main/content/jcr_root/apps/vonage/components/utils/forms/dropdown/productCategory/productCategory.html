@@ -1,0 +1,24 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-select">
+    <select data-sly-test="${!properties.optionRequired}" id="Area_of_Interest-${model.uuid}" name="Area_of_Interest" class="Vlt-form__select" required>
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="API">${'vng-api' @ i18n}</option>
+      <option value="UC">${'vng-uc' @ i18n}</option>
+      <option value="CC">${'vng-cc' @ i18n}</option>
+    </select>
+    <select data-sly-test="${properties.optionRequired}" id="Area_of_Interest-${model.uuid}" name="Area_of_Interest" class="Vlt-form__select">
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="API">${'vng-api' @ i18n}</option>
+      <option value="UC">${'vng-uc' @ i18n}</option>
+      <option value="CC">${'vng-cc' @ i18n}</option>
+    </select>
+    <label class="Vlt-form__input-label" for="Area_of_Interest-${model.uuid}">
+      ${'vng-interested' @ i18n}
+    </label>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

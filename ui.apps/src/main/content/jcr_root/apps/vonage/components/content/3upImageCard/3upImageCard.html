@@ -1,0 +1,13 @@
+<sly data-sly-use.template="limitedGrid.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px min-height: 100px;"></div>
+
+<div class="container" data-analytics-id="${currentNode.name}">
+  <div class="row" data-sly-test="${properties.title}">
+    <div class="col-7 col-md-12 col-lg-8">
+      <h2 class="card-image-3-up__headline" data-sly-element="${properties.headerType}">${properties.title}</h2>
+    </div>
+  </div>
+  <sly data-sly-call="${template.main @ numberOfItems='3', resourceType='vonage/components/content/3upImageCard/imageCard', mediumColClass='col-md-12'}"/>
+</div>

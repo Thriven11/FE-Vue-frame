@@ -1,0 +1,18 @@
+From: no-reply@vonage.com
+Subject: Vonage web notification | Content Invalid
+
+Hello ${recipientName},
+
+The page you requested for activation cannot be processed. 
+
+Possible reasons:
+1. Selected page is not a valid content type Or,
+2. Selected page is not allowed for activation
+
+Page requested for activation: ${payload}
+
+From,
+Vonage AEM Admin
+
+--------------------------------------------------------------
+This is an automatic generated message. Please do not reply.

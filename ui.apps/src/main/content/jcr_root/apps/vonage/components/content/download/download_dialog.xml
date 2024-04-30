@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Download"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+        <file
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+            fieldLabel="Download Asset URL"
+            name="./fileReference"
+            rootPath="/content/dam/vonage"/>
+        <actionText
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription="The text for the download action."
+            fieldLabel="Button Text"
+            name="./actionText"/>
+        <ariaLabel
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Aria Label"
+            name="./ariaLabel"/>
+        <inline
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+            checked="{Boolean}false"
+            fieldDescription="When checked, the download asset will be displayed inline in the browser."
+            name="./inline"
+            text="Display inline"
+            uncheckedValue="{Boolean}false"
+            value="{Boolean}true"/>
+        <centerButton
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+            checked="{Boolean}false"
+            fieldDescription="When checked, the download CTA will be centered on page."
+            name="./centerButton"
+            text="Display Centered"
+            uncheckedValue="{Boolean}false"
+            value="{Boolean}true"/>
+    </items>
+</jcr:root>

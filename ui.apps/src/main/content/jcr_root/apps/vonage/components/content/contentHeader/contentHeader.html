@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.vonage.core.models.content.ContentHeaderModel">
+    <div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+         data-emptytext="${component.title} Component"></div>
+    <header class="content-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1">
+                    <h1 class="content-header__content">${model.headlineText}</h1>
+                    <span class="content-header__date">${model.contentDate}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+</sly>

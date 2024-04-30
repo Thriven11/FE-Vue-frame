@@ -1,0 +1,48 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.AddOnModel" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+    data-emptytext="${component.title} Component"></div>
+    <section data-sly-test="${inheritedPageProperties.ecommPartnerType != 'EZlynx'}" class="add-on">
+
+<section class="add-on">
+
+    <div class="container">
+        <div class="row">
+            <header class="add-on__header ">
+
+                <div class="row">
+                    <div class="col-lg-12">                        
+                        <h5 class="add-on__headline">${model.title || 'Boost your plan'}</h5>
+                        <p class="add-on__subtitle">${model.subTitle || 'Add any of the following to your plan to try it
+                            for free. Don’t worry, we’ll let you know before your trial ends.'}</p>
+                    </div>
+                </div>
+
+            </header>
+        </div>
+
+        <div id="v-add-on"></div>
+
+    </div>
+
+    <div class="dict d-none">
+        <input type="hidden" name="addToPlan" value="${'vng-ecomm-addToPlan' @ i18n}">
+        <input type="hidden" name="edit" value="${'vng-ecomm-edit' @ i18n}">
+        <input type="hidden" name="learnMore" value="${'vng-ecomm-learnMore' @ i18n}">
+        <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+        <input type="hidden" name="perLine" value="${'vng-ecomm-perLine' @ i18n}">
+        <input type="hidden" name="remove" value="${'vng-ecomm-remove' @ i18n}">
+        <input type="hidden" name="tax" value="${'vng-ecomm-tax' @ i18n}">
+        <input type="hidden" name="taxes" value="${'vng-ecomm-taxes' @ i18n}">
+        <input type="hidden" name="taxesAndFees" value="${'vng-ecomm-taxesAndFees' @ i18n}">
+        <input type="hidden" name="update" value="${'vng-ecomm-update' @ i18n}">
+
+        <input type="hidden" name="tabOneLabel" value="${properties.tabOneLabel || 'Add-ons' }">
+        <input type="hidden" name="tabTwoLabel" value="${properties.tabTwolabel || 'Phones'}">
+        <input type="hidden" name="tabThreeLabel" value="${properties.tabThreeLabel ||' Services and Integrations' }">
+        <input type="hidden" name="authorServices" value="${properties.tabThreeSubProductOne ||' Professional Services' }">
+        <input type="hidden" name="authorIntegrations" value="${properties.tabThreeSubProductTwo ||' Integrations' }">
+        
+    </div>
+</section>
+</section>

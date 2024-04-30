@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  externalizer.domains="[local https://author-vonageholdingscorp-dev65-a.adobecqms.net,
+author http://ec2-54-196-160-23.compute-1.amazonaws.com:4502,
+publish https://dev-www.vonage.com,
+publish_us-en https://dev-www.vonage.com,
+publish_fr-fr https://dev-www.vonage.fr,
+publish_ph-en https://dev-www.vonage.com.ph,
+publish_au-en https://dev-www.vonage.com.au,
+publish_gb-en https://dev-www.vonage.co.uk,
+publish_my-en https://dev-www.vonage.com.my,
+publish_sg-en https://dev-www.vonage.sg,
+publish_nz-en https://dev-www.vonage.nz,
+publish_ca-en https://dev-www.vonage.ca/en,
+publish_ca-fr https://dev-www.vonage.ca/fr,
+publish_id-en https://dev-www.vonage.id,
+publish_hk-en https://dev-www.vonage.hk,
+publish_br-es https://dev-www.vonage.com.br,
+publish_co-es https://dev-www.vonage.co,
+publish_mx-es https://dev-www.vonage.mx,
+publish_ar-es https://dev-www.vonage.com.ar,
+publish_es-es https://dev-www.vonage.com.es,
+publish_cl-es https://dev-www.vonage.cl,
+publish_jp-ja https://dev-www.vonagebusiness.jp,
+publish_kr-ko https://dev-www.vonage.kr,
+publish_cn-zh https://dev-www.vonagebusiness.cn,
+publish_ru-ru https://dev-www.vonage.ru,
+publish_de-de https://dev-www.vonagebusiness.de,
+publish_br-pt https://dev-www.vonage.com.br,
+publish_tw-en https://dev-www.vonage.com.tw
+]"/>

@@ -1,0 +1,50 @@
+<sly
+	data-sly-use.model="com.vonage.core.models.structure.EcommerceHeader"
+	data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html" />
+<sly data-sly-use.contactUsUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.contactHref}" />
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder"
+	data-emptytext="${component.title}"></div>
+<header class="ecommerce-header">
+	<div class="container ecommerce-header__container">
+    <div class="ecommerce-header__logo">
+      <sly
+        data-sly-resource="${'header-logo' @ resourceType='vonage/components/content/logo'}" />
+    </div>
+
+    <div class="h5 ecommerce-header__message" data-sly-test="${pageProperties.headerMessage}">
+      ${pageProperties.headerMessage}
+    </div>
+    <div data-sly-test="${wcmmode.edit}">Header Message</div>
+
+    <div class="ecommerce-header__ctas">
+      <div class="ecommerce-header__cta-default"
+        data-sly-test="${wcmmode.edit || pageProperties.showLink }">
+        <sly data-sly-call="${ctaTemplate.ctaV3 @ link=model.link, cssClass='link link--light'}" />
+      </div>
+      <div id="v-ecommerce-header"></div>
+    </div>
+	</div>
+
+  <div class="dict d-none">
+      <input type="hidden" name="disclaimer" value="${model.cartDetailsDisclaimer @ context='attribute'}">
+      <input type="hidden" name="dueToday" value="${'vng-ecomm-dueToday' @ i18n}">
+      <input type="hidden" name="firstBill" value="${'vng-ecomm-firstBill' @ i18n}">
+      <input type="hidden" name="lines" value="${'vng-ecomm-lines' @ i18n}">
+      <input type="hidden" name="lines" value="${'vng-ecomm-lines' @ i18n}">
+      <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+      <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+      <input type="hidden" name="monthlyBill" value="${'vng-ecomm-monthlyBill' @ i18n}">
+      <input type="hidden" name="monthlyFees" value="${'vng-ecomm-monthlyFees' @ i18n}">
+      <input type="hidden" name="oneTimeFees" value="${'vng-ecomm-oneTimeFees' @ i18n}">
+      <input type="hidden" name="shipping" value="${'vng-ecomm-shipping' @ i18n}">
+      <input type="hidden" name="taxes" value="${'vng-ecomm-taxes' @ i18n}">
+      <input type="hidden" name="title" value="${'vng-ecomm-checkout-title' @ i18n}">
+      <!-- TODO: Replace when added to ecomm header model -->
+      <input type="hidden" name="contactUsUrl" value="${contactUsUrl.externalUrl}">
+      <input type="hidden" name="contactUsText" value="${model.contactLabel}">
+
+      <input type="hidden" name="shareCartLabel" value="${model.shareCartLabel}">
+      <input type="hidden" name="shareFunctionality" value="${inheritedPageProperties.ecommPartnerType}">
+  </div>
+</header>

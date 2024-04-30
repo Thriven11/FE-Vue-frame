@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.vonage.core.models.content.JumpLinksItemModel" />
+<div
+  data-sly-test="${wcmmode.edit}"
+  class="cq-placeholder cq-marker-start"
+  style="height: 150px;"
+  data-emptytext="${component.title} Component"
+  style="min-width: 250px;"
+></div>
+<div class="jump-links__jump-link">
+  <a
+      class="jump-links__link"
+      href="javascript:void(0)"
+      data-target="${model.link.href}"
+      aria-label="${model.link.ariaLabel}"
+    >
+    </a>
+  <div class="jump-links__heading">
+    <div class="jump-links__icon">
+      <sly data-sly-include="image/image.html" />
+    </div>
+    <h2 class="jump-links__title">${model.headline}</h2>
+    <span class="Vlt-icon-arrow-link" aria-hidden="true"></span>
+  </div>
+  <span class="jump-links__label">${model.description}</span>
+</div>

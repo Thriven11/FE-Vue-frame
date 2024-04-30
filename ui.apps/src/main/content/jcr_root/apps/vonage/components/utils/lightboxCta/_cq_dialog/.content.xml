@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Lightbox Form CTA"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <columns
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+          margin="{Boolean}true">
+          <items jcr:primaryType="nt:unstructured">
+              <column
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <items jcr:primaryType="nt:unstructured">
+                      <label
+                        jcr:primaryType="nt:unstructured"
+                        required="true"
+                        fieldLabel="Label"
+                        name="./label"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <form
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Form"
+                        fieldDescription="This is the form that will be embedded in the lightbox"
+                        name="./formPath"
+                        rootPath="/content/experience-fragments/vonage"
+                        required="{Boolean}true"/>
+                      <confirmationMessage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Confirmation Message"
+                        fieldDescription="This is the message displayed after submitting the form"
+                        name="./confMessagePath"
+                        rootPath="/content/experience-fragments/vonage"
+                        required="{Boolean}true"/>
+						 <backgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Select button background color"
+                                fieldLabel="CTA Button Color and Style"
+                                name="./lightboxColor">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Default"
+                                        value="default"/>
+                                    <whitebuttonwithblacklabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="White button with Black label(Solid)"
+                                        value="btn btn--light"/>
+                                    <whitebuttonwithwhitelabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="White button with White label(Pixel Solid)"
+                                        value="btn btn--secondary btn--light"/>
+                                    <blackbuttonwithwhitelabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Black button with White label(Solid)"
+                                        value="btn btn--primary"/>
+                                    <blackbuttonwithblacklabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Black button with Black label(Pixel Solid)"
+                                        value="btn btn--secondary"/>
+                                    <brandpurplewithwwhitelabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Brand Purple W/White label(Solid)"
+                                        value="btn btn--electricPurple"/>
+                                    <brandpurplewwhitelabel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Brand Purple W/White label(Pixel Solid)"
+                                        value="btn btn--electricPurpleBorder"/>
+                                </items>
+                            </backgroundColor>
+                  </items>
+              </column>
+          </items>
+      </columns>
+        </items>
+    </content>
+</jcr:root>

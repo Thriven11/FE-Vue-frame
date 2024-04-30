@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Tabbed Product Pricing Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/container">
+      <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <mainContent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Main Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tabsCard
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                              fieldDescription="Click 'Add' to add a new Tab.  Max should be around 4"
+                                              fieldLabel="Tabs"
+                                              composite="{Boolean}true">
+                                                <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                name="./tabList">
+                                                  <items jcr:primaryType="nt:unstructured">
+                                                    <tabTitle
+                                                      jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                      fieldLabel="Tab Title"
+                                                      name="./tabTitle"
+                                                      required="{Boolean}true"/>
+                                                    <sectionCard
+                                                      jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                      fieldDescription="Click 'Add' to add a new Section Card."
+                                                      fieldLabel="Sections"
+                                                      composite="{Boolean}true">
+                                                        <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./sectionList">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <headline
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Headline"
+                                                                name="./headline"
+                                                                required="{Boolean}false"/>
+                                                            <offerings
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                fieldDescription="Click 'Add' to add a Product w/ Price."
+                                                                fieldLabel="Products"
+                                                                composite="{Boolean}true">
+                                                                <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="./offeringList">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <description
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Product Name"
+                                                                        name="./description"
+                                                                        required="{Boolean}true"/>
+                                                                        <price
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Price"
+                                                                        name="./price"
+                                                                        required="{Boolean}true"/>
+                                                                        <legal
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Legal"
+                                                                        name="./legal"
+                                                                        fieldDescription="small text that appears under the price, 2 to 4 words max"
+                                                                        required="{Boolean}false"/>
+                                                                    </items>
+                                                                </field>
+                                                            </offerings>
+                                                        </items>
+                                                      </field>
+                                                    </sectionCard>
+                                                    <endNote
+                                                      jcr:primaryType="nt:unstructured"
+                                                      fieldLabel="Endnote"
+                                                      sling:resourceType="granite/ui/components/foundation/include"
+                                                      path="/apps/vonage/components/utils/endNote/endnote_dialog"/>
+                                                    </items>
+                                                </field>
+                                              </tabsCard>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </mainContent>
+                    <endNoteSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="End Note (optional)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <endNote
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/include"
+                                                path="/apps/vonage/components/utils/endNote/endnote_dialog"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </endNoteSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

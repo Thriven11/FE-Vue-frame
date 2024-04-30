@@ -1,0 +1,28 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CardComponentModel"/>
+<sly data-sly-use.template="vonage/components/utils/baseComponent/imageTemplate.html"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:150px;"></div>
+
+<div class="col-lg${properties.gridSize} col-md${properties.gridSize} col-sm-12 col-item">
+
+  <sly data-sly-test="${!properties.textOnTop}">
+  <div class="image-wrapper ${properties.centerImage}">
+      <sly data-sly-call="${template.cfImage @ cssClass='', original='500', xlg='360', lg='285', md='500', sm='500'}"/>
+    </div>
+    <div class="text-wrapper" data-sly-test="${properties.text}">
+      <div class="text aem-GridColumn aem-GridColumn--default--12" >
+          <sly data-sly-include="text.html"/>
+      </div>
+    </div>
+  </sly>
+  <sly data-sly-test="${properties.textOnTop}">
+    <div class="text-wrapper on-top" data-sly-test="${properties.text}">
+      <div class="text aem-GridColumn aem-GridColumn--default--12" >
+          <sly data-sly-include="text.html"/>
+      </div>
+    </div>
+    <div class="image-wrapper ${properties.centerImage}">
+      <sly data-sly-call="${template.cfImage @ cssClass='', original='500', xlg='360', lg='285', md='500', sm='500'}"/>
+    </div>
+  </sly>
+</div>

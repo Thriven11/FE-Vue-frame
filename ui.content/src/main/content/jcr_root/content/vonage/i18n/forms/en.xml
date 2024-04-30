@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:language="en"
+  jcr:mixinTypes="[mix:language]"
+  jcr:primaryType="nt:folder">
+  <masterAgentCity
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-masterAgentCity"
+    sling:message="Master Agent City"/>
+  <companyName
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-companyName"
+    sling:message="Company Name"/>
+  <email
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-email"
+    sling:message="Email"/>
+  <emailAddress
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-emailAddress"
+    sling:message="Email Address"/>
+  <firstName
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-firstName"
+    sling:message="First Name"/>
+  <jobTitle
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-jobTitle"
+    sling:message="Job Title"/>
+  <jobTitleRole
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-jobTitleRole"
+    sling:message="Title or role"/>
+  <lastName
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-lastName"
+    sling:message="Last Name"/>
+  <lastName
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-lastName"
+    sling:message="Last Name"/>
+  <masterAgent
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-masterAgent"
+    sling:message="Affiliated to a Master Agent / Distributor ?"/>
+  <masterAgentName
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-masterAgentName"
+    sling:message="Master Agent / Distributor Name"/>
+  <phone
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-phone"
+    sling:message="Phone"/>
+  <phoneNumber
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-phoneNumber"
+    sling:message="Phone Number"/>
+  <requiredField
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-requiredFieldMsg"
+    sling:message="This field is required"/>
+  <validZipCode
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-validZipCode"
+    sling:message="Please enter a valid zip code"/>
+  <zipCode
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-zipCode"
+    sling:message="Zip Code"/>
+  <validNoOfExtensions
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-validExtensions"
+    sling:message="Please enter a valid number of extensions"/>
+  <noOfExtensions
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-extensions"
+    sling:message="Number of extensions"/>
+  <requiredCheckbox
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-requiredCheckboxMsg"
+    sling:message="This must be checked"/>
+  <gdprDisclaimer
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-gdpr-disclaimer"
+    sling:message="By submitting your information, you agree to be contacted via phone and email regarding your interest in our products and services. We will treat your data in accordance with our"/>
+  <gdprConsent
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-gdpr-consent"
+    sling:message="Yes, please send me emails, articles, event invitations, and other information related to Vonage products and services. I understand I may unsubscribe at any time by clicking the link included in emails."/>
+  <privacyPolicy
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-privacyPolicy"
+    sling:message="By checking this box, you agree to be contacted via phone and email regarding your interest in our products and services. We will treat your data in accordance with our"/>
+  <privacyPolicyLink
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-privacyPolicyLink"
+    sling:message="privacy policy"/>
+  <areYouADeveloper
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-areYouADeveloper"
+    sling:message="Are you a developer?"/>
+  <select
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-select"
+    sling:message="Select"/>
+  <selectACountry
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-selectACountry"
+    sling:message="Select a country"/>
+  <country
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-country"
+    sling:message="Country"/>
+  <enterCountry
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-enterCountry"
+    sling:message="Enter a Country"/>
+  <whatProduct
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-whatProduct"
+    sling:message="What Product are you Interested in?"/>
+  <Customer360CustomerEngagement
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Customer 360/Customer Engagement"
+    sling:message="Customer 360/Customer Engagement"/>
+  <CallCenter
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Call Center"
+    sling:message="Call Center"/>
+  <Marketing
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Marketing"
+    sling:message="Marketing"/>
+  <CollaborationComms
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Collaboration/Comms"
+    sling:message="Collaboration/Comms"/>
+  <LogisticsTransportation
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Logistics/Transportation"
+    sling:message="Logistics/Transportation"/>
+  <Hospitality
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Hospitality"
+    sling:message="Hospitality"/>
+  <BusinessProductivity
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Business Productivity"
+    sling:message="Business Productivity"/>
+  <eCommerce
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-eCommerce"
+    sling:message="eCommerce"/>
+  <Support
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Support"
+    sling:message="Support"/>
+  <AreaofInterest
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Area of Interest"
+    sling:message="Area of Interest"/>
+  <Interest
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-interested"
+    sling:message="What are you interested in?"/>
+  <Unknown
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-unknown"
+    sling:message="Unknown"/>
+  <Other
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-other"
+    sling:message="Other"/>
+  <None
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-none"
+    sling:message="None"/>
+  <crm
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crm"
+    sling:message="CRM"/>
+  <crmIntegration
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmIntegrations"
+    sling:message="CRM Integrations"/>
+  <one
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-1"
+    sling:message="1"/>
+  <oneToNine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-1 - 9"
+    sling:message="1 - 9"/>
+  <twoToFour
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-2 - 4"
+    sling:message="2 - 4"/>
+  <fiveToNine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-5 - 9"
+    sling:message="5 - 9"/>
+  <tenToNineteen
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-10 - 19"
+    sling:message="10 - 19"/>
+  <tenToNinetynine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-10 - 99"
+    sling:message="10 - 99"/>
+  <twentytoFortynine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-20 - 49"
+    sling:message="20 - 49"/>
+  <fiftyToNinetynine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-50 - 99"
+    sling:message="50 - 99"/>
+  <onehundredTofourninenine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-100 - 499"
+    sling:message="100 - 499"/>
+  <onehundredTotwofortynine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-100 - 249"
+    sling:message="100 - 249"/>
+  <twofiftyTonineninetynine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-250 - 999"
+    sling:message="250 - 999"/>
+  <fivehundredTonineninenine
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-500 - 999"
+    sling:message="500 - 999"/>
+  <onethousandToFourthousand
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-1000 - 4999"
+    sling:message="1000 - 4999"/>
+  <fivethousandPlus
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-5000 +"
+    sling:message="5000 +"/>
+  <employees
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-employees"
+    sling:message="Employees"/>
+  <employeesOptional
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-employees-optional"
+    sling:message="Employees (optional)"/>
+  <Automotive
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Automotive"
+    sling:message="Automotive"/>
+  <Banking
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Banking"
+    sling:message="Banking"/>
+  <BrandingAdvertising
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-BrandingAdvertising"
+    sling:message="Branding &amp; Advertising"/>
+  <CallCenter
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Call Center"
+    sling:message="Call Center"/>
+  <ConsultantandProfessionalServices
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Consultant and Professional Services"
+    sling:message="Consultant and Professional Services"/>
+  <Consulting
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Consulting"
+    sling:message="Consulting"/>
+  <ConsumerProductGoods
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Consumer Product Goods"
+    sling:message="Consumer Product Goods"/>
+  <CustomerService
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Customer Service"
+    sling:message="Customer Service"/>
+  <Dating
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Dating"
+    sling:message="Dating"/>
+  <Ecommerce
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Ecommerce"
+    sling:message="Ecommerce"/>
+  <Education
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Education"
+    sling:message="Education"/>
+  <Electronics
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Electronics"
+    sling:message="Electronics"/>
+  <EmailServiceProviders
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Email Service Providers"
+    sling:message="Email Service Providers"/>
+  <Entertainment
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Entertainment"
+    sling:message="Entertainment"/>
+  <FieldServices
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Field Services"
+    sling:message="Field Services"/>
+  <FinancialServices
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Financial Services"
+    sling:message="Financial Services"/>
+  <FoodBeverage
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-FoodBeverage"
+    sling:message="Food &amp; Beverage"/>
+  <FoodDelivery
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Food Delivery"
+    sling:message="Food Delivery"/>
+  <Gambling
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Gambling"
+    sling:message="Gambling"/>
+  <Gaming
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Gaming"
+    sling:message="Gaming"/>
+  <Government
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Government"
+    sling:message="Government"/>
+  <HealthWellness
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-HealthWellness"
+    sling:message="Health &amp; Wellness"/>
+  <Healthcare
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Healthcare"
+    sling:message="Healthcare"/>
+  <Hospitality
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Hospitality"
+    sling:message="Hospitality"/>
+  <Insurance
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Insurance"
+    sling:message="Insurance"/>
+  <Legal
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Legal"
+    sling:message="Legal"/>
+  <Logistics
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Logistics"
+    sling:message="Logistics"/>
+  <Marketing
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Marketing"
+    sling:message="Marketing"/>
+  <Marketplace
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Marketplace"
+    sling:message="Marketplace"/>
+  <MassGaming
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Mass Gaming"
+    sling:message="Mass Gaming"/>
+  <MediaEntertainment
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-MediaEntertainment"
+    sling:message="Media &amp; Entertainment"/>
+  <OnlineClassifieds
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Online Classifieds"
+    sling:message="Online Classifieds"/>
+  <OnlineGaming
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Online Gaming"
+    sling:message="Online Gaming"/>
+  <OnlineMedia
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Online Media"
+    sling:message="Online Media"/>
+  <OTT
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-OTT"
+    sling:message="OTT"/>
+  <Payment
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Payment"
+    sling:message="Payment"/>
+  <Pharmaceuticals
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Pharmaceuticals"
+    sling:message="Pharmaceuticals"/>
+  <ProfessionalServices
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Professional Services"
+    sling:message="Professional Services"/>
+  <PublicService
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Public Service"
+    sling:message="Public Service"/>
+  <RealEstate
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Real Estate"
+    sling:message="Real Estate"/>
+  <Recruiting
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Recruiting"
+    sling:message="Recruiting"/>
+  <Religion
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Religion"
+    sling:message="Religion"/>
+  <Retail
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Retail"
+    sling:message="Retail"/>
+  <Security
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Security"
+    sling:message="Security"/>
+  <Social
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Social"
+    sling:message="Social"/>
+  <SocialNetworks
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Social Networks"
+    sling:message="Social Networks"/>
+  <Software
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Software"
+    sling:message="Software"/>
+  <Technology
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Technology"
+    sling:message="Technology"/>
+  <Telecommunications
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Telecommunications"
+    sling:message="Telecommunications"/>
+  <Transportation
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Transportation"
+    sling:message="Transportation"/>
+  <Travel
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Travel"
+    sling:message="Travel"/>
+  <Utilities
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Utilities"
+    sling:message="Utilities"/>
+  <WebMobileDevelopment
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Web/Mobile Development"
+    sling:message="Web/Mobile Development"/>
+  <Industry
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Industry"
+    sling:message="Industry"/>
+  <selectPartnerType
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-selectPartnerType"
+    sling:message="Select a partner type"/>
+  <application
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-application"
+    sling:message="Application"/>
+  <integration
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-integration"
+    sling:message="Integration"/>
+  <technology
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-technology"
+    sling:message="Technology"/>
+  <partnerType
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-partnerType"
+    sling:message="Partner Type"/>
+  <ProgrammableContactCenter
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Programmable Contact Center"
+    sling:message="Programmable Contact Center"/>
+  <ProgrammableSMS
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Programmable SMS"
+    sling:message="Programmable SMS"/>
+  <smsMms
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-sms-mms"
+    sling:message="SMS / MMS"/>
+  <video
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-video"
+    sling:message="Video"/>
+  <ProgrammableVoice
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Programmable Voice"
+    sling:message="Programmable Voice"/>
+  <SIPTrunking
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-SIP Trunking"
+    sling:message="SIP Trunking"/>
+  <voice
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-voice"
+    sling:message="Voice"/>
+  <WhatsApp
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-whatsapp"
+    sling:message="WhatsApp"/>
+  <FacebookViberSocial
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-facebook-viber-social"
+    sling:message="Facebook Messenger, Viber, Social"/>
+  <MultiChannelConversations
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-multi-channel-conversations"
+    sling:message="Multi-channel Conversations"/>
+  <TwoFactorAuthentication
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-two-factor-authentication"
+    sling:message="Two-Factor Authentication"/>
+  <ContactCenterAugmentation
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-contact-center-augmentation"
+    sling:message="Contact Center Augmentation"/>
+  <Ai
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-ai"
+    sling:message="AI"/>
+  <EnterpriseServices
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-enterprise-services"
+    sling:message="Enterprise Services"/>
+  <Verify
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Verify"
+    sling:message="Verify"/>
+  <NumberInsight
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Number Insight"
+    sling:message="Number Insight"/>
+  <In-AppMessaging
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-In-App Messaging"
+    sling:message="In-App Messaging"/>
+  <In-AppVoice
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-In-App Voice"
+    sling:message="In-App Voice"/>
+  <MessagesAPI
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Messages API"
+    sling:message="Messages API"/>
+  <DispatchAPI
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Dispatch API"
+    sling:message="Dispatch API"/>
+  <WhatsAppBusinessSolution
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-WhatsApp Business Solution"
+    sling:message="WhatsApp Business Solution"/>
+  <EnterprisePlan
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-Enterprise Plan"
+    sling:message="Enterprise Plan"/>
+  <OpenTokLiveVideo
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-OpenTok Live Video"
+    sling:message="OpenTok Live Video"/>
+  <message
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-message"
+    sling:message="Message"/>
+  <api
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-api"
+    sling:message="Communication APIs"/>
+  <uc
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-uc"
+    sling:message="Unified Communications"/>
+  <cc
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-cc"
+    sling:message="Contact Centers"/>
+  <cmethod
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-cmethod"
+    sling:message="Contact Method"/>
+  <GlobalCompanySize
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-globalCompanySize"
+    sling:message="Global company size"/>
+  <Addressline1
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-addressLine1"
+    sling:message="Address line 1"/>
+  <Addressline2
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-addressLine2"
+    sling:message="Address line 2 (optional)"/>
+  <State
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-state"
+    sling:message="State"/>
+  <City
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-city"
+    sling:message="City"/>
+  <call30minutes
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-call30minutes"
+    sling:message="Within the next 30 minutes"/>
+  <ScheduleCall
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-scheduleCall"
+    sling:message="Schedule a call"/>
+  <ReScheduleCall
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-reScheduleCall"
+    sling:message="Re-schedule a call"/>
+  <ScheduleConversation
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-scheduleConversation"
+    sling:message="Schedule a conversation"/>
+  <crmDesk
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmDesk"
+    sling:message="Desk"/>
+  <crmHouse
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmHouse"
+    sling:message="In House"/>
+  <crmMD
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmMD"
+    sling:message="Microsoft Dynamics"/>
+  <crmOracle
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmOracle"
+    sling:message="Oracle"/>
+  <crmSage
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmSage"
+    sling:message="Sage"/>
+  <crmSalesforce
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmSalesforce"
+    sling:message="Salesforce"/>
+  <crmSAP
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmSAP"
+    sling:message="SAP"/>
+  <crmSugar
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmSugar"
+    sling:message="Sugar"/>
+  <crmZendesk
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-crmZendesk"
+    sling:message="Zendesk"/>
+  <RightNow
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-rightNow"
+    sling:message="Right now"/>
+  <founderPresident
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-founderPresident"
+    sling:message="Founder / President"/>
+  <manager
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-manager"
+    sling:message="Manager"/>
+  <ownerPartner
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-ownerPartner"
+    sling:message="Owner / Partner"/>
+  <projectManager
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-projectManager"
+    sling:message="Project Manager"/>
+  <salesProfessional
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-salesProfessional"
+    sling:message="Sales Professional"/>
+  <specialist
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-specialist"
+    sling:message="Specialist"/>
+  <supervisor
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-supervisor"
+    sling:message="Supervisor"/>
+  <vplevel
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-vplevel"
+    sling:message="VP level"/>
+     <businessemail
+    jcr:primaryType="sling:MessageEntry"
+    sling:key="vng-businessemail"
+    sling:message="Business Email"/>
+</jcr:root>

@@ -1,0 +1,60 @@
+<sly data-sly-use.model="com.vonage.core.models.content.ProductPricingTabsModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+
+<section id="product-card-tabbed" class="tabs product-card-tabbed">
+
+  ${model.tabList}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div data-sly-list.tab="${model.tabList}" role="tablist" aria-label="SMS" class="tabs__tabs">
+          <button
+            aria-controls="panel${model.tabTitle}"
+            aria-selected="true"
+            class="tabs__tab"
+            id="tab${model.tabTitle}"
+            role="tab"
+            tabindex="-1">${tab.tabTitle}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <sly data-sly-list.tab="${model.tabList}">
+    <div role="tabpanel" aria-labelledby="${model.tabTitle}" id="panel${model.tabTitle}" class="tabs__panel" tabindex="${tabList.index}" aria-hidden="false">
+      <div class="pricing-card">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div data-sly-list.sectionItem="${tab.sectionList}" class="pricing-card__card not-dynamic">
+                <div class="pricing-card__option">
+                  <h3 class="pricing-card__option-product">${sectionItem.headline}</h3>
+                  <!-- Include Offerings -->
+                  <sly data-sly-list.offeringItem="${sectionItem.offeringList}">
+                    <div class="pricing-card__offer">
+                      <span class="pricing-card__offer-name">${offeringItem.description}</span>
+                      <div class="pricing-card__offer-price-container">
+                        <span class="pricing-card__offer-price">${offeringItem.price}</span>
+                        <span data-sly-test="${offeringItem.legal}" class="pricing-card__offer-price__legal">
+                          ${offeringItem.legal}
+                        </span>
+                      </div>
+                    </div>
+                  </sly>
+                </div>
+              </div>
+              <sly data-sly-include="/apps/vonage/components/utils/endNote/endnote-plain.html"></sly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sly>
+
+</section>

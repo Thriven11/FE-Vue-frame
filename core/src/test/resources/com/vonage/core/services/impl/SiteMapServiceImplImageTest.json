@@ -1,0 +1,101 @@
+{
+	"jcr:primaryType": "cq:Page",
+	"jcr:createdBy": "admin",
+	"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+	"jcr:content": {
+		"jcr:primaryType": "cq:PageContent",
+		"jcr:createdBy": "admin",
+		"jcr:title": "en-us",
+		"cq:template": "/conf/vonage/settings/wcm/templates/generic-page",
+		"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+		"cq:lastModified": "Fri Sep 27 2019 11:31:21 GMT+0000",
+		"sling:resourceType": "vonage/components/structure/generic-page",
+		"cq:lastModifiedBy": "admin",
+		"root": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "wcm/foundation/components/responsivegrid"
+		},
+		"cq:responsive": {
+			"jcr:primaryType": "nt:unstructured"
+		}
+	},
+	"homepage": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+		"jcr:content": {
+			"jcr:primaryType": "cq:PageContent",
+			"jcr:mixinTypes": [
+				"mix:versionable"
+			],
+			"jcr:createdBy": "admin",
+			"jcr:title": "Homepage",
+			"cq:lastReplicationAction": "Activate",
+			"cq:template": "/conf/vonage/settings/wcm/templates/generic-page-with-leadgen",
+			"cq:lastReplicatedBy": "admin",
+			"metadataPageName": "Communication APIs, Contact Center, Business Phone, VoIP",
+			"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+			"cq:lastReplicated": "Wed Nov 20 2019 03:22:27 GMT+0000",
+			"cq:lastModified": "Wed Nov 27 2019 18:23:46 GMT+0000",
+			"disableIndexForSEO": "true",
+			"jcr:description": "Vonage offers flexible and scalable voice, messaging, video and data capabilities across Unified Communications, Contact Centers and Communications APIs.",
+			"pageTitle": "Homepage",
+			"sling:resourceType": "vonage/components/structure/generic-page",
+			"cq:lastModifiedBy": "admin"
+		}
+	},
+	"homepagedemo": {
+		"jcr:primaryType": "cq:Page",
+		"jcr:createdBy": "admin",
+		"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+		"jcr:content": {
+			"jcr:primaryType": "cq:PageContent",
+			"jcr:mixinTypes": [
+				"mix:versionable"
+			],
+			"jcr:createdBy": "admin",
+			"jcr:title": "HomePageDemo",
+			"cq:template": "/conf/vonage/settings/wcm/templates/generic-page",
+			"jcr:created": "Fri Nov 29 2019 11:58:23 GMT+0530",
+			"cq:lastModified": "Wed Nov 06 2019 10:53:21 GMT+0000",
+			"sling:resourceType": "vonage/components/structure/generic-page",
+			"cq:lastModifiedBy": "admin",
+			"root": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "wcm/foundation/components/responsivegrid",
+				"generalContainer": {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType": "vonage/components/structure/generalContainer",
+					"responsiveGrid": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "wcm/foundation/components/responsivegrid",
+						"hero": {
+							"jcr:primaryType": "nt:unstructured",
+							"jcr:createdBy": "admin",
+							"videoPlayLabel": "THE NEW VONAGE STORY",
+							"eyebrow": "One Vonage, one promise Demo Content",
+							"jcr:lastModifiedBy": "admin",
+							"dataVideoId": "IdakC24Whps",
+							"tileTheme": "salmon",
+							"jcr:created": "Fri Sep 27 2019 13:06:26 GMT+0000",
+							"title": "We will lead you through change.",
+							"jcr:lastModified": "Fri Sep 27 2019 13:25:20 GMT+0000",
+							"sling:resourceType": "vonage/components/content/hero"
+						},
+						"download": {
+							"jcr:primaryType": "nt:unstructured",
+							"jcr:createdBy": "admin",
+							"fileReference": "/content/dam/vonage/leadgen/lead-gen-icon.png",
+							"jcr:lastModifiedBy": "admin",
+							"inline": "true",
+							"jcr:created": "Wed Nov 06 2019 10:49:53 GMT+0000",
+							"jcr:lastModified": "Wed Nov 06 2019 10:53:21 GMT+0000",
+							"sling:resourceType": "vonage/components/content/download",
+							"actionText": "Download"
+						}
+					}
+				}
+			}
+		}
+	}
+}

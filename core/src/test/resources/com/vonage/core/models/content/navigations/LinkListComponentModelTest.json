@@ -1,0 +1,24 @@
+{
+	"jcr:primaryType": "nt:unstructured",
+	"jcr:createdBy": "admin",
+	"jcr:lastModifiedBy": "admin",
+	"jcr:created": "Fri Sep 27 2019 11:16:52 GMT+0000",
+	"title": "Contact Centers",
+	"jcr:lastModified": "Fri Sep 27 2019 20:34:28 GMT+0000",
+	"sling:resourceType": "vonage/components/content/navigations/titleLinkList",
+	"links": {
+		"jcr:primaryType": "nt:unstructured",
+		"item0": {
+			"jcr:primaryType": "nt:unstructured",
+			"target": "_blank",
+			"href": "https://www.newvoicemedia.com/en-us/partners",
+			"label": "Partners"
+		},
+		"item1": {
+			"jcr:primaryType": "nt:unstructured",
+			"target": "_blank",
+			"href": "https://nvm.statuspage.io/",
+			"label": "NewVoiceMedia System Status"
+		}
+	}
+}

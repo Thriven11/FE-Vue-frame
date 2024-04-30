@@ -1,0 +1,128 @@
+<sly
+  data-sly-use.imageTemplate="vonage/components/utils/baseComponent/imageTemplate.html"
+/>
+
+<section
+  class="resources-list resources-list--filters"
+  :class="[isLoading ? classes.isLoading : '', hasResults ? classes.hasResults : '']"
+  data-sly-use.model="com.vonage.core.models.content.ResourceListResultsModel"
+  v-cloak
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1 header">
+        <h1 class="h3">{{ category.label }}</h1>
+      </div>
+    </div>
+    <div class="row" ref="main">
+      <div class="col-12 col-lg-3">
+        <categories
+          :current-category="category"
+          :categories="categories"
+          :show-total="false"
+          @go-to-category="goToCategory($event)"
+        ></categories>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="resources-list__loading"></div>
+
+        <resource-filters
+          ref="resource-filters"
+          :filter-options="category.filterOptions"
+          :selected-filters="filters"
+          @toggle-filter="toggleFilter($event)"
+          @clear-filters="clearFilters()"
+        ></resource-filters>
+
+        <section
+          class="resources-list__results article-grid"
+          :class="[contentType == 'partners' ? classes.smallImages : '']"
+        >
+          <div class="row">
+            <div class="col-12 col-md-6" v-for="result in results">
+              <div class="article-grid__card">
+                <a
+                  class="Vlt-card-image"
+                  :href="result.url"
+                  :aria-label="'link to' + result.title"
+                >
+                  <div class="Vlt-card-image__image-wrapper">
+                    <img
+                      class="Vlt-card-image__image"
+                      :src="result.image"
+                      :alt="result.title"
+                    />
+                  </div>
+                  <div class="Vlt-card-image__body">
+
+                    <div v-if="result.content_section === 'resources'" class="Vlt-card-image__header">
+                      <span
+                        class="Vlt-card-image__category"
+                        v-if="result.resources"
+                        >{{ Array.isArray(result.resources) ?
+                        result.resources[0] : result.resources }}</span
+                      >
+                      <span class="Vlt-card-image__type" v-if="result.topic"
+                        >{{ Array.isArray(result.topic) ? result.topic[0] :
+                        result.topic }}</span
+                      >
+                    </div>
+
+                    <div v-if="result.content_section === 'partners'" class="Vlt-card-image__header">
+                      <span
+                        class="Vlt-card-image__category" v-if="result.product"
+                        >{{ result.product }}</span
+                      >
+                      <span class="Vlt-card-image__type" v-if="result['partner-type']"
+                        >{{ Array.isArray(result['partner-type']) ? result['partner-type'].join(", ") :
+                          result['partner-type'] }}</span
+                      >
+                    </div>
+
+                    <div v-if="result.content_section === 'events' || (result.events === 'Details Page')" class="Vlt-card-image__header">
+                      <span
+                        class="Vlt-card-image__category" v-if="result['event-type']"
+                        >{{ Array.isArray(result['event-type']) ? result['event-type'].join(", ") :
+                        result['event-type'] }}</span
+                      >
+                      <span class="Vlt-card-image__type" v-if="result['event_start_string'] && result['event_end_string']"
+                        >{{ result['event_start_string'] }} - {{ result['event_end_string'] }}</span
+                      >
+                      <span class="Vlt-card-image__type" v-else-if="result['event_start_string']"
+                        >{{ result['event_start_string'] }}</span
+                      >
+                    </div>
+                    <span class="Vlt-card-image__headline"
+                      >{{ result.title }}
+                      <span class="Vlt-icon-arrow-link"></span
+                    ></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <pagination
+          :current-page="page"
+          :total-pages="getTotalPages"
+          @go-to-page="goToPage($event)"
+        ></pagination>
+
+        <div class="no-results">
+          <sly
+            data-sly-call="${imageTemplate.coreImage @ cssClass='no-results__image'}"
+          />
+          <h2 class="no-results__title">${model.noResultsTitle}</h2>
+          <span class="no-results__description"
+            >${model.noResultsDescription}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="dict d-none">
+
+  <input type="hidden" name="engineKey" value="${inheritedPageProperties.engineKey}">
+</div>

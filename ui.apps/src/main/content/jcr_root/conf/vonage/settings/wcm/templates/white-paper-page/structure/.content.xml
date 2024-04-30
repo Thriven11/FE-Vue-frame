@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2019-11-11T17:34:54.970+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/vonage/settings/wcm/templates/white-paper-page"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="vonage/components/structure/white-paper">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <experiencefragment
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/Header/master"
+                text="Opens in a new window Skip to Main Content Main Menu Products Products Communications APIs Customize your offering easily with our innovative apps and integrations. Unified Communications Connect your teams and customers with voice, messaging, video and data, anywhere. Contact Centers Create richer employee and customer experiences that help more and sell more. Business Needs Business Needs Communications APIs Use Cases Leverage our API Platform to innovate your business communications from Customer Notifications to Fraud Detection to Real-Time Sentiment Analysis and more. Salesforce Integration for Contact Centers Harness the power of SalesforceÂ® computer-telephony integration (CTI) for great conversations and create exceptional customer and employee experiences. Move Communications to the Cloud Enable work from anywhere, take advantage of over 40 features and reduce your communication total cost of ownership (TCO) when you move your communications to the cloud. Resources Developer Center About Us Support Sign In Contact us"/>
+            <generalcontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/generalContainer">
+                <responsiveGrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <breadcrumb
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/breadcrumb"
+                        backgroundColor="breadcrumbs--dark"
+                        startLevel="3"/>
+                    <headerLists
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vonage/components/content/headerLists"
+                            editable="{Boolean}true"/>
+                    <responsivegrid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid"
+                        editable="{Boolean}true">
+                        <cq:responsive jcr:primaryType="nt:unstructured"/>
+                    </responsivegrid>
+                </responsiveGrid>
+            </generalcontainer>
+            <experiencefragment_1818925819
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/lead_gen/master"
+                text="Speak with an expert. I'm interested in:"/>
+            <experiencefragment_1022346214
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/content/fragments/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/vonage/en-us/Footer/master"
+                text="Communications APIs Partners Nexmo System Status Tokbox System Status Unified Communications Partners System Status Contact Centers Partners NewVoiceMedia System Status Corporate Careers Investor Relations Newsroom Events Legal Privacy Terms of Service E911 Acceptable Use Policy Copyright Â© Vonage 2019"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

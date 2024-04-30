@@ -1,0 +1,6 @@
+<sly data-sly-test="${wcmmode.edit}"
+	data-sly-use.content="/libs/granite/sightly/templates/clientlib.html"
+	data-sly-call="${ content.css @ categories='cq.experience-fragments.content.vonage'}"/>
+<div class="${wcmmode.edit ? 'xf-content-height' : ''}">
+    <sly data-sly-use.body="body.js" data-sly-resource="${body.resourcePath @ selectors=[]}"/>
+</div>

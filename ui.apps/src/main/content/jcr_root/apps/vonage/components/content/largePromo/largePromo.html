@@ -1,0 +1,27 @@
+<sly data-sly-use.model="com.vonage.core.models.content.LargePromoComponentModel"
+     data-sly-use.ctaTemplate="vonage/components/utils/baseComponent/ctaTemplate.html"/>
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     style="height: 150px;"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="large-promo${model.backgroundTheme}">
+  <div class="container">
+    <div class="large-promo__container">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-1 col-lg-5">
+          <div class="large-promo__promo-info">
+            <h2 class="large-promo__headline">${model.title}</h2>
+            <span class="large-promo__description">${model.description}</span>
+            <div>
+              <sly data-sly-test="${!properties.lightboxCta}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn-light'}"></sly>
+              <sly data-sly-test="${properties.lightboxCta}" data-sly-resource="${'lightbox-cta-1' @resourceType='/apps/vonage/components/utils/lightboxCta',addSelectors='btn-light'}"></sly>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-5 offset-lg-1">
+          <sly data-sly-resource="${'largePromoImage' @resourceType='vonage/components/content/largePromo/largePromoImage'}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

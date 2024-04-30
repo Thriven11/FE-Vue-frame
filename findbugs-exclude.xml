@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter xmlns="http://findbugs.sourceforge.net/filter/3.0.4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://findbugs.sourceforge.net/filter/3.0.4 https://raw.githubusercontent.com/findbugsproject/findbugs/3.0.4/findbugs/etc/findbugsfilter.xsd"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/findbugsproject/findbugs/3.0.4/findbugs/etc/findbugsfilter.xsd">
+    <Match>
+        <Bug pattern="HRS_REQUEST_PARAMETER_TO_HTTP_HEADER"/>
+    </Match>
+    <Match>
+        <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+    </Match>
+    <Match>
+        <Bug pattern="BC_UNCONFIRMED_CAST"/>
+    </Match>
+    <Match>
+        <Bug pattern="MSF_MUTABLE_SERVLET_FIELD"/>
+    </Match>
+    <Match>
+        <Bug pattern="MTIA_SUSPECT_SERVLET_INSTANCE_FIELD"/>
+    </Match>
+    <Match>
+        <Bug pattern="SE_BAD_FIELD"/>
+    </Match>
+</FindBugsFilter>

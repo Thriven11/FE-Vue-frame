@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.vonage.core.models.content.navigations.LinkListComponentModel"
+     data-sly-use.template="linkListTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="Vlt-footer__header">
+    <h5 class="Vlt-footer__title">
+        ${model.title}
+    </h5>
+    <sly data-sly-call="${template.linkList @
+        links=model.links,
+        listItemClass='Vlt-footer__header-link'}"/>
+</div>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header Lists"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                required="{Boolean}true"                                                
+                                                fieldDescription="Please enter a title for Header Lists."
+                                                fieldLabel="Title"
+                                                name="./title"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Please enter a description for Header Lists."
+                                                fieldLabel="Description"
+                                                name="./description"/>                                                
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </tab>
+                    <download
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Download"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <primaryLightbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="When checked, the primary CTA will trigger a lightbox form and confirmation message"
+                                                name="./primaryLightbox"
+                                                text="Override Download functionality below and serve lightbox form instead?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+											<download
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/include"
+												path="/apps/vonage/components/content/download/download_dialog"/>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </download>                    
+                    <card1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CardOne"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Card Title"
+                                                name="./cardOneTitle"
+                                                required="{Boolean}false"/>                                        
+											  <card
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+												fieldDescription="Click 'Add Field' to add a new card list item."
+												fieldLabel="Card List"
+												composite="{Boolean}true">
+												<field
+												  jcr:primaryType="nt:unstructured"
+												  sling:resourceType="granite/ui/components/coral/foundation/container"
+												  name="./cardOne">
+												  <items jcr:primaryType="nt:unstructured">
+	                                                   <item
+	                                                         jcr:primaryType="nt:unstructured"
+	                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+	                                                         fieldLabel="List Item Text"
+	                                                         name="./listItem"/>														 
+												  </items>
+												</field>
+											  </card>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </card1>                    
+                    <card2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CardTwo"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Card Title"
+                                                name="./cardTwoTitle"
+                                                required="{Boolean}false"/>                                        
+											  <card
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+												fieldDescription="Click 'Add Field' to add a new card list item."
+												fieldLabel="Card List"
+												composite="{Boolean}true">
+												<field
+												  jcr:primaryType="nt:unstructured"
+												  sling:resourceType="granite/ui/components/coral/foundation/container"
+												  name="./cardTwo">
+												  <items jcr:primaryType="nt:unstructured">
+	                                                   <item
+	                                                         jcr:primaryType="nt:unstructured"
+	                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+	                                                         fieldLabel="List Item Text"
+	                                                         name="./listItem"/>														 
+												  </items>
+												</field>
+											  </card>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </card2>					
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,43 @@
+<sly data-sly-use.model="com.vonage.core.models.content.StepsGridModel"
+     data-sly-use.ctaTemplate="ctaTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <div class="step__icon ${properties.circularIcon}"
+           data-sly-test.resourceNode="stepFeatureImage"
+           data-sly-test.resourceNodeType="${'{0}{1}' @
+            format=['vonage/components/content/stepsGrid/stepsItem/', 'stepFeatureImage']}">
+        <sly data-sly-resource="${@path=resourceNode,
+              resourceType=resourceNodeType}" data-sly-unwrap>
+        </sly>
+      </div>
+    </div>
+      <div class="col-9">
+        <div class="step__content ">
+          <div class="row">
+          <div class="step__eyebrow-container col-2">
+              <span class="step__eyebrow">
+                ${model.eyebrow}
+              </span>
+          </div>
+          <div class="step__text col">
+            <h2 class="step__title">${model.title @ context='html'}</h2>
+            <div class="step__description">${properties.text @ context='html'}</div>
+            <div class="step__link-wrapper" data-sly-test="${model.link.href != '#' || properties.primaryLightbox}">
+              <sly
+                      data-sly-test="${!properties.primaryLightbox}"
+                      data-sly-call="${ctaTemplate.ctaL3 @link=model.link, cssClass='link'}"/>
+              <sly
+                      data-sly-test="${properties.primaryLightbox}"
+                      data-sly-resource="${'ctaLightbox' @resourceType='/apps/vonage/components/utils/lightboxCta', addSelectors='link'}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

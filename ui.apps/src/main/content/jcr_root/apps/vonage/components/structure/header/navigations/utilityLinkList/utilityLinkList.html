@@ -1,0 +1,71 @@
+<sly data-sly-use.model="${'com.vonage.core.models.content.navigations.UtilityNavComponentModel'}"
+     data-sly-use.countryModel="com.vonage.core.models.content.CountryListModel"
+     data-sly-use.languageModel="${'com.vonage.core.models.content.LanguageListModel'}"
+     data-sly-use.webAppConfig="com.vonage.core.models.configs.WebAppConfig"
+     data-sly-use.ctaTemplate="ctaTemplate.html"
+     data-sly-use.linkListTemplate="linkListTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<sly data-sly-test.country="${currentPage.language.country}"/>
+
+<div class="Vlt-utility-nav">
+  <sly data-sly-call="${linkListTemplate.linkListV2 @
+            links=model.links,
+            listClass='Vlt-utility-nav__links',
+            listItemClass='Vlt-utility-nav__item',
+            anchorClass='Vlt-utility-nav__link'}"
+  />
+
+  <div class="country-selector" data-sly-test="${!model.hideCountrySelector && webAppConfig.envConfig.aemMode == 'publish'}">
+    <div class="country-selector__container">
+      <span class="country-selector__spacer"></span>
+      <select class="country-selector__countries" data-sly-list.site="${countryModel.countriesList}">
+        <option
+          data-sly-test="${countryModel.currentLocale == site.locale && site.locale == 'en-US'}"
+          selected
+          value="${site.url}?bypassgeoloc=true">
+          Global (English)
+        </option>
+        <option
+          data-sly-test="${countryModel.currentLocale != site.locale && site.locale == 'en-US'}"
+          value="${site.url}?bypassgeoloc=true">
+          Global (English)
+        </option>
+        <sly data-sly-test="${((country == 'CN' && ( site.locale != 'en-TW' && site.locale != 'en-HK' )) || country !='CN')}">
+          <option
+            data-sly-test="${countryModel.currentLocale == site.locale && site.locale != 'en-US'}"
+            selected
+            value="${site.url}">
+            ${site.country @ i18n, locale=site.language} (${site.languageName @ i18n, locale=site.language})
+          </option>
+          <option
+            data-sly-test="${countryModel.currentLocale != site.locale && site.locale != 'en-US'}"
+            value="${site.url}">
+            ${site.country @ i18n, locale=site.language} (${site.languageName @ i18n, locale=site.language})
+          </option>
+        </sly>
+      </select>
+    </div>
+  </div>
+  <div class="language-selector" data-sly-test="${languageModel.showLanguageDropdown && model.showLanguageSelector}">
+    <div class="language-selector__container">
+      <span class="language-selector__spacer"></span>
+      <select class="language-selector__languages" data-sly-list.site="${languageModel.languageList}">
+        <option
+          data-sly-test="${languageModel.currentLanguage == site.language}"
+          selected
+          value="${site.url}">
+          ${site.name @ i18n, locale=site.language}
+        </option>
+        <option
+          data-sly-test="${languageModel.currentLanguage != site.language}"
+          value="${site.url}">
+          ${site.name @ i18n, locale=site.language}
+        </option>
+      </select>
+    </div>
+  </div>
+
+</div>

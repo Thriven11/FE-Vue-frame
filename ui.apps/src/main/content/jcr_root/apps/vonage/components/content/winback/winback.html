@@ -1,0 +1,61 @@
+<div class="winback-modal"></div>
+<sly data-sly-test="${wcmmode.edit}">Edit the Winback pop over component.</sly>
+<input type="hidden" name="winbackUsecase" value="${pageProperties.usecase}">
+<!-- Trigger/Open The Modal -->
+
+<div id="showModal" >
+<!-- The Modal -->
+<div id="winbackModal" class="modal winback" role="dialog" aria-modal="true" aria-labelledby="v16-modal-trigger" open="open" style="display: none;">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="row">
+				<div class="col-lg-6 left-area">
+
+					<div class="winback__offer">
+						<div class="winback__special-offer">
+							<p >${properties.offerText} </p>
+						</div>
+					</div>
+					<div data-sly-test="${properties.heading}" class="modal-heading winback__modal-heading">
+						${properties.heading @context='html'}
+					</div>
+
+					<div data-sly-test="${properties.subheading}" class="modal-subheading winback__modal-subheading">
+						${properties.subheading @context='html'}
+					</div>
+
+					<div data-sly-test="${properties.buyonline}" class="modal-buyonline winback__modal-buyonline">
+						${properties.buyonline @context='html'}
+					</div>
+
+
+                  <div style="display: flex;">
+						<div sly-data-test="${properties.label}" class="winback__Rectangle">
+							<p class="winback__Choose-your-plan"><a href="${properties.href @ extension='html'}" target="${properties.target}" style="color:white;"> ${properties.label}</a> </p>
+						</div>
+						<div class="winback__Learn-More"><a href="${properties.texthref @ extension='html'}" target="${properties.texttarget}" style="color:black;"> ${properties.textlabel}</a> </div>
+					</div>
+
+				
+					<div data-sly-test="${properties.tnc}" class="modal-tc winback__modal-tc">
+						${properties.tnc @context='html'}
+					</div>
+
+
+				</div>
+				<div class="col-lg-6 right-area">
+					<div>
+						<img src="${properties.fileReference}" class="montage winback__montage">
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

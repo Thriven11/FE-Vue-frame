@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Checkout Form"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+		<items jcr:primaryType="nt:unstructured">
+			<column jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/container">
+				<items jcr:primaryType="nt:unstructured">
+					<tabs jcr:primaryType="nt:unstructured" maximized="true"
+						sling:resourceType="granite/ui/components/coral/foundation/tabs">
+						<items jcr:primaryType="nt:unstructured">
+							<account jcr:primaryType="nt:unstructured"
+								jcr:title="Account"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<contactTitle
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Contact Title" name="./account/title"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<ServiceAddress
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Service Address" name="./account/address"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<ServiceDescription
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Service Description"
+														name="./account/description"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<CompanyTitle
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Company Title"
+														name="./account/companyAddress"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<CompanyDescription
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Use same address label"
+														name="./account/companyDescription"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													
+												</items>
+											</column>
+										</items>
+									</column>
+								</items>
+							</account>
+							<shipping jcr:primaryType="nt:unstructured"
+								jcr:title="Shipping"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<title
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Title" 
+														name="./shipping/title"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<sameAsService
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Shipping address same as service label" 
+														name="./shipping/sameAsService"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<shhippingMethod
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Shipping method label" 
+														name="./shipping/shippingMethod"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<legalText jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Shipping legal text" 
+														name="./shipping/legalText"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</legalText>
+												</items>
+											</column>
+										</items>
+									</column>
+								</items>
+							</shipping>
+							<payment jcr:primaryType="nt:unstructured"
+								jcr:title="Payment"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<paymentInfo
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Title" name="./payment/title"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<zuoraDisclaimer jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Zuora disclaimer" 
+														name="./payment/zuoraDisclaimer"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</zuoraDisclaimer>
+													<acceptTermsOfServiceCheck jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Accept 'Terms of Service' check label" 
+														name="./payment/acceptTermsOfServiceCheck"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</acceptTermsOfServiceCheck>
+
+													<emergencyServicePolicyText jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Emergency services policy text" 
+														name="./payment/emergencyServicePolicyText"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</emergencyServicePolicyText>
+
+													<aceptEmergencyServicePolicyCheck jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Acept 'Emergency services policy' check label" 
+														name="./payment/aceptEmergencyServicePolicyCheck"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</aceptEmergencyServicePolicyCheck>
+
+													<oneyearCommitmentCheck jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Acept 'One year commitment' check label" 
+														name="./payment/oneYearCommitmentCheck"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</oneyearCommitmentCheck>
+													<cardNotCharged jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Card will not be charged textfield" 
+														name="./payment/cardNotCharged"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</cardNotCharged>
+													<reviewSelection jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Review your selection textfield" 
+														name="./payment/reviewSelection"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</reviewSelection>
+												</items>
+											</column>
+										</items>
+									</column>
+								</items>
+							</payment>
+							<review jcr:primaryType="nt:unstructured"
+								jcr:title="Review"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured" >
+									<general jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/tabs">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												jcr:title="General"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<title jcr:primaryType="nt:unstructured" 
+														fieldLabel="Title" 
+														name="./review/title" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<completePurchaseLabel jcr:primaryType="nt:unstructured" 
+														fieldLabel="Complete purchase button label" 
+														name="./review/completePurchaseLabel" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<completePurchaseTextfield 
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Complete Purchase Texfield" 
+														name="./review/completePurchaseTextfield"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</completePurchaseTextfield>
+													<disclaimer 
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Disclaimer for small screens" 
+														name="./review/pricingDisclaimer"
+														useFixedInlineToolbar="{Boolean}true"
+														required="true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</disclaimer>
+													<href
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Success Redirect"
+														name="./review/href"
+														rootPath="/content/vonage"/>
+												</items>
+											</column>
+											<planaSummary jcr:primaryType="nt:unstructured"
+												jcr:title="Plan summary"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<editSectionText 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Edit plan text" 
+														name="./review/editPlanText" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<editSectionUrl
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Edit plan URL"
+														name="./review/editPlanUrl"
+														rootPath="/content/vonage"/>
+													<planTrialMiceText jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Plan Mice text/Legal text" 
+														name="./review/planTrialMiceText"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</planTrialMiceText>
+													<phoneNumberBodyCopy 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Phone Number Body Copy" 
+														name="./review/phoneNumberBodyCopy" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+													<phoneMiceText jcr:primaryType="nt:unstructured"
+														sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+														fieldLabel="Phone Mice text/Legal text" 
+														name="./review/phoneMiceText"
+														useFixedInlineToolbar="{Boolean}true">
+														<rtePlugins jcr:primaryType="nt:unstructured">
+															<format
+																jcr:primaryType="nt:unstructured"
+																features="*"/>
+														</rtePlugins>
+														<uiSettings jcr:primaryType="nt:unstructured">
+															<cui jcr:primaryType="nt:unstructured">
+																<inline
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</inline>
+																<dialogFullScreen
+																	jcr:primaryType="nt:unstructured"
+																	toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+																</dialogFullScreen>
+															</cui>
+														</uiSettings>
+													</phoneMiceText>
+												</items>
+											</planaSummary>
+											<account jcr:primaryType="nt:unstructured"
+												jcr:title="Account"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<sectionTitle 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Secction title" 
+														name="./review/accountTitle" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<editSectionText 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Edit account text" 
+														name="./review/editAccountText" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+												</items>
+											</account>
+											<shipping jcr:primaryType="nt:unstructured"
+												jcr:title="Shipping"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<sectionTitle 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Section Title" 
+														name="./review/shippingTitle" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<editSectionText 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Edit shipping text" 
+														name="./review/editShippingText" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+												</items>
+											</shipping>
+											<payment jcr:primaryType="nt:unstructured"
+												jcr:title="Payment"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<sectionTitle 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Section Title" 
+														name="./review/paymentTitle" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+													<editPayment 
+														jcr:primaryType="nt:unstructured" 
+														fieldLabel="Edit payment label" 
+														name="./review/paymentLabel" 
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+												</items>
+											</payment>
+										</items>
+									</general>
+								</items>
+							</review>
+							<abandonCart jcr:primaryType="nt:unstructured"
+								jcr:title="Abandon Cart Modal"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<title
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Modal Title" 
+														name="./abandonCart/title"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<text
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Modal text" 
+														name="./abandonCart/text"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<ctaLabel
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Primary CTA label" 
+														name="./abandonCart/label"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+													<cteHref
+														jcr:primaryType="nt:unstructured"
+														sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+														fieldLabel="Primary CTA URL"
+														name="./abandonCart/href"
+														rootPath="/content/vonage"/>
+													<closeLabel
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Close Modal text" 
+														name="./abandonCart/closeLabel"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+												</items>
+											</column>
+										</items>
+									</column>
+								</items>
+							</abandonCart>
+							<shareCart jcr:primaryType="nt:unstructured"
+								jcr:title="Share Cart Modal"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<column jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/container">
+												<items jcr:primaryType="nt:unstructured">
+													<shareCartConfMsg
+														jcr:primaryType="nt:unstructured"
+														fieldLabel="Share Cart conf message" 
+														name="./shareCart/confMsg"
+														sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+												</items>
+											</column>
+										</items>
+									</column>
+								</items>
+							</shareCart>
+						</items>
+					</tabs>
+				</items>
+			</column>
+		</items>
+	</content>
+</jcr:root>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Case Study"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <logoSection
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Logo Section"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <logoImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Logo Image Path"
+                                                    name="./logoImage"
+                                                    required="{Boolean}false"
+                                                    fieldDescription="Select Image Path for Logo from DAM"
+                                                    rootPath="/content/dam/vonage"/>
+                                            <altText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Logo Image Alt Text"
+                                                    fieldDescription="Alternative Text for Logo Image"
+                                                    name="./altText"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </logoSection>
+                    <textSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <eyebrow
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Eyebrow"
+                                                required="{Boolean}false"
+                                                name="./eyebrow"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Please enter a description for Case Study."
+                                                fieldLabel="Description"
+                                                required="{Boolean}true"
+                                                name="./description"/>
+                                            <cstext fieldLabel="Text" jcr:primaryType="nt:unstructured" path="/apps/vonage/components/utils/rte/rte_dialog" sling:resourceType="granite/ui/components/foundation/include"/>
+                                            <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name"
+                                                name="./name"/>
+                                            <jobTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Job title"
+                                                name="./jobTitle"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </textSection>
+                    <styleOptions
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Style Options"
+                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <textLeft
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              checked="{Boolean}false"
+                                              fieldDescription="When checked, text will be on left, image on right"
+                                              name="./textLeft"
+                                              text="Display text on Left?"
+                                              uncheckedValue="{Boolean}false"
+                                              value="{Boolean}true"/>
+                                            <gridValue
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                              fieldDescription="Adjust the width of the text column, making the image smaller. Default is half."
+                                              fieldLabel="Text Column Size"
+                                              name="./gridValue">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                <half
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="1/2 (default)"
+                                                  selected="{Boolean}true"
+                                                  value="col-lg-6 col-md-12 col-sm-12"/>
+                                                <two-thirds
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="2/3"
+                                                  value="col-lg-8 col-md-12 col-sm-12"/>
+                                                <one-quarter
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="1/4"
+                                                  value="col-lg-4 col-md-12 col-sm-12"/>
+                                              </items>
+                                            </gridValue>
+                                            <logoPosition
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                              fieldDescription="Adjust the position of the floating logo.  Default is top right"
+                                              fieldLabel="Logo Position"
+                                              name="./logoPosition">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                <topRight
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Top Right"
+                                                  selected="{Boolean}true"
+                                                  value="top right"/>
+                                                <topLeft
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Top Left"
+                                                  value="top left"/>
+                                                <bottomLeft
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Bottom Left"
+                                                  value="bottom left"/>
+                                                <bottomRight
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Bottom Right"
+                                                  value="bottom right"/>
+                                              </items>
+                                            </logoPosition>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </styleOptions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,126 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-select">
+    <select data-sly-test="${!properties.isOptional}" id="industry-${model.uuid}" name="industry" class="Vlt-form__select" required>
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="${'vng-Automotive' @ i18n, locale='en'}">${'vng-Automotive' @ i18n}</option>
+      <option value="${'vng-Banking' @ i18n, locale='en'}">${'vng-Banking' @ i18n}</option>
+      <option value="${'vng-BrandingAdvertising' @ i18n, locale='en'}">${'vng-BrandingAdvertising' @ i18n}</option>
+      <option value="${'vng-Call Center' @ i18n, locale='en'}">${'vng-Call Center' @ i18n}</option>
+      <option value="${'vng-Consultant and Professional Services' @ i18n, locale='en'}">${'vng-Consultant and Professional Services' @ i18n}</option>
+      <option value="${'vng-Consulting' @ i18n, locale='en'}">${'vng-Consulting' @ i18n}</option>
+      <option value="${'vng-Consumer Product Goods' @ i18n, locale='en'}">${'vng-Consumer Product Goods' @ i18n}</option>
+      <option value="${'vng-Customer Service' @ i18n, locale='en'}">${'vng-Customer Service' @ i18n}</option>
+      <option value="${'vng-crm' @ i18n, locale='en'}">${'vng-crm' @ i18n}</option>
+      <option value="${'vng-Dating' @ i18n, locale='en'}">${'vng-Dating' @ i18n}</option>
+      <option value="${'vng-Ecommerce' @ i18n, locale='en'}">${'vng-Ecommerce' @ i18n}</option>
+      <option value="${'vng-Education' @ i18n, locale='en'}">${'vng-Education' @ i18n}</option>
+      <option value="${'vng-Electronics' @ i18n, locale='en'}">${'vng-Electronics' @ i18n}</option>
+      <option value="${'vng-Email Service Providers' @ i18n, locale='en'}">${'vng-Email Service Providers' @ i18n}</option>
+      <option value="${'vng-Entertainment' @ i18n, locale='en'}">${'vng-Entertainment' @ i18n}</option>
+      <option value="${'vng-Field Services' @ i18n, locale='en'}">${'vng-Field Services' @ i18n}</option>
+      <option value="${'vng-Financial Services' @ i18n, locale='en'}">${'vng-Financial Services' @ i18n}</option>
+      <option value="${'vng-FoodBeverage' @ i18n, locale='en'}">${'vng-FoodBeverage' @ i18n}</option>
+      <option value="${'vng-Food Delivery' @ i18n, locale='en'}">${'vng-Food Delivery' @ i18n}</option>
+      <option value="${'vng-Gambling' @ i18n, locale='en'}">${'vng-Gambling' @ i18n}</option>
+      <option value="${'vng-Gaming' @ i18n, locale='en'}">${'vng-Gaming' @ i18n}</option>
+      <option value="${'vng-Government' @ i18n, locale='en'}">${'vng-Government' @ i18n}</option>
+      <option value="${'vng-HealthWellness' @ i18n, locale='en'}">${'vng-HealthWellness' @ i18n}</option>
+      <option value="${'vng-Healthcare' @ i18n, locale='en'}">${'vng-Healthcare' @ i18n}</option>
+      <option value="${'vng-Hospitality' @ i18n, locale='en'}">${'vng-Hospitality' @ i18n}</option>
+      <option value="${'vng-Insurance' @ i18n, locale='en'}">${'vng-Insurance' @ i18n}</option>
+      <option value="${'vng-Legal' @ i18n, locale='en'}">${'vng-Legal' @ i18n}</option>
+      <option value="${'vng-Logistics' @ i18n, locale='en'}">${'vng-Logistics' @ i18n}</option>
+      <option value="${'vng-Marketing' @ i18n, locale='en'}">${'vng-Marketing' @ i18n}</option>
+      <option value="${'vng-Marketplace' @ i18n, locale='en'}">${'vng-Marketplace' @ i18n}</option>
+      <option value="${'vng-Mass Gaming' @ i18n, locale='en'}">${'vng-Mass Gaming' @ i18n}</option>
+      <option value="${'vng-MediaEntertainment' @ i18n, locale='en'}">${'vng-MediaEntertainment' @ i18n}</option>
+      <option value="${'vng-Online Classifieds' @ i18n, locale='en'}">${'vng-Online Classifieds' @ i18n}</option>
+      <option value="${'vng-Online Gaming' @ i18n, locale='en'}">${'vng-Online Gaming' @ i18n}</option>
+      <option value="${'vng-Online Media' @ i18n, locale='en'}">${'vng-Online Media' @ i18n}</option>
+      <option value="${'vng-OTT' @ i18n, locale='en'}">${'vng-OTT' @ i18n}</option>
+      <option value="${'vng-Payment' @ i18n, locale='en'}">${'vng-Payment' @ i18n}</option>
+      <option value="${'vng-Pharmaceuticals' @ i18n, locale='en'}">${'vng-Pharmaceuticals' @ i18n}</option>
+      <option value="${'vng-Professional Services' @ i18n, locale='en'}">${'vng-Professional Services' @ i18n}</option>
+      <option value="${'vng-Public Service' @ i18n, locale='en'}">${'vng-Public Service' @ i18n}</option>
+      <option value="${'vng-Real Estate' @ i18n, locale='en'}">${'vng-Real Estate' @ i18n}</option>
+      <option value="${'vng-Recruiting' @ i18n, locale='en'}">${'vng-Recruiting' @ i18n}</option>
+      <option value="${'vng-Religion' @ i18n, locale='en'}">${'vng-Religion' @ i18n}</option>
+      <option value="${'vng-Retail' @ i18n, locale='en'}">${'vng-Retail' @ i18n}</option>
+      <option value="${'vng-Security' @ i18n, locale='en'}">${'vng-Security' @ i18n}</option>
+      <option value="${'vng-Social' @ i18n, locale='en'}">${'vng-Social' @ i18n}</option>
+      <option value="${'vng-Social Networks' @ i18n, locale='en'}">${'vng-Social Networks' @ i18n}</option>
+      <option value="${'vng-Software' @ i18n, locale='en'}">${'vng-Software' @ i18n}</option>
+      <option value="${'vng-Technology' @ i18n, locale='en'}">${'vng-Technology' @ i18n}</option>
+      <option value="${'vng-Telecommunications' @ i18n, locale='en'}">${'vng-Telecommunications' @ i18n}</option>
+      <option value="${'vng-Transportation' @ i18n, locale='en'}">${'vng-Transportation' @ i18n}</option>
+      <option value="${'vng-Travel' @ i18n, locale='en'}">${'vng-Travel' @ i18n}</option>
+      <option value="${'vng-Utilities' @ i18n, locale='en'}">${'vng-Utilities' @ i18n}</option>
+      <option value="${'vng-Web/Mobile Development' @ i18n, locale='en'}">${'vng-Web/Mobile Development' @ i18n}</option>
+      <option value="${'vng-other' @ i18n, locale='en'}">${'vng-other' @ i18n}</option>
+    </select>
+    <select data-sly-test="${properties.isOptional}" id="industry-${model.uuid}" name="industry" class="Vlt-form__select">
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="${'vng-Automotive' @ i18n, locale='en'}">${'vng-Automotive' @ i18n}</option>
+      <option value="${'vng-Banking' @ i18n, locale='en'}">${'vng-Banking' @ i18n}</option>
+      <option value="${'vng-BrandingAdvertising' @ i18n, locale='en'}">${'vng-BrandingAdvertising' @ i18n}</option>
+      <option value="${'vng-Call Center' @ i18n, locale='en'}">${'vng-Call Center' @ i18n}</option>
+      <option value="${'vng-Consultant and Professional Services' @ i18n, locale='en'}">${'vng-Consultant and Professional Services' @ i18n}</option>
+      <option value="${'vng-Consulting' @ i18n, locale='en'}">${'vng-Consulting' @ i18n}</option>
+      <option value="${'vng-Consumer Product Goods' @ i18n, locale='en'}">${'vng-Consumer Product Goods' @ i18n}</option>
+      <option value="${'vng-Customer Service' @ i18n, locale='en'}">${'vng-Customer Service' @ i18n}</option>
+      <option value="${'vng-crm' @ i18n, locale='en'}">${'vng-crm' @ i18n}</option>
+      <option value="${'vng-Dating' @ i18n, locale='en'}">${'vng-Dating' @ i18n}</option>
+      <option value="${'vng-Ecommerce' @ i18n, locale='en'}">${'vng-Ecommerce' @ i18n}</option>
+      <option value="${'vng-Education' @ i18n, locale='en'}">${'vng-Education' @ i18n}</option>
+      <option value="${'vng-Electronics' @ i18n, locale='en'}">${'vng-Electronics' @ i18n}</option>
+      <option value="${'vng-Email Service Providers' @ i18n, locale='en'}">${'vng-Email Service Providers' @ i18n}</option>
+      <option value="${'vng-Entertainment' @ i18n, locale='en'}">${'vng-Entertainment' @ i18n}</option>
+      <option value="${'vng-Field Services' @ i18n, locale='en'}">${'vng-Field Services' @ i18n}</option>
+      <option value="${'vng-Financial Services' @ i18n, locale='en'}">${'vng-Financial Services' @ i18n}</option>
+      <option value="${'vng-FoodBeverage' @ i18n, locale='en'}">${'vng-FoodBeverage' @ i18n}</option>
+      <option value="${'vng-Food Delivery' @ i18n, locale='en'}">${'vng-Food Delivery' @ i18n}</option>
+      <option value="${'vng-Gambling' @ i18n, locale='en'}">${'vng-Gambling' @ i18n}</option>
+      <option value="${'vng-Gaming' @ i18n, locale='en'}">${'vng-Gaming' @ i18n}</option>
+      <option value="${'vng-Government' @ i18n, locale='en'}">${'vng-Government' @ i18n}</option>
+      <option value="${'vng-HealthWellness' @ i18n, locale='en'}">${'vng-HealthWellness' @ i18n}</option>
+      <option value="${'vng-Healthcare' @ i18n, locale='en'}">${'vng-Healthcare' @ i18n}</option>
+      <option value="${'vng-Hospitality' @ i18n, locale='en'}">${'vng-Hospitality' @ i18n}</option>
+      <option value="${'vng-Insurance' @ i18n, locale='en'}">${'vng-Insurance' @ i18n}</option>
+      <option value="${'vng-Legal' @ i18n, locale='en'}">${'vng-Legal' @ i18n}</option>
+      <option value="${'vng-Logistics' @ i18n, locale='en'}">${'vng-Logistics' @ i18n}</option>
+      <option value="${'vng-Marketing' @ i18n, locale='en'}">${'vng-Marketing' @ i18n}</option>
+      <option value="${'vng-Marketplace' @ i18n, locale='en'}">${'vng-Marketplace' @ i18n}</option>
+      <option value="${'vng-Mass Gaming' @ i18n, locale='en'}">${'vng-Mass Gaming' @ i18n}</option>
+      <option value="${'vng-MediaEntertainment' @ i18n, locale='en'}">${'vng-MediaEntertainment' @ i18n}</option>
+      <option value="${'vng-Online Classifieds' @ i18n, locale='en'}">${'vng-Online Classifieds' @ i18n}</option>
+      <option value="${'vng-Online Gaming' @ i18n, locale='en'}">${'vng-Online Gaming' @ i18n}</option>
+      <option value="${'vng-Online Media' @ i18n, locale='en'}">${'vng-Online Media' @ i18n}</option>
+      <option value="${'vng-OTT' @ i18n, locale='en'}">${'vng-OTT' @ i18n}</option>
+      <option value="${'vng-Payment' @ i18n, locale='en'}">${'vng-Payment' @ i18n}</option>
+      <option value="${'vng-Pharmaceuticals' @ i18n, locale='en'}">${'vng-Pharmaceuticals' @ i18n}</option>
+      <option value="${'vng-Professional Services' @ i18n, locale='en'}">${'vng-Professional Services' @ i18n}</option>
+      <option value="${'vng-Public Service' @ i18n, locale='en'}">${'vng-Public Service' @ i18n}</option>
+      <option value="${'vng-Real Estate' @ i18n, locale='en'}">${'vng-Real Estate' @ i18n}</option>
+      <option value="${'vng-Recruiting' @ i18n, locale='en'}">${'vng-Recruiting' @ i18n}</option>
+      <option value="${'vng-Religion' @ i18n, locale='en'}">${'vng-Religion' @ i18n}</option>
+      <option value="${'vng-Retail' @ i18n, locale='en'}">${'vng-Retail' @ i18n}</option>
+      <option value="${'vng-Security' @ i18n, locale='en'}">${'vng-Security' @ i18n}</option>
+      <option value="${'vng-Social' @ i18n, locale='en'}">${'vng-Social' @ i18n}</option>
+      <option value="${'vng-Social Networks' @ i18n, locale='en'}">${'vng-Social Networks' @ i18n}</option>
+      <option value="${'vng-Software' @ i18n, locale='en'}">${'vng-Software' @ i18n}</option>
+      <option value="${'vng-Technology' @ i18n, locale='en'}">${'vng-Technology' @ i18n}</option>
+      <option value="${'vng-Telecommunications' @ i18n, locale='en'}">${'vng-Telecommunications' @ i18n}</option>
+      <option value="${'vng-Transportation' @ i18n, locale='en'}">${'vng-Transportation' @ i18n}</option>
+      <option value="${'vng-Travel' @ i18n, locale='en'}">${'vng-Travel' @ i18n}</option>
+      <option value="${'vng-Utilities' @ i18n, locale='en'}">${'vng-Utilities' @ i18n}</option>
+      <option value="${'vng-Web/Mobile Development' @ i18n, locale='en'}">${'vng-Web/Mobile Development' @ i18n}</option>
+      <option value="${'vng-other' @ i18n, locale='en'}">${'vng-other' @ i18n}</option>
+    </select>
+    <label class="Vlt-form__input-label" for="industry-${model.uuid}">${'vng-Industry' @ i18n}</label>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

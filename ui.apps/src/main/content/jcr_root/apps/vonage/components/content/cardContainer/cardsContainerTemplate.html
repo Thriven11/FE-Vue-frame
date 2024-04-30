@@ -1,0 +1,20 @@
+<template data-sly-template.cardsContainer="${@ sectionClass, cardType, cardWidth, cardTitle, cardTitleType}">
+    <section class="${sectionClass}" data-analytics-id="${currentNode.name}">
+        <div class="container">
+		<div data-sly-test="${cardType == 'imageCard' && cardTitle}" class="row">
+			<div class="col-7 col-md-12 col-lg-8">
+				<h2 class="card-image-3-up__headline" data-sly-element="${cardTitleType}">${cardTitle}</h2>
+			</div>
+		</div>
+		<div class="row" data-sly-list.card="${[1,2,3]}">
+                <div class="${cardWidth}"
+                    data-sly-test.resourceNode="${[cardType, card.intValue] @join='-'}"
+                    data-sly-test.resourceNodeType="${'{0}{1}' @
+                    format=['vonage/components/content/cardContainer/', cardType]}">
+                    <sly data-sly-resource="${@path=resourceNode,
+                        resourceType=resourceNodeType}" data-sly-unwrap></sly>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

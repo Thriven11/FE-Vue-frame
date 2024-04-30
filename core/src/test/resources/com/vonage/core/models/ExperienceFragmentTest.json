@@ -1,0 +1,220 @@
+{
+	"conf": {
+		"jcr:primaryType": "nt:unstructured",
+		"jcr:lastModifiedBy": "admin",
+		"jcr:lastModified": "Fri Sep 27 2019 11:28:49 GMT+0000",
+		"sling:resourceType": "vonage/components/structure/experiencefragment",
+		"fragmentPath": "/root/content/experience-fragments/master",
+		"fragmentType": "header"
+	},
+	"content": {
+		"experience-fragments": {
+			"master": {
+				"jcr:primaryType": "cq:Page",
+				"jcr:createdBy": "admin",
+				"jcr:created": "Mon Sep 30 2019 10:47:44 GMT+0530",
+				"jcr:content": {
+					"jcr:primaryType": "cq:PageContent",
+					"jcr:mixinTypes": [
+						"mix:versionable"
+					],
+					"jcr:createdBy": "admin",
+					"jcr:title": "Header",
+					"cq:lastReplicationAction": "Activate",
+					"jcr:versionHistory": "b6913ce1-0350-4557-9d00-4ec13eafdf4b",
+					"cq:template": "/conf/vonage/settings/wcm/templates/experience-fragment-page",
+					"cq:lastReplicatedBy": "admin",
+					"cq:xfMasterVariation": true,
+					"jcr:predecessors": [
+						"c2a232ea-e954-48ef-a0c8-03f35f627242"
+					],
+					"jcr:created": "Mon Sep 30 2019 10:47:44 GMT+0530",
+					"cq:lastReplicated": "Fri Sep 27 2019 13:30:04 GMT+0000",
+					"cq:lastModified": "Tue Oct 01 2019 18:36:42 GMT+0000",
+					"cq:xfVariantType": "web",
+					"jcr:baseVersion": "c2a232ea-e954-48ef-a0c8-03f35f627242",
+					"jcr:isCheckedOut": true,
+					"cq:tags": [],
+					"jcr:uuid": "9fdbbcfe-b5b0-4fc2-949e-cce941bb617f",
+					"sling:resourceType": "vonage/components/structure/xfpage",
+					"cq:lastModifiedBy": "admin",
+					"root": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "wcm/foundation/components/responsivegrid",
+						"header": {
+							"jcr:primaryType": "nt:unstructured",
+							"jcr:createdBy": "admin",
+							"mainMenuLabel": "Main Menu",
+							"jcr:lastModifiedBy": "admin",
+							"jcr:created": "Fri Sep 27 2019 10:59:21 GMT+0000",
+							"skipButtonLabel": "Skip to Main Content",
+							"jcr:lastModified": "Fri Sep 27 2019 20:25:30 GMT+0000",
+							"sling:resourceType": "vonage/components/structure/header",
+							"utilityNavigation": {
+								"jcr:primaryType": "nt:unstructured",
+								"jcr:lastModifiedBy": "admin",
+								"target": "_self",
+								"href": "/content/vonage/en-us/homepage/contact-us",
+								"label": "Contact us",
+								"jcr:lastModified": "Tue Oct 01 2019 18:29:28 GMT+0000",
+								"sling:resourceType": "vonage/components/structure/header/navigations/utilityLinkList",
+								"links": {
+									"jcr:primaryType": "nt:unstructured",
+									"item0": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_self",
+										"href": "/content/vonage/en-us/homepage/support",
+										"label": "Support"
+									},
+									"item1": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_self",
+										"href": "/content/vonage/en-us/homepage/log-in",
+										"label": "Sign In"
+									}
+								}
+							},
+							"mainNavigation": {
+								"jcr:primaryType": "nt:unstructured",
+								"jcr:lastModifiedBy": "admin",
+								"jcr:lastModified": "Tue Oct 01 2019 18:36:42 GMT+0000",
+								"sling:resourceType": "vonage/components/structure/header/navigations/mainLinkList",
+								"primaryNavLinks": {
+									"jcr:primaryType": "nt:unstructured",
+									"item0": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_blank",
+										"href": "https://www.vonage.com/business/",
+										"label": "Products",
+										"showSecondaryLevel": "true",
+										"secondaryNavLinks": {
+											"jcr:primaryType": "nt:unstructured",
+											"item0": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Customize your offering easily with our innovative apps and integrations.",
+												"target": "_blank",
+												"href": "https://www.nexmo.com",
+												"title": "Communications APIs"
+											},
+											"item1": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Connect your teams and customers with voice, messaging, video and data, anywhere.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/business-cloud/",
+												"title": "Unified Communications"
+											},
+											"item2": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Create richer employee and customer experiences that help more and sell more.",
+												"target": "_blank",
+												"href": "https://www.newvoicemedia.com/en-us",
+												"title": "Contact Centers"
+											}
+										}
+									},
+									"item1": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_blank",
+										"href": "https://www.vonage.com/business/",
+										"label": "Business Needs",
+										"showSecondaryLevel": "true",
+										"secondaryNavLinks": {
+											"jcr:primaryType": "nt:unstructured",
+											"item0": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Leverage our API Platform to innovate your business communications from Customer Notifications to Fraud Detection to Real-Time Sentiment Analysis and more.",
+												"target": "_blank",
+												"href": "https://https://www.nexmo.com/use-cases",
+												"title": "Communications APIs Use Cases"
+											},
+											"item1": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Harness the power of Salesforce® computer-telephony integration (CTI) for great conversations and create exceptional customer and employee experiences.",
+												"target": "_blank",
+												"href": "https://www.newvoicemedia.com/en-us/salesforce",
+												"title": "Salesforce Integration for Contact Centers"
+											},
+											"item2": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Enable work from anywhere, take advantage of over 40 features and reduce your communication total cost of ownership (TCO) when you move your communications to the cloud.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/business-need/move-cloud/",
+												"title": "Move Communications to the Cloud"
+											}
+										}
+									},
+									"item2": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_blank",
+										"href": "https://www.vonage.com/business/resources/",
+										"label": "Resources",
+										"showSecondaryLevel": "false"
+									},
+									"item3": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_blank",
+										"href": "https://developer.nexmo.com/",
+										"label": "Developer Center",
+										"showSecondaryLevel": "false",
+										"secondaryNavLinks": {
+											"jcr:primaryType": "nt:unstructured",
+											"item0": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "Contact Centers"
+											},
+											"item1": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "Tutorials"
+											},
+											"item2": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "API Reference"
+											},
+											"item3": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "SDKs and Tools"
+											},
+											"item4": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "Community"
+											},
+											"item5": {
+												"jcr:primaryType": "nt:unstructured",
+												"description": "Duis aute irure dolor in reprehenderit in voluptate velit.",
+												"target": "_blank",
+												"href": "https://www.vonage.com/business/",
+												"title": "Developer Blog"
+											}
+										}
+									},
+									"item4": {
+										"jcr:primaryType": "nt:unstructured",
+										"target": "_self",
+										"href": "/content/vonage/en-us/homepage/about-us",
+										"label": "About Us",
+										"showSecondaryLevel": "false"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

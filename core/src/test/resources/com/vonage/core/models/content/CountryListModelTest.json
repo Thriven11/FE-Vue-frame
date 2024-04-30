@@ -1,0 +1,30 @@
+{
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:created": "Thu Jan 16 2020 19:06:30 GMT+0530",
+    "jcr:content": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:title": "Countries List",
+        "cq:lastModified": "Thu Jan 16 2020 19:06:30 GMT+0530",
+        "sling:resourceType": "acs-commons/components/utilities/genericlist",
+        "cq:lastModifiedBy": "admin",
+        "list": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:title": "Algeria",
+                "value": "dz"
+            },
+            "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:title": "United States",
+                "value": "us"
+            },
+            "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:title": "Vietnam",
+                "value": "vn"
+            }
+        }
+    }
+}

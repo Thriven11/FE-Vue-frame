@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Landing Page Hero"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs"
+				maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<textSection jcr:primaryType="nt:unstructured"
+						jcr:title="Text Section"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<title jcr:primaryType="nt:unstructured"
+												required="true" fieldLabel="Title" name="./title"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<description jcr:primaryType="nt:unstructured"
+												path="/apps/vonage/components/utils/rte/rte_dialog_with_description"
+												sling:resourceType="granite/ui/components/foundation/include" />
+											<mediaType jcr:primaryType="nt:unstructured"
+												required="true" fieldLabel="Media Type" name="./mediaType"
+												emptyOption="{Boolean}false"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select">
+												<items jcr:primaryType="nt:unstructured">
+													<option1 jcr:primaryType="nt:unstructured"
+														selected="{Boolean}true" text="Image" value="image" />
+													<option2 jcr:primaryType="nt:unstructured"
+														text="Video" value="video" />
+													<option3 jcr:primaryType="nt:unstructured"
+														text="Embed" value="embed" />
+												</items>
+											</mediaType>
+											<hideMedia
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./hideMedia" text="Hide Media in Mobile"
+												fieldDescription="Select to hide media in mobile."
+												value="{Boolean}true">
+											</hideMedia>
+											<hideBreadcrumbs
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./hideBreadcrumbs" text="Hide Breadcrumbs"
+												fieldDescription="Select this to hide breadcrumbs."
+												value="{Boolean}true">
+											</hideBreadcrumbs>
+											<cta jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/include"
+												path="/apps/vonage/components/utils/cta/cta_dialog_without_label" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</textSection>
+					<priceSection jcr:primaryType="nt:unstructured"
+						jcr:title="Price Section"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<currency jcr:primaryType="nt:unstructured"
+												fieldLabel="Currency" name="./priceCurrency"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<price jcr:primaryType="nt:unstructured"
+												fieldLabel="Price" name="./subcopy"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<unit jcr:primaryType="nt:unstructured"
+												fieldLabel="Unit" name="./priceUnit"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+											<description jcr:primaryType="nt:unstructured"
+												fieldLabel="Description" name="./priceDescription"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</priceSection>
+					<styleSection jcr:primaryType="nt:unstructured"
+						jcr:title="Style Section"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<backgroundImage
+												jcr:primaryType="nt:unstructured"
+												fieldLabel="Background Image" name="./backgroundImage"
+												emptyOption="{Boolean}false"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select">
+												<items jcr:primaryType="nt:unstructured">
+													<option1 jcr:primaryType="nt:unstructured"
+														selected="{Boolean}true" text="Clouds"
+														value="/content/dam/vonage/us-en/brand/illustrations/vonage/clouds.png" />
+													<option2 jcr:primaryType="nt:unstructured"
+														text="Alternate Clouds"
+														value="/content/dam/vonage/us-en/brand/illustrations/vonage/clouds-secondary.png" />
+													<option3 jcr:primaryType="nt:unstructured"
+														text="None" value="" />
+												</items>
+											</backgroundImage>
+											<backgroundColor
+						                        jcr:primaryType="nt:unstructured"
+						                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+						                        fieldDescription="Select background color"
+						                        fieldLabel="Background Color"
+						                        name="./backgroundColor">
+						                        <items jcr:primaryType="nt:unstructured">
+						                          <default
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Default"
+						                            value=""
+						                            selected="{Boolean}true"/>
+						                          <white
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="White"
+                                                    value="landing-page-hero--white"/>
+                                                  <black
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Black"
+                                                    value="landing-page-hero--black"/>
+                                                  <darkGray
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Dark Gray"
+                                                    value="landing-page-hero--dark-gray"/>
+						                          <purpleSalmon
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Purple Salmon"
+						                            value="landing-page-hero--purple-salmon"/>
+						                          <purpleViolet
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Purple Violet"
+						                            value="landing-page-hero--purple-violet"/>
+						                          <magentaCoral
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Magenta Coral"
+						                            value="landing-page-hero--magenta-coral"/>
+						                          <purpleSky
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Purple Sky"
+						                            value="landing-page-hero--purple-sky"/>
+						                          <indigoViolet
+						                            jcr:primaryType="nt:unstructured"
+						                            text="Indigo Violet"
+						                            value="landing-page-hero--indigo-violet"/>
+						                        </items>
+                                            </backgroundColor>
+											<alternateClouds
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./alternateClouds" text="Show Alternate Clouds"
+												fieldDescription="Select this to make room for the alternate clouds background"
+												value="landing-page-hero--alternate-clouds">
+											</alternateClouds>
+											<mediaContained
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./mediaContained" text="Contained Media"
+												fieldDescription="Cannot be used with Floating Media"
+												value="landing-page-hero--media-contained">
+											</mediaContained>
+											<mediaFloating
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./mediaFloating" text="Floating Media"
+												fieldDescription="Cannot be used with Contained Media"
+												value="landing-page-hero--media-floating">
+											</mediaFloating>
+											<mediaLandscape
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./mediaLandscape" text="Landscape Orientation"
+												value="landing-page-hero--media-landscape">
+											</mediaLandscape>
+											<noSpace jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./noSpace" text="Remove Bottom Margin from Component?"
+												fieldDescription="Select this to make this component bump up against the content below it"
+												value="landing-page-hero--no-space">
+											</noSpace>
+											<bottomSpace
+                                                jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Add Bottom Padding to Component if CTAs are getting cut-off" name="./addPadding"
+                                                emptyOption="{Boolean}false"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <option1 jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true" text="none"
+                                                        value="" />
+                                                    <option2 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 1 rem from bottom"
+                                                        value="landing-page-hero--padding-bottom-1rem" />
+                                                    <option3 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 2 rem from bottom" value="landing-page-hero--padding-bottom-2rem" />
+                                                    <option4 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 3 rem from bottom" value="landing-page-hero--padding-bottom-3rem" />
+                                                    <option5 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 4 rem from bottom" value="landing-page-hero--padding-bottom-4rem" />
+                                                    <option6 jcr:primaryType="nt:unstructured"
+                                                        text="Margin of 5 rem from bottom" value="landing-page-hero--padding-bottom-5rem" />
+                                                </items>
+                                            </bottomSpace>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</styleSection>
+					<ctaOptions jcr:primaryType="nt:unstructured"
+						jcr:title="CTA Options"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<primaryLightbox
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												checked="{Boolean}false"
+												fieldDescription="When checked, the primary CTA will trigger a lightbox form and confirmation message"
+												name="./primaryLightbox" text="Primary Button as Lightbox Form?"
+												uncheckedValue="{Boolean}false" value="{Boolean}true" />
+											<secondaryLightbox
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												checked="{Boolean}false"
+												fieldDescription="When checked, the secondary CTA will trigger a lightbox form and confirmation message"
+												name="./secondaryLightbox"
+												text="Secondary Button as Lightbox Form?"
+												uncheckedValue="{Boolean}false" value="{Boolean}true" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</ctaOptions>
+					<endNoteSection jcr:primaryType="nt:unstructured"
+						jcr:title="End Note"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<endNote jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/foundation/include"
+												fieldLabel="End Note"
+												path="/apps/vonage/components/utils/endNote/endnote_dialog" />
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</endNoteSection>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

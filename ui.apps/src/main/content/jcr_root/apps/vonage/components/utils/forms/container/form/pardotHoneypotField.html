@@ -1,0 +1,26 @@
+<sly
+  data-sly-use.model="com.vonage.core.models.content.forms.FormContainerComponentModel"
+/>
+
+<!--/* Honeypot field */-->
+<div class="Vlt-form__field-container col-12" data-name="pardot_extra_field">
+  <div class="Vlt-form__element Vlt-form__element--big" role="status">
+    <div class="Vlt-input">
+      <input
+        type="text"
+        placeholder=" "
+        id="extra-${model.uuid}"
+        name="pardot_extra_field"
+        required
+        value="Block me"
+      />
+      <label class="Vlt-form__input-label" for="extra-${model.uuid}"
+        >${'comments' @ i18n}</label
+      >
+      <span class="Vlt-icon-form-checkmark"></span>
+    </div>
+    <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+      <span class="Vlt-form__input-error-label">${'requiredFieldMsg' @ i18n}</span>
+    </small>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+<sly data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"/>
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.BestNextStepFormModel" />
+<sly data-sly-use.privacyPolicySchedule="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.privacyPolicySchedule}" />
+<sly data-sly-use.primaryCtaUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.primaryCtaUrl}" />
+<sly data-sly-use.secondaryCtaUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.secondaryCtaUrl}" />
+<sly data-sly-use.ctaRescheduleUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.ctaRescheduleUrl}" />
+
+<div data-sly-test="${wcmmode.edit}"
+	class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+
+<section class="best-next-step">
+  <div id="v-best-next-step"></div>
+
+  <div class="dict d-none">
+    <input type="hidden" name="countryCode" value="${currentPage.language.country}">
+    <input type="hidden" name="language" value="${currentPage.language.language}">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+
+    <!-- input label values -->
+    <input type="hidden" name="contactLeyend" value="${model.contactLeyend}">
+    <input type="hidden" name="phoneLeyend" value="${model.phoneLeyend}">
+    <input type="hidden" name="call30minutes" value="${model.soonCallLabel}">
+    <input type="hidden" name="scheduleCall" value="${model.scheduledCallLabel}">
+    <input type="hidden" name="footNote" value="${model.footNote}">
+    <input type="hidden" name="tellUsMoreLeyend" value="${model.tellUsMoreLeyend}">
+    <input type="hidden" name="firstName" value="${'vng-firstName' @ i18n}">
+    <input type="hidden" name="lastName" value="${'vng-lastName' @ i18n}">
+    <input type="hidden" name="email" value="${'vng-email' @ i18n}">
+    <input type="hidden" name="emailAddress" value="${'vng-emailAddress' @ i18n}">
+    <input type="hidden" name="cmethod" value="${'vng-cmethod' @ i18n}">
+    <input type="hidden" name="phone" value="${'vng-phone' @ i18n}">
+    <input type="hidden" name="phoneNumber" value="${'vng-phoneNumber' @ i18n}">
+    <input type="hidden" name="dateLabel" value="${'ecomm-bsn-dateLabel' @ i18n}">
+    <input type="hidden" name="datePlaceholder" value="${'ecomm-bsn-datePlaceholder' @ i18n}">
+    <input type="hidden" name="timeLabel" value="${'ecomm-bsn-timeLabel' @ i18n}">
+    <input type="hidden" name="timePlaceholder" value="${'ecomm-bsn-timePlaceholder' @ i18n}">
+    <input type="hidden" name="timezoneLabel" value="${'ecomm-bsn-timezoneLabel' @ i18n}">
+    <input type="hidden" name="timezonePlaceholder" value="${'ecomm-bsn-timezonePlaceholder' @ i18n}">
+    <input type="hidden" name="companyName" value="${'vng-companyName' @ i18n}">
+    <input type="hidden" name="globalCompanySize" value="${'vng-globalCompanySize' @ i18n}">
+    <input type="hidden" name="jobTitleRole" value="${'vng-jobTitleRole' @ i18n}">
+    <input type="hidden" name="industry" value="${'vng-Industry' @ i18n}">
+    <input type="hidden" name="crmIntegrations" value="${'vng-crmIntegrations' @ i18n}">
+    <input type="hidden" name="reScheduleCall" value="${'vng-reScheduleCall' @ i18n}">
+    <input type="hidden" name="privacyPolicySchedule" value="${privacyPolicySchedule.externalizedHtml}">
+    <!-- END:input label values -->
+
+    <!-- company sizes values -->
+    <input type="hidden" name="oneToNine" value="${'vng-1 - 9' @ i18n}">
+    <input type="hidden" name="tenToNinetynine" value="${'vng-10 - 99' @ i18n}">
+    <input type="hidden" name="onehundredTotwofortynine" value="${'vng-100 - 249' @ i18n}">
+    <input type="hidden" name="twofiftyTonineninetynine" value="${'vng-250 - 999' @ i18n}">
+    <input type="hidden" name="onethousandToFourthousand" value="${'vng-1000 - 4999' @ i18n}">
+    <input type="hidden" name="fivethousandPlus" value="${'vng-5000 +' @ i18n}">
+    <!-- END:company sizes values -->
+
+    <!-- industries -->
+    <input type="hidden" name="indAutomative" value="${'vng-Automotive' @ i18n, locale='en'}">
+    <input type="hidden" name="indBanking" value="${'vng-Banking' @ i18n, locale='en'}">
+    <input type="hidden" name="indBrandingAdvertising" value="${'vng-BrandingAdvertising' @ i18n, locale='en'}">
+    <input type="hidden" name="indCall" value="${'vng-Call Center' @ i18n, locale='en'}">
+    <input type="hidden" name="indConsultant" value="${'vng-Consultant and Professional Services' @ i18n, locale='en'}">
+    <input type="hidden" name="indConsulting" value="${'vng-Consulting' @ i18n, locale='en'}">
+    <input type="hidden" name="indConsumerProduct" value="${'vng-Consumer Product Goods' @ i18n, locale='en'}">
+    <input type="hidden" name="indCustomerService" value="${'vng-Customer Service' @ i18n, locale='en'}">
+    <input type="hidden" name="indCrm" value="${'vng-crm' @ i18n, locale='en'}">
+    <input type="hidden" name="indDating" value="${'vng-Dating' @ i18n, locale='en'}">
+    <input type="hidden" name="indEcommerce" value="${'vng-Ecommerce' @ i18n, locale='en'}">
+    <input type="hidden" name="indEducation" value="${'vng-Education' @ i18n, locale='en'}">
+    <input type="hidden" name="indElectronics" value="${'vng-Electronics' @ i18n, locale='en'}">
+    <input type="hidden" name="indEmailService" value="${'vng-Email Service Providers' @ i18n, locale='en'}">
+    <input type="hidden" name="indEntertainment" value="${'vng-Entertainment' @ i18n, locale='en'}">
+    <input type="hidden" name="indFieldServices" value="${'vng-Field Services' @ i18n, locale='en'}">
+    <input type="hidden" name="indFinancialServices" value="${'vng-Financial Services' @ i18n, locale='en'}">
+    <input type="hidden" name="indFoodBeverage" value="${'vng-FoodBeverage' @ i18n, locale='en'}">
+    <input type="hidden" name="indFoodDelivery" value="${'vng-Food Delivery' @ i18n, locale='en'}">
+    <input type="hidden" name="indGambling" value="${'vng-Gambling' @ i18n, locale='en'}">
+    <input type="hidden" name="indGaming" value="${'vng-Gaming' @ i18n, locale='en'}">
+    <input type="hidden" name="indGovernment" value="${'vng-Government' @ i18n, locale='en'}">
+    <input type="hidden" name="indHealthWellness" value="${'vng-HealthWellness' @ i18n, locale='en'}">
+    <input type="hidden" name="indHealthcare" value="${'vng-Healthcare' @ i18n, locale='en'}">
+    <input type="hidden" name="indHospitality" value="${'vng-Hospitality' @ i18n, locale='en'}">
+    <input type="hidden" name="indInsurance" value="${'vng-Insurance' @ i18n, locale='en'}">
+    <input type="hidden" name="indLegal" value="${'vng-Legal' @ i18n, locale='en'}">
+    <input type="hidden" name="indLogistics" value="${'vng-Logistics' @ i18n, locale='en'}">
+    <input type="hidden" name="indMarketing" value="${'vng-Marketing' @ i18n, locale='en'}">
+    <input type="hidden" name="indMarketplace" value="${'vng-Marketplace' @ i18n, locale='en'}">
+    <input type="hidden" name="indMassGaming" value="${'vng-Mass Gaming' @ i18n, locale='en'}">
+    <input type="hidden" name="indMediaEntertainment" value="${'vng-MediaEntertainment' @ i18n, locale='en'}">
+    <input type="hidden" name="indOnlineClassifieds" value="${'vng-Online Classifieds' @ i18n, locale='en'}">
+    <input type="hidden" name="indOnlineGaming" value="${'vng-Online Gaming' @ i18n, locale='en'}">
+    <input type="hidden" name="indOnlineMedia" value="${'vng-Online Media' @ i18n, locale='en'}">
+    <input type="hidden" name="indOTT" value="${'vng-OTT' @ i18n, locale='en'}">
+    <input type="hidden" name="indPayment" value="${'vng-Payment' @ i18n, locale='en'}">
+    <input type="hidden" name="indPharmaceuticals" value="${'vng-Pharmaceuticals' @ i18n, locale='en'}">
+    <input type="hidden" name="indProfessionalServices" value="${'vng-Professional Services' @ i18n, locale='en'}">
+    <input type="hidden" name="indPublicService" value="${'vng-Public Service' @ i18n, locale='en'}">
+    <input type="hidden" name="indRealEstate" value="${'vng-Real Estate' @ i18n, locale='en'}">
+    <input type="hidden" name="indRecruiting" value="${'vng-Recruiting' @ i18n, locale='en'}">
+    <input type="hidden" name="indReligion" value="${'vng-Religion' @ i18n, locale='en'}">
+    <input type="hidden" name="indRetail" value="${'vng-Retail' @ i18n, locale='en'}">
+    <input type="hidden" name="indSecurity" value="${'vng-Security' @ i18n, locale='en'}">
+    <input type="hidden" name="indSocial" value="${'vng-Social' @ i18n, locale='en'}">
+    <input type="hidden" name="indSocialNetworks" value="${'vng-Social Networks' @ i18n, locale='en'}">
+    <input type="hidden" name="indSoftware" value="${'vng-Software' @ i18n, locale='en'}">
+    <input type="hidden" name="indTechnology" value="${'vng-Technology' @ i18n, locale='en'}">
+    <input type="hidden" name="indTelecommunications" value="${'vng-Telecommunications' @ i18n, locale='en'}">
+    <input type="hidden" name="indTransportation" value="${'vng-Transportation' @ i18n, locale='en'}">
+    <input type="hidden" name="indTravel" value="${'vng-Travel' @ i18n, locale='en'}">
+    <input type="hidden" name="indUtilities" value="${'vng-Utilities' @ i18n, locale='en'}">
+    <input type="hidden" name="indWebMobileDevelopment" value="${'vng-Web/Mobile Development' @ i18n, locale='en'}">
+    <input type="hidden" name="indOther" value="${'vng-other' @ i18n, locale='en'}">
+    <!-- END:industries -->
+
+    <!-- Titles -->
+    <input type="hidden" name="founderPresident" value="${'vng-founderPresident' @ i18n}">
+    <input type="hidden" name="manager" value="${'vng-manager' @ i18n}">
+    <input type="hidden" name="ownerPartner" value="${'vng-ownerPartner' @ i18n}">
+    <input type="hidden" name="projectManager" value="${'vng-projectManager' @ i18n}">
+    <input type="hidden" name="salesProfessional" value="${'vng-salesProfessional' @ i18n}">
+    <input type="hidden" name="specialist" value="${'vng-specialist' @ i18n}">
+    <input type="hidden" name="supervisor" value="${'vng-supervisor' @ i18n}">
+    <input type="hidden" name="vplevel" value="${'vng-vplevel' @ i18n}">
+    <!-- END: titles -->
+
+    <!-- crm integration values -->
+    <input type="hidden" name="crmDesk" value="${'vng-crmDesk' @ i18n}">
+    <input type="hidden" name="crmHouse" value="${'vng-crmHouse' @ i18n}">
+    <input type="hidden" name="crmMD" value="${'vng-crmMD' @ i18n}">
+    <input type="hidden" name="crmOracle" value="${'vng-crmOracle' @ i18n}">
+    <input type="hidden" name="crmSage" value="${'vng-crmSage' @ i18n}">
+    <input type="hidden" name="crmSalesforce" value="${'vng-crmSalesforce' @ i18n}">
+    <input type="hidden" name="crmSAP" value="${'vng-crmSAP' @ i18n}">
+    <input type="hidden" name="crmSugar" value="${'vng-crmSugar' @ i18n}">
+    <input type="hidden" name="crmZendesk" value="${'vng-crmZendesk' @ i18n}">
+    <!-- END:crm integration values -->
+
+    <!-- Submit -->
+    <input type="hidden" name="scheduleConversation" value="${'vng-scheduleConversation' @ i18n}">
+    <!-- END:submit -->
+
+    <!-- Errors -->
+    <input type="hidden" name="errorEmail" value="${'vng-ecomm-errorEmail' @ i18n}">
+    <input type="hidden" name="errorRequired" value="${'vng-ecomm-errorRequired' @ i18n}">
+    <input type="hidden" name="errorPrivatePolity" value="${'vng-ecomm-errorPrivatePolity' @ i18n}">
+    <!-- END:Errors -->
+
+    <!-- END: Confirmation messages and errors -->
+    <input type="hidden" name="confirmEmailTitle" value="${model.confirmEmailTitle}">
+    <input type="hidden" name="confirmPhoneTitle" value="${model.confirmPhoneTitle}">
+    <input type="hidden" name="confirmPhoneMessage" value="${model.confirmPhoneMessage}">
+    <input type="hidden" name="addCalendarTitle" value=${model.addCalendarTitle}>
+    <input type="hidden" name="calendarEventTitle" value="${model.calendarEventTitle}">
+    <input type="hidden" name="calendarEventDescription" value="${model.calendarEventDescription}">
+    <input type="hidden" name="googleCalendar" value="${'ecomm-bsn-calendar-googleCalendar' @ i18n}">
+    <input type="hidden" name="office365Calendar" value="${'ecomm-bsn-calendar-office365Calendar' @ i18n}">
+    <input type="hidden" name="outlookCalendar" value="${'ecomm-bsn-calendar-outlookCalendar' @ i18n}">
+    <input type="hidden" name="appleCalendar" value="${'ecomm-bsn-calendar-appleCalendar' @ i18n}">
+
+    <!-- CTA's + Icons -->
+    <input type="hidden" name="ctaEmailRedirectUrl" value="${primaryCtaUrl.externalUrl}">
+    <input type="hidden" name="ctaEmailRedirectText" value="${model.primaryCtaText}">
+    <input type="hidden" name="ctaPhoneUrl" value="${secondaryCtaUrl.externalUrl}">
+    <input type="hidden" name="ctaPhoneText" value="${model.secondaryCtaText}">
+    <input type="hidden" name="ctaScheduleUrl" value="${ctaRescheduleUrl.externalUrl}">
+    <input type="hidden" name="ctaScheduleText" value="${model.ctaRescheduleText}">
+
+    <input type="hidden" name="icon" value="${image.fileReference}">
+    <input type="hidden" name="iconAlt" value="${image.alt}">
+
+    <input type="hidden" name="excludedDates" value="${model.excludedDates}">
+  </div>
+</section>

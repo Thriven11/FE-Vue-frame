@@ -1,0 +1,82 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component" style="min-width:250px"></div>
+<sly data-sly-use.model="com.vonage.core.models.content.JobSearchComponentModel" />
+
+<div class="job-search-component" id="job-search-component" value="${properties.pageType}">
+  <section class="job-search ${properties.pageType}">
+    <div class="container">
+      <sly data-sly-resource="${'breadcrumb' @resourceType='vonage/components/content/breadcrumb', addSelectors='light'}"/>
+      <h1 class="job-search__title">${properties.title}</h1>
+      <h2 class="job-search__overview-title">${properties.title}</h2>
+      <h5 class="job-search__overview-subtitle">${properties.overviewSubTitle}</h5>
+      <div class="Vlt-form__element Vlt-form__element--big job-search__select-wrap" role="status">
+        <div class="Vlt-select">
+          <select v-on:change="officeChanged" :value="this.loc" aria-label="Select an Office">
+            <option value="0">All Locations</option>
+          	<sly data-sly-list.key="${model.offices}">
+            	<option value="${key}">${model.offices[key]}</option>
+            </sly>
+          </select>
+          <label class="Vlt-form__input-label" for="location">Location</label>
+        </div>
+        <div class="Vlt-select">
+          <select v-on:change="departmentChanged" :value="this.dept" aria-label="Select a Department">
+          	<option value="0">All Careers</option>
+            <sly data-sly-list.key="${model.departments}">
+              <option value="${key}">${model.departments[key]}</option>
+            </sly>
+          </select>
+          <label class="Vlt-form__input-label" for="field">Career</label>
+        </div>
+      </div>
+      <button class="btn" type="button" v-on:click="searchClicked" aria-label="Search Jobs">
+        Search Jobs
+      </button>
+      <button class="btn btn--light job-search__reset-button" type="button" v-on:click="resetClicked" aria-label="Reset Search">
+        Reset
+      </button>
+    </div>
+  </section>
+
+  <section class="job-listings ${properties.pageType}">
+    <div class="container">
+      <div class="Vlt-form__element job-listings__newest-wrap">
+        <div class="Vlt-select">
+          <select class="job-listings__newest-oldest" v-on:change="newestChanged" :value="this.sort" aria-label="Sort list by newest/oldest">
+            <option value="desc">By Newest</option>
+            <option value="asc">By Oldest</option>
+          </select>
+        </div>
+      </div>
+      <p v-if="!hasResults" class="job-listings__no-jobs-found">
+        There are no jobs matching your filters.
+        <button class="job-listings__reset-jobs" v-on:click="resetClicked" aria-label="Reset Search">
+          View all jobs
+        </button>
+        instead.
+      </p>
+      <ul v-else class="job-listings__list">
+        <li class="job-listings__list-item" v-for="job in jobs">
+          <div class="job-listings__title-container">
+            <h5 class="job-listings__title"><a :href="job.URL" aria-label="See Job Description">{{job.title}}</a></h5>
+            <p class="job-listings__date">{{job.date}}</p>
+          </div>
+          <p class="job-listings__key">Career: <span class="job-listings__value">{{job.career}}</span></p>
+          <p class="job-listings__key">Job ID: <span class="job-listings__value">{{job.jobRequisitionId}}</span></p>
+          <p class="job-listings__key" v-if="job.locations.length < 2">Location: <span class="job-listings__value">{{job.locations[0]}}</span></p>
+          <p class="job-listings__key" v-else>Locations:</p>
+          <ul class="job-listings__locations-list" v-if="job.locations.length > 1">
+            <li v-for="location in job.locations">
+              <p>{{location}}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <pagination
+        :current-page="page"
+        :total-pages="getTotalPages"
+        @go-to-page="goToPage($event)">
+      </pagination>
+    </div>
+  </section>
+</div>

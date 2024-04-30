@@ -1,0 +1,56 @@
+## This file is used to apply rewrite rules as an include.
+## Consider the base file here as a global for re-use
+
+Define dialect ph/en
+
+##Examples:
+## This ruleset would look for robots.txt and fetch it from the dam only if the domain is exampleco-dev.adobecqms.net
+#RewriteCond %{SERVER_NAME} exampleco-dev.adobecqms.net [NC]
+#RewriteRule ^/robots.txt$ /content/dam/exampleco/robots.txt [NC,PT]
+RewriteRule ^/robots\.txt$ /content/dam/vonage/robots/${dialect}/robots.txt [NC,PT]
+
+## This ruleset would look for sitemap.xml and point it at the re-usable file in exampleco's general folder of their site pages
+#RewriteCond %{SERVER_NAME} exampleco-brand2-dev.adobecqms.net [NC]
+#RewriteRule ^/sitemap.xml$ /content/exampleco/general/sitemap.xml [NC,PT]
+RewriteRule ^/sitemap(.*).xml$ /content/vonage/live-copies/${dialect}/sitemap$1.xml [NC,PT]
+
+## This ruleset would look for logo.jpg on all sites and source it from exampleco's general folder
+#RewriteRule ^/logo.jpg$ /content/dam/exampleco/general/logo.jpg [NC,PT]
+
+## This ruleset is a vanity url that exampleco's contactus site that doesn't exist on our environment
+#RewriteRule ^/contactus https://corp.exampleco.com/contactus.html [NC,R=301]
+
+# Include common rules
+Include /etc/httpd/conf.d/rewrites/vng_common_rewrite.rules
+
+# Homepage
+RewriteRule ^/$ /content/vonage/live-copies/${dialect}/homepage.html [NC,PT]
+
+# Handle all other AEM pages
+RewriteCond %{REQUEST_URI} !^/etc.clientlibs
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/home/
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{REQUEST_URI} ^/(.*)
+RewriteRule ^/(.*)/$ /content/vonage/live-copies/${dialect}/$1.html [NC,PT]
+
+## Prevent X-FORWARDED-FOR spoofing
+RewriteCond %{HTTP:X-Forwarded-For} !^$
+RewriteCond %{HTTP:X-Forwarded-For} !^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+RewriteRule .* - [F]
+
+## Uncomment to force HSTS protection
+#Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
+
+## Block wordpress DDOS Attempts
+RewriteRule ^.*xmlrpc.php - [F]
+RewriteCond %{HTTP_USER_AGENT} ^.*wordpress [NC]
+RewriteRule .* - [F]
+
+## Block wp-login
+RewriteRule ^.*wp-login - [F,NC,L]

@@ -1,0 +1,42 @@
+<sly data-sly-use.model="com.vonage.core.models.content.forms.BasicFormFieldModel" />
+
+<div class="Vlt-form__element Vlt-form__element--big" role="status">
+  <div class="Vlt-select">
+    <select data-sly-test="${!properties.isOptional}" id="product-${model.uuid}" name="product" class="Vlt-form__select" required>
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="${'vng-sms-mms' @ i18n, locale='en'}">${'vng-sms-mms' @ i18n}</option>
+      <option value="${'vng-video' @ i18n, locale='en'}">${'vng-video' @ i18n}</option>
+      <option value="${'vng-voice' @ i18n, locale='en'}">${'vng-voice' @ i18n}</option>
+      <option value="${'vng-SIP Trunking' @ i18n, locale='en'}">${'vng-SIP Trunking' @ i18n}</option>
+      <option value="${'vng-whatsapp' @ i18n, locale='en'}">${'vng-whatsapp' @ i18n}</option>
+      <option value="${'vng-facebook-viber-social' @ i18n, locale='en'}">${'vng-facebook-viber-social' @ i18n}</option>
+      <option value="${'vng-email' @ i18n, locale='en'}">${'vng-email' @ i18n}</option>
+      <option value="${'vng-multi-channel-conversations' @ i18n, locale='en'}">${'vng-multi-channel-conversations' @ i18n}</option>
+      <option value="${'vng-two-factor-authentication' @ i18n, locale='en'}">${'vng-two-factor-authentication' @ i18n}</option>
+      <option value="${'vng-contact-center-augmentation' @ i18n, locale='en'}">${'vng-contact-center-augmentation' @ i18n}</option>
+      <option value="${'vng-ai' @ i18n, locale='en'}">${'vng-ai' @ i18n}</option>
+      <option value="${'vng-enterprise-services' @ i18n, locale='en'}">${'vng-enterprise-services' @ i18n}</option>
+    </select>
+    <select data-sly-test="${properties.isOptional}" id="product-${model.uuid}" name="product" class="Vlt-form__select">
+      <option selected="" disabled="" value="">${'vng-select' @ i18n}</option>
+      <option value="${'vng-sms-mms' @ i18n, locale='en'}">${'vng-sms-mms' @ i18n}</option>
+      <option value="${'vng-video' @ i18n, locale='en'}">${'vng-video' @ i18n}</option>
+      <option value="${'vng-voice' @ i18n, locale='en'}">${'vng-voice' @ i18n}</option>
+      <option value="${'vng-SIP Trunking' @ i18n, locale='en'}">${'vng-SIP Trunking' @ i18n}</option>
+      <option value="${'vng-whatsapp' @ i18n, locale='en'}">${'vng-whatsapp' @ i18n}</option>
+      <option value="${'vng-facebook-viber-social' @ i18n, locale='en'}">${'vng-facebook-viber-social' @ i18n}</option>
+      <option value="${'vng-email' @ i18n, locale='en'}">${'vng-email' @ i18n}</option>
+      <option value="${'vng-multi-channel-conversations' @ i18n, locale='en'}">${'vng-multi-channel-conversations' @ i18n}</option>
+      <option value="${'vng-two-factor-authentication' @ i18n, locale='en'}">${'vng-two-factor-authentication' @ i18n}</option>
+      <option value="${'vng-contact-center-augmentation' @ i18n, locale='en'}">${'vng-contact-center-augmentation' @ i18n}</option>
+      <option value="${'vng-ai' @ i18n, locale='en'}">${'vng-ai' @ i18n}</option>
+      <option value="${'vng-enterprise-services' @ i18n, locale='en'}">${'vng-enterprise-services' @ i18n}</option>
+    </select>
+    <label class="Vlt-form__input-label" for="product-${model.uuid}">
+      ${'vng-whatProduct' @ i18n}
+    </label>
+  </div>
+  <small class="Vlt-form__element__error Vlt-icon-warning-icon">
+    <span class="Vlt-form__input-error-label">${'vng-requiredFieldMsg' @ i18n}</span>
+  </small>
+</div>

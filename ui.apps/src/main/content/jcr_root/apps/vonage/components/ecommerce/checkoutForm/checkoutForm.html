@@ -1,0 +1,142 @@
+<sly data-sly-use.model="com.vonage.core.models.ecommerce.CheckoutFormModel"/>
+<sly data-sly-use.abandonCartCTAUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.abandonCart.cta.href}" />
+<sly data-sly-use.reviewSuccessRedirectUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.review.successRedirect.href}" />
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<sly data-sly-use.shippingLegalText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.shipping.legalText}" />
+<sly data-sly-use.planTrialMiceText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.review.planTrialMiceText}" />
+<sly data-sly-use.phoneMiceText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.review.phoneMiceText}" />
+<sly data-sly-use.emergencyServicePolicyText="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.payment.emergencyServicePolicyText}" />
+<sly data-sly-use.oneYearCommitmentCheck="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.payment.oneYearCommitmentCheck}" />
+<sly data-sly-use.cardNotCharged="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.payment.cardNotCharged}" />
+<sly data-sly-use.reviewSelection="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.payment.reviewSelection}" />
+<sly data-sly-use.zuoraDisclaimer="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.payment.zuoraDisclaimer}" />
+<sly data-sly-use.pricingDisclaimer="${'../../utils/urlRewriter/rteUrlRewriter.js' @ html=model.review.pricingDisclaimer}" />
+<sly data-sly-use.editPlanUrl="${'../../utils/urlRewriter/urlRewriter.js' @ url=model.review.editPlanUrl}" />
+
+<section class="checkout-form">
+  <div id="v-checkout-form"></div>
+
+  <div class="dict d-none">
+    <!-- currentPage values -->
+    <input type="hidden" name="countryCode" value="${currentPage.language.country}">
+    <input type="hidden" name="language" value="${currentPage.language.language}">
+    <input type="hidden" name="locale" value="${currentPage.language.language}-${currentPage.language.country}">
+    <!-- END:currentPage values -->
+
+    <!-- input label values -->
+    <input type="hidden" name="firstName" value="${'vng-firstName' @ i18n}">
+    <input type="hidden" name="lastName" value="${'vng-lastName' @ i18n}">
+    <input type="hidden" name="email" value="${'vng-email' @ i18n}">
+    <input type="hidden" name="phoneNumber" value="${'vng-phoneNumber' @ i18n}">
+    <input type="hidden" name="companyName" value="${'vng-companyName' @ i18n}">
+    <input type="hidden" name="globalCompanySize" value="${'vng-globalCompanySize' @ i18n}">
+    <input type="hidden" name="addressLine1" value="${'vng-addressLine1' @ i18n}">
+    <input type="hidden" name="addressLine2" value="${'vng-addressLine2' @ i18n}">
+    <input type="hidden" name="country" value="${'vng-country' @ i18n}">
+    <input type="hidden" name="state" value="${'vng-state' @ i18n}">
+    <input type="hidden" name="city" value="${'vng-city' @ i18n}">
+    <input type="hidden" name="zipCode" value="${'vng-zipCode' @ i18n}">
+    <!-- END:input label values -->
+
+    <!-- company sizes values -->
+    <input type="hidden" name="oneToNine" value="${'vng-1 - 9' @ i18n}">
+    <input type="hidden" name="tenToNinetynine" value="${'vng-10 - 99' @ i18n}">
+    <input type="hidden" name="onehundredTotwofortynine" value="${'vng-100 - 249' @ i18n}">
+    <input type="hidden" name="twofiftyTonineninetynine" value="${'vng-250 - 999' @ i18n}">
+    <input type="hidden" name="onethousandToFourthousand" value="${'vng-1000 - 4999' @ i18n}">
+    <input type="hidden" name="fivethousandPlus" value="${'vng-5000 +' @ i18n}">
+    <!-- END:company sizes values -->
+
+    <!-- vng-ecomm values -->
+    <input type="hidden" name="account" value="${'vng-ecomm-account' @ i18n}">
+    <input type="hidden" name="addOn" value="${'vng-ecomm-addOn' @ i18n}">
+    <input type="hidden" name="applyPromoCode" value="${'vng-ecomm-payment-applyPromoCode' @ i18n}">
+    <input type="hidden" name="billingAddress" value="${'vng-ecomm-payment-billingAddress' @ i18n}">
+    <input type="hidden" name="billingAddressSameAsService" value="${'vng-ecomm-payment-billingAddressSameAsService' @ i18n}">
+    <input type="hidden" name="cancel" value="${'vng-ecomm-cancel' @ i18n}">
+    <input type="hidden" name="changePlan" value="${'vng-ecomm-changePlan' @ i18n}">
+    <input type="hidden" name="confirmRemoveAddOn" value="${'vng-ecomm-confirmRemoveAddOn' @ i18n}">
+    <input type="hidden" name="continueToNextStep" value="${'vng-ecomm-continueToNextStep' @ i18n}">
+    <input type="hidden" name="dueToday" value="${'vng-ecomm-dueToday' @ i18n}">
+    <input type="hidden" name="enterPromoCode" value="${'vng-ecomm-payment-enterPromoCode' @ i18n}">
+    <input type="hidden" name="errorAtLeastOnePhoneNumberRequired" value="${'vng-ecomm-errorAtLeastOnePhoneNumberRequired' @ i18n}">
+    <input type="hidden" name="errorEmail" value="${'vng-ecomm-errorEmail' @ i18n}">
+    <input type="hidden" name="errorRequired" value="${'vng-ecomm-errorRequired' @ i18n}">
+    <input type="hidden" name="errorTermsOfService" value="${'vng-ecomm-errorTermsOfService' @ i18n}">
+    <input type="hidden" name="firstBill" value="${'vng-ecomm-firstBill' @ i18n}">
+    <input type="hidden" name="hardware" value="${'vng-ecomm-hardware' @ i18n}">
+    <input type="hidden" name="mo" value="${'vng-ecomm-mo' @ i18n}">
+    <input type="hidden" name="monthlyBill" value="${'vng-ecomm-monthlyBill' @ i18n}">
+    <input type="hidden" name="payment" value="${'vng-ecomm-payment' @ i18n}">
+    <input type="hidden" name="perUnit" value="${'vng-ecomm-perUnit' @ i18n}">
+    <input type="hidden" name="phoneNumber" value="${'vng-ecomm-phoneNumber' @ i18n}">
+    <input type="hidden" name="plan" value="${'vng-ecomm-plan' @ i18n}">
+    <input type="hidden" name="professionalService" value="${'vng-ecomm-professionalService' @ i18n}">
+    <input type="hidden" name="promoCode" value="${'vng-ecomm-payment-promoCode' @ i18n}">
+    <input type="hidden" name="promoCodeSuccess" value="${'vng-ecomm-payment-promoCodeSuccess' @ i18n}">
+    <input type="hidden" name="remove" value="${'vng-ecomm-remove' @ i18n}">
+    <input type="hidden" name="removeAddOnCopy" value="${'vng-ecomm-removeAddOnCopy' @ i18n}">
+    <input type="hidden" name="discardRemoveAddOn" value="${'vng-ecomm-discardRemoveAddOn' @ i18n}">
+    <input type="hidden" name="removePromoCode" value="${'vng-ecomm-payment-removePromoCode' @ i18n}">
+    <input type="hidden" name="review" value="${'vng-ecomm-review' @ i18n}">
+    <input type="hidden" name="reviewOrder" value="${'vng-ecomm-payment-reviewOrder' @ i18n}">
+    <input type="hidden" name="shipping" value="${'vng-ecomm-shipping' @ i18n}">
+    <input type="hidden" name="shippingTitle" value="${model.shipping.title @ context='text'}">
+    <input type="hidden" name="shippingSameAsService" value="${model.shipping.sameAsService @ context='text'}">
+    <input type="hidden" name="shippingMethod" value="${model.shipping.shippingMethod @ context='text'}">
+    <input type="hidden" name="shippingLegalText" value="${shippingLegalText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="update" value="${'vng-ecomm-update' @ i18n}">
+    <input type="hidden" name="loading" value="${'vng-ecomm-loading' @ i18n}">
+    <input type="hidden" name="addPhoneNumberMandatory" value="${'vng-ecomm-addPhoneNumber-mandatory' @ i18n}">
+    <!-- END:vng-ecomm values -->
+
+    <!-- Model values -->
+    <input type="hidden" name="abandonCartTitle" value="${model.abandonCart.title @ context='attribute'}">
+    <input type="hidden" name="abandonCartText" value="${model.abandonCart.text @ context='attribute'}">
+    <input type="hidden" name="abandonCartCTAUrl" value="${abandonCartCTAUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="abandonCartCTALabel" value="${model.abandonCart.cta.label @ context='attribute'}">
+    <input type="hidden" name="abandonCartCloseLabel" value="${model.abandonCart.closeLabel @ context='attribute'}">
+    <input type="hidden" name="acceptTermsOfServiceCheck" value="${model.payment.acceptTermsOfServiceCheck @ context='attribute'}">
+    <input type="hidden" name="accountAddress" value="${model.account.address @ context='attribute'}">
+    <input type="hidden" name="accountDescription" value="${model.account.descrition @ context='attribute'}">
+    <input type="hidden" name="accountTitle" value="${model.account.title @ context='attribute'}">
+    <input type="hidden" name="aceptEmergencyServicePolicyCheck" value="${model.payment.aceptEmergencyServicePolicyCheck @ context='attribute'}">
+    <input type="hidden" name="companyAddress" value="${model.account.companyAddress @ context='attribute'}">
+    <input type="hidden" name="companyDescription" value="${model.account.companyDescription @ context='attribute'}">
+    <input type="hidden" name="shareCartConfMsg" value="${model.shareCart.confMsg @ context='attribute'}">
+
+    <input type="hidden" name="planTrialMiceText" value="${planTrialMiceText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="phoneNumberBodyCopy" value="${model.review.phoneNumberBodyCopy @ context='attribute'}">
+    <input type="hidden" name="phoneMiceText" value="${phoneMiceText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="emergencyServicePolicyText" value="${emergencyServicePolicyText.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="oneYearCommitmentCheck" value="${oneYearCommitmentCheck.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="cardNotCharged" value="${cardNotCharged.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="reviewSelection" value="${reviewSelection.externalizedHtml @ context='attribute'}">
+    <input type="hidden" name="paymentTitle" value="${model.payment.title @ context='attribute'}">
+    <input type="hidden" name="reviewSuccessRedirectUrl" value="${reviewSuccessRedirectUrl.externalUrl @ context='attribute'}">
+    <!-- END:Model values -->
+
+    <!-- @TODO: Temp values to be injected via AEM either via authorable fields or dictionary elements -->
+    <!-- ui.frontend/src/main/webpack/base/js/components/ecommerce/components/checkoutForm/CheckoutReview.vue -->
+    <input type="hidden" name="reviewPlanSummary" value="${model.review.title @ context='attribute'}">
+    <input type="hidden" name="yourAccount" value="${model.review.accountTitle @ context='attribute'}">
+    <input type="hidden" name="name" value="${'vng-ecomm-name' @ i18n}">
+    <input type="hidden" name="emailAddress" value="${'vng-email' @ i18n}">
+    <input type="hidden" name="contactDetails" value="${model.account.title @ context='attribute'}">
+    <input type="hidden" name="editPlanText" value="${model.review.editPlanText @ context='attribute'}">
+    <input type="hidden" name="editPlanUrl" value="${editPlanUrl.externalUrl @ context='attribute'}">
+    <input type="hidden" name="editAccountDetails" value="${model.review.editAccountText @ context='attribute'}">
+    <input type="hidden" name="editShippingDetails" value="${model.review.editShippingText @ context='attribute'}">
+    <input type="hidden" name="shippingAddress" value="${model.shipping.title @ context='text'}">
+    <input type="hidden" name="editPaymentDetails" value="${model.review.paymentLabel @ context='attribute'}">
+    <input type="hidden" name="completePurchase" value="${model.review.completePurchaseLabel @ context='attribute'}">
+    <input type="hidden" name="completePurchaseTextfield" value="${model.review.completePurchaseTextfield @ context='attribute'}">
+    <input type="hidden" name="pricingDisclaimer" value="${pricingDisclaimer.externalizedHtml @ context='attribute'}">
+    <!-- END: ui.frontend/src/main/webpack/base/js/components/ecommerce/components/checkoutForm/CheckoutReview.vue -->
+
+    <input type="hidden" name="zuoraDisclaimer" value="${zuoraDisclaimer.externalizedHtml @ context='attribute'}">
+    <input data-sly-test="${wcmmode.edit}" type="hidden" name="isEditMode" value="true">
+  </div>
+</section>

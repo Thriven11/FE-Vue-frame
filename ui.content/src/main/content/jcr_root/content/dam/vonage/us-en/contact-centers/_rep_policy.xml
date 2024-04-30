@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <deny
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="everyone"
+        rep:privileges="{Name}[jcr:all]"/>
+    <allow1
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="mac-default-contactcenters-owner"
+        rep:privileges="{Name}[jcr:versionManagement,jcr:modifyAccessControl,jcr:read,jcr:readAccessControl,crx:replicate,rep:write,jcr:lockManagement]"/>
+    <allow2
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="mac-default-contactcenters-editor"
+        rep:privileges="{Name}[jcr:removeChildNodes,jcr:versionManagement,jcr:modifyProperties,jcr:read,jcr:addChildNodes,jcr:readAccessControl,crx:replicate,jcr:lockManagement,jcr:nodeTypeManagement]"/>
+    <allow3
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="mac-default-contactcenters-editor"
+        rep:privileges="{Name}[jcr:removeNode]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob="/*"/>
+    </allow3>
+    <allow4
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="mac-default-contactcenters"
+        rep:privileges="{Name}[jcr:read]"/>
+</jcr:root>

@@ -1,0 +1,34 @@
+<sly data-sly-use.model="com.vonage.core.models.content.CustomerStorySummaryComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component"></div>
+
+<section class="customer-story-summary" data-sly-test="${model.title || model.storyList1 || model.storyList2}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="customer-story-summary__headline">
+                    ${model.title}
+                </h2>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5" data-sly-test="${model.storyList1}">
+                <div data-sly-list.list="${model.storyList1}" class="customer-story-summary__first-column">
+                    <a class="customer-story-summary__link" href="${list.link.href}" target="${list.link.target}"
+                       rel="noopener" aria-describedby="${list.link.target =='_blank' ? 'new-window' : ''}" aria-label="${list.link.ariaLabel || list.link.label}">
+                        ${list.link.label}
+                        <span class="Vlt-icon-arrow-link"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 offset-lg-1" data-sly-test="${model.storyList2}">
+                <div data-sly-list.list="${model.storyList2}"  class="customer-story-summary__second-column">
+                    <a class="customer-story-summary__link" href="${list.link.href}" target="${list.link.target}"
+                       rel="noopener" aria-describedby="${list.link.target =='_blank' ? 'new-window' : ''}" aria-label="${list.link.ariaLabel || list.link.label}">
+                        ${list.link.label}
+                        <span class="Vlt-icon-arrow-link"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+<sly data-sly-use.model="com.vonage.core.models.content.FeaturePricingCardComponentModel"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<section class="featured-pricing-card">
+
+  <sly data-sly-test="${model.currencyToggle}" data-sly-include="/apps/vonage/components/utils/currencyToggle/currencyToggle.html"></sly>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="featured-pricing-card__container">
+					<div class="row">
+						<div class="col-12 col-lg-4">
+							<!-- Left section (pricing information) -->
+							<div class="featured-pricing-card__price-info">
+								<div class="featured-pricing-card__price-detail" aria-label="">
+									<span class="featured-pricing-card__caption">${model.caption}</span>
+									<div class="featured-pricing-card__price-wrapper">
+										<span class="featured-pricing-card__currency">${model.currency}</span>
+										<span class="featured-pricing-card__price">${model.price}</span>
+									</div>
+									<span class="featured-pricing-card__frequency">${model.frequency}</span>
+								</div>
+								<p class="featured-pricing-card__description">${model.description}</p>
+							</div>
+						</div>
+
+						<!-- Right section (per-mintue pricing list or checkbox list) -->
+						<div class="col-12 col-lg-8">
+							<div class="featured-pricing-card__price-options">
+								<span class="featured-pricing-card__headline">${model.headline}</span>
+
+								<!-- Conditional rendering for per-minute pricing list -->
+								<sly data-sly-test="${properties.sectionType == 'per-minute-pricing-section'}">
+										<div data-sly-list.offering="${model.offeringList}" class="featured-pricing-card__offering">
+												<div class="featured-pricing-card__offer">
+													<p class="featured-pricing-card__offer-price">${offering.price}</p>
+													<p class="featured-pricing-card__offer-name">${offering.description}</p>
+												</div>
+										</div>
+								</sly>
+
+								<!-- Conditional rendering for checkbox list sub-component -->
+								<sly data-sly-test="${properties.sectionType == 'checkbox-list-section'}">
+										<sly
+											data-sly-resource="${'featuresList' @resourceType='vonage/components/utils/list'}"
+										/>
+								</sly>
+
+
+							</div>
+							<div class="featured-pricing-card__cta left" data-sly-test="${properties.ctaType == 'cta-left'}">
+								<sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn'}"></sly>
+							</div>
+							<div class="featured-pricing-card__cta right" data-sly-test="${properties.ctaType == 'cta-right'}">
+								<sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn'}"></sly>
+							</div>
+							<div class="featured-pricing-card__cta center" data-sly-test="${properties.ctaType == 'cta-center'}">
+								<sly data-sly-test="${!properties.primaryLightbox}" data-sly-resource="${'cta-1' @resourceType='/apps/vonage/components/content/cta',addSelectors='btn'}"></sly>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

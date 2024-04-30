@@ -1,0 +1,45 @@
+<sly data-sly-use.model="com.vonage.core.models.structure.header.MainNavigationComponentModel"
+     data-sly-use.template="secondaryCardTemplate.html"
+     data-sly-use.ctaTemplate="ctaTemplate.html"/>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width: 300px"></div>
+
+<nav class="Vlt-topnav" aria-label="main menu">
+  <sly  data-sly-list.resourceLink="${model.primaryNavList}">
+    <div class="Vlt-topnav__item" data-sly-test="${resourceLink.showSecondaryLevel == 'false'}">
+      <sly data-sly-call="${ctaTemplate.ctaV5 @
+			link=resourceLink.link, rel='noopener', cssClass='Vlt-topnav__link'}"/>
+    </div>
+    <div class="Vlt-topnav__item" data-sly-test="${resourceLink.showSecondaryLevel == 'true'}">
+      <button class="Vlt-topnav__button" data-static-label="${resourceLink.link.staticLabel}" aria-expanded="false" data-di-id="mainnav_${resourceLink.link.tagLabel}">
+        ${resourceLink.link.label}
+      </button>
+      <div class="Vlt-topmenu">
+        <span class="Vlt-topmenu__title">${resourceLink.link.label}</span>
+        <div class="Vlt-topmenu__items" role="menu"
+             data-sly-list.secondaryLevel="${resourceLink.secondaryNavigationList}">
+          <sly data-sly-call="${template.secondaryCard @ card=secondaryLevel}"/>
+        </div>
+      </div>
+    </div>
+  </sly>
+
+  <!--/* Eccomerce button - desktop */-->
+  <div class="ecomm-link ecomm-link--desktop Vlt-topnav__item Vlt-topnav__item--cart">
+    <a href="${model.AbbandonedCartLinkHref}"
+      class="ecomm-link__btn" aria-label="redirect to cart page" >
+      <sly data-sly-include="cartSvg.html"/>
+    </a>
+  </div>
+  <div class="Vlt-topnav__item Vlt-topnav__item--try Vlt-topnav__btn" data-sly-test="${model.finalSecondaryCta.link.label && model.finalSecondaryCta.link.href != '#' && model.finalSecondaryCta.link.target}">
+    <a class="Vlt-topnav__link" href="${model.finalSecondaryCta.link.href}"
+       target="${model.finalSecondaryCta.link.target}"
+       aria-describedby="${model.finalSecondaryCta.link.target == '_blank' ? 'new-window' : ''}" aria-label="Go to the ${model.finalSecondaryCta.link.label} page">${model.finalSecondaryCta.link.label}</a>
+  </div>
+  <div class="Vlt-topnav__item Vlt-topnav__item--contact Vlt-topnav__btn" data-sly-test="${model.link.label && !pageProperties.hideContactCTA}">
+    <a data-sly-test.ctaLabel="${model.alternativeCtaLabel ? model.alternativeCtaLabel : model.link.label}" class="Vlt-topnav__link" href="${model.contactUsFormUrl}"
+       target="${model.link.target}"
+       aria-describedby="${model.link.target == '_blank' ? 'new-window' : ''}" aria-label="Go to the ${ctaLabel} page">${ctaLabel}</a>
+  </div>
+</nav>

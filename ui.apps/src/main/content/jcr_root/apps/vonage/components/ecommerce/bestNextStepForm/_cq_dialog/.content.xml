@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Best Next Step Form"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <tabs jcr:primaryType="nt:unstructured" maximized="true" sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+          <form jcr:primaryType="nt:unstructured" 
+            jcr:title="Form" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                  <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <contactLeyend 
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Contact text" 
+                        name="./contactLeyend" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <phoneLeyend 
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Call text" 
+                        name="./phoneLeyend" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <soonCall 
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="'As soon as possible' option text" 
+                        name="./soonCallLabel" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <soonCallFootNote jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Footnote"
+                        name="./footNote"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                </inline>
+                                <dialogFullScreen
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                </dialogFullScreen>
+                            </cui>
+                        </uiSettings>
+                      </soonCallFootNote>
+                      
+                      <scheduledCall 
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Scheduled call option text" 
+                        name="./scheduledCallLabel" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <tellUsMoreLeyend 
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="More information text" 
+                        name="./tellUsMoreLeyend" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <privacyPolicySchedule jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Privacy policy checkbox label" 
+                        name="./privacyPolicySchedule"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                </inline>
+                                <dialogFullScreen
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+                                </dialogFullScreen>
+                            </cui>
+                        </uiSettings>
+                      </privacyPolicySchedule>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </form>
+          <excludedDates jcr:primaryType="nt:unstructured" 
+            jcr:title="Excluded dates" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                  <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <excludedDates
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                        fieldDescription="Click 'Add field' to add new excluded dare"
+                        fieldLabel="Excluded dates">
+                      <field
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                          fieldLabel="Date" 
+                          displayedFormat="MM-DD-YYYY"
+                          required="true"
+                          type="date"
+                          name="./excludedDates"/>
+                    </excludedDates>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </excludedDates>
+          <confirmation jcr:primaryType="nt:unstructured" 
+            jcr:title="Confirmations" 
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <columns jcr:primaryType="nt:unstructured" margin="true" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                  <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <titleEmail
+                          jcr:primaryType="nt:unstructured"
+                          required="true"
+                          fieldLabel="Email Confirmation title"
+                          name="./confirmEmailTitle"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <titlePhone
+                          jcr:primaryType="nt:unstructured"
+                          required="true"
+                          fieldLabel="Phone call confirmation title"
+                          name="./confirmPhoneTitle"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <confirmPhoneMessage
+                          jcr:primaryType="nt:unstructured"
+                          required="true"
+                          fieldLabel="Schedule call confirmation message"
+                          name="./confirmPhoneMessage"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <primaryCtaText
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Email CTA label" 
+                        name="./primaryCtaText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <primaryCtaUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Email CTA URL"
+                        name="./primaryCtaUrl"
+                        rootPath="/content/vonage"/>
+                      <secondaryCtaText
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Call 30 minutes CTA label" 
+                        name="./secondaryCtaText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <secondaryCtaUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Call 30 minutes URL"
+                        name="./secondaryCtaUrl"
+                        rootPath="/content/vonage"/>
+                      <ctaRescheduleText
+                        jcr:primaryType="nt:unstructured" 
+                        fieldLabel="Schedule call CTA label" 
+                        name="./ctaRescheduleText" 
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                      <ctaRescheduleUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Schedule call URL"
+                        name="./ctaRescheduleUrl"
+                        rootPath="/content/vonage"/>
+                    </items>
+                  </column>
+                </items>
+              </columns>
+            </items>
+          </confirmation>
+          <add-to-calendar
+              jcr:primaryType="nt:unstructured"
+              jcr:title="Add to calendar"
+              sling:resourceType="granite/ui/components/coral/foundation/container"
+              margin="{Boolean}true">
+              <items jcr:primaryType="nt:unstructured">
+                  <column
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                          <column
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                  <title
+                                      jcr:primaryType="nt:unstructured"
+                                      required="true"
+                                      fieldLabel="Add to calendar text"
+                                      name="./addCalendarTitle"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                  <eventTitle
+                                      jcr:primaryType="nt:unstructured"
+                                      required="true"
+                                      fieldLabel="Calendar new event title"
+                                      name="./calendarEventTitle"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                  <eventDescription
+                                      jcr:primaryType="nt:unstructured"
+                                      required="true"
+                                      fieldLabel="Calendar new event description"
+                                      name="./calendarEventDescription"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                              </items>
+                          </column>
+                      </items>
+                  </column>
+              </items>
+          </add-to-calendar>
+          <asset
+              jcr:primaryType="nt:unstructured"
+              jcr:title="Image"
+              sling:resourceType="granite/ui/components/coral/foundation/container"
+              margin="{Boolean}true">
+              <items jcr:primaryType="nt:unstructured">
+                  <columns
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                      margin="{Boolean}true">
+                      <items jcr:primaryType="nt:unstructured">
+                          <column
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                              <items jcr:primaryType="nt:unstructured">
+                                  <file
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                      allowUpload="{Boolean}false"
+                                      autoStart="{Boolean}false"
+                                      class="cq-droptarget"
+                                      fileNameParameter="./fileName"
+                                      fileReferenceParameter="./fileReference"
+                                      mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                      multiple="{Boolean}false"
+                                      name="./file"
+                                      title="Upload Image Asset"
+                                      uploadUrl="${suffix.path}"
+                                      useHTML5="{Boolean}true"/>
+                                  <alt
+                                      jcr:primaryType="nt:unstructured"
+                                      required="true"
+                                      fieldLabel="Alternative Text"
+                                      name="./alt"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                              </items>
+                          </column>
+                      </items>
+                  </columns>
+              </items>
+          </asset>
+          <metadata
+                  jcr:primaryType="nt:unstructured"
+                  jcr:title="Metadata"
+                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                  margin="{Boolean}true" 
+                  sling:hideResource="true"/>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

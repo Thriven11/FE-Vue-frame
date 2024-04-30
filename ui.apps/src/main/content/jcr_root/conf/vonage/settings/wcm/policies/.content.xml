@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <vng-content
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Default"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content,group:Vonage.Content.Core,group:Vonage.Content.Fragment]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-content>
+                    <vng-structure
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Structure"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[wcm/foundation/components/responsivegrid,vonage/components/content/fragments/experiencefragment,vonage/components/structure/generalContainer]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-structure>
+                    <vng-all
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage All"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Structure,Vonage.Content]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-all>
+                    <vng-experience-fragment
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Experience Fragment"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content,group:Vonage.Content.Core,group:Vonage.Structure]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-experience-fragment>
+                    <vng-experience-fragment-footer
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Experience Fragment"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/navigations/titleLinkList]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-experience-fragment-footer>
+                    <vng-experience-fragment-lightbox-forms
+                      jcr:description="Policy for editable layout containers"
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Vonage Experience Fragment"
+                      sling:resourceType="wcm/core/components/policy/policy"
+                      components="group:Vonage.Content.Forms"
+                      policyResourceType="wcm/foundation/components/responsivegrid">
+                      <jcr:content
+                        cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                        cq:lastReplicatedBy="admin"
+                        cq:lastReplicationAction="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"
+                        mergeList="{Boolean}true"/>
+                    </vng-experience-fragment-lightbox-forms>
+                    <vng-press-release-container
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Press Release Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/breadcrumb,vonage/components/content/contentHeader,wcm/foundation/components/responsivegrid]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-press-release-container>
+                    <vng-press-release-content
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Press Release Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/pressRelease/rteText,vonage/components/content/download,vonage/components/content/coreComponents/image]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-press-release-content>
+                    <vng-phone-page-container
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Phone Page Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/breadcrumb,wcm/foundation/components/responsivegrid]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-phone-page-container>
+                    <vng-phone-page-content
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Phone Page Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/coreComponents/text,vonage/components/content/headerMediaContainer,vonage/components/content/2upCard,vonage/components/content/rteFlexible]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-phone-page-content>
+                    <vng-white-paper-container
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage White Paper Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/breadcrumb,wcm/foundation/components/responsivegrid]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-white-paper-container>
+                    <vng-white-paper-content
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage White Paper Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content,group:Vonage.Content.Fragment,group:Vonage.Press Release]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-white-paper-content>
+                    <vng-container
+                        jcr:description="Policy for editable layout containers"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/structure/resources/resourcesContainer,wcm/foundation/components/responsivegrid,vonage/components/content/fragments/experiencefragment]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-container>
+                    <vng-customer-story-container
+                        jcr:lastModified="{Date}2019-11-11T15:37:04.214+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Customer Story Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Vonage.Content,group:Vonage.Content.Core,group:Vonage.Content.Fragment]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-customer-story-container>
+                    <vng-customer-story-content
+                        jcr:lastModified="{Date}2019-11-11T15:41:35.452+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Customer Story Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content,group:Vonage.Content.Core,group:Vonage.Content.Fragment,group:Vonage.Press Release]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-customer-story-content>
+                    <vng-article-container
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Article Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[wcm/foundation/components/responsivegrid,vonage/components/content/breadcrumb,vonage/components/content/headerMediaContainer]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-article-container>
+                    <vng-article-content
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Article Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content,group:Vonage.Content.Fragment,group:Vonage.Press Release]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-article-content>
+                    <vng-details-grid
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Article Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-details-grid>
+                    <vng-product-grid
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Vonage Article Content"
+                      sling:resourceType="wcm/core/components/policy/policy"
+                      components="[vonage/components/content/productGrid/productCard]"
+                      policyResourceType="vonage/components/utils/rowResponsiveGrid">
+                      <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                          <image
+                            jcr:primaryType="nt:unstructured"
+                            assetGroup="media"
+                            assetMimetype="image/*"
+                            droptarget="image"
+                            resourceType="vonage/components/content/coreComponents/image"
+                            type="Images"/>
+                        </assetToComponentMapping>
+                      </cq:authoring>
+                      <jcr:content
+                        jcr:primaryType="nt:unstructured"
+                        mergeList="{Boolean}true"/>
+                    </vng-product-grid>
+                    <vng-faqs
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Faqs Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[vonage/components/content/faqs/faq]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-faqs>
+                    <vng-category-grid
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Category Grid Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Vonage.Content]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="vonage/components/content/coreComponents/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </vng-category-grid>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+    <vonage jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <structure jcr:primaryType="nt:unstructured">
+                <generic-page jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-09-17T15:42:56.442-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="[vng.site]">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </generic-page>
+                <ecomm-page jcr:primaryType="nt:unstructured">
+                  <vonage-clientlibs
+                    jcr:lastModified="{Date}2019-09-17T15:42:56.442-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Vonage Clientlibs"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[vng.ecomm]">
+                    <jcr:content
+                      cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                      cq:lastReplicatedBy="admin"
+                      cq:lastReplicationAction="Activate"
+                      jcr:mixinTypes="[cq:ReplicationStatus]"
+                      jcr:primaryType="nt:unstructured"/>
+                  </vonage-clientlibs>
+                </ecomm-page>
+                <xfstandard jcr:primaryType="nt:unstructured">
+                    <vonage_experience_clientlibs
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-27T10:48:45.603Z"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage_experience_clientlibs>
+                </xfstandard>
+                <resources-page jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-10-31T21:35:30.507+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </resources-page>
+                <press-release jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-10-31T21:38:30.377+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </press-release>
+                <phone-page jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-10-31T21:38:30.377+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </phone-page>
+                <white-paper jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-10-31T21:38:30.377+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </white-paper>
+                <customer-story jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:lastModified="{Date}2019-11-11T15:32:17.454+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2019-09-17T15:43:06.728-04:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </customer-story>
+                <article-page jcr:primaryType="nt:unstructured">
+                    <vonage-clientlibs
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vonage Clientlibs"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="vng.site">
+                        <jcr:content
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </vonage-clientlibs>
+                </article-page>
+            </structure>
+        </components>
+    </vonage>
+</jcr:root>

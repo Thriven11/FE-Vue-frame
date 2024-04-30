@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Pricing Matrix Card"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs"
+				maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<properties jcr:primaryType="nt:unstructured"
+						jcr:title="Properties"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<fieldset jcr:primaryType="nt:unstructured" jcr:title=""
+								sling:resourceType="granite/ui/components/foundation/form/fieldset">
+								<layout jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<number jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												fieldLabel="Card number" max="3" min="1"
+												name="./number" step="1" />
+											<description jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+												fieldLabel="Descrition" 
+												name="./description"
+												useFixedInlineToolbar="{Boolean}true">
+												<rtePlugins jcr:primaryType="nt:unstructured">
+													<format
+														jcr:primaryType="nt:unstructured"
+														features="*"/>
+												</rtePlugins>
+												<uiSettings jcr:primaryType="nt:unstructured">
+													<cui jcr:primaryType="nt:unstructured">
+														<inline
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</inline>
+														<dialogFullScreen
+															jcr:primaryType="nt:unstructured"
+															toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink]">
+														</dialogFullScreen>
+													</cui>
+												</uiSettings>
+											</description>
+										</items>
+									</column>
+								</items>
+							</fieldset>
+						</items>
+					</properties>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

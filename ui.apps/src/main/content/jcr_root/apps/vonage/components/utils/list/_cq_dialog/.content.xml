@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Companies"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+           sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+    <items jcr:primaryType="nt:unstructured">
+      <column jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <title
+           jcr:primaryType="nt:unstructured"
+           sling:resourceType="acs-commons/granite/ui/components/include"
+           path="vonage/components/utils/rte/rte_dialog_namespace"
+           useFixedInlineToolbar="{Boolean}true">
+                        <parameters
+                            jcr:primaryType="nt:unstructured"
+                            fieldLabell="Title"
+                            namee="./title"/>
+          </title>
+          <list
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+            fieldDescription="Click 'Add Field' to add new list item."
+            composite="{Boolean}true">
+            <field
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/container"
+              name="./list">
+              <items jcr:primaryType="nt:unstructured">
+                <name
+                 jcr:primaryType="nt:unstructured"
+                 sling:resourceType="acs-commons/granite/ui/components/include"
+                 path="vonage/components/utils/rte/rte_dialog_namespace"
+                 useFixedInlineToolbar="{Boolean}true">
+                                    <parameters
+                                        jcr:primaryType="nt:unstructured"
+                                        fieldLabell="List Item"
+                                        namee="listItem"/>
+                </name>
+                <sublist
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                  fieldDescription="Click 'Add Field' to add a new sub-list under list."
+                  fieldLabel="Sub-list"
+                  composite="{Boolean}true">
+                  <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./subList">
+                    <items jcr:primaryType="nt:unstructured">
+                      <name
+                       jcr:primaryType="nt:unstructured"
+                       sling:resourceType="acs-commons/granite/ui/components/include"
+                       path="vonage/components/utils/rte/rte_dialog_namespace"
+                       useFixedInlineToolbar="{Boolean}true">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Sub-list Item"
+                                                    namee="subListItem"/>
+                      </name>
+                    </items>
+                  </field>
+                </sublist>
+              </items>
+            </field>
+          </list>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

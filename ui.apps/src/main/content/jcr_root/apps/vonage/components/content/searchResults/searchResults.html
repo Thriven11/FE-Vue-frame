@@ -1,0 +1,82 @@
+<sly
+  data-sly-use.imageTemplate="vonage/components/utils/baseComponent/imageTemplate.html"
+/>
+
+<section
+  class="search-results"
+  :class="[isLoading ? classes.isLoading : '', hasResults ? classes.hasResults : '']"
+  data-sly-use.model="com.vonage.core.models.content.SearchResultsModel"
+  v-if="hasSearchQuery"
+  v-cloak
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <!--/* Facets */-->
+        <categories
+          :current-category="category"
+          :categories="categories"
+          :show-total="true"
+          @go-to-category="goToCategory($event)"
+        ></categories>
+      </div>
+      <div class="col-12 col-lg-9">
+        <!--/* Loading */-->
+        <div class="search-results__loading"></div>
+
+        <!--/* Results */-->
+        <section class="search-results__results">
+          <!--/* Results count */-->
+          <div class="results-count" v-if="query">
+            Displaying {{ getFirstResultNumber }}-{{ getLastResultNumber }} of
+            {{ totalResults }} results for <strong>{{ query }}</strong>
+          </div>
+
+          <ol
+            class="search-results__results-list"
+            :start="getFirstResultNumber"
+            :style="'--s:' + getFirstResultNumber"
+          >
+            <li class="search-results__card" v-for="result in results">
+              <div class="result-card">
+                <a class="result-card__title" :href="result.url">
+                  {{ result.title }}
+                  <span class="Vlt-icon-arrow-link"></span>
+                </a>
+                <p class="result-card__description">
+                  {{ result.meta_description }}
+                </p>
+                <a class="result-card__url" :href="result.url"
+                  >{{ result.url }}</a
+                >
+              </div>
+            </li>
+          </ol>
+
+          <!--/* Pagination */-->
+          <pagination
+            :current-page="page"
+            :total-pages="getTotalPages"
+            @go-to-page="goToPage($event)"
+          ></pagination>
+        </section>
+
+        <!--/* No results */-->
+        <div class="no-results">
+          <sly
+            data-sly-call="${imageTemplate.cfImage @ cssClass='no-results__image', original='117', xlg='117', lg='117', md='117', sm='117'}"
+          />
+          <h2 class="no-results__title">${model.noResultsTitle}</h2>
+          <span class="no-results__description"
+            >${model.noResultsDescription}</span
+          >
+        </div>
+
+        <div class="dict d-none">
+          <input type="hidden" name="engineKey" value="${inheritedPageProperties.engineKey}">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

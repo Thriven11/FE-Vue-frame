@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jcr:root
+  xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Pricing Matrix Card"
+  sling:resourceType="cq/gui/components/authoring/dialog"
+>
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container"
+  >
+    <items jcr:primaryType="nt:unstructured">
+      <tabs
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+        maximized="{Boolean}true"
+      >
+        <items jcr:primaryType="nt:unstructured">
+          <properties
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Properties"
+            sling:resourceType="granite/ui/components/foundation/container"
+          >
+            <items jcr:primaryType="nt:unstructured">
+              <fieldset
+                jcr:primaryType="nt:unstructured"
+                jcr:title=""
+                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+              >
+                <layout
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                />
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container"
+                  >
+                    <items jcr:primaryType="nt:unstructured">
+                      <isBestValue
+                        jcr:primaryType="nt:unstructured"
+                        name="./isBestValue"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        text="Highlight"
+                        value="true"
+                      />
+                      <bannerText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Please select the banner text"
+                        fieldLabel="Banner text"
+                        required="{Boolean}false"
+                        name="./bannerText">
+                        <items jcr:primaryType="nt:unstructured">
+                          <none
+                            jcr:primaryType="nt:unstructured"
+                            text="None"
+                            value=""/>
+                          <basic
+                            jcr:primaryType="nt:unstructured"
+                            text="Basic"
+                            value="vng-plans-banner-basic"/>
+                          <mostPopular
+                            jcr:primaryType="nt:unstructured"
+                            text="Most popular"
+                            value="vng-plans-banner-mostPopular"/>
+                          <allTheBells
+                            jcr:primaryType="nt:unstructured"
+                            text="All the bells &#38; whistles"
+                            value="vng-plans-banner-allTheBells"/>
+                        </items>
+                      </bannerText>
+                      <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        required="{Boolean}true"
+                        name="./title"
+                      />
+                      <startingPrice
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Starting price text"
+                        required="{Boolean}false"
+                        name="./startingPrice"
+                      />
+                      <prices
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                          fieldDescription="Plan price. Multiple prices can be added for use when a quantity selector is present on the page. Each price expects a quantity to be specified. If quantity is left empty, that price will be used if none of the previous quantities match"
+                          fieldLabel="Price"
+                          composite="{Boolean}true">
+                      >
+                          <field
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/container"
+                              name="./prices"
+                          >
+                            <items jcr:primaryType="nt:unstructured">
+                              <column
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                              >
+                                <items jcr:primaryType="nt:unstructured">
+                                          <price
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                              fieldLabel="Price"
+                                              required="{Boolean}false"
+                                              name="./price"
+                                          />
+                                          <legal
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                              fieldDescription="Any required legal messaging such as fee disclaimers, payment details, etc"
+                                              fieldLabel="Legal"
+                                              name="./legal"
+                                          />
+                                          <upperLimit
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                              fieldDescription="The price for this segment will be displayed while the quantity is less than the number you set here. Leave quantity blank for maximum quantity"
+                                              fieldLabel="Up to this quantity"
+                                              max="10000"
+                                              min="1"
+                                              name="./upperLimit"
+                                              step="1"
+                                          />
+                                          <hidePrimaryCTA
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              text="Hide primary cta"
+                                              name="./hidePrimaryCTA"
+                                              value="{Boolean}false"
+                                              uncheckedValue="{Boolean}true"
+                                          />
+                                          <hideSecondaryCTA
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              text="Hide secondary cta"
+                                              name="./hideSecondaryCTA"
+                                              value="{Boolean}false"
+                                              uncheckedValue="{Boolean}true"
+                                          />
+                                          <hideTextLink
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              text="Hide Text Link"
+                                              name="./hideTextLink"
+                                              value="{Boolean}false"
+                                              uncheckedValue="{Boolean}true"
+                                          />
+                                </items>
+                              </column>
+                            </items>
+                          </field>
+                      </prices>
+                      <description
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="acs-commons/granite/ui/components/include"
+                          path="vonage/components/utils/rte/rte_dialog_namespace">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabell="Description"
+                                                    namee="./description"/>
+                      </description>
+                      <primaryLightbox
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                          checked="{Boolean}false"
+                          fieldDescription="When checked, the primary CTA will trigger a lightbox form and confirmation message"
+                          name="./primaryLightbox"
+                          text="Primary Button as Lightbox?"
+                          uncheckedValue="{Boolean}false"
+                          value="{Boolean}true"/>
+                      <secondaryLightbox
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                          checked="{Boolean}false"
+                          fieldDescription="When checked, the secondary CTA will trigger a lightbox form and confirmation message"
+                          name="./secondaryLightbox"
+                          text="Secondary Button as Lightbox?"
+                          uncheckedValue="{Boolean}false"
+                          value="{Boolean}true"/>
+                    </items>
+                  </column>
+                </items>
+              </fieldset>
+            </items>
+          </properties>
+        </items>
+      </tabs>
+    </items>
+  </content>
+</jcr:root>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2019-09-27T20:45:19.346Z"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2019-09-27T13:25:29.540Z"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:tags="[]"
+        cq:template="/conf/vonage/settings/wcm/templates/experience-fragment-page"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        jcr:uuid="8c2bf1eb-09b9-45c6-84fc-67d5740b1842"
+        sling:resourceType="vonage/components/structure/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <footer
+                jcr:created="{Date}2019-09-27T11:16:27.650Z"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2019-09-27T11:16:27.650Z"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vonage/components/structure/footer">
+                <responsiveGrid1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <titlelinklist
+                        jcr:created="{Date}2019-09-27T11:16:40.394Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-09-27T20:45:19.290Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/navigations/titleLinkList"
+                        title="Communications APIs">
+                        <links jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                label="Partners"
+                                target="_blank"
+                                href="https://www.nexmo.com/partners/become-a-partner"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                label="Nexmo System Status"
+                                target="_blank"
+                                href="https://www.nexmostatus.com/"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                label="Tokbox System Status"
+                                target="_blank"
+                                href="https://support.tokbox.com/hc/en-us/sections/360004873552-Status-Updates"/>
+                        </links>
+                    </titlelinklist>
+                    <titlelinklist_145388
+                        jcr:created="{Date}2019-09-27T11:16:46.347Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-09-27T20:33:17.521Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/navigations/titleLinkList"
+                        title="Unified Communications">
+                        <links jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                label="Partners"
+                                target="_blank"
+                                href="https://www.vonage.com/business/partner-with-us/"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                label="System Status"
+                                target="_blank"
+                                href="https://businesssupport.vonage.com/trust?lob=essentials"/>
+                        </links>
+                    </titlelinklist_145388>
+                </responsiveGrid1>
+                <responsiveGrid2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <titlelinklist_157491
+                        jcr:created="{Date}2019-09-27T11:16:52.715Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-09-27T20:34:28.949Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/navigations/titleLinkList"
+                        title="Contact Centers">
+                        <links jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                label="Partners"
+                                target="_blank"
+                                href="https://www.newvoicemedia.com/en-us/partners"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                label="NewVoiceMedia System Status"
+                                target="_blank"
+                                href="https://nvm.statuspage.io/"/>
+                        </links>
+                    </titlelinklist_157491>
+                    <titlelinklist_109582
+                        jcr:created="{Date}2019-09-27T11:16:58.876Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2019-09-27T20:36:43.209Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vonage/components/content/navigations/titleLinkList"
+                        title="Corporate">
+                        <links jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                label="Careers"
+                                target="_blank"
+                                href="https://www.vonage.com/corporate/careers/"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                label="Investor Relations"
+                                target="_blank"
+                                href="https://ir.vonage.com/"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                label="Newsroom"
+                                target="_blank"
+                                href="https://ir.vonage.com/press-releases/2019"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                label="Events"
+                                target="_blank"
+                                href="https://www.vonage.com/business/events/"/>
+                        </links>
+                    </titlelinklist_109582>
+                </responsiveGrid2>
+                <legalLinkList
+                    jcr:lastModified="{Date}2019-09-27T20:28:13.168Z"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/navigations/legalLinkList">
+                    <links jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            label="Legal"
+                            target="_blank"
+                            href="https://www.vonage.com/business/legal-policy-center/"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            label="Privacy"
+                            target="_blank"
+                            href="https://www.vonage.com/privacy-policy?pca_ref"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            label="Terms of Service"
+                            target="_blank"
+                            href="https://www.vonage.com/business/legal-policy-center/tos/"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            label="E911"
+                            target="_blank"
+                            href="https://www.vonage.com/business/legal-policy-center/e911/"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            label="Acceptable Use Policy"
+                            target="_blank"
+                            href="https://www.vonage.com/business/legal-policy-center/aup/"/>
+                    </links>
+                </legalLinkList>
+                <social
+                    jcr:lastModified="{Date}2019-09-27T20:29:52.748Z"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vonage/components/content/social">
+                    <links jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            target="_blank"
+                            href="https://www.facebook.com/vonage"
+                            type="facebook"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            target="_blank"
+                            href="https://www.linkedin.com/company/vonage"
+                            type="linkedin"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            target="_blank"
+                            href="https://www.youtube.com/user/vonage"
+                            type="youtube"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            target="_blank"
+                            href="https://twitter.com/vonage"
+                            type="twitter"/>
+                    </links>
+                </social>
+            </footer>
+        </root>
+    </jcr:content>
+</jcr:root>

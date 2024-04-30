@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Feature"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <textSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Headline"
+                                                name="./title"/>
+                                            <description fieldLabel="Text" jcr:primaryType="nt:unstructured" path="/apps/vonage/components/utils/rte/rte_dialog_with_description" sling:resourceType="granite/ui/components/foundation/include"/>
+                                            <size
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Size Text"
+                                                name="./size">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <wide
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Wide Text"
+                                                        value=""/>
+                                                    <narrow
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Narrow Text"
+                                                        value="col-lg-5 offset-lg-1"/>
+                                                </items>
+                                            </size>
+                                            <assetPosition
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Asset Position"
+                                                    name="./position">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                            jcr:primaryType="nt:unstructured"
+                                                            selected="{Boolean}true"
+                                                            text="Left"
+                                                            value=""/>
+                                                    <right
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Right"
+                                                            value="feature--inverted"/>
+                                                </items>
+                                            </assetPosition>
+                                            <imageWidth
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./imagewidth"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                text="Force image to set width"
+                                                fieldDescription="When checked, the image will be 350px wide, this is useful for large icons and vertical images."
+                                                value="feature__content--force-image-width"/>
+                                            <topAllignment
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./topAllignment"
+                                                    text="Check this box for text to Top align"
+                                                    value="feature__content--top-align">
+                                            </topAllignment>
+                                            <marginBottom
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./marginBottom"
+                                                    text="Check this box for extra margin at bottom"
+                                                    fieldDescription="Use it for last Featue Comoponent"
+                                                    value="feature--last">
+                                            </marginBottom>
+
+                                            <noMarginBottom
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./marginBottom"
+                                                    text="Remove margin at bottom"
+                                                    fieldDescription="Use this to remove all bottom margin"
+                                                    value="feature--no-bottom-margin">
+                                            </noMarginBottom>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </textSection>
+                    <linkSection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Link Section"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title=""
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/include"
+                                                path="/apps/vonage/components/utils/cta/cta_dialog"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </linkSection>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

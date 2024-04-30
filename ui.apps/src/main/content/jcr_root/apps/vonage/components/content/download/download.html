@@ -1,0 +1,21 @@
+<section class="download-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 ${properties.centerButton ? '' : 'col-md-10 offset-md-1 col-lg-7 offset-lg-2' }">
+				<div
+					data-sly-use.download="com.adobe.cq.wcm.core.components.models.Download"
+					data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+					data-sly-test.hasContent="${download.title || download.description || download.actionText}"
+					class="cmp-download${!wcmmode.disabled ? ' cq-dd-file' : ''} ${properties.centerButton ? 'centerButton' : '' }">
+					<a data-sly-test="${download.url && download.actionText}"
+						aria-label="${properties.ariaLabel}" class="cmp-download__action"
+						href="${download.url}"> <span
+						class="cmp-download__action-text">${download.actionText}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<sly
+	data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-download cq-dd-file'}"></sly>

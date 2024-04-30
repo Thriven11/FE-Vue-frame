@@ -1,0 +1,15 @@
+From: no-reply@vonage.com
+Subject: Vonage web notification | Content Approved and Published
+
+Hello ${recipientName},
+
+Following AEM page has been approved and published successfully- 
+
+${payload}
+
+
+From,
+Vonage AEM Admin
+
+--------------------------------------------------------------
+This is an automatic generated message. Please do not reply.

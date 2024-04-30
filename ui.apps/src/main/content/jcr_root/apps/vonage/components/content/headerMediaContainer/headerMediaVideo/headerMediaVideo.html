@@ -1,0 +1,9 @@
+<sly data-sly-use.template="vonage/components/utils/baseComponent/videoImageTemplate.html"/>
+<sly data-sly-use.model="com.vonage.core.models.content.HeaderMediaComponentModel"></sly>
+
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder cq-marker-start"
+     data-emptytext="${component.title} Component" style="min-width:250px"></div>
+
+<div data-sly-test="${properties.dataVideoId}" class="header-media__video">
+    <sly data-sly-call="${template.videoImageContent @ dataVideoId=model.dataVideoId, caption=model.videoCaption, ariaLabel=model.videoAriaLabel}"></sly>
+</div>

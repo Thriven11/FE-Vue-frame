@@ -1,0 +1,16 @@
+<div data-sly-test="${wcmmode.edit}"
+	class="cq-placeholder cq-marker-start"
+	data-emptytext="${component.title} Component"></div>
+
+<section class="cart-checkout">
+  <div class="container ">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <sly data-sly-resource="${'Checkout' @ resourceType='/apps/vonage/components/ecommerce/checkoutForm'}" />
+      </div>
+      <div class="col-12 col-lg-5 offset-lg-1 checkout-cart-pricing-details__outer">
+        <sly data-sly-resource="${'Cart Details' @ resourceType='/apps/vonage/components/ecommerce/checkoutCartPricingDetails'}" />
+      </div>
+    </div>
+  </div>
+</section>
